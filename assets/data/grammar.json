@@ -1,0 +1,2774 @@
+[
+ {
+  "id": "n5-desu",
+  "l": 5,
+  "t": "〜は〜です",
+  "m": "X is Y",
+  "f": "Noun ＋ は ＋ Noun ＋ です",
+  "e": "The most basic polite sentence. は marks the topic, です makes the sentence polite. The negative is じゃありません (casual じゃない).",
+  "x": [
+   {
+    "jp": "わたし**は**がくせい**です**。",
+    "en": "I am a student."
+   },
+   {
+    "jp": "これ**は**ほん**じゃありません**。",
+    "en": "This is not a book."
+   }
+  ],
+  "q": {
+   "s": "たなかさん＿＿いしゃです。",
+   "o": [
+    "は",
+    "を",
+    "に"
+   ],
+   "a": 0,
+   "en": "Mr. Tanaka is a doctor."
+  }
+ },
+ {
+  "id": "n5-ka",
+  "l": 5,
+  "t": "〜か",
+  "m": "Question marker",
+  "f": "Sentence ＋ か",
+  "e": "Add か to the end of a polite sentence to turn it into a question. No question mark is needed in formal writing.",
+  "x": [
+   {
+    "jp": "がくせいです**か**。",
+    "en": "Are you a student?"
+   },
+   {
+    "jp": "なんじです**か**。",
+    "en": "What time is it?"
+   }
+  ],
+  "q": {
+   "s": "これはペンです＿＿。",
+   "o": [
+    "か",
+    "を",
+    "が"
+   ],
+   "a": 0,
+   "en": "Is this a pen?"
+  }
+ },
+ {
+  "id": "n5-no",
+  "l": 5,
+  "t": "〜の〜",
+  "m": "Possession / linking nouns",
+  "f": "Noun ＋ の ＋ Noun",
+  "e": "の links two nouns. The first noun describes or owns the second: 'my book', 'Japanese teacher', 'Tokyo university'.",
+  "x": [
+   {
+    "jp": "わたし**の**かばんです。",
+    "en": "It's my bag."
+   },
+   {
+    "jp": "にほんご**の**せんせい",
+    "en": "Japanese (language) teacher"
+   }
+  ],
+  "q": {
+   "s": "これはわたし＿＿くるまです。",
+   "o": [
+    "の",
+    "は",
+    "で"
+   ],
+   "a": 0,
+   "en": "This is my car."
+  }
+ },
+ {
+  "id": "n5-mo",
+  "l": 5,
+  "t": "〜も",
+  "m": "Also / too",
+  "f": "Noun ＋ も",
+  "e": "も replaces は or が (and attaches after other particles) to mean 'also'. In negative sentences it means 'either / not even'.",
+  "x": [
+   {
+    "jp": "わたし**も**がくせいです。",
+    "en": "I'm a student too."
+   },
+   {
+    "jp": "なに**も**たべません。",
+    "en": "I don't eat anything."
+   }
+  ],
+  "q": {
+   "s": "やまださんもわたし＿＿にほんじんです。",
+   "o": [
+    "も",
+    "の",
+    "を"
+   ],
+   "a": 0,
+   "en": "Ms. Yamada and I are both Japanese."
+  }
+ },
+ {
+  "id": "n5-wo",
+  "l": 5,
+  "t": "〜を",
+  "m": "Direct object",
+  "f": "Noun ＋ を ＋ Verb",
+  "e": "を marks the direct object: the thing the action is done to.",
+  "x": [
+   {
+    "jp": "パン**を**たべます。",
+    "en": "I eat bread."
+   },
+   {
+    "jp": "テレビ**を**みます。",
+    "en": "I watch TV."
+   }
+  ],
+  "q": {
+   "s": "まいあさコーヒー＿＿のみます。",
+   "o": [
+    "を",
+    "に",
+    "へ"
+   ],
+   "a": 0,
+   "en": "I drink coffee every morning."
+  }
+ },
+ {
+  "id": "n5-ni-place",
+  "l": 5,
+  "t": "〜に / 〜へ",
+  "m": "Destination",
+  "f": "Place ＋ に / へ ＋ いきます・きます・かえります",
+  "e": "Both に and へ mark the destination of movement. へ emphasises direction; に emphasises arrival. They are mostly interchangeable here.",
+  "x": [
+   {
+    "jp": "がっこう**に**いきます。",
+    "en": "I go to school."
+   },
+   {
+    "jp": "うち**へ**かえります。",
+    "en": "I return home."
+   }
+  ],
+  "q": {
+   "s": "あした、きょうと＿＿いきます。",
+   "o": [
+    "へ",
+    "を",
+    "が"
+   ],
+   "a": 0,
+   "en": "Tomorrow I'm going to Kyoto."
+  }
+ },
+ {
+  "id": "n5-de-place",
+  "l": 5,
+  "t": "〜で (place / means)",
+  "m": "At (where an action happens) / by means of",
+  "f": "Place ＋ で ＋ Verb   ·   Tool ＋ で",
+  "e": "で marks where an action takes place, and also the tool or means used to do something.",
+  "x": [
+   {
+    "jp": "としょかん**で**べんきょうします。",
+    "en": "I study at the library."
+   },
+   {
+    "jp": "バス**で**いきます。",
+    "en": "I go by bus."
+   }
+  ],
+  "q": {
+   "s": "はし＿＿すしをたべます。",
+   "o": [
+    "で",
+    "を",
+    "に"
+   ],
+   "a": 0,
+   "en": "I eat sushi with chopsticks."
+  }
+ },
+ {
+  "id": "n5-ni-time",
+  "l": 5,
+  "t": "〜に (time)",
+  "m": "At / on (specific time)",
+  "f": "Time ＋ に",
+  "e": "に marks a specific point in time: clock times, dates, days of the week. Relative words like きょう, あした, まいにち take no に.",
+  "x": [
+   {
+    "jp": "７じ**に**おきます。",
+    "en": "I get up at 7."
+   },
+   {
+    "jp": "にちようび**に**えいがをみます。",
+    "en": "I watch a movie on Sunday."
+   }
+  ],
+  "q": {
+   "s": "９じ＿＿ねます。",
+   "o": [
+    "に",
+    "で",
+    "を"
+   ],
+   "a": 0,
+   "en": "I go to bed at 9."
+  }
+ },
+ {
+  "id": "n5-ga-arimasu",
+  "l": 5,
+  "t": "〜があります / います",
+  "m": "There is / exists",
+  "f": "Thing ＋ が あります   ·   Person/animal ＋ が います",
+  "e": "Use あります for inanimate things and plants, います for people and animals. The place is marked with に.",
+  "x": [
+   {
+    "jp": "つくえのうえに本**があります**。",
+    "en": "There is a book on the desk."
+   },
+   {
+    "jp": "こうえんにこども**がいます**。",
+    "en": "There are children in the park."
+   }
+  ],
+  "q": {
+   "s": "にわにねこが＿＿。",
+   "o": [
+    "います",
+    "あります",
+    "です"
+   ],
+   "a": 0,
+   "en": "There is a cat in the garden."
+  }
+ },
+ {
+  "id": "n5-masu",
+  "l": 5,
+  "t": "〜ます / 〜ません",
+  "m": "Polite verb forms",
+  "f": "Verb stem ＋ ます / ません / ました / ませんでした",
+  "e": "The polite form of verbs. ます (present/future), ません (negative), ました (past), ませんでした (past negative).",
+  "x": [
+   {
+    "jp": "あしたテニスを**します**。",
+    "en": "I will play tennis tomorrow."
+   },
+   {
+    "jp": "きのうはべんきょう**しませんでした**。",
+    "en": "I didn't study yesterday."
+   }
+  ],
+  "q": {
+   "s": "きのうえいがをみ＿＿。",
+   "o": [
+    "ました",
+    "ます",
+    "ません"
+   ],
+   "a": 0,
+   "en": "I watched a movie yesterday."
+  }
+ },
+ {
+  "id": "n5-mashou",
+  "l": 5,
+  "t": "〜ましょう / 〜ませんか",
+  "m": "Let's… / Won't you…?",
+  "f": "Verb stem ＋ ましょう / ませんか",
+  "e": "ませんか is a polite invitation ('won't you…?'). ましょう means 'let's…' and also answers an invitation.",
+  "x": [
+   {
+    "jp": "いっしょにひるごはんをたべ**ませんか**。",
+    "en": "Won't you have lunch with me?"
+   },
+   {
+    "jp": "ええ、たべ**ましょう**。",
+    "en": "Yes, let's eat."
+   }
+  ],
+  "q": {
+   "s": "いっしょにかえり＿＿か。",
+   "o": [
+    "ません",
+    "ます",
+    "ました"
+   ],
+   "a": 0,
+   "en": "Shall we go home together?"
+  }
+ },
+ {
+  "id": "n5-tai",
+  "l": 5,
+  "t": "〜たい",
+  "m": "Want to (do)",
+  "f": "Verb stem ＋ たい（です）",
+  "e": "Expresses the speaker's desire to do something. It conjugates like an い-adjective: たくない, たかった. Use it for yourself, not others.",
+  "x": [
+   {
+    "jp": "にほんへいき**たい**です。",
+    "en": "I want to go to Japan."
+   },
+   {
+    "jp": "なにもたべ**たくない**です。",
+    "en": "I don't want to eat anything."
+   }
+  ],
+  "q": {
+   "s": "つめたいみずがのみ＿＿です。",
+   "o": [
+    "たい",
+    "ます",
+    "たく"
+   ],
+   "a": 0,
+   "en": "I want to drink cold water."
+  }
+ },
+ {
+  "id": "n5-adj-i",
+  "l": 5,
+  "t": "い-adjectives",
+  "m": "Describing with い-adjectives",
+  "f": "Adj-い ＋ Noun   ·   Adj-くない / Adj-かった",
+  "e": "い-adjectives conjugate themselves: たかい → たかくない (not), たかかった (was), たかくなかった (wasn't). いい is irregular: よくない, よかった.",
+  "x": [
+   {
+    "jp": "この本はおもしろ**い**です。",
+    "en": "This book is interesting."
+   },
+   {
+    "jp": "きのうはさむ**かった**です。",
+    "en": "It was cold yesterday."
+   }
+  ],
+  "q": {
+   "s": "このりんごはあまり＿＿です。",
+   "o": [
+    "おいしくない",
+    "おいしいじゃない",
+    "おいしかない"
+   ],
+   "a": 0,
+   "en": "This apple isn't very tasty."
+  }
+ },
+ {
+  "id": "n5-adj-na",
+  "l": 5,
+  "t": "な-adjectives",
+  "m": "Describing with な-adjectives",
+  "f": "Adj ＋ な ＋ Noun   ·   Adj ＋ じゃない / でした",
+  "e": "な-adjectives take な before a noun and behave like nouns at the end of a sentence: しずかです, しずかじゃありません, しずかでした.",
+  "x": [
+   {
+    "jp": "**しずかな**へやです。",
+    "en": "It's a quiet room."
+   },
+   {
+    "jp": "このまちは**きれいでした**。",
+    "en": "This town was beautiful."
+   }
+  ],
+  "q": {
+   "s": "ここは＿＿こうえんです。",
+   "o": [
+    "ゆうめいな",
+    "ゆうめいの",
+    "ゆうめい"
+   ],
+   "a": 0,
+   "en": "This is a famous park."
+  }
+ },
+ {
+  "id": "n5-te-kudasai",
+  "l": 5,
+  "t": "〜てください",
+  "m": "Please do…",
+  "f": "Verb て-form ＋ ください",
+  "e": "A polite request. Negative: ないでください ('please don't…').",
+  "x": [
+   {
+    "jp": "ここになまえをかい**てください**。",
+    "en": "Please write your name here."
+   },
+   {
+    "jp": "しゃしんをとら**ないでください**。",
+    "en": "Please don't take photos."
+   }
+  ],
+  "q": {
+   "s": "ちょっとまっ＿＿ください。",
+   "o": [
+    "て",
+    "た",
+    "で"
+   ],
+   "a": 0,
+   "en": "Please wait a moment."
+  }
+ },
+ {
+  "id": "n5-te-imasu",
+  "l": 5,
+  "t": "〜ています",
+  "m": "Ongoing action / state",
+  "f": "Verb て-form ＋ います",
+  "e": "Describes an action in progress ('is doing') or a resulting state (けっこんしています = is married, すんでいます = lives).",
+  "x": [
+   {
+    "jp": "いま、あめがふっ**ています**。",
+    "en": "It's raining now."
+   },
+   {
+    "jp": "とうきょうにすん**でいます**。",
+    "en": "I live in Tokyo."
+   }
+  ],
+  "q": {
+   "s": "おとうとはいまテレビをみ＿＿。",
+   "o": [
+    "ています",
+    "ます",
+    "ました"
+   ],
+   "a": 0,
+   "en": "My little brother is watching TV now."
+  }
+ },
+ {
+  "id": "n5-te-mo-ii",
+  "l": 5,
+  "t": "〜てもいいです",
+  "m": "It's okay to… / May I…?",
+  "f": "Verb て-form ＋ もいいです(か)",
+  "e": "Asks for or gives permission. Add か to ask.",
+  "x": [
+   {
+    "jp": "ここで写真を**撮ってもいいですか**。",
+    "en": "May I take photos here?"
+   },
+   {
+    "jp": "窓を**開けてもいいです**よ。",
+    "en": "You may open the window."
+   }
+  ],
+  "q": {
+   "s": "トイレを使っ＿＿いいですか。",
+   "o": [
+    "ても",
+    "ては",
+    "たら"
+   ],
+   "a": 0,
+   "en": "May I use the toilet?"
+  }
+ },
+ {
+  "id": "n5-te-wa-ikenai",
+  "l": 5,
+  "t": "〜てはいけません",
+  "m": "Must not…",
+  "f": "Verb て-form ＋ はいけません",
+  "e": "Expresses prohibition. Strong; often used for rules.",
+  "x": [
+   {
+    "jp": "ここでたばこをすっ**てはいけません**。",
+    "en": "You must not smoke here."
+   },
+   {
+    "jp": "じゅぎょうちゅうにねて**はいけません**。",
+    "en": "You must not sleep during class."
+   }
+  ],
+  "q": {
+   "s": "びじゅつかんでしゃしんをとって＿＿。",
+   "o": [
+    "はいけません",
+    "もいいです",
+    "ください"
+   ],
+   "a": 0,
+   "en": "You must not take photos in the museum."
+  }
+ },
+ {
+  "id": "n5-kara-made",
+  "l": 5,
+  "t": "〜から〜まで",
+  "m": "From … to / until …",
+  "f": "A ＋ から ＋ B ＋ まで",
+  "e": "Marks a starting point and end point in time or space.",
+  "x": [
+   {
+    "jp": "９じ**から**５じ**まで**はたらきます。",
+    "en": "I work from 9 to 5."
+   },
+   {
+    "jp": "うち**から**えき**まで**あるきます。",
+    "en": "I walk from home to the station."
+   }
+  ],
+  "q": {
+   "s": "ぎんこうは３じ＿＿です。",
+   "o": [
+    "まで",
+    "から",
+    "に"
+   ],
+   "a": 0,
+   "en": "The bank is open until 3."
+  }
+ },
+ {
+  "id": "n5-ta-koto",
+  "l": 5,
+  "t": "〜たことがあります",
+  "m": "Have done (experience)",
+  "f": "Verb た-form ＋ ことがあります",
+  "e": "Talks about having had an experience at some point in the past.",
+  "x": [
+   {
+    "jp": "ふじさんにのぼっ**たことがあります**。",
+    "en": "I have climbed Mt. Fuji."
+   },
+   {
+    "jp": "すしをたべ**たことがありません**。",
+    "en": "I've never eaten sushi."
+   }
+  ],
+  "q": {
+   "s": "にほんへいった＿＿があります。",
+   "o": [
+    "こと",
+    "もの",
+    "の"
+   ],
+   "a": 0,
+   "en": "I have been to Japan."
+  }
+ },
+ {
+  "id": "n5-tari",
+  "l": 5,
+  "t": "〜たり〜たりします",
+  "m": "Doing things like A and B",
+  "f": "Verb た-form ＋ り、Verb た-form ＋ り ＋ します",
+  "e": "Lists a few example actions from a larger set, without implying order.",
+  "x": [
+   {
+    "jp": "やすみのひはほんをよん**だり**、えいがをみ**たり**します。",
+    "en": "On days off I do things like read and watch movies."
+   }
+  ],
+  "q": {
+   "s": "にちようびはそうじをし＿＿、かいものをしたりします。",
+   "o": [
+    "たり",
+    "て",
+    "ながら"
+   ],
+   "a": 0,
+   "en": "On Sunday I clean, go shopping, and so on."
+  }
+ },
+ {
+  "id": "n5-mae-ato",
+  "l": 5,
+  "t": "〜まえに / 〜あとで",
+  "m": "Before / after",
+  "f": "Verb dict. ＋ まえに   ·   Verb た ＋ あとで   ·   Noun ＋ の ＋ まえに/あとで",
+  "e": "まえに takes the dictionary form (the action hasn't happened); あとで takes the た-form.",
+  "x": [
+   {
+    "jp": "ねる**まえに**はをみがきます。",
+    "en": "I brush my teeth before sleeping."
+   },
+   {
+    "jp": "しごとの**あとで**のみにいきます。",
+    "en": "I'll go drinking after work."
+   }
+  ],
+  "q": {
+   "s": "ごはんをたべた＿＿、さんぽします。",
+   "o": [
+    "あとで",
+    "まえに",
+    "から"
+   ],
+   "a": 0,
+   "en": "After eating, I'll take a walk."
+  }
+ },
+ {
+  "id": "n5-hoshii",
+  "l": 5,
+  "t": "〜がほしい",
+  "m": "Want (something)",
+  "f": "Noun ＋ が ＋ ほしい（です）",
+  "e": "Expresses wanting an object. Conjugates as an い-adjective. For actions, use 〜たい.",
+  "x": [
+   {
+    "jp": "あたらしいくるま**がほしい**です。",
+    "en": "I want a new car."
+   },
+   {
+    "jp": "なに**もほしくない**です。",
+    "en": "I don't want anything."
+   }
+  ],
+  "q": {
+   "s": "わたしはねこ＿＿ほしいです。",
+   "o": [
+    "が",
+    "を",
+    "で"
+   ],
+   "a": 0,
+   "en": "I want a cat."
+  }
+ },
+ {
+  "id": "n5-kara-reason",
+  "l": 5,
+  "t": "〜から (reason)",
+  "m": "Because…",
+  "f": "Sentence ＋ から、Result",
+  "e": "Gives a reason. The reason comes first, then から, then the result.",
+  "x": [
+   {
+    "jp": "あついです**から**、まどをあけます。",
+    "en": "It's hot, so I'll open the window."
+   },
+   {
+    "jp": "じかんがない**から**、タクシーでいこう。",
+    "en": "We don't have time, so let's go by taxi."
+   }
+  ],
+  "q": {
+   "s": "あめです＿＿、うちにいます。",
+   "o": [
+    "から",
+    "まで",
+    "より"
+   ],
+   "a": 0,
+   "en": "Because it's raining, I'll stay home."
+  }
+ },
+ {
+  "id": "n5-yori",
+  "l": 5,
+  "t": "〜より〜のほうが",
+  "m": "Comparisons",
+  "f": "A より B のほうが ＋ Adj",
+  "e": "Compares two things: 'B is more … than A'. Ask with AとBとどちらが…ですか.",
+  "x": [
+   {
+    "jp": "バス**より**でんしゃ**のほうが**はやいです。",
+    "en": "The train is faster than the bus."
+   },
+   {
+    "jp": "いぬとねこと**どちらが**すきですか。",
+    "en": "Which do you like more, dogs or cats?"
+   }
+  ],
+  "q": {
+   "s": "なつ＿＿ふゆのほうがすきです。",
+   "o": [
+    "より",
+    "から",
+    "まで"
+   ],
+   "a": 0,
+   "en": "I like winter more than summer."
+  }
+ },
+ {
+  "id": "n4-potential",
+  "l": 4,
+  "t": "Potential form",
+  "m": "Can / be able to",
+  "f": "Group 1: よむ → よめる   ·   Group 2: たべる → たべられる   ·   する → できる   ·   くる → こられる",
+  "e": "Expresses ability. The object is usually marked with が instead of を.",
+  "x": [
+   {
+    "jp": "にほんごが**はなせます**。",
+    "en": "I can speak Japanese."
+   },
+   {
+    "jp": "さしみが**たべられません**。",
+    "en": "I can't eat sashimi."
+   }
+  ],
+  "q": {
+   "s": "ピアノが＿＿か。",
+   "o": [
+    "ひけます",
+    "ひきます",
+    "ひいて"
+   ],
+   "a": 0,
+   "en": "Can you play the piano?"
+  }
+ },
+ {
+  "id": "n4-tsumori",
+  "l": 4,
+  "t": "〜つもりです",
+  "m": "Intend to…",
+  "f": "Verb dict. / ない ＋ つもりです",
+  "e": "States a plan or intention you have already decided on.",
+  "x": [
+   {
+    "jp": "らいねんにほんへいく**つもりです**。",
+    "en": "I intend to go to Japan next year."
+   },
+   {
+    "jp": "もうたばこはすわない**つもりです**。",
+    "en": "I don't intend to smoke anymore."
+   }
+  ],
+  "q": {
+   "s": "なつやすみにくにへかえる＿＿です。",
+   "o": [
+    "つもり",
+    "こと",
+    "ため"
+   ],
+   "a": 0,
+   "en": "I plan to go back to my country over summer break."
+  }
+ },
+ {
+  "id": "n4-volitional",
+  "l": 4,
+  "t": "Volitional 〜よう / 〜おう",
+  "m": "Let's / I think I'll…",
+  "f": "Group 1: いく → いこう   ·   Group 2: たべる → たべよう   ·   する → しよう",
+  "e": "Casual 'let's…'. With 〜とおもっています it means 'I'm thinking of doing…'.",
+  "x": [
+   {
+    "jp": "いっしょに**いこう**。",
+    "en": "Let's go together."
+   },
+   {
+    "jp": "くるまを**かおう**とおもっています。",
+    "en": "I'm thinking of buying a car."
+   }
+  ],
+  "q": {
+   "s": "あしたはやくおき＿＿とおもいます。",
+   "o": [
+    "よう",
+    "ろう",
+    "たい"
+   ],
+   "a": 0,
+   "en": "I think I'll get up early tomorrow."
+  }
+ },
+ {
+  "id": "n4-ba",
+  "l": 4,
+  "t": "〜ば (conditional)",
+  "m": "If…",
+  "f": "Group 1: いく → いけば   ·   Group 2: みる → みれば   ·   い-adj: たかい → たかければ",
+  "e": "A general conditional: if A happens, B (naturally) follows. Often used for advice: 〜ばいい ('you should just…').",
+  "x": [
+   {
+    "jp": "やすけれ**ば**かいます。",
+    "en": "If it's cheap, I'll buy it."
+   },
+   {
+    "jp": "わからなければ、せんせいにきけ**ばいい**です。",
+    "en": "If you don't understand, you should ask the teacher."
+   }
+  ],
+  "q": {
+   "s": "はやくいけ＿＿、まにあいます。",
+   "o": [
+    "ば",
+    "たら",
+    "と"
+   ],
+   "a": 0,
+   "en": "If you go now, you'll make it in time."
+  }
+ },
+ {
+  "id": "n4-tara",
+  "l": 4,
+  "t": "〜たら",
+  "m": "If / when…",
+  "f": "Verb/Adj た-form ＋ ら",
+  "e": "The most versatile conditional: 'if' or 'when (after) A happens'. Can be used with requests and intentions in the result.",
+  "x": [
+   {
+    "jp": "えきについ**たら**、でんわしてください。",
+    "en": "When you arrive at the station, please call me."
+   },
+   {
+    "jp": "あめがふっ**たら**、いきません。",
+    "en": "If it rains, I won't go."
+   }
+  ],
+  "q": {
+   "s": "じかんがあっ＿＿、あそびにきてください。",
+   "o": [
+    "たら",
+    "ても",
+    "ては"
+   ],
+   "a": 0,
+   "en": "If you have time, please come visit."
+  }
+ },
+ {
+  "id": "n4-to-cond",
+  "l": 4,
+  "t": "〜と (natural result)",
+  "m": "When A, (always) B",
+  "f": "Verb dict. ＋ と",
+  "e": "Used when B is an automatic or habitual result of A: directions, machines, nature. The result can't be a request or intention.",
+  "x": [
+   {
+    "jp": "このボタンをおす**と**、きっぷがでます。",
+    "en": "When you press this button, a ticket comes out."
+   },
+   {
+    "jp": "はるになる**と**、さくらがさきます。",
+    "en": "When spring comes, cherry blossoms bloom."
+   }
+  ],
+  "q": {
+   "s": "みぎにまがる＿＿、ぎんこうがあります。",
+   "o": [
+    "と",
+    "から",
+    "ので"
+   ],
+   "a": 0,
+   "en": "If you turn right, there's a bank."
+  }
+ },
+ {
+  "id": "n4-nagara",
+  "l": 4,
+  "t": "〜ながら",
+  "m": "While doing…",
+  "f": "Verb stem ＋ ながら",
+  "e": "Two actions done by the same person at the same time. The main action comes second.",
+  "x": [
+   {
+    "jp": "おんがくをきき**ながら**べんきょうします。",
+    "en": "I study while listening to music."
+   },
+   {
+    "jp": "あるき**ながら**はなしましょう。",
+    "en": "Let's talk while we walk."
+   }
+  ],
+  "q": {
+   "s": "テレビをみ＿＿ごはんをたべます。",
+   "o": [
+    "ながら",
+    "たり",
+    "ので"
+   ],
+   "a": 0,
+   "en": "I eat while watching TV."
+  }
+ },
+ {
+  "id": "n4-node",
+  "l": 4,
+  "t": "〜ので",
+  "m": "Because / since (softer)",
+  "f": "Plain form ＋ ので  (Noun/な-adj ＋ なので)",
+  "e": "Gives a reason more softly and objectively than から. Common in polite explanations and excuses.",
+  "x": [
+   {
+    "jp": "あたまがいたい**ので**、かえってもいいですか。",
+    "en": "I have a headache, so may I go home?"
+   },
+   {
+    "jp": "あしたはやすみ**なので**、ゆっくりねます。",
+    "en": "Tomorrow's a holiday, so I'll sleep in."
+   }
+  ],
+  "q": {
+   "s": "でんしゃがおくれた＿＿、ちこくしました。",
+   "o": [
+    "ので",
+    "のに",
+    "ても"
+   ],
+   "a": 0,
+   "en": "The train was late, so I was late."
+  }
+ },
+ {
+  "id": "n4-noni",
+  "l": 4,
+  "t": "〜のに",
+  "m": "Even though / despite",
+  "f": "Plain form ＋ のに  (Noun/な-adj ＋ なのに)",
+  "e": "Expresses that the result is contrary to expectation, often with frustration or surprise.",
+  "x": [
+   {
+    "jp": "たくさんべんきょうした**のに**、しけんにおちました。",
+    "en": "Even though I studied a lot, I failed the exam."
+   },
+   {
+    "jp": "にちようびな**のに**、しごとです。",
+    "en": "Even though it's Sunday, I have work."
+   }
+  ],
+  "q": {
+   "s": "やくそくした＿＿、かれはこなかった。",
+   "o": [
+    "のに",
+    "ので",
+    "から"
+   ],
+   "a": 0,
+   "en": "Even though he promised, he didn't come."
+  }
+ },
+ {
+  "id": "n4-temo",
+  "l": 4,
+  "t": "〜ても",
+  "m": "Even if…",
+  "f": "Verb/Adj て-form ＋ も",
+  "e": "Even if A happens, B still holds. With question words (なにをしても) it means 'no matter what…'.",
+  "x": [
+   {
+    "jp": "あめがふっ**ても**いきます。",
+    "en": "Even if it rains, I'll go."
+   },
+   {
+    "jp": "いくらかんがえ**ても**わかりません。",
+    "en": "No matter how much I think, I don't get it."
+   }
+  ],
+  "q": {
+   "s": "たかく＿＿、かいたいです。",
+   "o": [
+    "ても",
+    "たら",
+    "ので"
+   ],
+   "a": 0,
+   "en": "Even if it's expensive, I want to buy it."
+  }
+ },
+ {
+  "id": "n4-sou-looks",
+  "l": 4,
+  "t": "〜そうです (looks like)",
+  "m": "Looks like / seems about to",
+  "f": "Verb stem / Adj stem ＋ そうです",
+  "e": "Your guess based on what you see. いい → よさそう, ない → なさそう.",
+  "x": [
+   {
+    "jp": "このケーキはおいし**そう**ですね。",
+    "en": "This cake looks delicious."
+   },
+   {
+    "jp": "いまにもあめがふり**そう**です。",
+    "en": "It looks like it'll rain any moment."
+   }
+  ],
+  "q": {
+   "s": "このかばんはじょうぶ＿＿です。",
+   "o": [
+    "そう",
+    "よう",
+    "らしい"
+   ],
+   "a": 0,
+   "en": "This bag looks sturdy."
+  }
+ },
+ {
+  "id": "n4-sou-hearsay",
+  "l": 4,
+  "t": "〜そうです (hearsay)",
+  "m": "I heard that…",
+  "f": "Plain form ＋ そうです",
+  "e": "Reports information you heard or read. The source is often given with によると.",
+  "x": [
+   {
+    "jp": "てんきよほうによると、あしたはゆきがふる**そうです**。",
+    "en": "According to the forecast, it will snow tomorrow."
+   },
+   {
+    "jp": "かのじょはけっこんした**そうです**。",
+    "en": "I heard she got married."
+   }
+  ],
+  "q": {
+   "s": "ニュースによると、じしんがあった＿＿です。",
+   "o": [
+    "そう",
+    "よう",
+    "みたい"
+   ],
+   "a": 0,
+   "en": "According to the news, there was an earthquake."
+  }
+ },
+ {
+  "id": "n4-you-da",
+  "l": 4,
+  "t": "〜ようです / 〜みたいです",
+  "m": "It seems that…",
+  "f": "Plain form ＋ ようです (Noun ＋ の ＋ ようです)   ·   casual: みたい",
+  "e": "A conclusion drawn from evidence (sounds, situation). みたい is the casual version.",
+  "x": [
+   {
+    "jp": "だれもいない**ようです**。",
+    "en": "It seems no one is here."
+   },
+   {
+    "jp": "かぜをひいた**みたい**。",
+    "en": "I think I caught a cold."
+   }
+  ],
+  "q": {
+   "s": "でんきがきえています。るす＿＿ようです。",
+   "o": [
+    "の",
+    "な",
+    "だ"
+   ],
+   "a": 0,
+   "en": "The lights are off. It seems they're out."
+  }
+ },
+ {
+  "id": "n4-tame",
+  "l": 4,
+  "t": "〜ために",
+  "m": "In order to / for the sake of",
+  "f": "Verb dict. ＋ ために   ·   Noun ＋ の ＋ ために",
+  "e": "States a purpose that you can control, or a beneficiary.",
+  "x": [
+   {
+    "jp": "りゅうがくする**ために**、ちょきんしています。",
+    "en": "I'm saving money in order to study abroad."
+   },
+   {
+    "jp": "かぞく**のために**はたらきます。",
+    "en": "I work for my family."
+   }
+  ],
+  "q": {
+   "s": "けんこうの＿＿、まいにちはしっています。",
+   "o": [
+    "ために",
+    "ように",
+    "ので"
+   ],
+   "a": 0,
+   "en": "I run every day for my health."
+  }
+ },
+ {
+  "id": "n4-you-ni",
+  "l": 4,
+  "t": "〜ように",
+  "m": "So that…",
+  "f": "Verb dict. / ない ＋ ように",
+  "e": "A goal or result you hope for, often with potential or non-volitional verbs (みえる, わすれない).",
+  "x": [
+   {
+    "jp": "みんなにきこえる**ように**、おおきいこえではなします。",
+    "en": "I speak loudly so everyone can hear."
+   },
+   {
+    "jp": "わすれない**ように**、メモします。",
+    "en": "I'll take notes so I don't forget."
+   }
+  ],
+  "q": {
+   "s": "かぜをひかない＿＿、あたたかくしてください。",
+   "o": [
+    "ように",
+    "ために",
+    "のに"
+   ],
+   "a": 0,
+   "en": "Keep warm so you don't catch a cold."
+  }
+ },
+ {
+  "id": "n4-you-ni-naru",
+  "l": 4,
+  "t": "〜ようになる",
+  "m": "Come to be able / start to…",
+  "f": "Verb dict. / potential ＋ ようになる",
+  "e": "Describes a gradual change in ability or habit.",
+  "x": [
+   {
+    "jp": "にほんごがはなせる**ようになりました**。",
+    "en": "I've become able to speak Japanese."
+   },
+   {
+    "jp": "まいあさはやくおきる**ようになった**。",
+    "en": "I've started getting up early every morning."
+   }
+  ],
+  "q": {
+   "s": "およげる＿＿なりました。",
+   "o": [
+    "ように",
+    "ために",
+    "ことに"
+   ],
+   "a": 0,
+   "en": "I've learned to swim."
+  }
+ },
+ {
+  "id": "n4-koto-ni-suru",
+  "l": 4,
+  "t": "〜ことにする",
+  "m": "Decide to…",
+  "f": "Verb dict. / ない ＋ ことにする",
+  "e": "The speaker's own decision. ことにしている means a personal rule or habit.",
+  "x": [
+   {
+    "jp": "らいげつひっこす**ことにしました**。",
+    "en": "I decided to move next month."
+   },
+   {
+    "jp": "よるはあまいものをたべない**ことにしている**。",
+    "en": "I make it a rule not to eat sweets at night."
+   }
+  ],
+  "q": {
+   "s": "あしたからジョギングをする＿＿しました。",
+   "o": [
+    "ことに",
+    "ように",
+    "ために"
+   ],
+   "a": 0,
+   "en": "I've decided to start jogging tomorrow."
+  }
+ },
+ {
+  "id": "n4-te-shimau",
+  "l": 4,
+  "t": "〜てしまう",
+  "m": "Completely / unfortunately did",
+  "f": "Verb て-form ＋ しまう (casual: ちゃう / じゃう)",
+  "e": "Something done completely, or done with regret or by accident.",
+  "x": [
+   {
+    "jp": "さいふをなくし**てしまいました**。",
+    "en": "I (unfortunately) lost my wallet."
+   },
+   {
+    "jp": "ケーキをぜんぶたべ**ちゃった**。",
+    "en": "I ate the whole cake."
+   }
+  ],
+  "q": {
+   "s": "でんしゃにかさをわすれて＿＿。",
+   "o": [
+    "しまいました",
+    "おきました",
+    "みました"
+   ],
+   "a": 0,
+   "en": "I (accidentally) left my umbrella on the train."
+  }
+ },
+ {
+  "id": "n4-te-oku",
+  "l": 4,
+  "t": "〜ておく",
+  "m": "Do in advance / leave as is",
+  "f": "Verb て-form ＋ おく (casual: とく)",
+  "e": "Doing something in preparation, or leaving something in a state.",
+  "x": [
+   {
+    "jp": "パーティーのまえに、のみものをかっ**ておきます**。",
+    "en": "I'll buy drinks in advance of the party."
+   },
+   {
+    "jp": "まどをあけ**ておいて**ください。",
+    "en": "Please leave the window open."
+   }
+  ],
+  "q": {
+   "s": "りょこうのまえに、ホテルをよやくして＿＿。",
+   "o": [
+    "おきます",
+    "しまいます",
+    "います"
+   ],
+   "a": 0,
+   "en": "I'll book the hotel before the trip."
+  }
+ },
+ {
+  "id": "n4-te-miru",
+  "l": 4,
+  "t": "〜てみる",
+  "m": "Try doing…",
+  "f": "Verb て-form ＋ みる",
+  "e": "Try something to see how it is.",
+  "x": [
+   {
+    "jp": "このふく、きて**みても**いいですか。",
+    "en": "May I try on these clothes?"
+   },
+   {
+    "jp": "なっとうをたべ**てみました**。",
+    "en": "I tried eating natto."
+   }
+  ],
+  "q": {
+   "s": "このくつ、はいて＿＿もいいですか。",
+   "o": [
+    "み",
+    "おき",
+    "しまい"
+   ],
+   "a": 0,
+   "en": "May I try these shoes on?"
+  }
+ },
+ {
+  "id": "n4-giving",
+  "l": 4,
+  "t": "あげる / くれる / もらう",
+  "m": "Giving and receiving",
+  "f": "A は B に あげる   ·   A は (わたしに) くれる   ·   A は B に/から もらう",
+  "e": "あげる: give (outward). くれる: someone gives to me / my group. もらう: receive. With て-form they describe doing favours.",
+  "x": [
+   {
+    "jp": "ともだちが本を**くれました**。",
+    "en": "My friend gave me a book."
+   },
+   {
+    "jp": "せんせいにおしえて**もらいました**。",
+    "en": "The teacher taught me (I received the favour)."
+   }
+  ],
+  "q": {
+   "s": "ははがセーターをかって＿＿。",
+   "o": [
+    "くれました",
+    "あげました",
+    "もらいました"
+   ],
+   "a": 0,
+   "en": "My mother bought me a sweater."
+  }
+ },
+ {
+  "id": "n4-passive",
+  "l": 4,
+  "t": "Passive 〜られる",
+  "m": "Be done (to)",
+  "f": "Group 1: よむ → よまれる   ·   Group 2: たべる → たべられる   ·   する → される",
+  "e": "The subject receives the action. Often used for unpleasant events (suffering passive): あめにふられた.",
+  "x": [
+   {
+    "jp": "せんせいに**ほめられました**。",
+    "en": "I was praised by the teacher."
+   },
+   {
+    "jp": "でんしゃであしを**ふまれた**。",
+    "en": "Someone stepped on my foot on the train."
+   }
+  ],
+  "q": {
+   "s": "どろぼうにさいふを＿＿。",
+   "o": [
+    "とられました",
+    "とりました",
+    "とらせました"
+   ],
+   "a": 0,
+   "en": "My wallet was stolen by a thief."
+  }
+ },
+ {
+  "id": "n4-causative",
+  "l": 4,
+  "t": "Causative 〜させる",
+  "m": "Make / let someone do",
+  "f": "Group 1: いく → いかせる   ·   Group 2: たべる → たべさせる   ·   する → させる",
+  "e": "Making or letting someone do something. 〜させてください politely asks permission to do something yourself.",
+  "x": [
+   {
+    "jp": "ははは弟にやさいを**たべさせます**。",
+    "en": "Mom makes my brother eat vegetables."
+   },
+   {
+    "jp": "ちょっと**かんがえさせて**ください。",
+    "en": "Please let me think about it a little."
+   }
+  ],
+  "q": {
+   "s": "こどもにすきなことを＿＿。",
+   "o": [
+    "させます",
+    "されます",
+    "します"
+   ],
+   "a": 0,
+   "en": "I let my children do what they like."
+  }
+ },
+ {
+  "id": "n3-wake-da",
+  "l": 3,
+  "t": "〜わけだ",
+  "m": "That's why / no wonder",
+  "f": "Plain form ＋ わけだ (な-adj ＋ な / Noun ＋ という)",
+  "e": "A logical conclusion from facts just mentioned: 'so that means…', 'no wonder…'.",
+  "x": [
+   {
+    "jp": "１０ねんもすんでいたんですか。にほんごがじょうずな**わけです**ね。",
+    "en": "You lived here ten years? No wonder your Japanese is good."
+   },
+   {
+    "jp": "かれはフランスでそだった。フランスごがはなせる**わけだ**。",
+    "en": "He grew up in France. That's why he speaks French."
+   }
+  ],
+  "q": {
+   "s": "エアコンがこわれている。あつい＿＿だ。",
+   "o": [
+    "わけ",
+    "はず",
+    "べき"
+   ],
+   "a": 0,
+   "en": "The AC is broken. No wonder it's hot."
+  }
+ },
+ {
+  "id": "n3-wake-ja-nai",
+  "l": 3,
+  "t": "〜わけではない",
+  "m": "It doesn't mean that… / not necessarily",
+  "f": "Plain form ＋ わけではない",
+  "e": "Partially denies an assumption that might follow from what was said.",
+  "x": [
+   {
+    "jp": "きらいな**わけではない**が、あまりたべない。",
+    "en": "It's not that I dislike it, but I don't eat it much."
+   },
+   {
+    "jp": "おかねがあればしあわせという**わけではない**。",
+    "en": "Having money doesn't necessarily mean happiness."
+   }
+  ],
+  "q": {
+   "s": "いつもひまという＿＿ではない。",
+   "o": [
+    "わけ",
+    "はず",
+    "こと"
+   ],
+   "a": 0,
+   "en": "It's not that I'm always free."
+  }
+ },
+ {
+  "id": "n3-hazu",
+  "l": 3,
+  "t": "〜はずだ",
+  "m": "Should be / expected to",
+  "f": "Plain form ＋ はずだ (な-adj ＋ な / Noun ＋ の)",
+  "e": "A confident expectation based on reasoning or knowledge. はずがない: 'there's no way that…'.",
+  "x": [
+   {
+    "jp": "かれはもうついた**はず**です。",
+    "en": "He should have arrived by now."
+   },
+   {
+    "jp": "そんなことがある**はずがない**。",
+    "en": "There's no way that could happen."
+   }
+  ],
+  "q": {
+   "s": "かいぎは３じにおわる＿＿です。",
+   "o": [
+    "はず",
+    "わけ",
+    "べき"
+   ],
+   "a": 0,
+   "en": "The meeting should end at 3."
+  }
+ },
+ {
+  "id": "n3-beki",
+  "l": 3,
+  "t": "〜べきだ",
+  "m": "Should / ought to",
+  "f": "Verb dict. ＋ べきだ (する → すべき)",
+  "e": "A strong statement of what is right or necessary. べきではない: 'should not'.",
+  "x": [
+   {
+    "jp": "やくそくはまもる**べきだ**。",
+    "en": "You should keep your promises."
+   },
+   {
+    "jp": "そんなことはいう**べきではない**。",
+    "en": "You shouldn't say such things."
+   }
+  ],
+  "q": {
+   "s": "わからないことは、せんせいにきく＿＿だ。",
+   "o": [
+    "べき",
+    "はず",
+    "わけ"
+   ],
+   "a": 0,
+   "en": "You should ask the teacher about things you don't understand."
+  }
+ },
+ {
+  "id": "n3-tokoro",
+  "l": 3,
+  "t": "〜ところだ",
+  "m": "About to / in the middle of / just did",
+  "f": "Verb dict. ＋ ところ   ·   〜ている ＋ ところ   ·   Verb た ＋ ところ",
+  "e": "Pinpoints a moment: dict. form = about to; ている = right in the middle; た = just finished.",
+  "x": [
+   {
+    "jp": "いまからでかける**ところです**。",
+    "en": "I'm just about to head out."
+   },
+   {
+    "jp": "いま、ばんごはんをたべている**ところ**です。",
+    "en": "I'm in the middle of eating dinner."
+   },
+   {
+    "jp": "いま、えきについた**ところ**です。",
+    "en": "I've just arrived at the station."
+   }
+  ],
+  "q": {
+   "s": "ちょうどいまおわった＿＿です。",
+   "o": [
+    "ところ",
+    "ばかり",
+    "はず"
+   ],
+   "a": 0,
+   "en": "I've just finished."
+  }
+ },
+ {
+  "id": "n3-bakari",
+  "l": 3,
+  "t": "〜たばかり",
+  "m": "Just did (feels recent)",
+  "f": "Verb た-form ＋ ばかり",
+  "e": "Something happened recently from the speaker's point of view, even if objectively it was a while ago.",
+  "x": [
+   {
+    "jp": "にほんにきた**ばかり**です。",
+    "en": "I've only just come to Japan."
+   },
+   {
+    "jp": "かった**ばかり**のスマホがこわれた。",
+    "en": "The phone I just bought broke."
+   }
+  ],
+  "q": {
+   "s": "このパソコンはかった＿＿です。",
+   "o": [
+    "ばかり",
+    "ところ",
+    "まま"
+   ],
+   "a": 0,
+   "en": "I just bought this computer."
+  }
+ },
+ {
+  "id": "n3-mama",
+  "l": 3,
+  "t": "〜まま",
+  "m": "As is / leaving unchanged",
+  "f": "Verb た / ない ＋ まま   ·   Noun ＋ の ＋ まま",
+  "e": "Something stays in the same state while something else happens.",
+  "x": [
+   {
+    "jp": "くつをはいた**まま**へやにはいらないで。",
+    "en": "Don't come into the room with your shoes on."
+   },
+   {
+    "jp": "テレビをつけた**まま**ねてしまった。",
+    "en": "I fell asleep with the TV on."
+   }
+  ],
+  "q": {
+   "s": "まどをあけた＿＿でかけてしまった。",
+   "o": [
+    "まま",
+    "ばかり",
+    "ところ"
+   ],
+   "a": 0,
+   "en": "I went out leaving the window open."
+  }
+ },
+ {
+  "id": "n3-uchi-ni",
+  "l": 3,
+  "t": "〜うちに",
+  "m": "While (still) / before it changes",
+  "f": "Verb dict. / ない / Adj ＋ うちに   ·   Noun ＋ の ＋ うちに",
+  "e": "Do something while a situation lasts, before it changes.",
+  "x": [
+   {
+    "jp": "あたたかい**うちに**たべてください。",
+    "en": "Please eat it while it's warm."
+   },
+   {
+    "jp": "わかい**うちに**いろいろなところへいきたい。",
+    "en": "I want to go to many places while I'm young."
+   }
+  ],
+  "q": {
+   "s": "わすれない＿＿メモしておこう。",
+   "o": [
+    "うちに",
+    "あいだ",
+    "まえに"
+   ],
+   "a": 0,
+   "en": "Let me note it down before I forget."
+  }
+ },
+ {
+  "id": "n3-ni-yotte",
+  "l": 3,
+  "t": "〜によって",
+  "m": "Depending on / by means of / by (agent)",
+  "f": "Noun ＋ によって / による",
+  "e": "Shows variation ('depends on'), cause, means, or the agent in a formal passive.",
+  "x": [
+   {
+    "jp": "ひと**によって**かんがえかたがちがう。",
+    "en": "Ways of thinking differ from person to person."
+   },
+   {
+    "jp": "このえはピカソ**によって**かかれた。",
+    "en": "This picture was painted by Picasso."
+   }
+  ],
+  "q": {
+   "s": "くに＿＿ぶんかがちがいます。",
+   "o": [
+    "によって",
+    "について",
+    "にとって"
+   ],
+   "a": 0,
+   "en": "Culture differs depending on the country."
+  }
+ },
+ {
+  "id": "n3-ni-totte",
+  "l": 3,
+  "t": "〜にとって",
+  "m": "For / from the perspective of",
+  "f": "Noun ＋ にとって",
+  "e": "Gives the viewpoint from which a judgement is made.",
+  "x": [
+   {
+    "jp": "わたし**にとって**かぞくがいちばんたいせつです。",
+    "en": "For me, family is the most important thing."
+   },
+   {
+    "jp": "がくせい**にとって**、このほんはたかい。",
+    "en": "For students, this book is expensive."
+   }
+  ],
+  "q": {
+   "s": "こども＿＿、このもんだいはむずかしすぎる。",
+   "o": [
+    "にとって",
+    "によって",
+    "について"
+   ],
+   "a": 0,
+   "en": "For children, this problem is too hard."
+  }
+ },
+ {
+  "id": "n3-ni-tsuite",
+  "l": 3,
+  "t": "〜について",
+  "m": "About / concerning",
+  "f": "Noun ＋ について",
+  "e": "Marks the topic of speaking, thinking, researching, etc.",
+  "x": [
+   {
+    "jp": "にほんのれきし**について**しらべています。",
+    "en": "I'm researching Japanese history."
+   },
+   {
+    "jp": "そのけん**について**はあとではなしましょう。",
+    "en": "Let's talk about that matter later."
+   }
+  ],
+  "q": {
+   "s": "かんきょうもんだい＿＿レポートをかいた。",
+   "o": [
+    "について",
+    "にとって",
+    "によって"
+   ],
+   "a": 0,
+   "en": "I wrote a report about environmental problems."
+  }
+ },
+ {
+  "id": "n3-rashii",
+  "l": 3,
+  "t": "〜らしい",
+  "m": "Apparently / typical of",
+  "f": "Plain form ＋ らしい   ·   Noun ＋ らしい",
+  "e": "1) Hearsay or inference: 'it seems'. 2) After a noun: 'true to type' (おとこらしい = manly).",
+  "x": [
+   {
+    "jp": "あのみせはらいげつしまる**らしい**。",
+    "en": "Apparently that shop is closing next month."
+   },
+   {
+    "jp": "きょうははる**らしい**てんきだ。",
+    "en": "Today is real spring weather."
+   }
+  ],
+  "q": {
+   "s": "かのじょはびょうきでやすんでいる＿＿。",
+   "o": [
+    "らしい",
+    "べき",
+    "はず"
+   ],
+   "a": 0,
+   "en": "Apparently she's off sick."
+  }
+ },
+ {
+  "id": "n3-ppoi",
+  "l": 3,
+  "t": "〜っぽい",
+  "m": "-ish / tends to",
+  "f": "Verb stem / Noun / Adj stem ＋ っぽい",
+  "e": "Casual: has the quality of, or tends to. わすれっぽい = forgetful, こどもっぽい = childish.",
+  "x": [
+   {
+    "jp": "かれはおこり**っぽい**。",
+    "en": "He's quick to anger."
+   },
+   {
+    "jp": "きょうはかぜ**っぽい**。",
+    "en": "I feel like I'm coming down with a cold."
+   }
+  ],
+  "q": {
+   "s": "そのいいかたはこども＿＿よ。",
+   "o": [
+    "っぽい",
+    "らしい",
+    "みたい"
+   ],
+   "a": 0,
+   "en": "That way of talking is childish."
+  }
+ },
+ {
+  "id": "n3-you-ni-suru",
+  "l": 3,
+  "t": "〜ようにする",
+  "m": "Make an effort to…",
+  "f": "Verb dict. / ない ＋ ようにする",
+  "e": "An ongoing effort or habit. ようにしている describes a habit you keep.",
+  "x": [
+   {
+    "jp": "まいにちやさいをたべる**ようにしています**。",
+    "en": "I make a point of eating vegetables every day."
+   },
+   {
+    "jp": "あまりおそくまでおきない**ようにしよう**。",
+    "en": "Let's try not to stay up too late."
+   }
+  ],
+  "q": {
+   "s": "ちこくしない＿＿してください。",
+   "o": [
+    "ように",
+    "ために",
+    "ことに"
+   ],
+   "a": 0,
+   "en": "Please make sure not to be late."
+  }
+ },
+ {
+  "id": "n3-koto-ni-naru",
+  "l": 3,
+  "t": "〜ことになる",
+  "m": "It has been decided that…",
+  "f": "Verb dict. / ない ＋ ことになる",
+  "e": "A decision made by others or by circumstance (compare ことにする, your own decision).",
+  "x": [
+   {
+    "jp": "らいげつからおおさかでしごとをする**ことになりました**。",
+    "en": "It's been decided I'll work in Osaka from next month."
+   },
+   {
+    "jp": "このへやではたばこをすわない**ことになっています**。",
+    "en": "The rule is no smoking in this room."
+   }
+  ],
+  "q": {
+   "s": "かいしゃのめいれいで、てんきんする＿＿なった。",
+   "o": [
+    "ことに",
+    "ように",
+    "ために"
+   ],
+   "a": 0,
+   "en": "On the company's orders, I'm being transferred."
+  }
+ },
+ {
+  "id": "n3-sae",
+  "l": 3,
+  "t": "〜さえ",
+  "m": "Even",
+  "f": "Noun ＋ (particle) ＋ さえ",
+  "e": "Emphasises an extreme example: 'even X'. 〜さえ〜ば: 'if only X, then…'.",
+  "x": [
+   {
+    "jp": "ひらがな**さえ**かけない。",
+    "en": "I can't even write hiragana."
+   },
+   {
+    "jp": "じかん**さえ**あれば、りょこうできる。",
+    "en": "If only I had time, I could travel."
+   }
+  ],
+  "q": {
+   "s": "いそがしくて、ねるじかん＿＿ない。",
+   "o": [
+    "さえ",
+    "だけ",
+    "しか"
+   ],
+   "a": 0,
+   "en": "I'm so busy I don't even have time to sleep."
+  }
+ },
+ {
+  "id": "n3-to-shite",
+  "l": 3,
+  "t": "〜として",
+  "m": "As (a role)",
+  "f": "Noun ＋ として",
+  "e": "States the role, status or capacity in which something is done.",
+  "x": [
+   {
+    "jp": "りゅうがくせい**として**にほんにきました。",
+    "en": "I came to Japan as an exchange student."
+   },
+   {
+    "jp": "しゅみ**として**えをかいている。",
+    "en": "I paint as a hobby."
+   }
+  ],
+  "q": {
+   "s": "つうやく＿＿かいぎにさんかした。",
+   "o": [
+    "として",
+    "について",
+    "にとって"
+   ],
+   "a": 0,
+   "en": "I attended the meeting as an interpreter."
+  }
+ },
+ {
+  "id": "n3-kawari-ni",
+  "l": 3,
+  "t": "〜かわりに",
+  "m": "Instead of / in exchange for",
+  "f": "Verb dict. / Noun の ＋ かわりに",
+  "e": "Substitution ('instead of') or exchange ('in return for').",
+  "x": [
+   {
+    "jp": "ぶちょう**のかわりに**わたしがしゅっせきします。",
+    "en": "I'll attend in place of the manager."
+   },
+   {
+    "jp": "えいごをおしえる**かわりに**、にほんごをおしえてもらう。",
+    "en": "In exchange for teaching English, I get taught Japanese."
+   }
+  ],
+  "q": {
+   "s": "こめ＿＿パンをたべた。",
+   "o": [
+    "のかわりに",
+    "として",
+    "によって"
+   ],
+   "a": 0,
+   "en": "I ate bread instead of rice."
+  }
+ },
+ {
+  "id": "n3-sei-de",
+  "l": 3,
+  "t": "〜せいで / 〜おかげで",
+  "m": "Because of (bad) / thanks to (good)",
+  "f": "Plain form / Noun の ＋ せいで・おかげで",
+  "e": "せいで blames a cause for a bad result; おかげで credits a cause for a good one.",
+  "x": [
+   {
+    "jp": "あめの**せいで**しあいがちゅうしになった。",
+    "en": "The game was cancelled because of the rain."
+   },
+   {
+    "jp": "せんせいの**おかげで**ごうかくできました。",
+    "en": "Thanks to my teacher, I passed."
+   }
+  ],
+  "q": {
+   "s": "ねぼうした＿＿、ちこくした。",
+   "o": [
+    "せいで",
+    "おかげで",
+    "ために"
+   ],
+   "a": 0,
+   "en": "Because I overslept, I was late."
+  }
+ },
+ {
+  "id": "n3-ba-hodo",
+  "l": 3,
+  "t": "〜ば〜ほど",
+  "m": "The more…, the more…",
+  "f": "Verb ば ＋ Verb dict. ＋ ほど",
+  "e": "As one thing increases, so does the other.",
+  "x": [
+   {
+    "jp": "れんしゅうすれ**ば**する**ほど**じょうずになる。",
+    "en": "The more you practise, the better you get."
+   },
+   {
+    "jp": "かんがえれ**ば**かんがえる**ほど**わからなくなる。",
+    "en": "The more I think, the less I understand."
+   }
+  ],
+  "q": {
+   "s": "にほんごはべんきょうすれば＿＿ほどおもしろい。",
+   "o": [
+    "する",
+    "した",
+    "して"
+   ],
+   "a": 0,
+   "en": "The more you study Japanese, the more interesting it gets."
+  }
+ },
+ {
+  "id": "n2-ni-chigainai",
+  "l": 2,
+  "t": "〜に違いない",
+  "m": "Must be / no doubt",
+  "f": "Plain form ＋ に違いない (な-adj / Noun: no だ)",
+  "e": "A strong conviction based on evidence, stronger than だろう.",
+  "x": [
+   {
+    "jp": "あの人が犯人**に違いない**。",
+    "en": "That person must be the culprit."
+   },
+   {
+    "jp": "彼はもう帰った**に違いない**。",
+    "en": "He must have gone home already."
+   }
+  ],
+  "q": {
+   "s": "電気がついている。家にいる＿＿。",
+   "o": [
+    "に違いない",
+    "わけがない",
+    "べきだ"
+   ],
+   "a": 0,
+   "en": "The lights are on. They must be home."
+  }
+ },
+ {
+  "id": "n2-ppanashi",
+  "l": 2,
+  "t": "〜っぱなし",
+  "m": "Leaving (in a state) / continuously",
+  "f": "Verb stem ＋ っぱなし",
+  "e": "A state left as is (usually negligently), or something continuing without a break.",
+  "x": [
+   {
+    "jp": "水を出し**っぱなし**にしないで。",
+    "en": "Don't leave the water running."
+   },
+   {
+    "jp": "今日は一日中立ち**っぱなし**だった。",
+    "en": "I was on my feet all day today."
+   }
+  ],
+  "q": {
+   "s": "ドアを開け＿＿にしないでください。",
+   "o": [
+    "っぱなし",
+    "かけ",
+    "ぎみ"
+   ],
+   "a": 0,
+   "en": "Please don't leave the door open."
+  }
+ },
+ {
+  "id": "n2-kake",
+  "l": 2,
+  "t": "〜かけ",
+  "m": "Half-done / in the middle of",
+  "f": "Verb stem ＋ かけ(の) / かける",
+  "e": "Something started but not finished.",
+  "x": [
+   {
+    "jp": "読み**かけ**の本が机の上にある。",
+    "en": "There's a half-read book on the desk."
+   },
+   {
+    "jp": "何か言い**かけて**やめた。",
+    "en": "She started to say something and stopped."
+   }
+  ],
+  "q": {
+   "s": "食べ＿＿のパンを捨てた。",
+   "o": [
+    "かけ",
+    "っぱなし",
+    "ぎみ"
+   ],
+   "a": 0,
+   "en": "I threw away the half-eaten bread."
+  }
+ },
+ {
+  "id": "n2-gimi",
+  "l": 2,
+  "t": "〜気味",
+  "m": "Slightly / a touch of",
+  "f": "Verb stem / Noun ＋ 気味",
+  "e": "A slight tendency, usually something undesirable: 風邪気味, 疲れ気味.",
+  "x": [
+   {
+    "jp": "最近、疲れ**気味**だ。",
+    "en": "I've been feeling a bit tired lately."
+   },
+   {
+    "jp": "風邪**気味**なので、早く寝ます。",
+    "en": "I think I'm coming down with a cold, so I'll sleep early."
+   }
+  ],
+  "q": {
+   "s": "最近、太り＿＿なので、運動を始めた。",
+   "o": [
+    "気味",
+    "がち",
+    "っぽい"
+   ],
+   "a": 0,
+   "en": "I've been putting on weight, so I started exercising."
+  }
+ },
+ {
+  "id": "n2-gachi",
+  "l": 2,
+  "t": "〜がち",
+  "m": "Tend to / prone to",
+  "f": "Verb stem / Noun ＋ がち",
+  "e": "Frequently does or tends toward something (usually negative): 忘れがち, 病気がち.",
+  "x": [
+   {
+    "jp": "冬は運動不足になり**がち**だ。",
+    "en": "In winter we tend to get too little exercise."
+   },
+   {
+    "jp": "彼女は子供の頃、病気**がち**だった。",
+    "en": "She was often sick as a child."
+   }
+  ],
+  "q": {
+   "s": "忙しいと、食事が不規則になり＿＿だ。",
+   "o": [
+    "がち",
+    "気味",
+    "っぽい"
+   ],
+   "a": 0,
+   "en": "When busy, meals tend to get irregular."
+  }
+ },
+ {
+  "id": "n2-ue-de",
+  "l": 2,
+  "t": "〜上で",
+  "m": "After / when doing / in terms of",
+  "f": "Verb た ＋ 上で   ·   Verb dict. / Noun の ＋ 上で",
+  "e": "た上で: do A first, then B based on it. Dict. form 上で: 'when it comes to doing'.",
+  "x": [
+   {
+    "jp": "よく考えた**上で**決めます。",
+    "en": "I'll decide after thinking it over carefully."
+   },
+   {
+    "jp": "日本で生活する**上で**、日本語は大切だ。",
+    "en": "When living in Japan, Japanese is important."
+   }
+  ],
+  "q": {
+   "s": "家族と相談した＿＿、お返事します。",
+   "o": [
+    "上で",
+    "ところ",
+    "ばかり"
+   ],
+   "a": 0,
+   "en": "I'll reply after consulting with my family."
+  }
+ },
+ {
+  "id": "n2-ni-kanshite",
+  "l": 2,
+  "t": "〜に関して",
+  "m": "Regarding / concerning",
+  "f": "Noun ＋ に関して / に関する ＋ Noun",
+  "e": "A more formal version of について.",
+  "x": [
+   {
+    "jp": "この件**に関して**、ご意見をください。",
+    "en": "Please give your opinion regarding this matter."
+   },
+   {
+    "jp": "環境**に関する**本を読んだ。",
+    "en": "I read a book about the environment."
+   }
+  ],
+  "q": {
+   "s": "事故の原因＿＿調査が行われた。",
+   "o": [
+    "に関して",
+    "にとって",
+    "に対して"
+   ],
+   "a": 0,
+   "en": "An investigation into the cause of the accident was conducted."
+  }
+ },
+ {
+  "id": "n2-ni-taishite",
+  "l": 2,
+  "t": "〜に対して",
+  "m": "Towards / in contrast to",
+  "f": "Noun ＋ に対して",
+  "e": "The target of an action or attitude, or a contrast between two things.",
+  "x": [
+   {
+    "jp": "お客様**に対して**失礼なことを言ってはいけない。",
+    "en": "You mustn't say rude things to customers."
+   },
+   {
+    "jp": "兄が背が高いの**に対して**、弟は低い。",
+    "en": "Whereas the older brother is tall, the younger is short."
+   }
+  ],
+  "q": {
+   "s": "先生＿＿敬語を使う。",
+   "o": [
+    "に対して",
+    "に関して",
+    "によって"
+   ],
+   "a": 0,
+   "en": "We use honorific language towards teachers."
+  }
+ },
+ {
+  "id": "n2-wo-hajime",
+  "l": 2,
+  "t": "〜をはじめ",
+  "m": "Starting with / including",
+  "f": "Noun ＋ をはじめ(として)",
+  "e": "Names a representative example from a group.",
+  "x": [
+   {
+    "jp": "東京**をはじめ**、大きな都市は物価が高い。",
+    "en": "Big cities, starting with Tokyo, are expensive."
+   },
+   {
+    "jp": "社長**をはじめ**、社員全員が参加した。",
+    "en": "Everyone from the president down took part."
+   }
+  ],
+  "q": {
+   "s": "すし＿＿、日本料理は世界中で人気がある。",
+   "o": [
+    "をはじめ",
+    "をもとに",
+    "を通して"
+   ],
+   "a": 0,
+   "en": "Japanese food, starting with sushi, is popular worldwide."
+  }
+ },
+ {
+  "id": "n2-wo-moto-ni",
+  "l": 2,
+  "t": "〜をもとに",
+  "m": "Based on",
+  "f": "Noun ＋ をもとに(して)",
+  "e": "Something is created using another thing as its basis or source.",
+  "x": [
+   {
+    "jp": "この映画は実話**をもとに**作られた。",
+    "en": "This film was made based on a true story."
+   },
+   {
+    "jp": "アンケートの結果**をもとに**計画を立てる。",
+    "en": "We'll plan based on the survey results."
+   }
+  ],
+  "q": {
+   "s": "調査データ＿＿レポートを書いた。",
+   "o": [
+    "をもとに",
+    "をはじめ",
+    "に対して"
+   ],
+   "a": 0,
+   "en": "I wrote the report based on survey data."
+  }
+ },
+ {
+  "id": "n2-ni-kagitte",
+  "l": 2,
+  "t": "〜に限って",
+  "m": "Only / of all times / of all people",
+  "f": "Noun ＋ に限って",
+  "e": "Something unusual (usually bad) happens exactly in this case, or expresses trust: うちの子に限って… ('not my child!').",
+  "x": [
+   {
+    "jp": "急いでいる時**に限って**電車が遅れる。",
+    "en": "The train is always late precisely when I'm in a hurry."
+   },
+   {
+    "jp": "うちの子**に限って**そんなことはしません。",
+    "en": "My child, of all people, would never do that."
+   }
+  ],
+  "q": {
+   "s": "傘を持っていない日＿＿雨が降る。",
+   "o": [
+    "に限って",
+    "に関して",
+    "にとって"
+   ],
+   "a": 0,
+   "en": "It rains precisely on the days I don't have an umbrella."
+  }
+ },
+ {
+  "id": "n2-wake-ni-wa-ikanai",
+  "l": 2,
+  "t": "〜わけにはいかない",
+  "m": "Can't (for social/moral reasons)",
+  "f": "Verb dict. ＋ わけにはいかない   ·   Verb ない ＋ わけにはいかない",
+  "e": "Can't do something because of obligation or circumstance (not ability). ないわけにはいかない: 'have no choice but to'.",
+  "x": [
+   {
+    "jp": "明日は試験だから、遊ぶ**わけにはいかない**。",
+    "en": "I have an exam tomorrow, so I can't go out and play."
+   },
+   {
+    "jp": "頼まれたら、行かない**わけにはいかない**。",
+    "en": "If I'm asked, I can't not go."
+   }
+  ],
+  "q": {
+   "s": "約束したので、行かない＿＿。",
+   "o": [
+    "わけにはいかない",
+    "わけがない",
+    "はずがない"
+   ],
+   "a": 0,
+   "en": "I promised, so I can't not go."
+  }
+ },
+ {
+  "id": "n2-ni-shite-wa",
+  "l": 2,
+  "t": "〜にしては",
+  "m": "For (considering…)",
+  "f": "Plain form / Noun ＋ にしては",
+  "e": "The result differs from what you'd expect given the premise.",
+  "x": [
+   {
+    "jp": "初めて**にしては**上手ですね。",
+    "en": "That's good for your first time."
+   },
+   {
+    "jp": "十月**にしては**暑い。",
+    "en": "It's hot for October."
+   }
+  ],
+  "q": {
+   "s": "外国人＿＿日本語が上手だ。",
+   "o": [
+    "にしては",
+    "にとって",
+    "として"
+   ],
+   "a": 0,
+   "en": "His Japanese is good for a foreigner."
+  }
+ },
+ {
+  "id": "n2-tsutsu",
+  "l": 2,
+  "t": "〜つつ",
+  "m": "While / although",
+  "f": "Verb stem ＋ つつ / つつも",
+  "e": "Formal: two actions at once (like ながら), or つつも for contrast ('even while knowing…').",
+  "x": [
+   {
+    "jp": "体に悪いと知り**つつも**、たばこをやめられない。",
+    "en": "Even though I know it's bad for me, I can't quit smoking."
+   },
+   {
+    "jp": "景色を楽しみ**つつ**、山を登った。",
+    "en": "We climbed the mountain while enjoying the scenery."
+   }
+  ],
+  "q": {
+   "s": "いけないと思い＿＿、また食べてしまった。",
+   "o": [
+    "つつも",
+    "ながらに",
+    "かけ"
+   ],
+   "a": 0,
+   "en": "Though I knew I shouldn't, I ate it again."
+  }
+ },
+ {
+  "id": "n2-kagiri",
+  "l": 2,
+  "t": "〜限り",
+  "m": "As long as / as far as",
+  "f": "Verb dict. / ない ＋ 限り   ·   Noun ＋ の ＋ 限り",
+  "e": "As long as a condition holds; the limit of something (知る限り = as far as I know).",
+  "x": [
+   {
+    "jp": "私が知る**限り**、彼は正直な人だ。",
+    "en": "As far as I know, he's an honest person."
+   },
+   {
+    "jp": "練習しない**限り**、上手にならない。",
+    "en": "Unless you practise, you won't improve."
+   }
+  ],
+  "q": {
+   "s": "雨が降らない＿＿、試合は行われる。",
+   "o": [
+    "限り",
+    "上で",
+    "以上"
+   ],
+   "a": 0,
+   "en": "As long as it doesn't rain, the match will go ahead."
+  }
+ },
+ {
+  "id": "n2-ijou",
+  "l": 2,
+  "t": "〜以上(は)",
+  "m": "Now that / since",
+  "f": "Plain form ＋ 以上(は)",
+  "e": "Since a situation is so, a certain resolve or obligation follows.",
+  "x": [
+   {
+    "jp": "約束した**以上**、守らなければならない。",
+    "en": "Now that I've promised, I must keep it."
+   },
+   {
+    "jp": "学生である**以上**、勉強するべきだ。",
+    "en": "Since you're a student, you should study."
+   }
+  ],
+  "q": {
+   "s": "引き受けた＿＿、最後までやります。",
+   "o": [
+    "以上",
+    "限り",
+    "上で"
+   ],
+   "a": 0,
+   "en": "Since I took it on, I'll see it through to the end."
+  }
+ },
+ {
+  "id": "n1-ni-hoka-naranai",
+  "l": 1,
+  "t": "〜にほかならない",
+  "m": "Nothing other than / precisely",
+  "f": "Noun / Plain form ＋ にほかならない",
+  "e": "Strongly asserts that something is exactly X and nothing else.",
+  "x": [
+   {
+    "jp": "成功したのは努力の結果**にほかならない**。",
+    "en": "My success is nothing other than the result of effort."
+   },
+   {
+    "jp": "これは差別**にほかならない**。",
+    "en": "This is nothing but discrimination."
+   }
+  ],
+  "q": {
+   "s": "彼が怒ったのは、あなたを心配しているから＿＿。",
+   "o": [
+    "にほかならない",
+    "に限らない",
+    "にすぎない"
+   ],
+   "a": 0,
+   "en": "He got angry precisely because he's worried about you."
+  }
+ },
+ {
+  "id": "n1-ni-sugi-nai",
+  "l": 1,
+  "t": "〜にすぎない",
+  "m": "Merely / nothing more than",
+  "f": "Noun / Plain form ＋ にすぎない",
+  "e": "Emphasises that something is small or unimportant: 'only', 'just'.",
+  "x": [
+   {
+    "jp": "それは噂**にすぎない**。",
+    "en": "That's merely a rumour."
+   },
+   {
+    "jp": "私は一社員**にすぎません**。",
+    "en": "I'm just an ordinary employee."
+   }
+  ],
+  "q": {
+   "s": "合格者は応募者のわずか５％＿＿。",
+   "o": [
+    "にすぎない",
+    "にほかならない",
+    "に限る"
+   ],
+   "a": 0,
+   "en": "Successful applicants are a mere 5% of all applicants."
+  }
+ },
+ {
+  "id": "n1-zaru-wo-enai",
+  "l": 1,
+  "t": "〜ざるを得ない",
+  "m": "Have no choice but to",
+  "f": "Verb ない-stem ＋ ざるを得ない (する → せざるを得ない)",
+  "e": "Forced by circumstances to do something you'd rather not.",
+  "x": [
+   {
+    "jp": "台風のため、旅行を中止**せざるを得ない**。",
+    "en": "Because of the typhoon, we have no choice but to cancel the trip."
+   },
+   {
+    "jp": "上司の命令なので、行か**ざるを得ない**。",
+    "en": "It's my boss's order, so I have to go."
+   }
+  ],
+  "q": {
+   "s": "証拠がある以上、認め＿＿。",
+   "o": [
+    "ざるを得ない",
+    "かねない",
+    "てやまない"
+   ],
+   "a": 0,
+   "en": "Since there's evidence, I have no choice but to admit it."
+  }
+ },
+ {
+  "id": "n1-kanenai",
+  "l": 1,
+  "t": "〜かねない",
+  "m": "Could well (happen) / might",
+  "f": "Verb stem ＋ かねない",
+  "e": "There's a real risk of a bad outcome.",
+  "x": [
+   {
+    "jp": "そんな運転をしたら、事故を起こし**かねない**。",
+    "en": "Driving like that, you could well cause an accident."
+   },
+   {
+    "jp": "彼ならそんなことを言い**かねない**。",
+    "en": "He's the type who might say something like that."
+   }
+  ],
+  "q": {
+   "s": "無理をすると、病気になり＿＿。",
+   "o": [
+    "かねない",
+    "かねる",
+    "ざるを得ない"
+   ],
+   "a": 0,
+   "en": "If you overdo it, you could get sick."
+  }
+ },
+ {
+  "id": "n1-kaneru",
+  "l": 1,
+  "t": "〜かねる",
+  "m": "Cannot (politely)",
+  "f": "Verb stem ＋ かねる",
+  "e": "A polite, formal way to say you are unable or unwilling to do something, common in business.",
+  "x": [
+   {
+    "jp": "その件についてはお答えし**かねます**。",
+    "en": "I'm afraid I can't answer regarding that matter."
+   },
+   {
+    "jp": "ご要望には応じ**かねます**。",
+    "en": "We are unable to meet your request."
+   }
+  ],
+  "q": {
+   "s": "申し訳ありませんが、その条件はお受けし＿＿。",
+   "o": [
+    "かねます",
+    "かねません",
+    "ざるを得ません"
+   ],
+   "a": 0,
+   "en": "I'm sorry, but we cannot accept those terms."
+  }
+ },
+ {
+  "id": "n1-ya-ina-ya",
+  "l": 1,
+  "t": "〜や否や",
+  "m": "As soon as / the moment",
+  "f": "Verb dict. ＋ や否や",
+  "e": "Something happens immediately after another. Literary.",
+  "x": [
+   {
+    "jp": "ベルが鳴る**や否や**、学生たちは教室を飛び出した。",
+    "en": "The moment the bell rang, the students rushed out."
+   },
+   {
+    "jp": "彼は家に着く**や否や**寝てしまった。",
+    "en": "As soon as he got home, he fell asleep."
+   }
+  ],
+  "q": {
+   "s": "ドアを開ける＿＿、犬が飛び出してきた。",
+   "o": [
+    "や否や",
+    "かたわら",
+    "なり"
+   ],
+   "a": 0,
+   "en": "The moment I opened the door, the dog rushed out."
+  }
+ },
+ {
+  "id": "n1-nari",
+  "l": 1,
+  "t": "〜なり",
+  "m": "As soon as (and then unexpectedly)",
+  "f": "Verb dict. ＋ なり",
+  "e": "Someone does A and immediately does an unexpected B. Used for others, not yourself.",
+  "x": [
+   {
+    "jp": "彼は部屋に入る**なり**泣き出した。",
+    "en": "As soon as he entered the room, he burst into tears."
+   },
+   {
+    "jp": "母は電話を切る**なり**出かけた。",
+    "en": "Mom hung up and left right away."
+   }
+  ],
+  "q": {
+   "s": "彼女は私の顔を見る＿＿、笑い出した。",
+   "o": [
+    "なり",
+    "まで",
+    "ほど"
+   ],
+   "a": 0,
+   "en": "As soon as she saw my face, she burst out laughing."
+  }
+ },
+ {
+  "id": "n1-mono-wo",
+  "l": 1,
+  "t": "〜ものを",
+  "m": "If only… (regret / criticism)",
+  "f": "Plain form ＋ ものを",
+  "e": "Expresses regret or reproach that something wasn't done: 'if only you had…'.",
+  "x": [
+   {
+    "jp": "言ってくれれば手伝った**ものを**。",
+    "en": "If only you'd told me, I would have helped."
+   },
+   {
+    "jp": "早く病院に行けばよかった**ものを**。",
+    "en": "You should have gone to the hospital sooner."
+   }
+  ],
+  "q": {
+   "s": "一言謝ればすむ＿＿、彼は謝らなかった。",
+   "o": [
+    "ものを",
+    "ものの",
+    "ものなら"
+   ],
+   "a": 0,
+   "en": "One word of apology would have settled it, yet he didn't apologise."
+  }
+ },
+ {
+  "id": "n1-wo-yoginaku",
+  "l": 1,
+  "t": "〜を余儀なくされる",
+  "m": "Be forced to",
+  "f": "Noun ＋ を余儀なくされる",
+  "e": "Formal: circumstances forced someone to do something.",
+  "x": [
+   {
+    "jp": "大雪で、試合は中止**を余儀なくされた**。",
+    "en": "Due to heavy snow, the match was forced to be called off."
+   },
+   {
+    "jp": "経営不振で、工場は閉鎖**を余儀なくされた**。",
+    "en": "Due to poor business, the factory was forced to close."
+   }
+  ],
+  "q": {
+   "s": "けがのため、彼は引退＿＿。",
+   "o": [
+    "を余儀なくされた",
+    "にすぎなかった",
+    "を禁じ得なかった"
+   ],
+   "a": 0,
+   "en": "Due to injury, he was forced to retire."
+  }
+ },
+ {
+  "id": "n1-wo-kinjienai",
+  "l": 1,
+  "t": "〜を禁じ得ない",
+  "m": "Can't help feeling",
+  "f": "Noun (emotion) ＋ を禁じ得ない",
+  "e": "Formal: an emotion wells up that you can't suppress (同情, 怒り, 涙).",
+  "x": [
+   {
+    "jp": "被害者の話を聞いて、涙**を禁じ得なかった**。",
+    "en": "Hearing the victim's story, I couldn't hold back tears."
+   },
+   {
+    "jp": "その判決には怒り**を禁じ得ない**。",
+    "en": "I can't help feeling angry at that ruling."
+   }
+  ],
+  "q": {
+   "s": "彼の不幸な人生に同情＿＿。",
+   "o": [
+    "を禁じ得ない",
+    "を余儀なくされる",
+    "にすぎない"
+   ],
+   "a": 0,
+   "en": "I can't help feeling sympathy for his unfortunate life."
+  }
+ },
+ {
+  "id": "n1-tomo-naku",
+  "l": 1,
+  "t": "〜ともなく",
+  "m": "Without really meaning to",
+  "f": "Verb dict. ＋ ともなく",
+  "e": "Doing something absent-mindedly or without clear intention.",
+  "x": [
+   {
+    "jp": "見る**ともなく**テレビを見ていた。",
+    "en": "I was idly watching TV."
+   },
+   {
+    "jp": "聞く**ともなく**隣の会話を聞いていた。",
+    "en": "I was half-listening to the conversation next to me."
+   }
+  ],
+  "q": {
+   "s": "窓の外を眺める＿＿眺めていた。",
+   "o": [
+    "ともなく",
+    "や否や",
+    "なり"
+   ],
+   "a": 0,
+   "en": "I was gazing out of the window without really looking."
+  }
+ },
+ {
+  "id": "n1-made-mo-nai",
+  "l": 1,
+  "t": "〜までもない",
+  "m": "No need to (it's obvious)",
+  "f": "Verb dict. ＋ までもない",
+  "e": "Something is so obvious or minor that it isn't necessary.",
+  "x": [
+   {
+    "jp": "言う**までもなく**、健康が一番大切だ。",
+    "en": "Needless to say, health is most important."
+   },
+   {
+    "jp": "そんな簡単なこと、調べる**までもない**。",
+    "en": "Something that simple doesn't need looking up."
+   }
+  ],
+  "q": {
+   "s": "わざわざ行く＿＿。電話で済む。",
+   "o": [
+    "までもない",
+    "ほかない",
+    "かねない"
+   ],
+   "a": 0,
+   "en": "No need to go all the way there. A call will do."
+  }
+ },
+ {
+  "id": "n1-kotokara",
+  "l": 1,
+  "t": "〜ことから",
+  "m": "From the fact that / because",
+  "f": "Plain form ＋ ことから",
+  "e": "Explains the origin of a name or the basis for a judgement.",
+  "x": [
+   {
+    "jp": "富士山が見える**ことから**、この町は富士見町と呼ばれる。",
+    "en": "Because Mt. Fuji can be seen, this town is called Fujimi."
+   },
+   {
+    "jp": "指紋が一致した**ことから**、犯人が特定された。",
+    "en": "The culprit was identified from the matching fingerprints."
+   }
+  ],
+  "q": {
+   "s": "形が星に似ている＿＿、この名前がついた。",
+   "o": [
+    "ことから",
+    "ことには",
+    "ことなく"
+   ],
+   "a": 0,
+   "en": "It got this name because its shape resembles a star."
+  }
+ },
+ {
+  "id": "n1-koto-naku",
+  "l": 1,
+  "t": "〜ことなく",
+  "m": "Without (doing)",
+  "f": "Verb dict. ＋ ことなく",
+  "e": "Formal version of ないで: without ever doing something.",
+  "x": [
+   {
+    "jp": "彼は休む**ことなく**働き続けた。",
+    "en": "He kept working without resting."
+   },
+   {
+    "jp": "諦める**ことなく**挑戦し続けた。",
+    "en": "She kept trying without giving up."
+   }
+  ],
+  "q": {
+   "s": "彼女は一日も休む＿＿練習を続けた。",
+   "o": [
+    "ことなく",
+    "ことから",
+    "までもなく"
+   ],
+   "a": 0,
+   "en": "She kept practising without missing a single day."
+  }
+ },
+ {
+  "id": "n1-to-wa-ie",
+  "l": 1,
+  "t": "〜とはいえ",
+  "m": "Although / even so",
+  "f": "Plain form / Noun ＋ とはいえ",
+  "e": "Concedes a fact but says the reality is different from what it suggests.",
+  "x": [
+   {
+    "jp": "春**とはいえ**、まだ寒い。",
+    "en": "Although it's spring, it's still cold."
+   },
+   {
+    "jp": "便利になった**とはいえ**、問題も多い。",
+    "en": "Even though things have become convenient, there are many problems."
+   }
+  ],
+  "q": {
+   "s": "仕事＿＿、毎日残業するのはつらい。",
+   "o": [
+    "とはいえ",
+    "とあって",
+    "ともなく"
+   ],
+   "a": 0,
+   "en": "Although it's work, overtime every day is hard."
+  }
+ }
+]
