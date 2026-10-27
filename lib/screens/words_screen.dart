@@ -10,6 +10,7 @@ import '../widgets/common.dart';
 import 'flashcard_screen.dart';
 import 'quiz_screen.dart';
 import 'word_sheet.dart';
+import '../widgets/app_icons.dart';
 
 /// Browse every JLPT word, search, and manage starred words and decks.
 class WordsScreen extends StatefulWidget {
@@ -41,28 +42,35 @@ class _WordsScreenState extends State<WordsScreen> {
             preferredSize: const Size.fromHeight(120),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-              child: Column(children: [
-                TextField(
-                  controller: _search,
-                  onChanged: (v) => setState(() => _query = v),
-                  decoration: InputDecoration(
-                    hintText: 'Search 日本語, かな or English',
-                    prefixIcon: const Icon(Icons.search_rounded),
-                    suffixIcon: _query.isEmpty
-                        ? null
-                        : IconButton(
-                            icon: const Icon(Icons.clear_rounded),
-                            tooltip: 'Clear',
-                            onPressed: () => setState(() {
-                              _search.clear();
-                              _query = '';
-                            }),
-                          ),
-                    contentPadding: const EdgeInsets.symmetric(vertical: 12),
+              child: Column(
+                children: [
+                  TextField(
+                    controller: _search,
+                    onChanged: (v) => setState(() => _query = v),
+                    decoration: InputDecoration(
+                      hintText: 'Search 日本語, かな or English',
+                      prefixIcon: const Icon(AppIcons.search),
+                      suffixIcon: _query.isEmpty
+                          ? null
+                          : IconButton(
+                              icon: const Icon(AppIcons.close),
+                              tooltip: 'Clear',
+                              onPressed: () => setState(() {
+                                _search.clear();
+                                _query = '';
+                              }),
+                            ),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
                   ),
-                ),
-                const TabBar(tabs: [Tab(text: 'JLPT levels'), Tab(text: 'My decks')]),
-              ]),
+                  const TabBar(
+                    tabs: [
+                      Tab(text: 'JLPT levels'),
+                      Tab(text: 'My decks'),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -88,31 +96,39 @@ class _LevelsTab extends StatelessWidget {
         for (final l in [5, 4, 3, 2, 1]) ...[
           SoftCard(
             onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => LevelWordsScreen(level: l))),
-            child: Row(children: [
-              Container(
-                width: 52,
-                height: 52,
-                decoration: BoxDecoration(color: context.colors.accentSoft, borderRadius: BorderRadius.circular(16)),
-                child: Center(
-                  child: Text('N$l', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18, color: context.colors.accent)),
-                ),
-              ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(_names[l]!, style: context.text.titleMedium),
-                  const SizedBox(height: 6),
-                  Bar(state.learnedCount(l) / state.content.byLevel[l]!.length),
-                  const SizedBox(height: 4),
-                  Text(
-                    '${state.learnedCount(l)} learned · ${state.seenCount(l) - state.learnedCount(l)} learning · '
-                    '${state.content.byLevel[l]!.length} words',
-                    style: context.text.bodySmall,
+            child: Row(
+              children: [
+                Container(
+                  width: 52,
+                  height: 52,
+                  decoration: BoxDecoration(color: context.colors.accentSoft, borderRadius: BorderRadius.circular(16)),
+                  child: Center(
+                    child: Text(
+                      'N$l',
+                      style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18, color: context.colors.accent),
+                    ),
                   ),
-                ]),
-              ),
-              const Icon(Icons.chevron_right_rounded),
-            ]),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(_names[l]!, style: context.text.titleMedium),
+                      const SizedBox(height: 6),
+                      Bar(state.learnedCount(l) / state.content.byLevel[l]!.length),
+                      const SizedBox(height: 4),
+                      Text(
+                        '${state.learnedCount(l)} learned · ${state.seenCount(l) - state.learnedCount(l)} learning · '
+                        '${state.content.byLevel[l]!.length} words',
+                        style: context.text.bodySmall,
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(AppIcons.next),
+              ],
+            ),
           ),
           const SizedBox(height: 10),
         ],
@@ -133,17 +149,22 @@ class _DecksTab extends StatelessWidget {
         for (final d in state.visibleDecks) ...[
           SoftCard(
             onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => DeckScreen(deckId: d.id))),
-            child: Row(children: [
-              Icon(d.isStarred ? Icons.star_rounded : Icons.folder_rounded, color: context.colors.accent, size: 30),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(d.name, style: context.text.titleMedium),
-                  Text('${state.wordsIn(d.id).length} words', style: context.text.bodySmall),
-                ]),
-              ),
-              const Icon(Icons.chevron_right_rounded),
-            ]),
+            child: Row(
+              children: [
+                Icon(d.isStarred ? AppIcons.starOn : AppIcons.folder, color: context.colors.accent, size: 30),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(d.name, style: context.text.titleMedium),
+                      Text('${state.wordsIn(d.id).length} words', style: context.text.bodySmall),
+                    ],
+                  ),
+                ),
+                const Icon(AppIcons.next),
+              ],
+            ),
           ),
           const SizedBox(height: 10),
         ],
@@ -152,12 +173,15 @@ class _DecksTab extends StatelessWidget {
             final name = await promptDeckName(context);
             if (name != null) state.createDeck(name);
           },
-          icon: const Icon(Icons.add_rounded),
+          icon: const Icon(AppIcons.add),
           label: const Text('New deck'),
         ),
         const SizedBox(height: 8),
-        Text('Tip: star words on flashcards, or add them to a deck from any word page.',
-            textAlign: TextAlign.center, style: context.text.bodySmall),
+        Text(
+          'Tip: star words on flashcards, or add them to a deck from any word page.',
+          textAlign: TextAlign.center,
+          style: context.text.bodySmall,
+        ),
       ],
     );
   }
@@ -193,45 +217,49 @@ class _LevelWordsScreenState extends State<LevelWordsScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text('JLPT N${widget.level}')),
-      body: Column(children: [
-        SizedBox(
-          height: 48,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            children: [
-              for (final f in _Filter.values) ...[
-                ChoiceChip(
-                  label: Text(switch (f) {
-                    _Filter.all => 'All ${all.length}',
-                    _Filter.fresh => 'New',
-                    _Filter.learning => 'Learning',
-                    _Filter.learned => 'Learned',
-                  }),
-                  selected: _filter == f,
-                  onSelected: (_) => setState(() => _filter = f),
-                ),
-                const SizedBox(width: 8),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 48,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              children: [
+                for (final f in _Filter.values) ...[
+                  ChoiceChip(
+                    label: Text(switch (f) {
+                      _Filter.all => 'All ${all.length}',
+                      _Filter.fresh => 'New',
+                      _Filter.learning => 'Learning',
+                      _Filter.learned => 'Learned',
+                    }),
+                    selected: _filter == f,
+                    onSelected: (_) => setState(() => _filter = f),
+                  ),
+                  const SizedBox(width: 8),
+                ],
               ],
-            ],
-          ),
-        ),
-        Expanded(child: WordList(words: words)),
-        if (next.isNotEmpty)
-          SafeArea(
-            top: false,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-              child: GradientButton(
-                label: 'Learn ${next.length} new N${widget.level} words',
-                icon: Icons.add_rounded,
-                onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_) => FlashcardScreen(words: next, title: 'N${widget.level} new words'),
-                )),
-              ),
             ),
           ),
-      ]),
+          Expanded(child: WordList(words: words)),
+          if (next.isNotEmpty)
+            SafeArea(
+              top: false,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+                child: GradientButton(
+                  label: 'Learn ${next.length} new N${widget.level} words',
+                  icon: AppIcons.add,
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => FlashcardScreen(words: next, title: 'N${widget.level} new words'),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
@@ -283,45 +311,53 @@ class DeckScreen extends StatelessWidget {
       ),
       body: words.isEmpty
           ? EmptyState(
-              icon: deck.isStarred ? Icons.star_outline_rounded : Icons.folder_open_rounded,
+              icon: deck.isStarred ? AppIcons.star : AppIcons.folderOpen,
               title: 'No words yet',
               body: deck.isStarred
                   ? 'Tap the star on a flashcard or word page to save tricky words here.'
                   : 'Open any word and use "Add to deck".',
             )
-          : Column(children: [
-              Expanded(child: WordList(words: words)),
-              SafeArea(
-                top: false,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-                  child: Row(children: [
-                    Expanded(
-                      child: OutlinedButton.icon(
-                        onPressed: words.length < 4
-                            ? null
-                            : () => Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (_) => QuizSetupScreen(pool: words, sourceLabel: deck.name),
-                                )),
-                        icon: const Icon(Icons.quiz_outlined),
-                        label: const Text('Quiz'),
-                      ),
+          : Column(
+              children: [
+                Expanded(child: WordList(words: words)),
+                SafeArea(
+                  top: false,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton.icon(
+                            onPressed: words.length < 4
+                                ? null
+                                : () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (_) => QuizSetupScreen(pool: words, sourceLabel: deck.name),
+                                    ),
+                                  ),
+                            icon: const Icon(AppIcons.quiz),
+                            label: const Text('Quiz'),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: GradientButton(
+                            label: 'Study',
+                            height: 48,
+                            icon: AppIcons.wordsOn,
+                            onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (_) => FlashcardScreen(words: words..shuffle(), title: deck.name),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: GradientButton(
-                        label: 'Study',
-                        height: 48,
-                        icon: Icons.style_rounded,
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                          builder: (_) => FlashcardScreen(words: words..shuffle(), title: deck.name),
-                        )),
-                      ),
-                    ),
-                  ]),
+                  ),
                 ),
-              ),
-            ]),
+              ],
+            ),
     );
   }
 }
@@ -335,7 +371,7 @@ class WordList extends StatelessWidget {
     final state = context.watch<AppState>();
     final c = context.colors;
     if (words.isEmpty) {
-      return const EmptyState(icon: Icons.search_off_rounded, title: 'Nothing here', body: 'Try another filter or search.');
+      return const EmptyState(icon: AppIcons.notFound, title: 'Nothing here', body: 'Try another filter or search.');
     }
     return ListView.separated(
       padding: const EdgeInsets.only(bottom: 16),
@@ -347,21 +383,32 @@ class WordList extends StatelessWidget {
         final dot = card == null
             ? c.surface2
             : card.isLearned
-                ? c.good
-                : card.phase == CardPhase.fresh
-                    ? c.surface2
-                    : Colors.amber;
+            ? c.good
+            : card.phase == CardPhase.fresh
+            ? c.surface2
+            : Colors.amber;
         return ListTile(
           onTap: () => showWordSheet(context, w),
-          leading: Container(width: 10, height: 10, decoration: BoxDecoration(color: dot, shape: BoxShape.circle)),
+          leading: Container(
+            width: 10,
+            height: 10,
+            decoration: BoxDecoration(color: dot, shape: BoxShape.circle),
+          ),
           minLeadingWidth: 10,
           title: Text(w.word, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-          subtitle: Text('${w.showReading ? '${w.reading} · ' : ''}${w.shortMeaning}', maxLines: 1, overflow: TextOverflow.ellipsis),
-          trailing: Row(mainAxisSize: MainAxisSize.min, children: [
-            if (state.isStarred(w.id)) Icon(Icons.star_rounded, color: c.accent, size: 18),
-            const SizedBox(width: 4),
-            SpeakButton(w.speakText, size: 34),
-          ]),
+          subtitle: Text(
+            '${w.showReading ? '${w.reading} · ' : ''}${w.shortMeaning}',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (state.isStarred(w.id)) Icon(AppIcons.starOn, color: c.accent, size: 18),
+              const SizedBox(width: 4),
+              SpeakButton(w.speakText, size: 34),
+            ],
+          ),
         );
       },
     );

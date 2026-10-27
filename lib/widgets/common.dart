@@ -6,10 +6,18 @@ import 'package:provider/provider.dart';
 import '../services/sync_service.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
+import 'app_icons.dart';
 
 /// Rounded card with the Sakura border.
 class SoftCard extends StatelessWidget {
-  const SoftCard({super.key, required this.child, this.padding = const EdgeInsets.all(16), this.onTap, this.color, this.borderColor});
+  const SoftCard({
+    super.key,
+    required this.child,
+    this.padding = const EdgeInsets.all(16),
+    this.onTap,
+    this.color,
+    this.borderColor,
+  });
 
   final Widget child;
   final EdgeInsetsGeometry padding;
@@ -23,9 +31,15 @@ class SoftCard extends StatelessWidget {
     final radius = BorderRadius.circular(AppTheme.radius);
     return Material(
       color: color ?? Theme.of(context).colorScheme.surface,
-      shape: RoundedRectangleBorder(borderRadius: radius, side: BorderSide(color: borderColor ?? c.border, width: 2)),
+      shape: RoundedRectangleBorder(
+        borderRadius: radius,
+        side: BorderSide(color: borderColor ?? c.border, width: 2),
+      ),
       clipBehavior: Clip.antiAlias,
-      child: InkWell(onTap: onTap, child: Padding(padding: padding, child: child)),
+      child: InkWell(
+        onTap: onTap,
+        child: Padding(padding: padding, child: child),
+      ),
     );
   }
 }
@@ -59,9 +73,16 @@ class GradientButton extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   if (icon != null) ...[Icon(icon, color: Colors.white, size: 20), const SizedBox(width: 8)],
-                  Text(label,
-                      style: const TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16, fontFamily: AppTheme.font)),
+                  Text(
+                    label,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      fontFamily: AppTheme.font,
+                      fontFamilyFallback: AppTheme.fallback,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -86,10 +107,16 @@ class Tag extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(color: accent ? c.accentSoft : c.surface2, borderRadius: BorderRadius.circular(99)),
-      child: Row(mainAxisSize: MainAxisSize.min, children: [
-        if (icon != null) ...[Icon(icon, size: 13, color: fg), const SizedBox(width: 4)],
-        Text(label, style: TextStyle(color: fg, fontSize: 12, fontWeight: FontWeight.w700)),
-      ]),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (icon != null) ...[Icon(icon, size: 13, color: fg), const SizedBox(width: 4)],
+          Text(
+            label,
+            style: TextStyle(color: fg, fontSize: 12, fontWeight: FontWeight.w700),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -116,7 +143,7 @@ class SpeakButton extends StatelessWidget {
           child: SizedBox(
             width: size,
             height: size,
-            child: Icon(Icons.volume_up_rounded, color: c.accent, size: size * 0.52),
+            child: Icon(AppIcons.speaker, color: c.accent, size: size * 0.52),
           ),
         ),
       ),
@@ -202,13 +229,17 @@ class HighlightText extends StatelessWidget {
   Widget build(BuildContext context) {
     final base = style ?? DefaultTextStyle.of(context).style;
     final parts = text.split('**');
-    return Text.rich(TextSpan(children: [
-      for (var i = 0; i < parts.length; i++)
-        TextSpan(
-          text: parts[i],
-          style: i.isOdd ? base.copyWith(color: context.colors.accent, fontWeight: FontWeight.w700) : base,
-        ),
-    ]));
+    return Text.rich(
+      TextSpan(
+        children: [
+          for (var i = 0; i < parts.length; i++)
+            TextSpan(
+              text: parts[i],
+              style: i.isOdd ? base.copyWith(color: context.colors.accent, fontWeight: FontWeight.w700) : base,
+            ),
+        ],
+      ),
+    );
   }
 }
 
@@ -233,11 +264,18 @@ class SyncBadge extends StatelessWidget {
     );
   }
 
-  Widget _badge(BuildContext context, Color dot, String label) => Row(mainAxisSize: MainAxisSize.min, children: [
-        Container(width: 8, height: 8, decoration: BoxDecoration(color: dot, shape: BoxShape.circle)),
-        const SizedBox(width: 6),
-        Text(label, style: context.text.bodySmall),
-      ]);
+  Widget _badge(BuildContext context, Color dot, String label) => Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Container(
+        width: 8,
+        height: 8,
+        decoration: BoxDecoration(color: dot, shape: BoxShape.circle),
+      ),
+      const SizedBox(width: 6),
+      Text(label, style: context.text.bodySmall),
+    ],
+  );
 }
 
 String levelName(int level) => 'N$level';
@@ -251,29 +289,36 @@ class LevelPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    return Row(children: [
-      for (final l in [5, 4, 3, 2, 1]) ...[
-        Expanded(
-          child: Material(
-            color: l == value ? c.accent : Theme.of(context).colorScheme.surface,
-            shape: StadiumBorder(side: BorderSide(color: l == value ? c.accent : c.border, width: 2)),
-            child: InkWell(
-              customBorder: const StadiumBorder(),
-              onTap: () => onChanged(l),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 9),
-                child: Center(
-                  child: Text(levelName(l),
+    return Row(
+      children: [
+        for (final l in [5, 4, 3, 2, 1]) ...[
+          Expanded(
+            child: Material(
+              color: l == value ? c.accent : Theme.of(context).colorScheme.surface,
+              shape: StadiumBorder(side: BorderSide(color: l == value ? c.accent : c.border, width: 2)),
+              child: InkWell(
+                customBorder: const StadiumBorder(),
+                onTap: () => onChanged(l),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 9),
+                  child: Center(
+                    child: Text(
+                      levelName(l),
                       style: TextStyle(
-                          fontWeight: FontWeight.w700, color: l == value ? c.onAccent : c.muted, fontSize: 14)),
+                        fontWeight: FontWeight.w700,
+                        color: l == value ? c.onAccent : c.muted,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-        if (l != 1) const SizedBox(width: 6),
+          if (l != 1) const SizedBox(width: 6),
+        ],
       ],
-    ]);
+    );
   }
 }
 
@@ -287,16 +332,23 @@ class EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            Icon(icon, size: 56, color: context.colors.accent),
-            const SizedBox(height: 14),
-            Text(title, style: context.text.titleLarge, textAlign: TextAlign.center),
-            const SizedBox(height: 6),
-            Text(body, style: context.text.bodyMedium?.copyWith(color: context.colors.muted), textAlign: TextAlign.center),
-            if (action != null) ...[const SizedBox(height: 20), action!],
-          ]),
-        ),
-      );
+    child: Padding(
+      padding: const EdgeInsets.all(32),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 56, color: context.colors.accent),
+          const SizedBox(height: 14),
+          Text(title, style: context.text.titleLarge, textAlign: TextAlign.center),
+          const SizedBox(height: 6),
+          Text(
+            body,
+            style: context.text.bodyMedium?.copyWith(color: context.colors.muted),
+            textAlign: TextAlign.center,
+          ),
+          if (action != null) ...[const SizedBox(height: 20), action!],
+        ],
+      ),
+    ),
+  );
 }

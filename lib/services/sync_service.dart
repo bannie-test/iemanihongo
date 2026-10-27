@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'dart:convert';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -136,18 +138,23 @@ class SyncService {
 
   // ---- push ----
 
-  static const _boolColumns = {'deleted'};
-
   Future<void> _push(String table) async {
     final keys = LocalDb.syncTables[table]!;
     while (true) {
       final rows = await db.dirtyRows(table);
       if (rows.isEmpty) return;
+      final bools = LocalDb.boolColumns[table] ?? const <String>{};
+      final jsons = LocalDb.jsonColumns[table] ?? const <String>{};
       final payload = [
         for (final r in rows)
           {
             for (final e in r.entries)
-              if (e.key != 'dirty') e.key: _boolColumns.contains(e.key) ? e.value == 1 : e.value,
+              if (e.key != 'dirty')
+                e.key: bools.contains(e.key)
+                    ? e.value == 1
+                    : jsons.contains(e.key)
+                    ? jsonDecode(e.value as String)
+                    : e.value,
             'user_id': _uid,
           },
       ];
@@ -183,12 +190,18 @@ class SyncService {
           .order('synced_at')
           .range(offset, offset + page - 1);
       if (rows.isEmpty) break;
+      final bools = LocalDb.boolColumns[table] ?? const <String>{};
+      final jsons = LocalDb.jsonColumns[table] ?? const <String>{};
       final local = [
         for (final r in rows)
           {
             for (final e in r.entries)
               if (e.key != 'user_id' && e.key != 'synced_at')
-                e.key: _boolColumns.contains(e.key) ? ((e.value == true) ? 1 : 0) : e.value,
+                e.key: bools.contains(e.key)
+                    ? ((e.value == true) ? 1 : 0)
+                    : jsons.contains(e.key)
+                    ? jsonEncode(e.value)
+                    : e.value,
           },
       ];
       if (await db.mergeRemote(table, local) > 0) changed = true;

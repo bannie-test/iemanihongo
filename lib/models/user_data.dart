@@ -32,30 +32,30 @@ class DailyStat {
   int get answeredCorrect => correct + quizCorrect;
 
   Map<String, Object?> toRow() => {
-        'day': day,
-        'device_id': deviceId,
-        'reviews': reviews,
-        'correct': correct,
-        'new_words': newWords,
-        'quiz_total': quizTotal,
-        'quiz_correct': quizCorrect,
-        'seconds': seconds,
-        'goal': goal,
-        'updated_at': updatedAt,
-      };
+    'day': day,
+    'device_id': deviceId,
+    'reviews': reviews,
+    'correct': correct,
+    'new_words': newWords,
+    'quiz_total': quizTotal,
+    'quiz_correct': quizCorrect,
+    'seconds': seconds,
+    'goal': goal,
+    'updated_at': updatedAt,
+  };
 
   factory DailyStat.fromRow(Map<String, Object?> r) => DailyStat(
-        day: r['day'] as String,
-        deviceId: r['device_id'] as String,
-        reviews: (r['reviews'] as num).toInt(),
-        correct: (r['correct'] as num).toInt(),
-        newWords: (r['new_words'] as num).toInt(),
-        quizTotal: (r['quiz_total'] as num).toInt(),
-        quizCorrect: (r['quiz_correct'] as num).toInt(),
-        seconds: (r['seconds'] as num).toInt(),
-        goal: (r['goal'] as num).toInt(),
-        updatedAt: (r['updated_at'] as num).toInt(),
-      );
+    day: r['day'] as String,
+    deviceId: r['device_id'] as String,
+    reviews: (r['reviews'] as num).toInt(),
+    correct: (r['correct'] as num).toInt(),
+    newWords: (r['new_words'] as num).toInt(),
+    quizTotal: (r['quiz_total'] as num).toInt(),
+    quizCorrect: (r['quiz_correct'] as num).toInt(),
+    seconds: (r['seconds'] as num).toInt(),
+    goal: (r['goal'] as num).toInt(),
+    updatedAt: (r['updated_at'] as num).toInt(),
+  );
 }
 
 class Deck {
@@ -73,9 +73,36 @@ class Deck {
   Map<String, Object?> toRow() => {'id': id, 'name': name, 'deleted': deleted ? 1 : 0, 'updated_at': updatedAt};
 
   factory Deck.fromRow(Map<String, Object?> r) => Deck(
-        id: r['id'] as String,
-        name: r['name'] as String,
-        deleted: r['deleted'] == 1 || r['deleted'] == true,
-        updatedAt: (r['updated_at'] as num).toInt(),
-      );
+    id: r['id'] as String,
+    name: r['name'] as String,
+    deleted: r['deleted'] == 1 || r['deleted'] == true,
+    updatedAt: (r['updated_at'] as num).toInt(),
+  );
+}
+
+/// Best and latest handwriting score for one character.
+class WritingScore {
+  const WritingScore({this.best = 0, this.last = 0, this.attempts = 0, this.updatedAt = 0});
+
+  final int best;
+  final int last;
+  final int attempts;
+  final int updatedAt;
+
+  WritingScore record(int score, int now) =>
+      WritingScore(best: score > best ? score : best, last: score, attempts: attempts + 1, updatedAt: now);
+
+  Map<String, Object?> toRow() => {
+    'best_score': best,
+    'last_score': last,
+    'attempts': attempts,
+    'updated_at': updatedAt,
+  };
+
+  factory WritingScore.fromRow(Map<String, Object?> r) => WritingScore(
+    best: (r['best_score'] as num).toInt(),
+    last: (r['last_score'] as num).toInt(),
+    attempts: (r['attempts'] as num).toInt(),
+    updatedAt: (r['updated_at'] as num).toInt(),
+  );
 }

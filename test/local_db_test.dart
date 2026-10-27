@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:iemanihongo/data/local_db.dart';
 import 'package:iemanihongo/logic/srs.dart';
+import 'package:iemanihongo/models/jlpt.dart';
+import 'package:iemanihongo/models/user_data.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() {
@@ -41,6 +43,42 @@ void main() {
     await db.setDeckWord('starred', 'x', true, 1);
     await db.setDeckWord('starred', 'y', true, 1);
     await db.setDeckWord('starred', 'x', false, 2);
-    expect(await db.deckWords(), {'starred': {'y'}});
+    expect(await db.deckWords(), {
+      'starred': {'y'},
+    });
+  });
+
+  test('v2 tables store test attempts, answers and writing scores', () async {
+    final a = TestAttempt(
+      id: 'x',
+      testId: 'n2-t1',
+      title: 'N2',
+      level: 2,
+      mode: AttemptMode.exam,
+      questionIds: ['q1'],
+      answers: {'q1': 3},
+      startedAt: 1,
+      timeLimitSec: 60,
+      updatedAt: 1,
+    );
+    await db.saveAttempt(a);
+    await db.saveAnswers([
+      const TestAnswer(
+        id: 'r1',
+        attemptId: 'x',
+        questionId: 'q1',
+        level: 2,
+        section: 'kanji',
+        tag: 't',
+        chosen: 3,
+        isCorrect: true,
+        answeredAt: 5,
+      ),
+    ]);
+    await db.saveWriting('あ', const WritingScore().record(80, 9));
+    expect((await db.testAttempts()).single.answers, {'q1': 3});
+    expect((await db.testAnswers()).single.isCorrect, isTrue);
+    expect((await db.writingProgress())['あ']!.best, 80);
+    expect(await db.dirtyRows('test_answers'), hasLength(1));
   });
 }

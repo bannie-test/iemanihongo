@@ -40,14 +40,14 @@ class Word {
   }
 
   factory Word.fromJson(Map<String, dynamic> j) => Word(
-        id: j['id'] as String,
-        word: j['w'] as String,
-        reading: j['r'] as String,
-        meaning: j['m'] as String,
-        level: j['l'] as int,
-        order: j['o'] as int,
-        spoken: j['s'] as String?,
-      );
+    id: j['id'] as String,
+    word: j['w'] as String,
+    reading: j['r'] as String,
+    meaning: j['m'] as String,
+    level: j['l'] as int,
+    order: j['o'] as int,
+    spoken: j['s'] as String?,
+  );
 }
 
 bool isKanji(String ch) {
@@ -73,13 +73,13 @@ class KanjiInfo {
   final int? level;
 
   factory KanjiInfo.fromJson(String char, Map<String, dynamic> j) => KanjiInfo(
-        char: char,
-        strokes: j['s'] as int?,
-        meanings: List<String>.from(j['m'] as List),
-        onReadings: List<String>.from(j['on'] as List),
-        kunReadings: List<String>.from(j['kun'] as List),
-        level: j['l'] as int?,
-      );
+    char: char,
+    strokes: j['s'] as int?,
+    meanings: List<String>.from(j['m'] as List),
+    onReadings: List<String>.from(j['on'] as List),
+    kunReadings: List<String>.from(j['kun'] as List),
+    level: j['l'] as int?,
+  );
 }
 
 class GrammarExample {
@@ -127,15 +127,8 @@ class GrammarPoint {
       meaning: j['m'] as String,
       formation: j['f'] as String,
       explanation: j['e'] as String,
-      examples: [
-        for (final x in j['x'] as List) GrammarExample(x['jp'] as String, x['en'] as String),
-      ],
-      quiz: GrammarQuiz(
-        q['s'] as String,
-        List<String>.from(q['o'] as List),
-        q['a'] as int,
-        q['en'] as String,
-      ),
+      examples: [for (final x in j['x'] as List) GrammarExample(x['jp'] as String, x['en'] as String)],
+      quiz: GrammarQuiz(q['s'] as String, List<String>.from(q['o'] as List), q['a'] as int, q['en'] as String),
     );
   }
 }

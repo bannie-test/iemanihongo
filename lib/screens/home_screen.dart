@@ -8,7 +8,9 @@ import '../theme.dart';
 import '../widgets/common.dart';
 import 'flashcard_screen.dart';
 import 'grammar_screen.dart';
+import '../widgets/app_icons.dart';
 import 'settings_screen.dart';
+import 'shell.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -39,87 +41,116 @@ class HomeScreen extends StatelessWidget {
       child: ListView(
         padding: const EdgeInsets.fromLTRB(18, 12, 18, 24),
         children: [
-          Row(children: [
-            Expanded(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('${_weekdaysJa[now.weekday - 1]} · ${DateFormat('EEEE').format(now)}', style: context.text.bodySmall),
-                Text(_greeting(), style: context.text.headlineSmall),
-              ]),
-            ),
-            const SyncBadge(),
-            IconButton(
-              tooltip: 'Settings',
-              icon: const Icon(Icons.settings_outlined),
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SettingsScreen())),
-            ),
-          ]),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${_weekdaysJa[now.weekday - 1]} · ${DateFormat('EEEE').format(now)}',
+                      style: context.text.bodySmall,
+                    ),
+                    Text(_greeting(), style: context.text.headlineSmall),
+                  ],
+                ),
+              ),
+              const SyncBadge(),
+              IconButton(
+                tooltip: 'Settings',
+                icon: const Icon(AppIcons.settings),
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SettingsScreen())),
+              ),
+            ],
+          ),
           const SizedBox(height: 12),
           _StreakCard(state: state),
           const SizedBox(height: 12),
-          LevelPicker(value: level, onChanged: (l) => state.updateSettings((s) => s.copyWith(level: l))),
+          LevelPicker(
+            value: level,
+            onChanged: (l) => state.updateSettings((s) => s.copyWith(level: l)),
+          ),
           const SizedBox(height: 12),
           SoftCard(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Row(children: [
-                Expanded(
-                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('Vocabulary review', style: context.text.titleMedium),
-                    const SizedBox(height: 2),
-                    Text('$due due · $newLeft new words', style: context.text.bodySmall),
-                  ]),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Vocabulary review', style: context.text.titleMedium),
+                          const SizedBox(height: 2),
+                          Text('$due due · $newLeft new words', style: context.text.bodySmall),
+                        ],
+                      ),
+                    ),
+                    Tag('~${((due + newLeft) * 0.2).ceil().clamp(1, 60)} min', accent: true),
+                  ],
                 ),
-                Tag('~${((due + newLeft) * 0.2).ceil().clamp(1, 60)} min', accent: true),
-              ]),
-              const SizedBox(height: 12),
-              Bar(levelTotal == 0 ? 0 : learned / levelTotal),
-              const SizedBox(height: 6),
-              Text('N$level · $learned / $levelTotal words learned', style: context.text.bodySmall),
-            ]),
+                const SizedBox(height: 12),
+                Bar(levelTotal == 0 ? 0 : learned / levelTotal),
+                const SizedBox(height: 6),
+                Text('N$level · $learned / $levelTotal words learned', style: context.text.bodySmall),
+              ],
+            ),
           ),
           const SizedBox(height: 12),
           if (grammar != null)
             SoftCard(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => GrammarLessonScreen(point: grammar))),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Row(children: [
-                  Tag("Today's grammar · Day ${state.grammarDayNumber}", accent: true),
-                  const Spacer(),
-                  Text('N${grammar.level} · 5 min', style: context.text.bodySmall),
-                ]),
-                const SizedBox(height: 10),
-                Text(grammar.title, style: context.text.titleLarge?.copyWith(fontSize: 21)),
-                Text(grammar.meaning, style: context.text.bodySmall),
-              ]),
+              onTap: () =>
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => GrammarLessonScreen(point: grammar))),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Tag("Today's grammar · Day ${state.grammarDayNumber}", accent: true),
+                      const Spacer(),
+                      Text('N${grammar.level} · 5 min', style: context.text.bodySmall),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Text(grammar.title, style: context.text.titleLarge?.copyWith(fontSize: 21)),
+                  Text(grammar.meaning, style: context.text.bodySmall),
+                ],
+              ),
             )
           else
             SoftCard(
-              child: Row(children: [
-                Icon(Icons.emoji_events_rounded, color: c.accent),
-                const SizedBox(width: 10),
-                const Expanded(child: Text('You have finished every grammar lesson. すごい！')),
-              ]),
+              child: Row(
+                children: [
+                  Icon(AppIcons.trophy, color: c.accent),
+                  const SizedBox(width: 10),
+                  const Expanded(child: Text('You have finished every grammar lesson. すごい！')),
+                ],
+              ),
             ),
+          const SizedBox(height: 12),
+          const _JlptCard(),
           const SizedBox(height: 18),
           GradientButton(
             label: due + newLeft == 0 ? 'All caught up · study extra' : "Start today's session",
-            icon: Icons.play_arrow_rounded,
+            icon: AppIcons.play,
             onPressed: () {
               var words = state.buildDailySession();
               if (words.isEmpty) words = state.nextNewWords(5);
               if (words.isEmpty) {
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(const SnackBar(content: Text('You have seen every word in this level. Pick another level.')));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('You have seen every word in this level. Pick another level.')),
+                );
                 return;
               }
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (_) => FlashcardScreen(words: words, title: "Today's session"),
-              ));
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => FlashcardScreen(words: words, title: "Today's session"),
+                ),
+              );
             },
           ),
-          if (state.tts.japaneseAvailable.value == false) ...[
-            const SizedBox(height: 12),
-            const _VoiceMissingCard(),
-          ],
+          if (state.tts.japaneseAvailable.value == false) ...[const SizedBox(height: 12), const _VoiceMissingCard()],
         ],
       ),
     );
@@ -142,39 +173,59 @@ class _StreakCard extends StatelessWidget {
     final days = state.days;
 
     return SoftCard(
-      child: Column(children: [
-        Row(children: [
-          Ring(
-            value: goal == 0 ? 0 : progress / goal,
-            child: Text('${progress.clamp(0, 999)}/$goal', style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14)),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('🔥 ${s.current} ${s.current == 1 ? 'day' : 'days'}',
-                  style: context.text.headlineSmall?.copyWith(fontSize: 26)),
-              const SizedBox(height: 2),
-              Text(
-                s.todayDone
-                    ? 'Goal done for today. お疲れさま！'
-                    : left == goal
-                        ? 'Study $goal items today to ${s.current > 0 ? 'keep' : 'start'} your streak'
-                        : '$left more to ${s.current > 0 ? 'keep' : 'start'} your streak',
-                style: context.text.bodySmall,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Ring(
+                value: goal == 0 ? 0 : progress / goal,
+                child: Text(
+                  '${progress.clamp(0, 999)}/$goal',
+                  style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+                ),
               ),
-              if (s.freezes > 0) ...[
-                const SizedBox(height: 4),
-                Tag('${s.freezes} streak freeze${s.freezes > 1 ? 's' : ''}', icon: Icons.ac_unit_rounded),
-              ],
-            ]),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(AppIcons.fire, color: s.current > 0 ? Colors.deepOrange : context.colors.muted, size: 26),
+                        const SizedBox(width: 6),
+                        Text(
+                          '${s.current} ${s.current == 1 ? 'day' : 'days'}',
+                          style: context.text.headlineSmall?.copyWith(fontSize: 26),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      s.todayDone
+                          ? 'Goal done for today. お疲れさま！'
+                          : left == goal
+                          ? 'Study $goal items today to ${s.current > 0 ? 'keep' : 'start'} your streak'
+                          : '$left more to ${s.current > 0 ? 'keep' : 'start'} your streak',
+                      style: context.text.bodySmall,
+                    ),
+                    if (s.freezes > 0) ...[
+                      const SizedBox(height: 4),
+                      Tag('${s.freezes} streak freeze${s.freezes > 1 ? 's' : ''}', icon: AppIcons.freeze),
+                    ],
+                  ],
+                ),
+              ),
+            ],
           ),
-        ]),
-        const SizedBox(height: 14),
-        Row(children: [
-          for (var i = 0; i < 7; i++)
-            Expanded(child: _dayDot(context, DateTime(monday.year, monday.month, monday.day + i), days, s, c)),
-        ]),
-      ]),
+          const SizedBox(height: 14),
+          Row(
+            children: [
+              for (var i = 0; i < 7; i++)
+                Expanded(child: _dayDot(context, DateTime(monday.year, monday.month, monday.day + i), days, s, c)),
+            ],
+          ),
+        ],
+      ),
     );
   }
 
@@ -185,24 +236,26 @@ class _StreakCard extends StatelessWidget {
     final met = stat != null && stat.goal > 0 && stat.studied >= stat.goal;
     final frozen = s.frozenDays.contains(key);
     final isToday = key == today;
-    return Column(children: [
-      Text(DateFormat('E').format(d).substring(0, 1), style: context.text.bodySmall),
-      const SizedBox(height: 4),
-      Container(
-        width: 28,
-        height: 28,
-        decoration: BoxDecoration(
-          color: met ? c.accentSoft : c.surface2,
-          shape: BoxShape.circle,
-          border: isToday ? Border.all(color: c.accent, width: 2) : null,
+    return Column(
+      children: [
+        Text(DateFormat('E').format(d).substring(0, 1), style: context.text.bodySmall),
+        const SizedBox(height: 4),
+        Container(
+          width: 28,
+          height: 28,
+          decoration: BoxDecoration(
+            color: met ? c.accentSoft : c.surface2,
+            shape: BoxShape.circle,
+            border: isToday ? Border.all(color: c.accent, width: 2) : null,
+          ),
+          child: met
+              ? Icon(AppIcons.check, size: 16, color: c.accent)
+              : frozen
+              ? Icon(AppIcons.freeze, size: 14, color: Colors.lightBlue.shade300)
+              : null,
         ),
-        child: met
-            ? Icon(Icons.check_rounded, size: 16, color: c.accent)
-            : frozen
-                ? Icon(Icons.ac_unit_rounded, size: 14, color: Colors.lightBlue.shade300)
-                : null,
-      ),
-    ]);
+      ],
+    );
   }
 }
 
@@ -211,15 +264,60 @@ class _VoiceMissingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SoftCard(
-        child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Icon(Icons.record_voice_over_outlined, color: context.colors.accent),
-          const SizedBox(width: 10),
-          const Expanded(
-            child: Text(
-              'No Japanese voice found for audio. On Android open Settings → Accessibility → Text-to-speech '
-              '(or install "Speech Services by Google") and add Japanese. It then works offline.',
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Icon(AppIcons.voice, color: context.colors.accent),
+        const SizedBox(width: 10),
+        const Expanded(
+          child: Text(
+            'No Japanese voice found for audio. On Android open Settings → Accessibility → Text-to-speech '
+            '(or install "Speech Services by Google") and add Japanese. It then works offline.',
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+class _JlptCard extends StatelessWidget {
+  const _JlptCard();
+
+  @override
+  Widget build(BuildContext context) {
+    final state = context.watch<AppState>();
+    final c = context.colors;
+    final running = state.attempts.values.where((a) => a.inProgress && a.timed).toList()
+      ..sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
+    final r = running.isEmpty ? null : running.first;
+    return SoftCard(
+      onTap: () => Shell.goToTab(context, Shell.jlptTab),
+      child: Row(
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(color: c.accentSoft, borderRadius: BorderRadius.circular(14)),
+            child: Icon(AppIcons.examOn, color: c.accent),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Luyện thi JLPT N3–N1', style: context.text.titleMedium),
+                Text(
+                  r == null
+                      ? 'Đề thi thử có tính giờ · giải thích tiếng Việt'
+                      : '${r.title} · đang làm ${r.answers.length}/${r.total}',
+                  style: context.text.bodySmall,
+                ),
+              ],
             ),
           ),
-        ]),
-      );
+          Icon(AppIcons.next, color: c.muted),
+        ],
+      ),
+    );
+  }
 }

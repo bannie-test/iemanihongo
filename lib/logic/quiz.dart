@@ -40,16 +40,14 @@ class QuizBuilder {
     for (final w in allWords) {
       byLevel.putIfAbsent(w.level, () => []).add(w);
     }
-    return [
-      for (final w in eligible.take(count)) _question(w, mode, byLevel[w.level] ?? allWords),
-    ];
+    return [for (final w in eligible.take(count)) _question(w, mode, byLevel[w.level] ?? allWords)];
   }
 
   String display(Word w, QuizMode mode) => switch (mode) {
-        QuizMode.meaning => w.shortMeaning,
-        QuizMode.reverse || QuizMode.listening => w.word,
-        QuizMode.reading => w.reading,
-      };
+    QuizMode.meaning => w.shortMeaning,
+    QuizMode.reverse || QuizMode.listening => w.word,
+    QuizMode.reading => w.reading,
+  };
 
   QuizQuestion _question(Word w, QuizMode mode, List<Word> sameLevel) {
     final correct = display(w, mode);

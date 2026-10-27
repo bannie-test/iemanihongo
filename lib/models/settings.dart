@@ -48,34 +48,33 @@ class AppSettings {
     bool? autoplayAudio,
     double? speechRate,
     int? updatedAt,
-  }) =>
-      AppSettings(
-        themeMode: themeMode ?? this.themeMode,
-        level: level ?? this.level,
-        dailyGoal: dailyGoal ?? this.dailyGoal,
-        newPerDay: newPerDay ?? this.newPerDay,
-        remindersOn: remindersOn ?? this.remindersOn,
-        reminderHour: reminderHour ?? this.reminderHour,
-        reminderMinute: reminderMinute ?? this.reminderMinute,
-        streakNudge: streakNudge ?? this.streakNudge,
-        autoplayAudio: autoplayAudio ?? this.autoplayAudio,
-        speechRate: speechRate ?? this.speechRate,
-        updatedAt: updatedAt ?? this.updatedAt,
-      );
+  }) => AppSettings(
+    themeMode: themeMode ?? this.themeMode,
+    level: level ?? this.level,
+    dailyGoal: dailyGoal ?? this.dailyGoal,
+    newPerDay: newPerDay ?? this.newPerDay,
+    remindersOn: remindersOn ?? this.remindersOn,
+    reminderHour: reminderHour ?? this.reminderHour,
+    reminderMinute: reminderMinute ?? this.reminderMinute,
+    streakNudge: streakNudge ?? this.streakNudge,
+    autoplayAudio: autoplayAudio ?? this.autoplayAudio,
+    speechRate: speechRate ?? this.speechRate,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
 
   Map<String, Object?> toJson() => {
-        'themeMode': themeMode.name,
-        'level': level,
-        'dailyGoal': dailyGoal,
-        'newPerDay': newPerDay,
-        'remindersOn': remindersOn,
-        'reminderHour': reminderHour,
-        'reminderMinute': reminderMinute,
-        'streakNudge': streakNudge,
-        'autoplayAudio': autoplayAudio,
-        'speechRate': speechRate,
-        'updatedAt': updatedAt,
-      };
+    'themeMode': themeMode.name,
+    'level': level,
+    'dailyGoal': dailyGoal,
+    'newPerDay': newPerDay,
+    'remindersOn': remindersOn,
+    'reminderHour': reminderHour,
+    'reminderMinute': reminderMinute,
+    'streakNudge': streakNudge,
+    'autoplayAudio': autoplayAudio,
+    'speechRate': speechRate,
+    'updatedAt': updatedAt,
+  };
 
   factory AppSettings.fromJson(Map<String, dynamic> j) {
     const d = AppSettings();

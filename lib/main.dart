@@ -26,11 +26,7 @@ Future<void> main() async {
     debugPrint('Supabase unavailable, running local-only: $e');
   }
 
-  final results = await Future.wait([
-    ContentRepository.load(),
-    LocalDb.open(),
-    SharedPreferences.getInstance(),
-  ]);
+  final results = await Future.wait([ContentRepository.load(), LocalDb.open(), SharedPreferences.getInstance()]);
   final notifications = NotificationService();
   await notifications.init();
 

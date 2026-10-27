@@ -4,7 +4,8 @@ import 'package:iemanihongo/logic/streak.dart';
 Map<String, DayTotal> run(String start, List<int> studied, {int goal = 10}) {
   final d0 = parseDay(start);
   return {
-    for (var i = 0; i < studied.length; i++) dayKey(DateTime(d0.year, d0.month, d0.day + i)): DayTotal(studied[i], goal),
+    for (var i = 0; i < studied.length; i++)
+      dayKey(DateTime(d0.year, d0.month, d0.day + i)): DayTotal(studied[i], goal),
   };
 }
 

@@ -69,24 +69,27 @@ extension AppThemeX on BuildContext {
 }
 
 class AppTheme {
-  static const font = 'ZenMaruGothic';
+  /// Latin and Vietnamese text use Nunito (rounded, full Vietnamese
+  /// support); Japanese characters fall back to Zen Maru Gothic.
+  static const font = 'Nunito';
+  static const fallback = ['ZenMaruGothic'];
   static const radius = 24.0;
 
   static ThemeData light() => _build(
-        brightness: Brightness.light,
-        c: AppColors.light,
-        bg: const Color(0xFFFFF6F7),
-        surface: Colors.white,
-        text: const Color(0xFF2B1F24),
-      );
+    brightness: Brightness.light,
+    c: AppColors.light,
+    bg: const Color(0xFFFFF6F7),
+    surface: Colors.white,
+    text: const Color(0xFF2B1F24),
+  );
 
   static ThemeData dark() => _build(
-        brightness: Brightness.dark,
-        c: AppColors.dark,
-        bg: const Color(0xFF170F13),
-        surface: const Color(0xFF24171D),
-        text: const Color(0xFFF6E9EE),
-      );
+    brightness: Brightness.dark,
+    c: AppColors.dark,
+    bg: const Color(0xFF170F13),
+    surface: const Color(0xFF24171D),
+    text: const Color(0xFFF6E9EE),
+  );
 
   static ThemeData _build({
     required Brightness brightness,
@@ -116,10 +119,16 @@ class AppTheme {
       colorScheme: scheme,
       brightness: brightness,
       fontFamily: font,
+      fontFamilyFallback: fallback,
       scaffoldBackgroundColor: bg,
       extensions: [c],
     );
-    final tt = base.textTheme.apply(bodyColor: text, displayColor: text, fontFamily: font);
+    final tt = base.textTheme.apply(
+      bodyColor: text,
+      displayColor: text,
+      fontFamily: font,
+      fontFamilyFallback: fallback,
+    );
     return base.copyWith(
       textTheme: tt.copyWith(
         headlineMedium: tt.headlineMedium?.copyWith(fontWeight: FontWeight.w700, fontSize: 26),
@@ -135,7 +144,13 @@ class AppTheme {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
-        titleTextStyle: TextStyle(fontFamily: font, fontSize: 20, fontWeight: FontWeight.w700, color: text),
+        titleTextStyle: TextStyle(
+          fontFamily: font,
+          fontFamilyFallback: fallback,
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: text,
+        ),
         foregroundColor: text,
       ),
       cardTheme: CardThemeData(
@@ -159,6 +174,7 @@ class AppTheme {
         labelTextStyle: WidgetStateProperty.resolveWith(
           (s) => TextStyle(
             fontFamily: font,
+            fontFamilyFallback: fallback,
             fontSize: 11.5,
             fontWeight: s.contains(WidgetState.selected) ? FontWeight.w700 : FontWeight.w500,
             color: s.contains(WidgetState.selected) ? c.accent : c.muted,
@@ -169,7 +185,12 @@ class AppTheme {
         style: FilledButton.styleFrom(
           minimumSize: const Size.fromHeight(52),
           shape: const StadiumBorder(),
-          textStyle: const TextStyle(fontFamily: font, fontWeight: FontWeight.w700, fontSize: 16),
+          textStyle: const TextStyle(
+            fontFamily: font,
+            fontFamilyFallback: fallback,
+            fontWeight: FontWeight.w700,
+            fontSize: 16,
+          ),
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
@@ -177,24 +198,43 @@ class AppTheme {
           minimumSize: const Size.fromHeight(48),
           shape: const StadiumBorder(),
           side: BorderSide(color: c.border, width: 2),
-          textStyle: const TextStyle(fontFamily: font, fontWeight: FontWeight.w700, fontSize: 15),
+          textStyle: const TextStyle(
+            fontFamily: font,
+            fontFamilyFallback: fallback,
+            fontWeight: FontWeight.w700,
+            fontSize: 15,
+          ),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: surface,
         contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: BorderSide(color: c.border, width: 2)),
-        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: BorderSide(color: c.border, width: 2)),
-        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: BorderSide(color: c.accent, width: 2)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(18),
+          borderSide: BorderSide(color: c.border, width: 2),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(18),
+          borderSide: BorderSide(color: c.border, width: 2),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(18),
+          borderSide: BorderSide(color: c.accent, width: 2),
+        ),
       ),
       chipTheme: ChipThemeData(
         shape: const StadiumBorder(),
         side: BorderSide.none,
         backgroundColor: c.surface2,
         selectedColor: c.accent,
-        labelStyle: TextStyle(fontFamily: font, fontWeight: FontWeight.w700, color: text),
-        secondaryLabelStyle: TextStyle(fontFamily: font, fontWeight: FontWeight.w700, color: c.onAccent),
+        labelStyle: TextStyle(fontFamily: font, fontFamilyFallback: fallback, fontWeight: FontWeight.w700, color: text),
+        secondaryLabelStyle: TextStyle(
+          fontFamily: font,
+          fontFamilyFallback: fallback,
+          fontWeight: FontWeight.w700,
+          color: c.onAccent,
+        ),
         checkmarkColor: c.onAccent,
       ),
       dividerTheme: DividerThemeData(color: c.border, space: 1, thickness: 1),

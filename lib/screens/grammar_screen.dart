@@ -5,6 +5,7 @@ import '../models/content.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/app_icons.dart';
 
 class GrammarScreen extends StatelessWidget {
   const GrammarScreen({super.key});
@@ -24,18 +25,25 @@ class GrammarScreen extends StatelessWidget {
               color: c.accentSoft,
               borderColor: c.accentSoft,
               onTap: () => _open(context, today),
-              child: Row(children: [
-                Expanded(
-                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text("Today's lesson · Day ${state.grammarDayNumber}",
-                        style: TextStyle(color: c.accent, fontWeight: FontWeight.w700)),
-                    const SizedBox(height: 6),
-                    Text(today.title, style: context.text.headlineSmall),
-                    Text(today.meaning, style: context.text.bodySmall),
-                  ]),
-                ),
-                Icon(Icons.play_circle_fill_rounded, color: c.accent, size: 40),
-              ]),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Today's lesson · Day ${state.grammarDayNumber}",
+                          style: TextStyle(color: c.accent, fontWeight: FontWeight.w700),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(today.title, style: context.text.headlineSmall),
+                        Text(today.meaning, style: context.text.bodySmall),
+                      ],
+                    ),
+                  ),
+                  Icon(AppIcons.playCircle, color: c.accent, size: 40),
+                ],
+              ),
             ),
           const SizedBox(height: 16),
           for (final l in [5, 4, 3, 2, 1]) _LevelSection(level: l, initiallyExpanded: l == state.settings.level),
@@ -75,7 +83,7 @@ class _LevelSection extends StatelessWidget {
                 ListTile(
                   onTap: () => GrammarScreen._open(context, g),
                   leading: Icon(
-                    state.grammarDone.containsKey(g.id) ? Icons.check_circle_rounded : Icons.circle_outlined,
+                    state.grammarDone.containsKey(g.id) ? AppIcons.checkCircle : AppIcons.circle,
                     color: state.grammarDone.containsKey(g.id) ? c.good : c.border,
                   ),
                   title: Text(g.title, style: const TextStyle(fontWeight: FontWeight.w700)),
@@ -133,13 +141,19 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
           children: [
             Text(g.title, style: context.text.headlineMedium?.copyWith(fontSize: 30)),
             const SizedBox(height: 2),
-            Text(g.meaning, style: context.text.titleMedium?.copyWith(color: c.muted, fontWeight: FontWeight.w500)),
+            Text(
+              g.meaning,
+              style: context.text.titleMedium?.copyWith(color: c.muted, fontWeight: FontWeight.w500),
+            ),
             const SizedBox(height: 14),
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(color: c.accentSoft, borderRadius: BorderRadius.circular(18)),
-              child: Text(g.formation,
-                  textAlign: TextAlign.center, style: TextStyle(color: c.accent, fontWeight: FontWeight.w700, fontSize: 16)),
+              child: Text(
+                g.formation,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: c.accent, fontWeight: FontWeight.w700, fontSize: 16),
+              ),
             ),
             const SizedBox(height: 14),
             Text(g.explanation, style: context.text.bodyMedium),
@@ -148,52 +162,69 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
             for (final x in g.examples) ...[
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Expanded(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      HighlightText(x.jp, style: const TextStyle(fontSize: 17, height: 1.5)),
-                      Text(x.en, style: context.text.bodySmall),
-                    ]),
-                  ),
-                  const SizedBox(width: 8),
-                  SpeakButton(x.plain, size: 38),
-                ]),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          HighlightText(x.jp, style: const TextStyle(fontSize: 17, height: 1.5)),
+                          Text(x.en, style: context.text.bodySmall),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    SpeakButton(x.plain, size: 38),
+                  ],
+                ),
               ),
               const Divider(),
             ],
             const SizedBox(height: 14),
             SoftCard(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('Quick check', style: context.text.bodySmall),
-                const SizedBox(height: 8),
-                Text(
-                  answered ? g.quiz.sentence.replaceFirst('＿＿', '【${g.quiz.options[g.quiz.answer]}】') : g.quiz.sentence,
-                  style: const TextStyle(fontSize: 18, height: 1.5),
-                ),
-                if (answered) Text(g.quiz.translation, style: context.text.bodySmall),
-                const SizedBox(height: 12),
-                Wrap(spacing: 8, runSpacing: 8, children: [
-                  for (final i in _order)
-                    ChoiceChip(
-                      label: Text(g.quiz.options[i], style: const TextStyle(fontSize: 16)),
-                      selected: _picked == i,
-                      selectedColor: i == g.quiz.answer ? c.good : c.bad,
-                      backgroundColor: answered && i == g.quiz.answer ? c.good.withValues(alpha: 0.2) : null,
-                      onSelected: answered ? null : (_) => setState(() => _picked = i),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Quick check', style: context.text.bodySmall),
+                  const SizedBox(height: 8),
+                  Text(
+                    answered
+                        ? g.quiz.sentence.replaceFirst('＿＿', '【${g.quiz.options[g.quiz.answer]}】')
+                        : g.quiz.sentence,
+                    style: const TextStyle(fontSize: 18, height: 1.5),
+                  ),
+                  if (answered) Text(g.quiz.translation, style: context.text.bodySmall),
+                  const SizedBox(height: 12),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: [
+                      for (final i in _order)
+                        ChoiceChip(
+                          label: Text(g.quiz.options[i], style: const TextStyle(fontSize: 16)),
+                          selected: _picked == i,
+                          selectedColor: i == g.quiz.answer ? c.good : c.bad,
+                          backgroundColor: answered && i == g.quiz.answer ? c.good.withValues(alpha: 0.2) : null,
+                          onSelected: answered ? null : (_) => setState(() => _picked = i),
+                        ),
+                    ],
+                  ),
+                  if (answered) ...[
+                    const SizedBox(height: 10),
+                    Text(
+                      correct ? 'Correct! よくできました。' : 'Not quite. The answer is ${g.quiz.options[g.quiz.answer]}.',
+                      style: TextStyle(color: correct ? c.good : c.bad, fontWeight: FontWeight.w700),
                     ),
-                ]),
-                if (answered) ...[
-                  const SizedBox(height: 10),
-                  Text(correct ? 'Correct! よくできました。' : 'Not quite. The answer is ${g.quiz.options[g.quiz.answer]}.',
-                      style: TextStyle(color: correct ? c.good : c.bad, fontWeight: FontWeight.w700)),
+                  ],
                 ],
-              ]),
+              ),
             ),
             const SizedBox(height: 20),
             if (done)
               OutlinedButton.icon(
                 onPressed: () => Navigator.pop(context),
-                icon: Icon(Icons.check_circle_rounded, color: c.good),
+                icon: Icon(AppIcons.checkCircle, color: c.good),
                 label: const Text('Lesson completed'),
               )
             else
@@ -203,9 +234,8 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
                     ? () {
                         state.completeGrammar(g.id);
                         Navigator.pop(context);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('${g.title} completed. また明日！')),
-                        );
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(SnackBar(content: Text('${g.title} completed. また明日！')));
                       }
                     : null,
               ),

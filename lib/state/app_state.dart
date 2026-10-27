@@ -11,7 +11,9 @@ import '../data/content_repository.dart';
 import '../data/local_db.dart';
 import '../logic/srs.dart';
 import '../logic/streak.dart';
+import '../logic/weakness.dart';
 import '../models/content.dart';
+import '../models/jlpt.dart';
 import '../models/settings.dart';
 import '../models/user_data.dart';
 import '../services/notification_service.dart';
@@ -48,6 +50,9 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   final Map<String, Deck> decks = {};
   Map<String, Set<String>> deckWords = {};
   Map<String, int> grammarDone = {};
+  final Map<String, TestAttempt> attempts = {};
+  final List<TestAnswer> testAnswers = [];
+  Map<String, WritingScore> writing = {};
   StreakInfo streak = StreakInfo.empty;
   StreamSubscription<AuthState>? _authSub;
   Timer? _reminderDebounce;
@@ -110,6 +115,13 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
       ..addEntries((await db.decks()).map((d) => MapEntry(d.id, d)));
     deckWords = await db.deckWords();
     grammarDone = await db.grammarDone();
+    attempts
+      ..clear()
+      ..addEntries((await db.testAttempts()).map((a) => MapEntry(a.id, a)));
+    testAnswers
+      ..clear()
+      ..addAll(await db.testAnswers());
+    writing = await db.writingProgress();
     _recomputeStreak();
   }
 
@@ -303,8 +315,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   CardState cardFor(String wordId) => cards[wordId] ?? CardState(wordId: wordId);
 
-  int learnedCount(int level) =>
-      content.byLevel[level]!.where((w) => cards[w.id]?.isLearned ?? false).length;
+  int learnedCount(int level) => content.byLevel[level]!.where((w) => cards[w.id]?.isLearned ?? false).length;
 
   int seenCount(int level) => content.byLevel[level]!.where((w) => cards.containsKey(w.id)).length;
 
@@ -352,7 +363,10 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   /// The next unfinished lesson, starting at the chosen level.
   GrammarPoint? get todaysGrammar {
-    final order = [settings.level, ...[5, 4, 3, 2, 1].where((l) => l != settings.level)];
+    final order = [
+      settings.level,
+      ...[5, 4, 3, 2, 1].where((l) => l != settings.level),
+    ];
     for (final l in order) {
       for (final g in grammarFor(l)) {
         if (!grammarDone.containsKey(g.id)) return g;
@@ -382,8 +396,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   Deck get starredDeck => decks[Deck.starredId] ?? Deck(id: Deck.starredId, name: 'Starred');
 
-  List<Word> wordsIn(String deckId) =>
-      [for (final id in deckWords[deckId] ?? const <String>{}) ?content.byId[id]];
+  List<Word> wordsIn(String deckId) => [for (final id in deckWords[deckId] ?? const <String>{}) ?content.byId[id]];
 
   bool inDeck(String deckId, String wordId) => deckWords[deckId]?.contains(wordId) ?? false;
 
@@ -429,6 +442,166 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     _write(db.saveDeck(d));
     notifyListeners();
     sync?.schedule();
+  }
+
+  // ---------------------------------------------------------- JLPT tests
+  //
+  // Test data lives in the user's Supabase account: every change is pushed
+  // right away, and the local copy only queues writes while offline.
+
+  bool get canSaveTests => user != null || allowTestsWithoutAccount;
+
+  /// Lets widget tests run JLPT tests without a Supabase session.
+  @visibleForTesting
+  bool allowTestsWithoutAccount = false;
+
+  List<TestAttempt> attemptsFor(String testId) =>
+      attempts.values.where((a) => a.testId == testId).toList()..sort((a, b) => b.startedAt.compareTo(a.startedAt));
+
+  TestAttempt? inProgress(String testId) {
+    for (final a in attemptsFor(testId)) {
+      if (a.inProgress) return a;
+    }
+    return null;
+  }
+
+  int? bestScore(String testId) {
+    final done = attemptsFor(testId).where((a) => a.finished);
+    if (done.isEmpty) return null;
+    return done.map((a) => (a.percent * 100).round()).reduce(max);
+  }
+
+  List<TestAttempt> finishedAttempts(int level) =>
+      attempts.values.where((a) => a.level == level && a.finished).toList()
+        ..sort((a, b) => b.finishedAt.compareTo(a.finishedAt));
+
+  WeaknessReport weakness(int level) => Weakness.analyze(testAnswers, level: level);
+
+  TestAttempt startExam(JlptTest test) => _newAttempt(
+    testId: test.id,
+    title: 'N${test.level} · ${test.title}',
+    level: test.level,
+    mode: AttemptMode.exam,
+    questions: test.questions.map((q) => q.id).toList(),
+    timeLimitSec: test.minutes * 60,
+  );
+
+  TestAttempt startPractice({
+    required int level,
+    required String key,
+    required String title,
+    required List<String> questionIds,
+  }) => _newAttempt(testId: key, title: title, level: level, mode: AttemptMode.practice, questions: questionIds);
+
+  TestAttempt _newAttempt({
+    required String testId,
+    required String title,
+    required int level,
+    required AttemptMode mode,
+    required List<String> questions,
+    int timeLimitSec = 0,
+  }) {
+    // Only one unfinished sitting per test: starting over discards the old one.
+    for (final old in attemptsFor(testId).where((a) => a.inProgress)) {
+      old
+        ..finishedAt = TestAttempt.discarded
+        ..updatedAt = nowMs;
+      _write(db.saveAttempt(old));
+    }
+    final a = TestAttempt(
+      id: const Uuid().v4(),
+      testId: testId,
+      title: title,
+      level: level,
+      mode: mode,
+      questionIds: questions,
+      startedAt: nowMs,
+      timeLimitSec: timeLimitSec,
+      updatedAt: nowMs,
+    );
+    attempts[a.id] = a;
+    _write(db.saveAttempt(a));
+    notifyListeners();
+    sync?.schedule(immediate: true);
+    return a;
+  }
+
+  /// Saves progress of a running attempt (answers, position, time used).
+  void saveAttempt(TestAttempt a, {bool pushNow = false}) {
+    a.updatedAt = nowMs;
+    _write(db.saveAttempt(a));
+    pushNow ? sync?.schedule(immediate: true) : sync?.schedule();
+  }
+
+  /// Practice mode records each answer immediately so weak areas update
+  /// even if the set is never finished.
+  void recordPracticeAnswer(TestAttempt a, JlptQuestion q, int chosen) {
+    a.answers[q.id] = chosen;
+    final answer = _answerRow(a, q, chosen);
+    testAnswers.add(answer);
+    _write(db.saveAnswers([answer]));
+    final t = _todayRow();
+    t.quizTotal++;
+    if (answer.isCorrect) t.quizCorrect++;
+    saveAttempt(a);
+    _afterProgress();
+  }
+
+  /// Grades and closes an attempt. Exam answers are recorded here.
+  void finishAttempt(TestAttempt a) {
+    if (!a.inProgress) return;
+    a
+      ..score = a.questionIds.where((id) => a.answers[id] == content.questionById[id]?.answer).length
+      ..finishedAt = nowMs;
+    if (a.mode == AttemptMode.exam) {
+      final rows = [
+        for (final id in a.questionIds)
+          if (content.questionById[id] case final q?)
+            if (a.answers[id] case final chosen?) _answerRow(a, q, chosen),
+      ];
+      testAnswers.addAll(rows);
+      _write(db.saveAnswers(rows));
+      final t = _todayRow();
+      t.quizTotal += rows.length;
+      t.quizCorrect += rows.where((r) => r.isCorrect).length;
+    }
+    saveAttempt(a, pushNow: true);
+    _afterProgress();
+  }
+
+  void discardAttempt(TestAttempt a) {
+    a
+      ..finishedAt = TestAttempt.discarded
+      ..updatedAt = nowMs;
+    _write(db.saveAttempt(a));
+    notifyListeners();
+    sync?.schedule(immediate: true);
+  }
+
+  TestAnswer _answerRow(TestAttempt a, JlptQuestion q, int chosen) => TestAnswer(
+    id: const Uuid().v4(),
+    attemptId: a.id,
+    questionId: q.id,
+    level: q.level,
+    section: q.section.name,
+    tag: q.tag,
+    chosen: chosen,
+    isCorrect: chosen == q.answer,
+    answeredAt: nowMs,
+  );
+
+  // ------------------------------------------------------------- writing
+
+  WritingScore writingScore(String ch) => writing[ch] ?? const WritingScore();
+
+  void recordWriting(String ch, int score) {
+    final s = writingScore(ch).record(score, nowMs);
+    writing[ch] = s;
+    _write(db.saveWriting(ch, s));
+    final t = _todayRow();
+    t.quizTotal++;
+    if (score >= 70) t.quizCorrect++;
+    _afterProgress();
   }
 
   // ------------------------------------------------------------ reminders

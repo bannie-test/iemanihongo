@@ -2,6 +2,7 @@ import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
 
 import '../logic/srs.dart';
+import '../models/jlpt.dart';
 import '../models/user_data.dart';
 
 /// Local SQLite store. It is the source of truth for the UI; rows with
@@ -18,6 +19,21 @@ class LocalDb {
     'decks': ['id'],
     'deck_words': ['deck_id', 'word_id'],
     'grammar_progress': ['grammar_id'],
+    'test_attempts': ['id'],
+    'test_answers': ['id'],
+    'writing_progress': ['ch'],
+  };
+
+  /// Columns stored as 0/1 locally and as booleans in Supabase.
+  static const boolColumns = {
+    'decks': {'deleted'},
+    'deck_words': {'deleted'},
+    'test_answers': {'is_correct'},
+  };
+
+  /// Columns stored as JSON text locally and as jsonb in Supabase.
+  static const jsonColumns = {
+    'test_attempts': {'question_ids', 'answers', 'flagged'},
   };
 
   static Future<LocalDb> open({DatabaseFactory? factory, String? path}) async {
@@ -25,7 +41,16 @@ class LocalDb {
     final dbPath = path ?? p.join(await f.getDatabasesPath(), 'iemanihongo.db');
     final db = await f.openDatabase(
       dbPath,
-      options: OpenDatabaseOptions(version: 1, onCreate: (db, _) => _create(db)),
+      options: OpenDatabaseOptions(
+        version: 2,
+        onCreate: (db, _) async {
+          await _create(db);
+          await _createV2(db);
+        },
+        onUpgrade: (db, from, _) async {
+          if (from < 2) await _createV2(db);
+        },
+      ),
     );
     return LocalDb(db);
   }
@@ -53,7 +78,38 @@ class LocalDb {
     await b.commit(noResult: true);
   }
 
+  /// v2: JLPT practice tests and writing practice.
+  static Future<void> _createV2(Database db) async {
+    final b = db.batch();
+    b.execute('''CREATE TABLE test_attempts(
+      id TEXT PRIMARY KEY, test_id TEXT NOT NULL, title TEXT NOT NULL, level INTEGER NOT NULL,
+      mode TEXT NOT NULL, question_ids TEXT NOT NULL, answers TEXT NOT NULL, flagged TEXT NOT NULL,
+      current_index INTEGER NOT NULL, started_at INTEGER NOT NULL, finished_at INTEGER NOT NULL,
+      time_limit_sec INTEGER NOT NULL, elapsed_sec INTEGER NOT NULL, score INTEGER NOT NULL,
+      total INTEGER NOT NULL, updated_at INTEGER NOT NULL, dirty INTEGER NOT NULL DEFAULT 1)''');
+    b.execute('''CREATE TABLE test_answers(
+      id TEXT PRIMARY KEY, attempt_id TEXT NOT NULL, question_id TEXT NOT NULL, level INTEGER NOT NULL,
+      section TEXT NOT NULL, tag TEXT NOT NULL, chosen INTEGER NOT NULL, is_correct INTEGER NOT NULL,
+      answered_at INTEGER NOT NULL, updated_at INTEGER NOT NULL, dirty INTEGER NOT NULL DEFAULT 1)''');
+    b.execute('''CREATE TABLE writing_progress(
+      ch TEXT PRIMARY KEY, best_score INTEGER NOT NULL, last_score INTEGER NOT NULL,
+      attempts INTEGER NOT NULL, updated_at INTEGER NOT NULL, dirty INTEGER NOT NULL DEFAULT 1)''');
+    await b.commit(noResult: true);
+  }
+
   // ---- reads ----
+
+  Future<List<TestAttempt>> testAttempts() async => [
+    for (final r in await db.query('test_attempts')) TestAttempt.fromRow(r),
+  ];
+
+  Future<List<TestAnswer>> testAnswers() async => [
+    for (final r in await db.query('test_answers')) TestAnswer.fromRow(r),
+  ];
+
+  Future<Map<String, WritingScore>> writingProgress() async => {
+    for (final r in await db.query('writing_progress')) r['ch'] as String: WritingScore.fromRow(r),
+  };
 
   Future<List<CardState>> cards() async => [for (final r in await db.query('user_cards')) CardState.fromRow(r)];
 
@@ -70,9 +126,8 @@ class LocalDb {
   }
 
   Future<Map<String, int>> grammarDone() async => {
-        for (final r in await db.query('grammar_progress'))
-          r['grammar_id'] as String: (r['completed_at'] as num).toInt(),
-      };
+    for (final r in await db.query('grammar_progress')) r['grammar_id'] as String: (r['completed_at'] as num).toInt(),
+  };
 
   // ---- local writes (marked dirty) ----
 
@@ -85,17 +140,34 @@ class LocalDb {
   Future<void> saveDeck(Deck d) =>
       db.insert('decks', {...d.toRow(), 'dirty': 1}, conflictAlgorithm: ConflictAlgorithm.replace);
 
-  Future<void> setDeckWord(String deckId, String wordId, bool present, int now) => db.insert(
-        'deck_words',
-        {'deck_id': deckId, 'word_id': wordId, 'deleted': present ? 0 : 1, 'updated_at': now, 'dirty': 1},
-        conflictAlgorithm: ConflictAlgorithm.replace,
-      );
+  Future<void> setDeckWord(String deckId, String wordId, bool present, int now) => db.insert('deck_words', {
+    'deck_id': deckId,
+    'word_id': wordId,
+    'deleted': present ? 0 : 1,
+    'updated_at': now,
+    'dirty': 1,
+  }, conflictAlgorithm: ConflictAlgorithm.replace);
 
-  Future<void> saveGrammarDone(String id, int at) => db.insert(
-        'grammar_progress',
-        {'grammar_id': id, 'completed_at': at, 'updated_at': at, 'dirty': 1},
-        conflictAlgorithm: ConflictAlgorithm.replace,
-      );
+  Future<void> saveGrammarDone(String id, int at) => db.insert('grammar_progress', {
+    'grammar_id': id,
+    'completed_at': at,
+    'updated_at': at,
+    'dirty': 1,
+  }, conflictAlgorithm: ConflictAlgorithm.replace);
+
+  Future<void> saveAttempt(TestAttempt a) =>
+      db.insert('test_attempts', {...a.toRow(), 'dirty': 1}, conflictAlgorithm: ConflictAlgorithm.replace);
+
+  Future<void> saveAnswers(List<TestAnswer> answers) async {
+    final b = db.batch();
+    for (final a in answers) {
+      b.insert('test_answers', {...a.toRow(), 'dirty': 1}, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+    await b.commit(noResult: true);
+  }
+
+  Future<void> saveWriting(String ch, WritingScore s) =>
+      db.insert('writing_progress', {'ch': ch, ...s.toRow(), 'dirty': 1}, conflictAlgorithm: ConflictAlgorithm.replace);
 
   // ---- sync support ----
 

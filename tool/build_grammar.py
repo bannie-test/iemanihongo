@@ -17,5 +17,7 @@ for level, items in ((5, N5), (4, N4), (3, N3), (2, N2), (1, N1)):
                     'q': {'s': q, 'o': opts, 'a': ans, 'en': qen}})
 
 path = os.path.join(os.path.dirname(__file__), '..', 'assets', 'data', 'grammar.json')
+# Neither bundled font has the fullwidth tilde (U+FF5E); use the wave dash.
+out = json.loads(json.dumps(out, ensure_ascii=False).replace('～', '〜'))
 json.dump(out, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(len(out), 'lessons', {f'N{l}': sum(1 for g in out if g['l'] == l) for l in (5, 4, 3, 2, 1)})

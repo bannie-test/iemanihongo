@@ -127,12 +127,12 @@ class NotificationService {
   }
 
   Future<void> _schedule(int id, tz.TZDateTime at, String title, String body) => _plugin.zonedSchedule(
-        id: id,
-        scheduledDate: at,
-        notificationDetails: _details,
-        // Inexact alarms need no special permission; a few minutes' drift is fine.
-        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-        title: title,
-        body: body,
-      );
+    id: id,
+    scheduledDate: at,
+    notificationDetails: _details,
+    // Inexact alarms need no special permission; a few minutes' drift is fine.
+    androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+    title: title,
+    body: body,
+  );
 }

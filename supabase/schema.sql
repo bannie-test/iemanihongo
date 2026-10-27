@@ -86,10 +86,65 @@ create table if not exists public.grammar_progress (
   primary key (user_id, grammar_id)
 );
 
+-- JLPT practice tests: one row per sitting (saved while in progress so it
+-- can be resumed on any device) …
+create table if not exists public.test_attempts (
+  user_id        uuid not null default auth.uid() references auth.users on delete cascade,
+  id             text not null,
+  test_id        text not null,             -- n3-t1, n2-sec-bunpou, n1-weak …
+  title          text not null,
+  level          smallint not null,
+  mode           text not null,             -- exam | practice
+  question_ids   jsonb not null default '[]'::jsonb,
+  answers        jsonb not null default '{}'::jsonb,   -- {question_id: chosen option}
+  flagged        jsonb not null default '[]'::jsonb,
+  current_index  integer not null default 0,
+  started_at     bigint not null,
+  finished_at    bigint not null default 0, -- 0 = still in progress
+  time_limit_sec integer not null default 0,
+  elapsed_sec    integer not null default 0,
+  score          integer not null default 0,
+  total          integer not null default 0,
+  updated_at     bigint not null default 0,
+  synced_at      timestamptz not null default now(),
+  primary key (user_id, id)
+);
+
+-- … and every answered question, used to find weak areas.
+create table if not exists public.test_answers (
+  user_id     uuid not null default auth.uid() references auth.users on delete cascade,
+  id          text not null,
+  attempt_id  text not null,
+  question_id text not null,
+  level       smallint not null,
+  section     text not null,
+  tag         text not null,
+  chosen      smallint not null,
+  is_correct  boolean not null,
+  answered_at bigint not null,
+  updated_at  bigint not null default 0,
+  synced_at   timestamptz not null default now(),
+  primary key (user_id, id)
+);
+create index if not exists test_answers_question_idx on public.test_answers (user_id, question_id);
+
+-- Handwriting practice scores per character
+create table if not exists public.writing_progress (
+  user_id    uuid not null default auth.uid() references auth.users on delete cascade,
+  ch         text not null,
+  best_score smallint not null default 0,
+  last_score smallint not null default 0,
+  attempts   integer not null default 0,
+  updated_at bigint not null default 0,
+  synced_at  timestamptz not null default now(),
+  primary key (user_id, ch)
+);
+
 do $$
 declare t text;
 begin
-  foreach t in array array['profiles','user_cards','daily_stats','decks','deck_words','grammar_progress'] loop
+  foreach t in array array['profiles','user_cards','daily_stats','decks','deck_words','grammar_progress',
+                            'test_attempts','test_answers','writing_progress'] loop
     execute format('alter table public.%I enable row level security', t);
     execute format('drop policy if exists "own rows" on public.%I', t);
     execute format('create policy "own rows" on public.%I for all to authenticated

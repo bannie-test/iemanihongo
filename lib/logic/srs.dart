@@ -48,42 +48,41 @@ class CardState {
     int? reps,
     int? lapses,
     int? updatedAt,
-  }) =>
-      CardState(
-        wordId: wordId,
-        phase: phase ?? this.phase,
-        step: step ?? this.step,
-        ease: ease ?? this.ease,
-        interval: interval ?? this.interval,
-        due: due ?? this.due,
-        reps: reps ?? this.reps,
-        lapses: lapses ?? this.lapses,
-        updatedAt: updatedAt ?? this.updatedAt,
-      );
+  }) => CardState(
+    wordId: wordId,
+    phase: phase ?? this.phase,
+    step: step ?? this.step,
+    ease: ease ?? this.ease,
+    interval: interval ?? this.interval,
+    due: due ?? this.due,
+    reps: reps ?? this.reps,
+    lapses: lapses ?? this.lapses,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
 
   Map<String, Object?> toRow() => {
-        'word_id': wordId,
-        'state': phase.index,
-        'step': step,
-        'ease': ease,
-        'interval_days': interval,
-        'due': due,
-        'reps': reps,
-        'lapses': lapses,
-        'updated_at': updatedAt,
-      };
+    'word_id': wordId,
+    'state': phase.index,
+    'step': step,
+    'ease': ease,
+    'interval_days': interval,
+    'due': due,
+    'reps': reps,
+    'lapses': lapses,
+    'updated_at': updatedAt,
+  };
 
   factory CardState.fromRow(Map<String, Object?> r) => CardState(
-        wordId: r['word_id'] as String,
-        phase: CardPhase.values[(r['state'] as num).toInt().clamp(0, 3)],
-        step: (r['step'] as num).toInt(),
-        ease: (r['ease'] as num).toDouble(),
-        interval: (r['interval_days'] as num).toDouble(),
-        due: (r['due'] as num).toInt(),
-        reps: (r['reps'] as num).toInt(),
-        lapses: (r['lapses'] as num).toInt(),
-        updatedAt: (r['updated_at'] as num).toInt(),
-      );
+    wordId: r['word_id'] as String,
+    phase: CardPhase.values[(r['state'] as num).toInt().clamp(0, 3)],
+    step: (r['step'] as num).toInt(),
+    ease: (r['ease'] as num).toDouble(),
+    interval: (r['interval_days'] as num).toDouble(),
+    due: (r['due'] as num).toInt(),
+    reps: (r['reps'] as num).toInt(),
+    lapses: (r['lapses'] as num).toInt(),
+    updatedAt: (r['updated_at'] as num).toInt(),
+  );
 }
 
 class Srs {
@@ -116,7 +115,11 @@ class Srs {
       case Rating.good:
         final nextStep = c.phase == CardPhase.fresh ? 1 : c.step + 1;
         if (nextStep < learningSteps.length) {
-          return c.copyWith(phase: CardPhase.learning, step: nextStep, due: now + learningSteps[nextStep].inMilliseconds);
+          return c.copyWith(
+            phase: CardPhase.learning,
+            step: nextStep,
+            due: now + learningSteps[nextStep].inMilliseconds,
+          );
         }
         return _graduate(c, graduatingDays, now);
       case Rating.easy:
@@ -166,8 +169,7 @@ class Srs {
   }
 
   /// Human-friendly label of the interval a rating would produce.
-  static String previewLabel(CardState c, Rating r, int nowMs) =>
-      formatInterval(schedule(c, r, nowMs).due - nowMs);
+  static String previewLabel(CardState c, Rating r, int nowMs) => formatInterval(schedule(c, r, nowMs).due - nowMs);
 
   static String formatInterval(int ms) {
     final m = ms / 60000;

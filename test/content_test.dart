@@ -14,6 +14,7 @@ void main() {
       jsonDecode(File('assets/data/vocab.json').readAsStringSync()) as List,
       jsonDecode(File('assets/data/kanji.json').readAsStringSync()) as Map<String, dynamic>,
       jsonDecode(File('assets/data/grammar.json').readAsStringSync()) as List,
+      jsonDecode(File('assets/data/jlpt_tests.json').readAsStringSync()) as List,
     );
   });
 
