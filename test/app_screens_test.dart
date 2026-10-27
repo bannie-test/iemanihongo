@@ -173,7 +173,10 @@ void main() {
 
       // Let debounced timers finish before the test ends.
       await tester.pump(const Duration(seconds: 5));
-      await tester.runAsync(() => state.db.db.close());
+      await tester.runAsync(() async {
+        await state.flushWrites();
+        await state.db.db.close();
+      });
     });
   }
 }

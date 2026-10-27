@@ -51,6 +51,16 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   StreakInfo streak = StreakInfo.empty;
   StreamSubscription<AuthState>? _authSub;
   Timer? _reminderDebounce;
+  final Set<Future<void>> _pendingWrites = {};
+
+  /// Local writes run in the background so the UI never waits on disk.
+  void _write(Future<void> f) {
+    _pendingWrites.add(f);
+    f.whenComplete(() => _pendingWrites.remove(f));
+  }
+
+  /// Waits for queued local writes (before sync, sign-out and in tests).
+  Future<void> flushWrites() => Future.wait(List.of(_pendingWrites));
 
   // ---------------------------------------------------------------- setup
 
@@ -173,6 +183,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   /// Uploads pending changes, then removes this account's data from the device.
   Future<void> signOut() async {
+    await flushWrites();
     try {
       await sync?.sync();
     } catch (_) {}
@@ -222,7 +233,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   void _saveToday() {
     final row = _todayRow()..updatedAt = DateTime.now().millisecondsSinceEpoch;
-    db.saveStat(row);
+    _write(db.saveStat(row));
   }
 
   /// Per-day totals across all devices.
@@ -303,7 +314,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     final before = cardFor(wordId);
     final after = Srs.schedule(before, rating, nowMs);
     cards[wordId] = after;
-    db.saveCard(after);
+    _write(db.saveCard(after));
     final t = _todayRow();
     t.reviews++;
     if (rating != Rating.again) t.correct++;
@@ -321,7 +332,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     if (!correct && c != null && c.isLearned && c.due > nowMs) {
       final updated = c.copyWith(due: nowMs, updatedAt: nowMs);
       cards[wordId] = updated;
-      db.saveCard(updated);
+      _write(db.saveCard(updated));
     }
     _afterProgress();
   }
@@ -356,7 +367,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     if (grammarDone.containsKey(id)) return;
     final now = nowMs;
     grammarDone[id] = now;
-    db.saveGrammarDone(id, now);
+    _write(db.saveGrammarDone(id, now));
     notifyListeners();
     sync?.schedule();
   }
@@ -382,11 +393,11 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     if (deckId == Deck.starredId && !decks.containsKey(deckId)) {
       final d = Deck(id: deckId, name: 'Starred', updatedAt: nowMs);
       decks[deckId] = d;
-      db.saveDeck(d);
+      _write(db.saveDeck(d));
     }
     final set = deckWords.putIfAbsent(deckId, () => {});
     present ? set.add(wordId) : set.remove(wordId);
-    db.setDeckWord(deckId, wordId, present, nowMs);
+    _write(db.setDeckWord(deckId, wordId, present, nowMs));
     notifyListeners();
     sync?.schedule();
   }
@@ -396,7 +407,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   Deck createDeck(String name) {
     final d = Deck(id: const Uuid().v4(), name: name.trim(), updatedAt: nowMs);
     decks[d.id] = d;
-    db.saveDeck(d);
+    _write(db.saveDeck(d));
     notifyListeners();
     sync?.schedule();
     return d;
@@ -406,7 +417,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     d
       ..name = name.trim()
       ..updatedAt = nowMs;
-    db.saveDeck(d);
+    _write(db.saveDeck(d));
     notifyListeners();
     sync?.schedule();
   }
@@ -415,7 +426,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     d
       ..deleted = true
       ..updatedAt = nowMs;
-    db.saveDeck(d);
+    _write(db.saveDeck(d));
     notifyListeners();
     sync?.schedule();
   }
