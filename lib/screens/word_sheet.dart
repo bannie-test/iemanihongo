@@ -62,7 +62,7 @@ class _WordSheet extends StatelessWidget {
                 children: [
                   if (word.showReading)
                     Text(word.reading, style: TextStyle(color: c.muted, fontSize: 16, letterSpacing: 1.5)),
-                  Text(word.word, style: const TextStyle(fontSize: 44, fontWeight: FontWeight.w700, height: 1.2)),
+                  Text(word.word, style: AppTheme.jp(44, height: 1.2)),
                 ],
               ),
             ),
@@ -196,10 +196,7 @@ class KanjiPanel extends StatelessWidget {
                 height: 64,
                 decoration: BoxDecoration(color: c.accentSoft, borderRadius: BorderRadius.circular(18)),
                 child: Center(
-                  child: Text(
-                    info.char,
-                    style: TextStyle(fontSize: 38, color: c.accent, fontWeight: FontWeight.w700),
-                  ),
+                  child: Text(info.char, style: AppTheme.jp(38, color: c.clay)),
                 ),
               ),
               const SizedBox(width: 14),
@@ -233,7 +230,7 @@ class KanjiPanel extends StatelessWidget {
               ListTile(
                 dense: true,
                 contentPadding: EdgeInsets.zero,
-                title: Text(w.word, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
+                title: Text(w.word, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600)),
                 subtitle: Text('${w.showReading ? '${w.reading} · ' : ''}${w.shortMeaning}'),
                 trailing: Tag('N${w.level}'),
                 onTap: () => showWordSheet(context, w),

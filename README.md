@@ -2,26 +2,29 @@
 
 A Flutter app for learning Japanese from JLPT N5 to N1, for Android and iOS.
 
-- **Flashcards with spaced repetition.** Again / Hard / Good / Easy ratings schedule each word (SM-2 with learning steps). You set how many new words to learn per day.
-- **8,034 vocabulary words** across N5–N1. Each one has audio, its reading and meaning, and a breakdown of its kanji (meanings, on/kun readings, stroke count, other words that use it).
+- **Flashcards with spaced repetition.** Reveal the card, then tap Next; the next review is scheduled automatically (an SM-2 variant). Words you miss in quizzes and tests come back sooner. You set how many new words to learn per day.
+- **8,144 vocabulary words** across N5–N1 (Waller's JLPT lists, cross-checked against JMdict). Each one has audio, its reading and meaning, and a breakdown of its kanji (meanings, on/kun readings, stroke count, other words that use it).
 - **Four quiz modes:** meaning, reverse (English → Japanese), reading (kanji → kana), and listening. If you miss a word you have already learned, it comes back for review.
-- **Daily grammar lessons.** 99 lessons from N5 to N1, each with the pattern's formation, an explanation, example sentences with audio, and a quick-check question.
+- **Daily grammar lessons.** 167 lessons from N5 to N1, each with a textbook reference (Genki, Minna no Nihongo, Shin Kanzen Master, Sō Matome) and a tip, each with the pattern's formation, an explanation, example sentences with audio, and a quick-check question.
 - **Streaks.** A day counts when you reach your daily goal. Every 7-day streak earns a freeze (you can hold up to 2), which is used automatically on a day you miss.
 - **Progress dashboard.** Words learned, accuracy, items studied per day, JLPT coverage, and a study calendar.
 - **Starred words and custom decks.** You can study or quiz any deck.
 - **Reminders.** A daily reminder at a time you choose, plus a 9 PM nudge when your streak is at risk. Both are skipped once you've reached the day's goal, and both work offline.
 - **Works offline.** All content is bundled with the app and progress is saved on the device first. When you're online it syncs to Supabase, and changes from your other devices arrive in real time.
-- **JLPT N3 / N2 / N1 practice tests (Luyện thi JLPT).** Two timed mock tests per level in the 文字・語彙・文法 format: kanji reading, kanji writing, vocabulary in context, synonyms, grammar, and sentence building (★). Every question has a Vietnamese translation and an explanation of why the answer is right and why each other option is wrong.
+- **JLPT N5–N1 practice tests (Luyện thi JLPT).** 13 timed mock tests (390 questions; three each for N3–N1, two each for N5/N4) in the 文字・語彙・文法 format: kanji reading, kanji writing, vocabulary in context, synonyms, grammar, and sentence building (★). Every question has a Vietnamese translation and an explanation of why the answer is right and why each other option is wrong.
   - Countdown timer, flag questions, a question grid, and pause/resume. Progress and the remaining time are saved, so you can continue a test on another device.
   - Practice by question type (untimed), with a **Show answers** switch for instant feedback.
   - **Review mode** with a show/hide-answers switch. You can also reveal each question on its own, which lets you re-test yourself.
   - **Weak-area tracking:** accuracy per question type, the grammar points and kanji traps you miss most, and one tap to practise your mistakes.
   - Attempts and answers are stored in your Supabase account, so this feature needs you to sign in. While offline, changes queue on the device and upload when you reconnect.
+- **Listening practice (聴解).** 30 JLPT-style dialogues across N5–N1 (task, point, summary, utterance and quick-response questions), read aloud with two voices, with a show/hide transcript, Vietnamese explanations and tips. There is also sentence listening for every level.
 - **Writing practice** for hiragana, katakana, and N5–N1 kanji (2,141 characters). Trace over faint dashed stroke guides, watch an animation of the stroke order, or hide the guide and write from memory. Your writing is scored on shape, stroke count, stroke order, and stroke direction, and the best score per character syncs to Supabase.
-- **Light and dark themes** in the Sakura style: Nunito for Latin/Vietnamese text, Zen Maru Gothic for Japanese, and Lucide icons.
+- **Botanical design** in light and dark: cream paper, forest-green ink, sage panels and clay accents, with EB Garamond headings, Be Vietnam Pro text (full Vietnamese), Zen Old Mincho / Zen Kaku Gothic New for Japanese, and Lucide icons.
 - **Accounts.** Sign in with email and password, or continue as a guest and link an account later to sync.
 
-## 1. One-time Supabase setup
+## 1. One-time Supabase setup (required for sync)
+
+If the app shows **"Could not find the table 'public.profiles' in the schema cache"**, this step has not been done yet. The app also shows a **Set up database** button that walks you through it and copies the SQL for you.
 
 1. Open your Supabase project → **SQL Editor** → **New query**.
 2. Paste the contents of [`supabase/schema.sql`](supabase/schema.sql) and click **Run**. It is safe to run again after updates; for example, you need to re-run it once to add the JLPT test and writing tables.

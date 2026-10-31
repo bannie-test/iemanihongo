@@ -66,4 +66,12 @@ void main() {
     expect(Srs.formatInterval(4 * day), '4d');
     expect(Srs.formatInterval(90 * day), '3mo');
   });
+
+  test('advance: one tap graduates new cards to tomorrow and grows reviews', () {
+    final a = Srs.advance(fresh, now);
+    expect(a.phase, CardPhase.review);
+    expect(a.due, now + day);
+    final b = Srs.advance(a, now);
+    expect(b.interval, greaterThan(a.interval));
+  });
 }

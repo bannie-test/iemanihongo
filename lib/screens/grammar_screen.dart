@@ -33,7 +33,7 @@ class GrammarScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Today's lesson · Day ${state.grammarDayNumber}",
-                          style: TextStyle(color: c.accent, fontWeight: FontWeight.w700),
+                          style: TextStyle(color: c.accent, fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(height: 6),
                         Text(today.title, style: context.text.headlineSmall),
@@ -86,7 +86,7 @@ class _LevelSection extends StatelessWidget {
                     state.grammarDone.containsKey(g.id) ? AppIcons.checkCircle : AppIcons.circle,
                     color: state.grammarDone.containsKey(g.id) ? c.good : c.border,
                   ),
-                  title: Text(g.title, style: const TextStyle(fontWeight: FontWeight.w700)),
+                  title: Text(g.title, style: const TextStyle(fontWeight: FontWeight.w600)),
                   subtitle: Text(g.meaning),
                 ),
             ],
@@ -152,11 +152,23 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
               child: Text(
                 g.formation,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: c.accent, fontWeight: FontWeight.w700, fontSize: 16),
+                style: TextStyle(color: c.accent, fontWeight: FontWeight.w600, fontSize: 16),
               ),
             ),
             const SizedBox(height: 14),
             Text(g.explanation, style: context.text.bodyMedium),
+            if (g.tip != null) ...[const SizedBox(height: 12), TipBox(g.tip!, label: 'Tip')],
+            if (g.reference != null) ...[
+              const SizedBox(height: 10),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(AppIcons.grammar, size: 15, color: c.muted),
+                  const SizedBox(width: 6),
+                  Expanded(child: Text('Reference: ${g.reference}', style: context.text.bodySmall)),
+                ],
+              ),
+            ],
             const SizedBox(height: 16),
             Text('Examples', style: context.text.titleMedium),
             for (final x in g.examples) ...[
@@ -214,7 +226,7 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
                     const SizedBox(height: 10),
                     Text(
                       correct ? 'Correct! よくできました。' : 'Not quite. The answer is ${g.quiz.options[g.quiz.answer]}.',
-                      style: TextStyle(color: correct ? c.good : c.bad, fontWeight: FontWeight.w700),
+                      style: TextStyle(color: correct ? c.good : c.bad, fontWeight: FontWeight.w600),
                     ),
                   ],
                 ],

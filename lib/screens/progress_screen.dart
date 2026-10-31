@@ -159,7 +159,7 @@ class _LevelRow extends StatelessWidget {
         children: [
           SizedBox(
             width: 30,
-            child: Text('N$level', style: const TextStyle(fontWeight: FontWeight.w700)),
+            child: Text('N$level', style: const TextStyle(fontWeight: FontWeight.w600)),
           ),
           Expanded(child: Bar(pct)),
           SizedBox(
@@ -282,7 +282,7 @@ class _Heatmap extends StatelessWidget {
     Color colorFor(DateTime d) {
       if (d.isAfter(today)) return Colors.transparent;
       final key = dayKey(d);
-      if (frozen.contains(key)) return Colors.lightBlue.withValues(alpha: 0.45);
+      if (frozen.contains(key)) return c.fieldLine.withValues(alpha: 0.55);
       final s = days[key];
       if (s == null || s.studied == 0) return c.heat[0];
       final ratio = s.goal == 0 ? 1 : s.studied / s.goal;
@@ -340,7 +340,7 @@ class _Heatmap extends StatelessWidget {
             Container(
               width: 10,
               height: 10,
-              decoration: BoxDecoration(color: Colors.lightBlue.withValues(alpha: 0.45), shape: BoxShape.circle),
+              decoration: BoxDecoration(color: c.fieldLine.withValues(alpha: 0.55), shape: BoxShape.circle),
             ),
             Text(' freeze', style: context.text.bodySmall),
           ],

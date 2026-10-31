@@ -105,7 +105,7 @@ class _LevelsTab extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'N$l',
-                      style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18, color: context.colors.accent),
+                      style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18, color: context.colors.accent),
                     ),
                   ),
                 ),
@@ -386,7 +386,7 @@ class WordList extends StatelessWidget {
             ? c.good
             : card.phase == CardPhase.fresh
             ? c.surface2
-            : Colors.amber;
+            : c.clay;
         return ListTile(
           onTap: () => showWordSheet(context, w),
           leading: Container(
@@ -395,7 +395,7 @@ class WordList extends StatelessWidget {
             decoration: BoxDecoration(color: dot, shape: BoxShape.circle),
           ),
           minLeadingWidth: 10,
-          title: Text(w.word, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+          title: Text(w.word, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
           subtitle: Text(
             '${w.showReading ? '${w.reading} · ' : ''}${w.shortMeaning}',
             maxLines: 1,

@@ -13,6 +13,7 @@ import 'services/notification_service.dart';
 import 'services/tts_service.dart';
 import 'state/app_state.dart';
 import 'theme.dart';
+import 'widgets/botanical.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,6 +61,7 @@ class IemanihongoApp extends StatelessWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: state.settings.themeMode,
+      builder: (context, child) => PaperGrain(child: child ?? const SizedBox.shrink()),
       home: home,
     );
   }

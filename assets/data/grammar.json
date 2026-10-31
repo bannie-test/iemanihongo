@@ -25,7 +25,9 @@
    ],
    "a": 0,
    "en": "Mr. Tanaka is a doctor."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 1",
+  "tip": "は is written with ha but read \"wa\" as a particle."
  },
  {
   "id": "n5-ka",
@@ -53,7 +55,9 @@
    ],
    "a": 0,
    "en": "Is this a pen?"
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 1",
+  "tip": "Questions keep the same word order as statements – just add か."
  },
  {
   "id": "n5-no",
@@ -81,7 +85,9 @@
    ],
    "a": 0,
    "en": "This is my car."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 1",
+  "tip": "The owner or category comes first: わたしの本 (my book), 日本語の本 (a Japanese book)."
  },
  {
   "id": "n5-mo",
@@ -109,7 +115,9 @@
    ],
    "a": 0,
    "en": "Ms. Yamada and I are both Japanese."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 2",
+  "tip": "も replaces は/が/を but follows other particles: 東京にも行きました."
  },
  {
   "id": "n5-wo",
@@ -137,7 +145,9 @@
    ],
    "a": 0,
    "en": "I drink coffee every morning."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 3",
+  "tip": "を is read \"o\". Movement verbs use を for the space moved through: 公園を散歩する."
  },
  {
   "id": "n5-ni-place",
@@ -165,7 +175,9 @@
    ],
    "a": 0,
    "en": "Tomorrow I'm going to Kyoto."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 3",
+  "tip": "Only movement verbs (行く, 来る, 帰る) take へ; use に for existence (あります/います)."
  },
  {
   "id": "n5-de-place",
@@ -193,7 +205,9 @@
    ],
    "a": 0,
    "en": "I eat sushi with chopsticks."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 3",
+  "tip": "Place of action → で (図書館で勉強する); place of existence → に (図書館にいる)."
  },
  {
   "id": "n5-ni-time",
@@ -221,7 +235,9 @@
    ],
    "a": 0,
    "en": "I go to bed at 9."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 3",
+  "tip": "No に after 今日, 明日, 毎日, 来週 – these are relative times."
  },
  {
   "id": "n5-ga-arimasu",
@@ -249,7 +265,9 @@
    ],
    "a": 0,
    "en": "There is a cat in the garden."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 4",
+  "tip": "Plants use あります, even though they are alive."
  },
  {
   "id": "n5-masu",
@@ -277,7 +295,9 @@
    ],
    "a": 0,
    "en": "I watched a movie yesterday."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lessons 3–4",
+  "tip": "ます-form is the safe default with people you don't know well."
  },
  {
   "id": "n5-mashou",
@@ -305,7 +325,9 @@
    ],
    "a": 0,
    "en": "Shall we go home together?"
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 3",
+  "tip": "To accept an invitation: ええ、〜ましょう. To decline: ちょっと…"
  },
  {
   "id": "n5-tai",
@@ -333,7 +355,9 @@
    ],
    "a": 0,
    "en": "I want to drink cold water."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 11",
+  "tip": "For other people use 〜たがっている: 弟は日本へ行きたがっている."
  },
  {
   "id": "n5-adj-i",
@@ -361,7 +385,9 @@
    ],
    "a": 0,
    "en": "This apple isn't very tasty."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 5",
+  "tip": "きれい and きらい end in い but are な-adjectives – a classic trap."
  },
  {
   "id": "n5-adj-na",
@@ -389,7 +415,9 @@
    ],
    "a": 0,
    "en": "This is a famous park."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 5",
+  "tip": "な appears only before nouns: 静かな町, but 町は静かです."
  },
  {
   "id": "n5-te-kudasai",
@@ -417,7 +445,9 @@
    ],
    "a": 0,
    "en": "Please wait a moment."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 6",
+  "tip": "Softer: 〜てくださいませんか / 〜ていただけませんか."
  },
  {
   "id": "n5-te-imasu",
@@ -445,7 +475,9 @@
    ],
    "a": 0,
    "en": "My little brother is watching TV now."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 7",
+  "tip": "Change-of-state verbs (結婚する, 知る, 住む) use ている for a lasting state."
  },
  {
   "id": "n5-te-mo-ii",
@@ -473,7 +505,9 @@
    ],
    "a": 0,
    "en": "May I use the toilet?"
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 6",
+  "tip": "Answer: はい、いいですよ / すみません、ちょっと…."
  },
  {
   "id": "n5-te-wa-ikenai",
@@ -501,7 +535,9 @@
    ],
    "a": 0,
    "en": "You must not take photos in the museum."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 6",
+  "tip": "Casual speech shortens ては to ちゃ: 入っちゃだめ."
  },
  {
   "id": "n5-kara-made",
@@ -529,7 +565,9 @@
    ],
    "a": 0,
    "en": "The bank is open until 3."
-  }
+  },
+  "ref": "Minna no Nihongo Shokyū I (3A Network) – Bài 4",
+  "tip": "Times use から/まで without に; まで + に (までに) means \"by\" a deadline."
  },
  {
   "id": "n5-ta-koto",
@@ -557,7 +595,9 @@
    ],
    "a": 0,
    "en": "I have been to Japan."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 11",
+  "tip": "Uses the た-form even though it is about general experience."
  },
  {
   "id": "n5-tari",
@@ -581,7 +621,9 @@
    ],
    "a": 0,
    "en": "On Sunday I clean, go shopping, and so on."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 11",
+  "tip": "Always finish the pattern with する: 〜たり〜たりします."
  },
  {
   "id": "n5-mae-ato",
@@ -609,7 +651,9 @@
    ],
    "a": 0,
    "en": "After eating, I'll take a walk."
-  }
+  },
+  "ref": "Minna no Nihongo Shokyū I (3A Network) – Bài 18 (まえに); Minna no Nihongo Shokyū II (3A Network) – Bài 34 (あとで)",
+  "tip": "まえに takes the dictionary form even for past events."
  },
  {
   "id": "n5-hoshii",
@@ -637,7 +681,9 @@
    ],
    "a": 0,
    "en": "I want a cat."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 14",
+  "tip": "For things others want: 〜をほしがっている."
  },
  {
   "id": "n5-kara-reason",
@@ -665,7 +711,9 @@
    ],
    "a": 0,
    "en": "Because it's raining, I'll stay home."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 6",
+  "tip": "から can sound like an excuse; ので (N4) is softer and more polite."
  },
  {
   "id": "n5-yori",
@@ -693,7 +741,309 @@
    ],
    "a": 0,
    "en": "I like winter more than summer."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 10",
+  "tip": "The best of three or more: 〜の中で〜がいちばん…."
+ },
+ {
+  "id": "n5-kore-sore",
+  "l": 5,
+  "t": "これ / それ / あれ / どれ",
+  "m": "this / that / that over there / which",
+  "f": "これ・それ・あれ ＋ は … ／ どれ ＋ が …",
+  "e": "これ is near the speaker, それ near the listener, あれ far from both. どれ asks 'which one' among three or more. Before a noun use この・その・あの・どの.",
+  "x": [
+   {
+    "jp": "**これ**はわたしのかさです。",
+    "en": "This is my umbrella."
+   },
+   {
+    "jp": "**どれ**があなたのかばんですか。",
+    "en": "Which one is your bag?"
+   }
+  ],
+  "q": {
+   "s": "＿＿本はだれのですか。",
+   "o": [
+    "その",
+    "それ",
+    "そこ"
+   ],
+   "a": 0,
+   "en": "Whose is that book?"
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 2",
+  "tip": "Question words like どれ and だれ take が, never は: どれがいいですか。"
+ },
+ {
+  "id": "n5-koko",
+  "l": 5,
+  "t": "ここ / そこ / あそこ / どこ",
+  "m": "here / there / over there / where",
+  "f": "ここ・そこ・あそこ ＋ は … ／ どこ ＋ ですか",
+  "e": "Place words follow the same こ・そ・あ・ど pattern. Polite versions: こちら・そちら・あちら・どちら.",
+  "x": [
+   {
+    "jp": "トイレは**どこ**ですか。",
+    "en": "Where is the toilet?"
+   },
+   {
+    "jp": "**あそこ**に銀行があります。",
+    "en": "There is a bank over there."
+   }
+  ],
+  "q": {
+   "s": "すみません、駅は＿＿ですか。",
+   "o": [
+    "どこ",
+    "どれ",
+    "だれ"
+   ],
+   "a": 0,
+   "en": "Excuse me, where is the station?"
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 2",
+  "tip": "In shops and offices you will hear the polite こちら・どちら instead of ここ・どこ."
+ },
+ {
+  "id": "n5-suki",
+  "l": 5,
+  "t": "〜が好き / きらい / 上手 / 下手",
+  "m": "like / dislike / be good at / be bad at",
+  "f": "N ＋ が ＋ 好きです・きらいです・上手です・下手です",
+  "e": "These are な-adjectives, so the thing liked is marked with が, not を. 上手 is not used about yourself; say 得意 instead.",
+  "x": [
+   {
+    "jp": "わたしは音楽**が好き**です。",
+    "en": "I like music."
+   },
+   {
+    "jp": "兄は料理**が上手**です。",
+    "en": "My older brother is good at cooking."
+   }
+  ],
+  "q": {
+   "s": "わたしはさかな＿＿きらいです。",
+   "o": [
+    "が",
+    "を",
+    "に"
+   ],
+   "a": 0,
+   "en": "I dislike fish."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 5",
+  "tip": "Common mistake: ×音楽を好きです → ○音楽が好きです."
+ },
+ {
+  "id": "n5-te-link",
+  "l": 5,
+  "t": "〜て (and, then)",
+  "m": "Linking actions and descriptions",
+  "f": "V て-form, V2 …   ·   Adj い → くて   ·   Adj な / N → で",
+  "e": "The て-form joins actions in time order ('do A and then B') and links descriptions ('cheap and tasty').",
+  "x": [
+   {
+    "jp": "朝ごはんを食べ**て**、学校へ行きます。",
+    "en": "I eat breakfast and go to school."
+   },
+   {
+    "jp": "この店は安**くて**おいしいです。",
+    "en": "This shop is cheap and tasty."
+   }
+  ],
+  "q": {
+   "s": "このへやはしずか＿＿きれいです。",
+   "o": [
+    "で",
+    "くて",
+    "て"
+   ],
+   "a": 0,
+   "en": "This room is quiet and clean."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 7",
+  "tip": "い-adjectives: たかい → たかくて; いい is irregular: よくて."
+ },
+ {
+  "id": "n5-te-kara",
+  "l": 5,
+  "t": "〜てから",
+  "m": "after doing …",
+  "f": "V て-form ＋ から",
+  "e": "Shows that one action is finished before the next begins. Stronger time order than plain て.",
+  "x": [
+   {
+    "jp": "宿題をし**てから**、テレビを見ます。",
+    "en": "I'll watch TV after doing my homework."
+   },
+   {
+    "jp": "手を洗っ**てから**食べてください。",
+    "en": "Please wash your hands before eating."
+   }
+  ],
+  "q": {
+   "s": "おふろに入って＿＿、ねます。",
+   "o": [
+    "から",
+    "まで",
+    "ので"
+   ],
+   "a": 0,
+   "en": "I go to bed after taking a bath."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 17",
+  "tip": "Vてから uses the て-form; Vたあとで uses the た-form. Both mean 'after'."
+ },
+ {
+  "id": "n5-naide",
+  "l": 5,
+  "t": "〜ないでください",
+  "m": "Please don't …",
+  "f": "V ない-form ＋ でください",
+  "e": "A polite request not to do something. Casual: 〜ないで.",
+  "x": [
+   {
+    "jp": "ここで写真を撮ら**ないでください**。",
+    "en": "Please don't take photos here."
+   },
+   {
+    "jp": "心配し**ないで**。",
+    "en": "Don't worry."
+   }
+  ],
+  "q": {
+   "s": "じゅぎょう中にスマホを使わ＿＿ください。",
+   "o": [
+    "ないで",
+    "なくて",
+    "ずに"
+   ],
+   "a": 0,
+   "en": "Please don't use your phone during class."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 8",
+  "tip": "Make the ない-form first (使う → 使わない), then add でください."
+ },
+ {
+  "id": "n5-to-omou",
+  "l": 5,
+  "t": "〜と思います",
+  "m": "I think that …",
+  "f": "Plain form ＋ と思います (N / な-adj ＋ だと思います)",
+  "e": "Gives your opinion or guess softly. The clause before と is in plain form.",
+  "x": [
+   {
+    "jp": "あしたは雨が降る**と思います**。",
+    "en": "I think it will rain tomorrow."
+   },
+   {
+    "jp": "この本はおもしろい**と思います**。",
+    "en": "I think this book is interesting."
+   }
+  ],
+  "q": {
+   "s": "あの人は先生だ＿＿思います。",
+   "o": [
+    "と",
+    "を",
+    "が"
+   ],
+   "a": 0,
+   "en": "I think that person is a teacher."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 8",
+  "tip": "Don't forget だ after nouns and な-adjectives: 先生だと思います, 静かだと思います."
+ },
+ {
+  "id": "n5-mou-mada",
+  "l": 5,
+  "t": "もう / まだ",
+  "m": "already / not yet, still",
+  "f": "もう ＋ Vました   ·   まだ ＋ Vていません",
+  "e": "もう〜ました: already did. Answer 'not yet' with まだです or まだ〜ていません (not ×まだ〜ませんでした).",
+  "x": [
+   {
+    "jp": "**もう**昼ごはんを食べましたか。",
+    "en": "Have you eaten lunch already?"
+   },
+   {
+    "jp": "いいえ、**まだ**食べていません。",
+    "en": "No, I haven't eaten yet."
+   }
+  ],
+  "q": {
+   "s": "宿題はもうしましたか。―いいえ、まだ＿＿。",
+   "o": [
+    "していません",
+    "しませんでした",
+    "しました"
+   ],
+   "a": 0,
+   "en": "Have you done your homework? – No, not yet."
+  },
+  "ref": "Minna no Nihongo Shokyū I (3A Network) – Bài 7 (もう), Bài 31 (まだ〜ていません)",
+  "tip": "まだ〜ていません describes a state that is still continuing, so it uses ている."
+ },
+ {
+  "id": "n5-deshou",
+  "l": 5,
+  "t": "〜でしょう",
+  "m": "probably … / … right?",
+  "f": "Plain form ＋ でしょう (N / な-adj: no だ)",
+  "e": "A polite guess about the future or uncertain facts. With rising intonation it checks agreement.",
+  "x": [
+   {
+    "jp": "明日は晴れる**でしょう**。",
+    "en": "It will probably be sunny tomorrow."
+   },
+   {
+    "jp": "これ、おいしい**でしょう**？",
+    "en": "This is tasty, isn't it?"
+   }
+  ],
+  "q": {
+   "s": "あの人はたぶん学生＿＿。",
+   "o": [
+    "でしょう",
+    "だでしょう",
+    "ですでしょう"
+   ],
+   "a": 0,
+   "en": "That person is probably a student."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 12",
+  "tip": "Weather forecasts use でしょう a lot. Casual form: だろう."
+ },
+ {
+  "id": "n5-nakereba",
+  "l": 5,
+  "t": "〜なければなりません",
+  "m": "must / have to",
+  "f": "V ない-form (drop い) ＋ ければなりません・いけません",
+  "e": "Expresses obligation. Casual speech shortens it to 〜なきゃ or 〜なくちゃ.",
+  "x": [
+   {
+    "jp": "毎日薬を飲ま**なければなりません**。",
+    "en": "I have to take medicine every day."
+   },
+   {
+    "jp": "もう帰ら**なくちゃ**。",
+    "en": "I have to go home now."
+   }
+  ],
+  "q": {
+   "s": "あしたは早く起き＿＿なりません。",
+   "o": [
+    "なければ",
+    "なくても",
+    "ないで"
+   ],
+   "a": 0,
+   "en": "I must get up early tomorrow."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 12",
+  "tip": "なくてもいいです is the opposite: 'you don't have to'."
  },
  {
   "id": "n4-potential",
@@ -721,7 +1071,9 @@
    ],
    "a": 0,
    "en": "Can you play the piano?"
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 13",
+  "tip": "Casual speech often drops ら: 食べれる (ら抜き) – avoid it on the JLPT."
  },
  {
   "id": "n4-tsumori",
@@ -749,7 +1101,9 @@
    ],
    "a": 0,
    "en": "I plan to go back to my country over summer break."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 10",
+  "tip": "つもり is for your firm intention; for vague plans use 〜(よ)うと思っています."
  },
  {
   "id": "n4-volitional",
@@ -777,7 +1131,9 @@
    ],
    "a": 0,
    "en": "I think I'll get up early tomorrow."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 15",
+  "tip": "(よ)うと思っている = an intention you have held for a while."
  },
  {
   "id": "n4-ba",
@@ -805,7 +1161,9 @@
    ],
    "a": 0,
    "en": "If you go now, you'll make it in time."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 22",
+  "tip": "If the main clause is a request or intention, 〜たら is usually safer than 〜ば with action verbs."
  },
  {
   "id": "n4-tara",
@@ -833,7 +1191,9 @@
    ],
    "a": 0,
    "en": "If you have time, please come visit."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 17",
+  "tip": "Can also mean \"when I did A, (I found) B\": 窓を開けたら、雪が降っていた."
  },
  {
   "id": "n4-to-cond",
@@ -861,7 +1221,9 @@
    ],
    "a": 0,
    "en": "If you turn right, there's a bank."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 18",
+  "tip": "No requests, orders or intentions after 〜と."
  },
  {
   "id": "n4-nagara",
@@ -889,7 +1251,9 @@
    ],
    "a": 0,
    "en": "I eat while watching TV."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 18",
+  "tip": "Both actions must be done by the same person."
  },
  {
   "id": "n4-node",
@@ -917,7 +1281,9 @@
    ],
    "a": 0,
    "en": "The train was late, so I was late."
-  }
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 12",
+  "tip": "Use ので for polite excuses: 用事があるので、お先に失礼します."
  },
  {
   "id": "n4-noni",
@@ -945,7 +1311,9 @@
    ],
    "a": 0,
    "en": "Even though he promised, he didn't come."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 22",
+  "tip": "のに at the end of a sentence expresses regret: 来ればよかったのに."
  },
  {
   "id": "n4-temo",
@@ -973,7 +1341,9 @@
    ],
    "a": 0,
    "en": "Even if it's expensive, I want to buy it."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 23",
+  "tip": "With question words: いくら〜ても, だれが〜ても, 何を〜ても."
  },
  {
   "id": "n4-sou-looks",
@@ -1001,7 +1371,9 @@
    ],
    "a": 0,
    "en": "This bag looks sturdy."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 13",
+  "tip": "Not for things you can see are obviously true: ×きれいそうな花 when it clearly is beautiful."
  },
  {
   "id": "n4-sou-hearsay",
@@ -1029,7 +1401,9 @@
    ],
    "a": 0,
    "en": "According to the news, there was an earthquake."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 17",
+  "tip": "Hearsay そう attaches to the plain form; \"looks like\" そう attaches to the stem."
  },
  {
   "id": "n4-you-da",
@@ -1057,7 +1431,9 @@
    ],
    "a": 0,
    "en": "The lights are off. It seems they're out."
-  }
+  },
+  "ref": "Minna no Nihongo Shokyū II (3A Network) – Bài 47; Genki II (The Japan Times) – Lesson 17 (みたい)",
+  "tip": "ようだ is your own inference; そうだ (hearsay) is what you were told."
  },
  {
   "id": "n4-tame",
@@ -1085,7 +1461,9 @@
    ],
    "a": 0,
    "en": "I run every day for my health."
-  }
+  },
+  "ref": "Minna no Nihongo Shokyū II (3A Network) – Bài 42",
+  "tip": "ために needs a controllable action; for non-volitional goals use ように."
  },
  {
   "id": "n4-you-ni",
@@ -1113,7 +1491,9 @@
    ],
    "a": 0,
    "en": "Keep warm so you don't catch a cold."
-  }
+  },
+  "ref": "Minna no Nihongo Shokyū II (3A Network) – Bài 36",
+  "tip": "Often follows potential or negative forms: 見えるように, 忘れないように."
  },
  {
   "id": "n4-you-ni-naru",
@@ -1141,7 +1521,9 @@
    ],
    "a": 0,
    "en": "I've learned to swim."
-  }
+  },
+  "ref": "Minna no Nihongo Shokyū II (3A Network) – Bài 36",
+  "tip": "Negative change: 〜なくなる (食べられなくなった)."
  },
  {
   "id": "n4-koto-ni-suru",
@@ -1169,7 +1551,9 @@
    ],
    "a": 0,
    "en": "I've decided to start jogging tomorrow."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 23",
+  "tip": "ことにした = you decided; ことになった = it was decided for you."
  },
  {
   "id": "n4-te-shimau",
@@ -1197,7 +1581,9 @@
    ],
    "a": 0,
    "en": "I (accidentally) left my umbrella on the train."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 18",
+  "tip": "In speech: 〜てしまう → 〜ちゃう, 〜でしまう → 〜じゃう."
  },
  {
   "id": "n4-te-oku",
@@ -1225,7 +1611,9 @@
    ],
    "a": 0,
    "en": "I'll book the hotel before the trip."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 15",
+  "tip": "In speech: 〜ておく → 〜とく (買っとく)."
  },
  {
   "id": "n4-te-miru",
@@ -1253,7 +1641,9 @@
    ],
    "a": 0,
    "en": "May I try these shoes on?"
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 13",
+  "tip": "Not \"try hard\" – for effort use 〜ようとする."
  },
  {
   "id": "n4-giving",
@@ -1281,7 +1671,9 @@
    ],
    "a": 0,
    "en": "My mother bought me a sweater."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lessons 14 & 16",
+  "tip": "Direction matters: くれる always moves toward \"me\" or my group."
  },
  {
   "id": "n4-passive",
@@ -1309,7 +1701,9 @@
    ],
    "a": 0,
    "en": "My wallet was stolen by a thief."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 21",
+  "tip": "The suffering passive is common with rain, theft, being stepped on."
  },
  {
   "id": "n4-causative",
@@ -1337,7 +1731,459 @@
    ],
    "a": 0,
    "en": "I let my children do what they like."
-  }
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 22",
+  "tip": "させてください is a polite way to ask \"let me…\"."
+ },
+ {
+  "id": "n4-sugiru",
+  "l": 4,
+  "t": "〜すぎる",
+  "m": "too much / too …",
+  "f": "V stem ＋ すぎる   ·   Adj い (drop い) / Adj な ＋ すぎる",
+  "e": "Something exceeds the proper amount. Conjugates as a group-2 verb (すぎます, すぎた).",
+  "x": [
+   {
+    "jp": "昨日は食べ**すぎました**。",
+    "en": "I ate too much yesterday."
+   },
+   {
+    "jp": "この問題は難し**すぎる**。",
+    "en": "This problem is too difficult."
+   }
+  ],
+  "q": {
+   "s": "このくつは大き＿＿、はけません。",
+   "o": [
+    "すぎて",
+    "すぎで",
+    "すぎに"
+   ],
+   "a": 0,
+   "en": "These shoes are too big to wear."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 12",
+  "tip": "いい becomes よすぎる; ない becomes なさすぎる."
+ },
+ {
+  "id": "n4-hou-ga-ii",
+  "l": 4,
+  "t": "〜たほうがいい",
+  "m": "You had better …",
+  "f": "V た-form ＋ ほうがいい   ·   V ない ＋ ほうがいい",
+  "e": "Strong advice. The positive uses the た-form even though it is about the future.",
+  "x": [
+   {
+    "jp": "熱があるなら、休ん**だほうがいい**ですよ。",
+    "en": "If you have a fever, you'd better rest."
+   },
+   {
+    "jp": "夜遅く食べ**ないほうがいい**。",
+    "en": "You'd better not eat late at night."
+   }
+  ],
+  "q": {
+   "s": "かぜのときは、早くね＿＿ほうがいいですよ。",
+   "o": [
+    "た",
+    "る",
+    "て"
+   ],
+   "a": 0,
+   "en": "When you have a cold, you'd better go to bed early."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 12",
+  "tip": "Negative advice keeps the ない-form: ×行かなかったほうがいい → ○行かないほうがいい."
+ },
+ {
+  "id": "n4-n-desu",
+  "l": 4,
+  "t": "〜んです",
+  "m": "explaining / asking for an explanation",
+  "f": "Plain form ＋ んです (N / な-adj ＋ なんです)",
+  "e": "Adds an explanatory nuance: giving a reason, or asking about a situation you noticed.",
+  "x": [
+   {
+    "jp": "どうした**んですか**。― 頭が痛い**んです**。",
+    "en": "What's wrong? – I have a headache."
+   },
+   {
+    "jp": "明日テストな**んです**。",
+    "en": "(The thing is,) there's a test tomorrow."
+   }
+  ],
+  "q": {
+   "s": "どうして遅れたんですか。― 電車が止まった＿＿。",
+   "o": [
+    "んです",
+    "ます",
+    "でした"
+   ],
+   "a": 0,
+   "en": "Why were you late? – The train stopped."
+  },
+  "ref": "Genki I (The Japan Times) – Lesson 12",
+  "tip": "Overusing んです sounds pushy; use it when there is a real context to explain."
+ },
+ {
+  "id": "n4-shi",
+  "l": 4,
+  "t": "〜し、〜し",
+  "m": "and also (listing reasons)",
+  "f": "Plain form ＋ し",
+  "e": "Lists several reasons or points, often implying 'and more'. The conclusion may come at the end.",
+  "x": [
+   {
+    "jp": "この店は安い**し**、おいしい**し**、よく来ます。",
+    "en": "This place is cheap and tasty, so I come often."
+   },
+   {
+    "jp": "雨だ**し**、今日は家にいよう。",
+    "en": "It's raining, so let's stay home today."
+   }
+  ],
+  "q": {
+   "s": "あの部屋は駅から近い＿＿、広いし、いいですね。",
+   "o": [
+    "し",
+    "て",
+    "から"
+   ],
+   "a": 0,
+   "en": "That room is close to the station and spacious – nice."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 13",
+  "tip": "With nouns and な-adjectives use だし: 静かだし、便利だし."
+ },
+ {
+  "id": "n4-kamoshirenai",
+  "l": 4,
+  "t": "〜かもしれない",
+  "m": "might / maybe",
+  "f": "Plain form ＋ かもしれない (N / な-adj: no だ)",
+  "e": "A possibility of about 50% or less – weaker than でしょう.",
+  "x": [
+   {
+    "jp": "午後から雨が降る**かもしれません**。",
+    "en": "It might rain in the afternoon."
+   },
+   {
+    "jp": "あの人は先生**かもしれない**。",
+    "en": "That person may be a teacher."
+   }
+  ],
+  "q": {
+   "s": "道がこんでいるから、少しおくれる＿＿。",
+   "o": [
+    "かもしれません",
+    "はずです",
+    "つもりです"
+   ],
+   "a": 0,
+   "en": "The roads are busy, so I might be a little late."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 14",
+  "tip": "Ranking of certainty: はずだ > でしょう > かもしれない."
+ },
+ {
+  "id": "n4-tara-dou",
+  "l": 4,
+  "t": "〜たらどうですか",
+  "m": "Why don't you …?",
+  "f": "V た-form ＋ らどうですか",
+  "e": "Gives a suggestion. Casual: 〜たら？ or 〜たらどう？ Can sound a little blunt to superiors.",
+  "x": [
+   {
+    "jp": "疲れているなら、少し休ん**だらどうですか**。",
+    "en": "If you're tired, why don't you rest a little?"
+   },
+   {
+    "jp": "先生に聞い**たら**？",
+    "en": "Why not ask the teacher?"
+   }
+  ],
+  "q": {
+   "s": "日本語が上手になりたいなら、日本のドラマを見＿＿どうですか。",
+   "o": [
+    "たら",
+    "れば",
+    "ると"
+   ],
+   "a": 0,
+   "en": "If you want to improve your Japanese, why not watch Japanese dramas?"
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 14",
+  "tip": "To a teacher or boss, softer: 〜てみてはいかがですか."
+ },
+ {
+  "id": "n4-te-hoshii",
+  "l": 4,
+  "t": "〜てほしい",
+  "m": "I want (someone) to …",
+  "f": "Person ＋ に ＋ V て-form ＋ ほしい",
+  "e": "Expresses wanting someone else to do something. Compare 〜たい (I want to do).",
+  "x": [
+   {
+    "jp": "母にもっと長生きし**てほしい**。",
+    "en": "I want my mother to live a long life."
+   },
+   {
+    "jp": "ここではたばこを吸わ**ないでほしい**。",
+    "en": "I'd like you not to smoke here."
+   }
+  ],
+  "q": {
+   "s": "友だち＿＿手伝ってほしいです。",
+   "o": [
+    "に",
+    "が",
+    "を"
+   ],
+   "a": 0,
+   "en": "I want my friend to help me."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 21",
+  "tip": "The person you want to act is marked with に."
+ },
+ {
+  "id": "n4-te-aru",
+  "l": 4,
+  "t": "〜てある",
+  "m": "has been done (and stays so)",
+  "f": "N ＋ が ＋ transitive V て-form ＋ ある",
+  "e": "Someone did something on purpose and the result remains. Compare 〜ている with intransitive verbs (a state that just is).",
+  "x": [
+   {
+    "jp": "壁に絵がかけ**てあります**。",
+    "en": "A picture has been hung on the wall."
+   },
+   {
+    "jp": "ビールは冷やし**てある**よ。",
+    "en": "The beer has been chilled (for you)."
+   }
+  ],
+  "q": {
+   "s": "ホテルはもう予約して＿＿。",
+   "o": [
+    "あります",
+    "います",
+    "おきます"
+   ],
+   "a": 0,
+   "en": "The hotel has already been booked."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 21",
+  "tip": "窓が開いている (it's open) vs 窓が開けてある (someone opened it on purpose)."
+ },
+ {
+  "id": "n4-aida",
+  "l": 4,
+  "t": "〜間 / 〜間に",
+  "m": "while / during",
+  "f": "V ている・N の ＋ 間（に）",
+  "e": "間 = throughout the whole period; 間に = at some point within the period.",
+  "x": [
+   {
+    "jp": "夏休みの**間**、ずっと国にいました。",
+    "en": "I was in my country all summer vacation."
+   },
+   {
+    "jp": "母が寝ている**間に**、料理を作った。",
+    "en": "I cooked while my mother was asleep."
+   }
+  ],
+  "q": {
+   "s": "子どもが寝ている＿＿、そうじをしました。",
+   "o": [
+    "間に",
+    "までに",
+    "ところで"
+   ],
+   "a": 0,
+   "en": "I cleaned while the children were sleeping."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 21",
+  "tip": "One action within the time → 間に; something lasting the whole time → 間."
+ },
+ {
+  "id": "n4-kadouka",
+  "l": 4,
+  "t": "〜かどうか",
+  "m": "whether or not",
+  "f": "Plain form ＋ かどうか (N / な-adj: no だ)",
+  "e": "Embeds a yes/no question in a sentence. With a question word use only か: 何時か.",
+  "x": [
+   {
+    "jp": "明日来られる**かどうか**わかりません。",
+    "en": "I don't know whether I can come tomorrow."
+   },
+   {
+    "jp": "おいしい**かどうか**食べてみます。",
+    "en": "I'll taste it to see whether it's good."
+   }
+  ],
+  "q": {
+   "s": "このくすりがきく＿＿わかりません。",
+   "o": [
+    "かどうか",
+    "どうか",
+    "かなにか"
+   ],
+   "a": 0,
+   "en": "I don't know whether this medicine works."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 20",
+  "tip": "何を買うか決めた (question word) vs 買うかどうか決めた (yes/no)."
+ },
+ {
+  "id": "n4-ba-yokatta",
+  "l": 4,
+  "t": "〜ばよかった",
+  "m": "I should have …",
+  "f": "V ば-form ＋ よかった",
+  "e": "Regret about something you did not do (or did).",
+  "x": [
+   {
+    "jp": "もっと勉強すれ**ばよかった**。",
+    "en": "I should have studied more."
+   },
+   {
+    "jp": "あんなこと、言わなけれ**ばよかった**。",
+    "en": "I shouldn't have said that."
+   }
+  ],
+  "q": {
+   "s": "かさを持ってくれ＿＿よかった。",
+   "o": [
+    "ば",
+    "たら",
+    "と"
+   ],
+   "a": 0,
+   "en": "I should have brought an umbrella."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 18",
+  "tip": "Often followed by のに or なあ to show strong regret."
+ },
+ {
+  "id": "n4-nakutemo",
+  "l": 4,
+  "t": "〜なくてもいい",
+  "m": "don't have to",
+  "f": "V ない (drop い) ＋ くてもいい",
+  "e": "Lack of obligation. Opposite of 〜なければならない.",
+  "x": [
+   {
+    "jp": "明日は来**なくてもいい**ですよ。",
+    "en": "You don't have to come tomorrow."
+   },
+   {
+    "jp": "全部食べ**なくてもいい**。",
+    "en": "You don't have to eat it all."
+   }
+  ],
+  "q": {
+   "s": "名前は書か＿＿いいです。",
+   "o": [
+    "なくても",
+    "ないでも",
+    "なければ"
+   ],
+   "a": 0,
+   "en": "You don't have to write your name."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 17",
+  "tip": "Formal alternative: 〜なくてもかまいません."
+ },
+ {
+  "id": "n4-hazu-n4",
+  "l": 4,
+  "t": "〜はずです",
+  "m": "should (be), expected",
+  "f": "Plain form ＋ はずです (N の / な-adj な)",
+  "e": "The speaker's expectation based on facts. はずがない = there's no way.",
+  "x": [
+   {
+    "jp": "田中さんは今日来る**はず**です。",
+    "en": "Mr. Tanaka should be coming today."
+   },
+   {
+    "jp": "彼が知らない**はずがない**。",
+    "en": "There's no way he doesn't know."
+   }
+  ],
+  "q": {
+   "s": "荷物は昨日送ったから、今日着く＿＿です。",
+   "o": [
+    "はず",
+    "つもり",
+    "ため"
+   ],
+   "a": 0,
+   "en": "I sent the parcel yesterday, so it should arrive today."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 19",
+  "tip": "Not for your own plans – use つもり for intentions."
+ },
+ {
+  "id": "n4-kata",
+  "l": 4,
+  "t": "〜方",
+  "m": "way of / how to",
+  "f": "V stem ＋ 方 (かた)",
+  "e": "Turns a verb into a noun meaning 'the way of doing'. The object takes の: 漢字の書き方.",
+  "x": [
+   {
+    "jp": "この機械の使い**方**を教えてください。",
+    "en": "Please tell me how to use this machine."
+   },
+   {
+    "jp": "おいしいコーヒーの入れ**方**",
+    "en": "how to make good coffee"
+   }
+  ],
+  "q": {
+   "s": "駅への行き＿＿がわかりません。",
+   "o": [
+    "方",
+    "所",
+    "物"
+   ],
+   "a": 0,
+   "en": "I don't know how to get to the station."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 23",
+  "tip": "する verbs: 勉強のし方, not ×勉強し方."
+ },
+ {
+  "id": "n4-nasai",
+  "l": 4,
+  "t": "〜なさい",
+  "m": "Do … (command)",
+  "f": "V stem ＋ なさい",
+  "e": "A soft command used by parents, teachers and in test instructions.",
+  "x": [
+   {
+    "jp": "早く寝**なさい**。",
+    "en": "Go to bed early."
+   },
+   {
+    "jp": "正しい答えを選び**なさい**。",
+    "en": "Choose the correct answer."
+   }
+  ],
+  "q": {
+   "s": "もう9時よ。早く起き＿＿。",
+   "o": [
+    "なさい",
+    "なさる",
+    "ください"
+   ],
+   "a": 0,
+   "en": "It's already 9! Get up."
+  },
+  "ref": "Genki II (The Japan Times) – Lesson 22",
+  "tip": "Not used to superiors – use 〜てください instead."
  },
  {
   "id": "n3-wake-da",
@@ -1365,7 +2211,9 @@
    ],
    "a": 0,
    "en": "The AC is broken. No wonder it's hot."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Look for なるほど or a fact given just before – a typical わけだ context."
  },
  {
   "id": "n3-wake-ja-nai",
@@ -1393,7 +2241,9 @@
    ],
    "a": 0,
    "en": "It's not that I'm always free."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Partial denial; softens a statement that could be misunderstood."
  },
  {
   "id": "n3-hazu",
@@ -1421,7 +2271,9 @@
    ],
    "a": 0,
    "en": "The meeting should end at 3."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "はずだった = it was supposed to (but didn't)."
  },
  {
   "id": "n3-beki",
@@ -1449,7 +2301,9 @@
    ],
    "a": 0,
    "en": "You should ask the teacher about things you don't understand."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "する → すべき is more common than するべき in writing."
  },
  {
   "id": "n3-tokoro",
@@ -1481,7 +2335,9 @@
    ],
    "a": 0,
    "en": "I've just finished."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Check the verb form: る / ている / た each change the meaning."
  },
  {
   "id": "n3-bakari",
@@ -1509,7 +2365,9 @@
    ],
    "a": 0,
    "en": "I just bought this computer."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Vたばかり is subjective – can be used even weeks later."
  },
  {
   "id": "n3-mama",
@@ -1537,7 +2395,9 @@
    ],
    "a": 0,
    "en": "I went out leaving the window open."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "The state is usually unexpected or unusual."
  },
  {
   "id": "n3-uchi-ni",
@@ -1565,7 +2425,9 @@
    ],
    "a": 0,
    "en": "Let me note it down before I forget."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Also \"while (something unplanned happened)\": 話しているうちに眠くなった."
  },
  {
   "id": "n3-ni-yotte",
@@ -1593,7 +2455,9 @@
    ],
    "a": 0,
    "en": "Culture differs depending on the country."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "In passive sentences it marks creators: 発明された, 書かれた."
  },
  {
   "id": "n3-ni-totte",
@@ -1621,7 +2485,9 @@
    ],
    "a": 0,
    "en": "For children, this problem is too hard."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Followed by evaluation words: 大切だ, 難しい, 必要だ."
  },
  {
   "id": "n3-ni-tsuite",
@@ -1649,7 +2515,9 @@
    ],
    "a": 0,
    "en": "I wrote a report about environmental problems."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Before a noun: 〜についての話."
  },
  {
   "id": "n3-rashii",
@@ -1677,7 +2545,9 @@
    ],
    "a": 0,
    "en": "Apparently she's off sick."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Hearsay らしい is less certain than そうだ."
  },
  {
   "id": "n3-ppoi",
@@ -1705,7 +2575,9 @@
    ],
    "a": 0,
    "en": "That way of talking is childish."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Casual; avoid in formal writing."
  },
  {
   "id": "n3-you-ni-suru",
@@ -1733,7 +2605,9 @@
    ],
    "a": 0,
    "en": "Please make sure not to be late."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "ようにしている = an established habit."
  },
  {
   "id": "n3-koto-ni-naru",
@@ -1761,7 +2635,9 @@
    ],
    "a": 0,
    "en": "On the company's orders, I'm being transferred."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "ことになっている = a rule or arrangement."
  },
  {
   "id": "n3-sae",
@@ -1789,7 +2665,9 @@
    ],
    "a": 0,
    "en": "I'm so busy I don't even have time to sleep."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "With verbs: Vますstem + さえ + すれば (〜さえすれば)."
  },
  {
   "id": "n3-to-shite",
@@ -1817,7 +2695,9 @@
    ],
    "a": 0,
    "en": "I attended the meeting as an interpreter."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "として + は / も / の are all common."
  },
  {
   "id": "n3-kawari-ni",
@@ -1845,7 +2725,9 @@
    ],
    "a": 0,
    "en": "I ate bread instead of rice."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Also \"but on the other hand\": 便利なかわりに、高い."
  },
  {
   "id": "n3-sei-de",
@@ -1873,7 +2755,9 @@
    ],
    "a": 0,
    "en": "Because I overslept, I was late."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "せいか = maybe because of (uncertain cause)."
  },
  {
   "id": "n3-ba-hodo",
@@ -1901,7 +2785,459 @@
    ],
    "a": 0,
    "en": "The more you study Japanese, the more interesting it gets."
-  }
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "With な-adjectives: 静かなら静かなほど."
+ },
+ {
+  "id": "n3-tabi-ni",
+  "l": 3,
+  "t": "〜たびに",
+  "m": "every time …",
+  "f": "V dict. / N の ＋ たびに",
+  "e": "Each time A happens, B happens too. Stronger than とき.",
+  "x": [
+   {
+    "jp": "この写真を見る**たびに**、学生時代を思い出す。",
+    "en": "Every time I see this photo, I remember my student days."
+   },
+   {
+    "jp": "旅行の**たびに**お土産を買う。",
+    "en": "I buy souvenirs every time I travel."
+   }
+  ],
+  "q": {
+   "s": "ふるさとに帰る＿＿、町が変わっている。",
+   "o": [
+    "たびに",
+    "うちに",
+    "ところに"
+   ],
+   "a": 0,
+   "en": "Every time I go back home, the town has changed."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "B is usually a natural or habitual result, not a one-off decision."
+ },
+ {
+  "id": "n3-saichuu",
+  "l": 3,
+  "t": "〜最中に",
+  "m": "right in the middle of",
+  "f": "V ている / N の ＋ 最中に",
+  "e": "Something (often unwelcome) interrupts at the peak of an activity.",
+  "x": [
+   {
+    "jp": "会議の**最中に**電話が鳴った。",
+    "en": "The phone rang right in the middle of the meeting."
+   },
+   {
+    "jp": "食事をしている**最中に**地震が起きた。",
+    "en": "An earthquake struck while we were eating."
+   }
+  ],
+  "q": {
+   "s": "試合の＿＿、雨が降り出した。",
+   "o": [
+    "最中に",
+    "たびに",
+    "以来"
+   ],
+   "a": 0,
+   "en": "It started raining in the middle of the match."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Use with activities that have a clear duration; not with states like 住んでいる."
+ },
+ {
+  "id": "n3-kke",
+  "l": 3,
+  "t": "〜っけ",
+  "m": "… was it? (checking a memory)",
+  "f": "Plain form ＋ っけ   ·   polite: 〜でしたっけ",
+  "e": "Casual way to ask yourself or someone to confirm something you've half forgotten.",
+  "x": [
+   {
+    "jp": "会議は何時から**だっけ**？",
+    "en": "What time does the meeting start again?"
+   },
+   {
+    "jp": "あの人の名前、何て言った**っけ**。",
+    "en": "What was that person's name again?"
+   }
+  ],
+  "q": {
+   "s": "明日の試験、何時からだった＿＿？",
+   "o": [
+    "っけ",
+    "って",
+    "けど"
+   ],
+   "a": 0,
+   "en": "What time is tomorrow's exam again?"
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Very common in conversation listening sections – a sign the speaker is unsure."
+ },
+ {
+  "id": "n3-toori",
+  "l": 3,
+  "t": "〜とおり（に）",
+  "m": "just as / in the way that",
+  "f": "V dict. / V た / N の ＋ とおり（に）   ·   N どおり",
+  "e": "Doing something exactly according to a model, plan or instruction.",
+  "x": [
+   {
+    "jp": "説明書に書いてある**とおりに**組み立てた。",
+    "en": "I assembled it exactly as the manual said."
+   },
+   {
+    "jp": "計画**どおり**に進んでいる。",
+    "en": "It is going according to plan."
+   }
+  ],
+  "q": {
+   "s": "先生が言った＿＿にやってみてください。",
+   "o": [
+    "とおり",
+    "ほど",
+    "ばかり"
+   ],
+   "a": 0,
+   "en": "Try doing it exactly as the teacher said."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "After a noun it becomes どおり (voiced): 予定どおり, 時間どおり."
+ },
+ {
+  "id": "n3-zu-ni",
+  "l": 3,
+  "t": "〜ずに",
+  "m": "without doing",
+  "f": "V ない-stem ＋ ずに (する → せずに)",
+  "e": "Written/formal version of 〜ないで.",
+  "x": [
+   {
+    "jp": "朝ごはんを食べ**ずに**家を出た。",
+    "en": "I left home without eating breakfast."
+   },
+   {
+    "jp": "辞書を使わ**ずに**読んでみよう。",
+    "en": "Let's try reading without a dictionary."
+   }
+  ],
+  "q": {
+   "s": "昨日は宿題をせ＿＿寝てしまった。",
+   "o": [
+    "ずに",
+    "ないで",
+    "なくて"
+   ],
+   "a": 0,
+   "en": "Yesterday I fell asleep without doing my homework."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Irregular: する → せずに (not ×しずに)."
+ },
+ {
+  "id": "n3-wari-ni",
+  "l": 3,
+  "t": "〜わりに（は）",
+  "m": "considering / for …",
+  "f": "Plain form / N の ＋ わりに（は）",
+  "e": "The result is different from what you would expect from A.",
+  "x": [
+   {
+    "jp": "この店は値段の**わりに**おいしい。",
+    "en": "This place is tasty for the price."
+   },
+   {
+    "jp": "彼はよく食べる**わりに**太らない。",
+    "en": "He doesn't get fat considering how much he eats."
+   }
+  ],
+  "q": {
+   "s": "このかばんは安い＿＿、じょうぶだ。",
+   "o": [
+    "わりに",
+    "せいで",
+    "ために"
+   ],
+   "a": 0,
+   "en": "This bag is sturdy for being cheap."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Compare にしては, which follows a fact about one specific case (初めてにしては)."
+ },
+ {
+  "id": "n3-darake",
+  "l": 3,
+  "t": "〜だらけ",
+  "m": "full of / covered in (unwanted)",
+  "f": "N ＋ だらけ",
+  "e": "Something is covered with or full of something unpleasant.",
+  "x": [
+   {
+    "jp": "子どもたちは泥**だらけ**になって遊んだ。",
+    "en": "The children played and got covered in mud."
+   },
+   {
+    "jp": "この作文は間違い**だらけ**だ。",
+    "en": "This essay is full of mistakes."
+   }
+  ],
+  "q": {
+   "s": "雨の中を歩いたので、くつが泥＿＿になった。",
+   "o": [
+    "だらけ",
+    "っぽい",
+    "がち"
+   ],
+   "a": 0,
+   "en": "I walked in the rain, so my shoes got covered in mud."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Negative nuance; for neutral 'full of' use いっぱい."
+ },
+ {
+  "id": "n3-you-to-suru",
+  "l": 3,
+  "t": "〜ようとする",
+  "m": "try to / be about to",
+  "f": "V volitional ＋ とする",
+  "e": "An attempt (often unsuccessful) or the moment just before an action.",
+  "x": [
+   {
+    "jp": "寝**ようとした**ときに、電話が鳴った。",
+    "en": "Just as I was about to sleep, the phone rang."
+   },
+   {
+    "jp": "思い出そ**うとして**も、思い出せない。",
+    "en": "Even if I try to remember, I can't."
+   }
+  ],
+  "q": {
+   "s": "出かけよう＿＿、雨が降ってきた。",
+   "o": [
+    "としたら",
+    "としても",
+    "とすれば"
+   ],
+   "a": 0,
+   "en": "Just as I was about to go out, it started to rain."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "ようとしない (refuse to) is used about other people: 弟は野菜を食べようとしない."
+ },
+ {
+  "id": "n3-ni-kurabete",
+  "l": 3,
+  "t": "〜に比べて",
+  "m": "compared with",
+  "f": "N ＋ に比べて",
+  "e": "Compares two things or situations.",
+  "x": [
+   {
+    "jp": "去年**に比べて**、今年は雪が多い。",
+    "en": "Compared with last year, there is more snow this year."
+   },
+   {
+    "jp": "兄**に比べて**、弟は背が高い。",
+    "en": "Compared with his older brother, the younger one is tall."
+   }
+  ],
+  "q": {
+   "s": "東京＿＿、大阪の物価は少し安い。",
+   "o": [
+    "に比べて",
+    "について",
+    "によって"
+   ],
+   "a": 0,
+   "en": "Compared with Tokyo, prices in Osaka are a little lower."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "More formal than より: Aに比べてBのほうが…."
+ },
+ {
+  "id": "n3-tsuide-ni",
+  "l": 3,
+  "t": "〜ついでに",
+  "m": "while (doing A), also do B",
+  "f": "V dict. / V た / N の ＋ ついでに",
+  "e": "Taking the opportunity of A to do B as well.",
+  "x": [
+   {
+    "jp": "買い物の**ついでに**、郵便局に寄った。",
+    "en": "While out shopping, I dropped by the post office."
+   },
+   {
+    "jp": "駅へ行く**ついでに**、手紙を出してくれる？",
+    "en": "Could you post the letter on your way to the station?"
+   }
+  ],
+  "q": {
+   "s": "散歩の＿＿、パンを買ってきた。",
+   "o": [
+    "ついでに",
+    "たびに",
+    "かわりに"
+   ],
+   "a": 0,
+   "en": "I bought bread while I was out for a walk."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "A is the main purpose; B is the extra."
+ },
+ {
+  "id": "n3-kuse-ni",
+  "l": 3,
+  "t": "〜くせに",
+  "m": "even though (criticism)",
+  "f": "Plain form / N の ＋ くせに",
+  "e": "Like のに but with clear criticism or contempt. Not used about yourself.",
+  "x": [
+   {
+    "jp": "知っている**くせに**、教えてくれない。",
+    "en": "He knows, yet he won't tell me."
+   },
+   {
+    "jp": "子どもの**くせに**生意気だ。",
+    "en": "He's cheeky for a child."
+   }
+  ],
+  "q": {
+   "s": "お金がない＿＿、高い服ばかり買う。",
+   "o": [
+    "くせに",
+    "おかげで",
+    "ために"
+   ],
+   "a": 0,
+   "en": "Even though she has no money, she keeps buying expensive clothes."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Strong and rude in tone – be careful using it to someone's face."
+ },
+ {
+  "id": "n3-koto-wa-nai",
+  "l": 3,
+  "t": "〜ことはない",
+  "m": "there's no need to",
+  "f": "V dict. ＋ ことはない",
+  "e": "Reassures someone that something is unnecessary.",
+  "x": [
+   {
+    "jp": "心配する**ことはない**よ。",
+    "en": "There's no need to worry."
+   },
+   {
+    "jp": "わざわざ来る**ことはない**。",
+    "en": "You don't need to go to the trouble of coming."
+   }
+  ],
+  "q": {
+   "s": "簡単な試験だから、そんなに緊張する＿＿ないよ。",
+   "o": [
+    "ことは",
+    "ばかりで",
+    "だけで"
+   ],
+   "a": 0,
+   "en": "It's an easy test, so there's no need to be so nervous."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Different from Vたことがない (never did)."
+ },
+ {
+  "id": "n3-temo-kamawanai",
+  "l": 3,
+  "t": "〜てもかまわない",
+  "m": "it's fine if …",
+  "f": "V て / Adj くて / N で ＋ もかまわない",
+  "e": "Polite permission or acceptance; a little more formal than 〜てもいい.",
+  "x": [
+   {
+    "jp": "ここに座っ**てもかまいません**か。",
+    "en": "Do you mind if I sit here?"
+   },
+   {
+    "jp": "少し高く**てもかまわない**。",
+    "en": "It's fine even if it's a bit expensive."
+   }
+  ],
+  "q": {
+   "s": "明日は休んで＿＿かまいませんよ。",
+   "o": [
+    "も",
+    "は",
+    "が"
+   ],
+   "a": 0,
+   "en": "It's fine for you to take tomorrow off."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Negative answer: いいえ、困ります / ちょっと…."
+ },
+ {
+  "id": "n3-te-bakari",
+  "l": 3,
+  "t": "〜てばかりいる",
+  "m": "do nothing but …",
+  "f": "V て-form ＋ ばかりいる",
+  "e": "Someone keeps doing the same thing (usually criticised).",
+  "x": [
+   {
+    "jp": "弟はゲームをし**てばかりいる**。",
+    "en": "My brother does nothing but play games."
+   },
+   {
+    "jp": "泣い**てばかりいて**も、何も変わらない。",
+    "en": "Just crying won't change anything."
+   }
+  ],
+  "q": {
+   "s": "彼は文句を言って＿＿いる。",
+   "o": [
+    "ばかり",
+    "だけ",
+    "しか"
+   ],
+   "a": 0,
+   "en": "He does nothing but complain."
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Vたばかり (just did) is a different pattern – check the form before ばかり."
+ },
+ {
+  "id": "n3-to-ieba",
+  "l": 3,
+  "t": "〜といえば",
+  "m": "speaking of …",
+  "f": "N ＋ といえば",
+  "e": "Introduces something the speaker associates with a topic just mentioned.",
+  "x": [
+   {
+    "jp": "京都**といえば**、お寺が有名ですね。",
+    "en": "Speaking of Kyoto, it's famous for temples."
+   },
+   {
+    "jp": "夏**といえば**花火だ。",
+    "en": "When you think of summer, it's fireworks."
+   }
+  ],
+  "q": {
+   "s": "日本の食べ物＿＿、すしでしょう。",
+   "o": [
+    "といえば",
+    "として",
+    "によって"
+   ],
+   "a": 0,
+   "en": "When it comes to Japanese food, it's sushi, right?"
+  },
+  "ref": "Shin Kanzen Master N3 Grammar (3A Network); Nihongo Sō Matome N3 Grammar (Ask)",
+  "tip": "Also といったら / というと with the same meaning."
  },
  {
   "id": "n2-ni-chigainai",
@@ -1929,7 +3265,9 @@
    ],
    "a": 0,
    "en": "The lights are on. They must be home."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Stronger than だろう, weaker than はずだ (logic) in nuance."
  },
  {
   "id": "n2-ppanashi",
@@ -1957,7 +3295,9 @@
    ],
    "a": 0,
    "en": "Please don't leave the door open."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Usually negative: leaving something undone."
  },
  {
   "id": "n2-kake",
@@ -1985,7 +3325,9 @@
    ],
    "a": 0,
    "en": "I threw away the half-eaten bread."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "As a noun: 読みかけの本, 食べかけのパン."
  },
  {
   "id": "n2-gimi",
@@ -2013,7 +3355,9 @@
    ],
    "a": 0,
    "en": "I've been putting on weight, so I started exercising."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Mostly for health and mood: 風邪気味, 疲れ気味."
  },
  {
   "id": "n2-gachi",
@@ -2041,7 +3385,9 @@
    ],
    "a": 0,
    "en": "When busy, meals tend to get irregular."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "がち = tendency (frequency); 気味 = a slight state right now."
  },
  {
   "id": "n2-ue-de",
@@ -2069,7 +3415,9 @@
    ],
    "a": 0,
    "en": "I'll reply after consulting with my family."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Vた上で = after doing A properly; V る上で = in the process of."
  },
  {
   "id": "n2-ni-kanshite",
@@ -2097,7 +3445,9 @@
    ],
    "a": 0,
    "en": "An investigation into the cause of the accident was conducted."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Formal version of について; common in business emails."
  },
  {
   "id": "n2-ni-taishite",
@@ -2125,7 +3475,9 @@
    ],
    "a": 0,
    "en": "We use honorific language towards teachers."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Two uses: target of an attitude, or contrast."
  },
  {
   "id": "n2-wo-hajime",
@@ -2153,7 +3505,9 @@
    ],
    "a": 0,
    "en": "Japanese food, starting with sushi, is popular worldwide."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Followed by a list or a group: など / をはじめとする〜."
  },
  {
   "id": "n2-wo-moto-ni",
@@ -2181,7 +3535,9 @@
    ],
    "a": 0,
    "en": "I wrote the report based on survey data."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "The basis is material or data used to create something."
  },
  {
   "id": "n2-ni-kagitte",
@@ -2209,7 +3565,9 @@
    ],
    "a": 0,
    "en": "It rains precisely on the days I don't have an umbrella."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Common complaint: 急いでいる時に限って…."
  },
  {
   "id": "n2-wake-ni-wa-ikanai",
@@ -2237,7 +3595,9 @@
    ],
    "a": 0,
    "en": "I promised, so I can't not go."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "ないわけにはいかない = must, have no choice."
  },
  {
   "id": "n2-ni-shite-wa",
@@ -2265,7 +3625,9 @@
    ],
    "a": 0,
    "en": "His Japanese is good for a foreigner."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "The premise is a fact; にしても = even if."
  },
  {
   "id": "n2-tsutsu",
@@ -2293,7 +3655,9 @@
    ],
    "a": 0,
    "en": "Though I knew I shouldn't, I ate it again."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "つつある = is in the process of: 増えつつある."
  },
  {
   "id": "n2-kagiri",
@@ -2321,7 +3685,9 @@
    ],
    "a": 0,
    "en": "As long as it doesn't rain, the match will go ahead."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "限りでは = as far as (I know / I saw)."
  },
  {
   "id": "n2-ijou",
@@ -2349,7 +3715,429 @@
    ],
    "a": 0,
    "en": "Since I took it on, I'll see it through to the end."
-  }
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Same group: からには, 上は – all express resolve."
+ },
+ {
+  "id": "n2-ni-sotte",
+  "l": 2,
+  "t": "〜に沿って",
+  "m": "along / in line with",
+  "f": "N ＋ に沿って / に沿った N",
+  "e": "Physically along something, or acting in accordance with a plan or wishes.",
+  "x": [
+   {
+    "jp": "川**に沿って**桜が咲いている。",
+    "en": "Cherry trees are blooming along the river."
+   },
+   {
+    "jp": "お客様の希望**に沿った**プランを作る。",
+    "en": "We make plans in line with customers' wishes."
+   }
+  ],
+  "q": {
+   "s": "マニュアル＿＿作業を進めてください。",
+   "o": [
+    "に沿って",
+    "にわたって",
+    "に先立って"
+   ],
+   "a": 0,
+   "en": "Please proceed with the work following the manual."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Written 沿って (along), not 添って (accompany)."
+ },
+ {
+  "id": "n2-wo-megutte",
+  "l": 2,
+  "t": "〜をめぐって",
+  "m": "over / concerning (dispute)",
+  "f": "N ＋ をめぐって / をめぐる N",
+  "e": "The topic around which discussion or conflict happens.",
+  "x": [
+   {
+    "jp": "遺産**をめぐって**兄弟が争っている。",
+    "en": "The siblings are fighting over the inheritance."
+   },
+   {
+    "jp": "新空港の建設**をめぐる**問題",
+    "en": "the issues surrounding the new airport"
+   }
+  ],
+  "q": {
+   "s": "ダムの建設＿＿、住民の意見が分かれている。",
+   "o": [
+    "をめぐって",
+    "を通して",
+    "をこめて"
+   ],
+   "a": 0,
+   "en": "Residents' opinions are divided over the dam construction."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Typical verbs after it: 議論する, 対立する, 争う."
+ },
+ {
+  "id": "n2-ni-kakawarazu",
+  "l": 2,
+  "t": "〜にかかわらず",
+  "m": "regardless of",
+  "f": "N ＋ にかかわらず   ·   V る V ない ＋ にかかわらず",
+  "e": "Whatever the condition, the result is the same.",
+  "x": [
+   {
+    "jp": "年齢**にかかわらず**、誰でも参加できます。",
+    "en": "Anyone can join regardless of age."
+   },
+   {
+    "jp": "晴れる晴れない**にかかわらず**、出発します。",
+    "en": "We'll leave whether it's sunny or not."
+   }
+  ],
+  "q": {
+   "s": "経験の有無＿＿、応募できます。",
+   "o": [
+    "にかかわらず",
+    "に限って",
+    "にとって"
+   ],
+   "a": 0,
+   "en": "You can apply regardless of experience."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Often follows pairs of opposites: 男女, 天候, 有無."
+ },
+ {
+  "id": "n2-ni-tomonatte",
+  "l": 2,
+  "t": "〜に伴って",
+  "m": "as … changes / along with",
+  "f": "N / V dict. こと ＋ に伴って",
+  "e": "When A changes, B changes too. Formal.",
+  "x": [
+   {
+    "jp": "人口の増加**に伴って**、住宅が不足している。",
+    "en": "With the population increase, there is a housing shortage."
+   },
+   {
+    "jp": "経済の発展**に伴い**、生活が豊かになった。",
+    "en": "Life became richer as the economy developed."
+   }
+  ],
+  "q": {
+   "s": "台風の接近＿＿、風が強くなってきた。",
+   "o": [
+    "に伴って",
+    "に関して",
+    "に対して"
+   ],
+   "a": 0,
+   "en": "As the typhoon approaches, the wind is getting stronger."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Close to につれて, but more formal and used for large-scale changes."
+ },
+ {
+  "id": "n2-ni-watatte",
+  "l": 2,
+  "t": "〜にわたって",
+  "m": "over / throughout (a span)",
+  "f": "Period / range ＋ にわたって / にわたる N",
+  "e": "Covers the whole of a long time or wide area.",
+  "x": [
+   {
+    "jp": "会議は3時間**にわたって**続いた。",
+    "en": "The meeting went on for three hours."
+   },
+   {
+    "jp": "全国**にわたる**調査",
+    "en": "a nationwide survey"
+   }
+  ],
+  "q": {
+   "s": "工事は半年＿＿行われる予定だ。",
+   "o": [
+    "にわたって",
+    "に沿って",
+    "をめぐって"
+   ],
+   "a": 0,
+   "en": "The construction is planned to continue over six months."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "The noun before it shows scale: 長期間, 広い範囲, 3日間."
+ },
+ {
+  "id": "n2-kara-to-itte",
+  "l": 2,
+  "t": "〜からといって",
+  "m": "just because … doesn't mean",
+  "f": "Plain form ＋ からといって 〜ない",
+  "e": "Rejects a simple conclusion drawn from one reason.",
+  "x": [
+   {
+    "jp": "高い**からといって**、品質がいいとは限らない。",
+    "en": "Just because it's expensive doesn't mean it's good quality."
+   },
+   {
+    "jp": "忙しい**からといって**、食事を抜いてはいけない。",
+    "en": "Being busy is no reason to skip meals."
+   }
+  ],
+  "q": {
+   "s": "日本人だ＿＿、敬語が上手だとは限らない。",
+   "o": [
+    "からといって",
+    "からには",
+    "からこそ"
+   ],
+   "a": 0,
+   "en": "Just because someone is Japanese doesn't mean they're good at keigo."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Almost always ends with a negative: とは限らない, わけではない, 〜てはいけない."
+ },
+ {
+  "id": "n2-mono-da",
+  "l": 2,
+  "t": "〜ものだ",
+  "m": "naturally / it's the way things are; used to",
+  "f": "V dict. ＋ ものだ   ·   V た ＋ ものだ (nostalgia)",
+  "e": "States common sense or the nature of things; with the た-form, reminisces.",
+  "x": [
+   {
+    "jp": "人の話は最後まで聞く**ものだ**。",
+    "en": "You should listen to people until they finish."
+   },
+   {
+    "jp": "子どもの頃はよくこの川で泳いだ**ものだ**。",
+    "en": "I often used to swim in this river as a child."
+   }
+  ],
+  "q": {
+   "s": "年をとると、時間が早く過ぎる＿＿だ。",
+   "o": [
+    "もの",
+    "こと",
+    "わけ"
+   ],
+   "a": 0,
+   "en": "As you get older, time passes quickly – that's how it is."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "ものではない = one shouldn't (social norm)."
+ },
+ {
+  "id": "n2-koto-da",
+  "l": 2,
+  "t": "〜ことだ",
+  "m": "you should (advice)",
+  "f": "V dict. / V ない ＋ ことだ",
+  "e": "Direct advice from someone with experience or authority.",
+  "x": [
+   {
+    "jp": "上手になりたければ、毎日練習する**ことだ**。",
+    "en": "If you want to improve, practise every day."
+   },
+   {
+    "jp": "無理をしない**ことだ**。",
+    "en": "Don't overdo it."
+   }
+  ],
+  "q": {
+   "s": "合格したいなら、過去問をたくさん解く＿＿だ。",
+   "o": [
+    "こと",
+    "わけ",
+    "ところ"
+   ],
+   "a": 0,
+   "en": "If you want to pass, solve lots of past papers."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Used to people of equal or lower status; sounds preachy to superiors."
+ },
+ {
+  "id": "n2-te-shou-ga-nai",
+  "l": 2,
+  "t": "〜てしょうがない",
+  "m": "extremely / can't help",
+  "f": "V て / Adj くて / Adj なで ＋ しょうがない",
+  "e": "A feeling or sensation is so strong the speaker can't control it.",
+  "x": [
+   {
+    "jp": "試験の結果が気になっ**てしょうがない**。",
+    "en": "I can't stop worrying about the exam results."
+   },
+   {
+    "jp": "このドラマ、面白く**てしょうがない**。",
+    "en": "This drama is incredibly interesting."
+   }
+  ],
+  "q": {
+   "s": "昨日あまり寝ていないので、眠くて＿＿。",
+   "o": [
+    "しょうがない",
+    "すぎない",
+    "かねない"
+   ],
+   "a": 0,
+   "en": "I didn't sleep much last night, so I'm terribly sleepy."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Same meaning: 〜てたまらない, 〜てならない (more formal); しょうがない is the most conversational."
+ },
+ {
+  "id": "n2-wake-ga-nai",
+  "l": 2,
+  "t": "〜わけがない",
+  "m": "there's no way",
+  "f": "Plain form ＋ わけがない (N の / な-adj な)",
+  "e": "Strong denial based on reasoning; the speaker is sure it is impossible.",
+  "x": [
+   {
+    "jp": "あんなに練習したんだから、負ける**わけがない**。",
+    "en": "After all that practice, there's no way we'll lose."
+   },
+   {
+    "jp": "彼が嘘をつく**わけがない**。",
+    "en": "There's no way he would lie."
+   }
+  ],
+  "q": {
+   "s": "毎日遊んでばかりいて、合格できる＿＿。",
+   "o": [
+    "わけがない",
+    "わけではない",
+    "わけにはいかない"
+   ],
+   "a": 0,
+   "en": "Playing every day, there's no way you'll pass."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "わけではない = not necessarily; わけにはいかない = can't (for social reasons). Don't mix them up!"
+ },
+ {
+  "id": "n2-nai-koto-wa-nai",
+  "l": 2,
+  "t": "〜ないことはない",
+  "m": "it's not that … not (possible but)",
+  "f": "V ない ＋ ことはない",
+  "e": "A double negative giving reluctant or partial agreement.",
+  "x": [
+   {
+    "jp": "辛い物は食べられ**ないことはない**けど、あまり好きじゃない。",
+    "en": "It's not that I can't eat spicy food, but I don't like it much."
+   },
+   {
+    "jp": "急げば間に合わ**ないことはない**。",
+    "en": "If we hurry, we might just make it."
+   }
+  ],
+  "q": {
+   "s": "難しいけれど、やってできない＿＿。",
+   "o": [
+    "ことはない",
+    "にすぎない",
+    "までもない"
+   ],
+   "a": 0,
+   "en": "It's difficult, but it's not impossible."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Usually followed by a reservation: 〜けど / 〜が."
+ },
+ {
+  "id": "n2-shidai",
+  "l": 2,
+  "t": "〜次第",
+  "m": "as soon as; depending on",
+  "f": "V stem ＋ 次第 (as soon as)   ·   N 次第だ (depends on)",
+  "e": "1) Formal 'as soon as' for future actions. 2) N次第: everything depends on N.",
+  "x": [
+   {
+    "jp": "資料が届き**次第**、お送りします。",
+    "en": "We'll send it as soon as the documents arrive."
+   },
+   {
+    "jp": "合格するかどうかは努力**次第**だ。",
+    "en": "Whether you pass depends on your effort."
+   }
+  ],
+  "q": {
+   "s": "詳細が決まり＿＿、ご連絡いたします。",
+   "o": [
+    "次第",
+    "とたん",
+    "以来"
+   ],
+   "a": 0,
+   "en": "We will contact you as soon as the details are decided."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "'As soon as' 次第 is only for future plans, unlike たとたん (past surprise)."
+ },
+ {
+  "id": "n2-wo-kikkake-ni",
+  "l": 2,
+  "t": "〜をきっかけに",
+  "m": "triggered by / taking … as a chance",
+  "f": "N ＋ をきっかけに（して）",
+  "e": "A specific event that led to a new start or change.",
+  "x": [
+   {
+    "jp": "留学**をきっかけに**、日本の文化に興味を持った。",
+    "en": "Studying abroad got me interested in Japanese culture."
+   },
+   {
+    "jp": "病気**をきっかけに**、たばこをやめた。",
+    "en": "I quit smoking after getting ill."
+   }
+  ],
+  "q": {
+   "s": "ある映画を見たこと＿＿、俳優を目指すようになった。",
+   "o": [
+    "をきっかけに",
+    "をめぐって",
+    "を問わず"
+   ],
+   "a": 0,
+   "en": "Seeing a certain film made me want to become an actor."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "Similar: を契機に (more formal)."
+ },
+ {
+  "id": "n2-ni-sakidatte",
+  "l": 2,
+  "t": "〜に先立って",
+  "m": "prior to",
+  "f": "N / V dict. ＋ に先立って / に先立ち",
+  "e": "Something done in preparation before an official event.",
+  "x": [
+   {
+    "jp": "開会**に先立って**、市長があいさつした。",
+    "en": "Prior to the opening, the mayor gave a speech."
+   },
+   {
+    "jp": "工事**に先立ち**、説明会が開かれた。",
+    "en": "A briefing was held before the construction."
+   }
+  ],
+  "q": {
+   "s": "映画の公開＿＿、試写会が行われた。",
+   "o": [
+    "に先立って",
+    "に沿って",
+    "にわたって"
+   ],
+   "a": 0,
+   "en": "A preview screening was held prior to the film's release."
+  },
+  "ref": "Shin Kanzen Master N2 Grammar (3A Network); Nihongo Sō Matome N2 Grammar (Ask)",
+  "tip": "More formal than 前に; typical in announcements and news."
  },
  {
   "id": "n1-ni-hoka-naranai",
@@ -2377,7 +4165,9 @@
    ],
    "a": 0,
    "en": "He got angry precisely because he's worried about you."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Emphatic; common with 〜から: 愛しているからにほかならない."
  },
  {
   "id": "n1-ni-sugi-nai",
@@ -2405,7 +4195,9 @@
    ],
    "a": 0,
    "en": "Successful applicants are a mere 5% of all applicants."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Downplays something: 言い訳にすぎない."
  },
  {
   "id": "n1-zaru-wo-enai",
@@ -2433,7 +4225,9 @@
    ],
    "a": 0,
    "en": "Since there's evidence, I have no choice but to admit it."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Irregular: する → せざるを得ない."
  },
  {
   "id": "n1-kanenai",
@@ -2461,7 +4255,9 @@
    ],
    "a": 0,
    "en": "If you overdo it, you could get sick."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Positive form but negative meaning – a frequent trap."
  },
  {
   "id": "n1-kaneru",
@@ -2489,7 +4285,9 @@
    ],
    "a": 0,
    "en": "I'm sorry, but we cannot accept those terms."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Negative form かねない means the opposite (might happen)."
  },
  {
   "id": "n1-ya-ina-ya",
@@ -2517,7 +4315,9 @@
    ],
    "a": 0,
    "en": "The moment I opened the door, the dog rushed out."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Also 〜や (shorter): ドアが開くや…."
  },
  {
   "id": "n1-nari",
@@ -2545,7 +4345,9 @@
    ],
    "a": 0,
    "en": "As soon as she saw my face, she burst out laughing."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Not for your own actions; the subject is someone else."
  },
  {
   "id": "n1-mono-wo",
@@ -2573,7 +4375,9 @@
    ],
    "a": 0,
    "en": "One word of apology would have settled it, yet he didn't apologise."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Often after 〜ば / 〜たら + いい."
  },
  {
   "id": "n1-wo-yoginaku",
@@ -2601,7 +4405,9 @@
    ],
    "a": 0,
    "en": "Due to injury, he was forced to retire."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Active form: 余儀なくさせる (force someone)."
  },
  {
   "id": "n1-wo-kinjienai",
@@ -2629,7 +4435,9 @@
    ],
    "a": 0,
    "en": "I can't help feeling sympathy for his unfortunate life."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Typical nouns: 涙, 怒り, 同情, 驚き."
  },
  {
   "id": "n1-tomo-naku",
@@ -2657,7 +4465,9 @@
    ],
    "a": 0,
    "en": "I was gazing out of the window without really looking."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Same verb repeated: 見るともなく見る."
  },
  {
   "id": "n1-made-mo-nai",
@@ -2685,7 +4495,9 @@
    ],
    "a": 0,
    "en": "No need to go all the way there. A call will do."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "言うまでもなく = needless to say (very common)."
  },
  {
   "id": "n1-kotokara",
@@ -2713,7 +4525,9 @@
    ],
    "a": 0,
    "en": "It got this name because its shape resembles a star."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Often explains names: 〜ことから〜と呼ばれる."
  },
  {
   "id": "n1-koto-naku",
@@ -2741,7 +4555,9 @@
    ],
    "a": 0,
    "en": "She kept practising without missing a single day."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Formal version of 〜ないで / 〜ずに."
  },
  {
   "id": "n1-to-wa-ie",
@@ -2769,6 +4585,428 @@
    ],
    "a": 0,
    "en": "Although it's work, overtime every day is hard."
-  }
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Concession in formal writing; similar to とはいうものの."
+ },
+ {
+  "id": "n1-wo-kagiri-ni",
+  "l": 1,
+  "t": "〜を限りに",
+  "m": "as of (the last time)",
+  "f": "N (time) ＋ を限りに",
+  "e": "Something that has continued ends at this point.",
+  "x": [
+   {
+    "jp": "今日**を限りに**たばこをやめる。",
+    "en": "As of today, I'm quitting smoking."
+   },
+   {
+    "jp": "今シーズン**を限りに**引退します。",
+    "en": "I will retire at the end of this season."
+   }
+  ],
+  "q": {
+   "s": "本日＿＿、この店は営業を終了いたします。",
+   "o": [
+    "を限りに",
+    "をよそに",
+    "をおいて"
+   ],
+   "a": 0,
+   "en": "As of today, this shop will close."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Close to をもって; を限りに stresses that something continuing stops."
+ },
+ {
+  "id": "n1-wo-ii-koto-ni",
+  "l": 1,
+  "t": "〜をいいことに",
+  "m": "taking advantage of",
+  "f": "N / Plain form の ＋ をいいことに",
+  "e": "Someone exploits a situation to do something improper.",
+  "x": [
+   {
+    "jp": "親が留守なの**をいいことに**、夜遅くまで遊んでいた。",
+    "en": "Taking advantage of his parents' absence, he played until late."
+   },
+   {
+    "jp": "注意されないの**をいいことに**、彼は遅刻を繰り返す。",
+    "en": "Since nobody warns him, he keeps coming late."
+   }
+  ],
+  "q": {
+   "s": "先生がいないの＿＿、学生たちは騒いでいる。",
+   "o": [
+    "をいいことに",
+    "をきっかけに",
+    "を皮切りに"
+   ],
+   "a": 0,
+   "en": "Taking advantage of the teacher's absence, the students are being noisy."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Always critical; not used for your own good choices."
+ },
+ {
+  "id": "n1-ni-itatte-wa",
+  "l": 1,
+  "t": "〜に至っては",
+  "m": "as for (the extreme case)",
+  "f": "N ＋ に至っては",
+  "e": "Names the most extreme example among similar ones.",
+  "x": [
+   {
+    "jp": "家族は皆反対した。父**に至っては**口もきいてくれない。",
+    "en": "My whole family objected. My father won't even speak to me."
+   },
+   {
+    "jp": "どの店も高いが、この店**に至っては**一万円もする。",
+    "en": "Every shop is expensive; this one even charges ten thousand yen."
+   }
+  ],
+  "q": {
+   "s": "クラスの多くが遅刻した。田中さん＿＿、まだ来ていない。",
+   "o": [
+    "に至っては",
+    "にしては",
+    "に限って"
+   ],
+   "a": 0,
+   "en": "Many in the class were late. Tanaka hasn't even arrived yet."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "The sentence before it usually describes a general bad situation."
+ },
+ {
+  "id": "n1-te-yamanai",
+  "l": 1,
+  "t": "〜てやまない",
+  "m": "never stop (wishing / hoping)",
+  "f": "V て-form ＋ やまない",
+  "e": "A deep, lasting feeling. Formal, used with 願う, 祈る, 愛する, 期待する.",
+  "x": [
+   {
+    "jp": "皆様のご健康を祈っ**てやみません**。",
+    "en": "I sincerely pray for your good health."
+   },
+   {
+    "jp": "彼の成功を願っ**てやまない**。",
+    "en": "I truly hope for his success."
+   }
+  ],
+  "q": {
+   "s": "卒業生の皆さんの活躍を期待して＿＿。",
+   "o": [
+    "やみません",
+    "たまりません",
+    "しかたありません"
+   ],
+   "a": 0,
+   "en": "We sincerely hope for the graduates' success."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Typical in speeches and letters; only with verbs of emotion."
+ },
+ {
+  "id": "n1-to-ittara-nai",
+  "l": 1,
+  "t": "〜といったらない",
+  "m": "indescribably",
+  "f": "N / Adj ＋ といったらない",
+  "e": "Something is so extreme that words cannot express it.",
+  "x": [
+   {
+    "jp": "あの時の恥ずかしさ**といったらなかった**。",
+    "en": "I can't describe how embarrassed I was."
+   },
+   {
+    "jp": "山頂からの景色の美しさ**といったらない**。",
+    "en": "The view from the summit is indescribably beautiful."
+   }
+  ],
+  "q": {
+   "s": "一人で暮らす寂しさ＿＿。",
+   "o": [
+    "といったらない",
+    "にすぎない",
+    "までもない"
+   ],
+   "a": 0,
+   "en": "The loneliness of living alone is beyond words."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Often after an adjective turned noun: 寂しさ, 美しさ, 悔しさ."
+ },
+ {
+  "id": "n1-majiki",
+  "l": 1,
+  "t": "〜まじき",
+  "m": "unacceptable for (someone in that role)",
+  "f": "V dict. ＋ まじき N (する → すまじき)",
+  "e": "Very formal: behaviour that someone of that status must never show.",
+  "x": [
+   {
+    "jp": "それは教師にある**まじき**行為だ。",
+    "en": "That is conduct unbecoming of a teacher."
+   },
+   {
+    "jp": "政治家として許す**まじき**発言",
+    "en": "a remark that cannot be tolerated from a politician"
+   }
+  ],
+  "q": {
+   "s": "警察官が犯罪に関わるとは、ある＿＿ことだ。",
+   "o": [
+    "まじき",
+    "べき",
+    "まい"
+   ],
+   "a": 0,
+   "en": "It's unthinkable that a police officer should be involved in a crime."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Pattern to memorise: NにあるまじきN."
+ },
+ {
+  "id": "n1-beku",
+  "l": 1,
+  "t": "〜べく",
+  "m": "in order to",
+  "f": "V dict. ＋ べく (する → すべく)",
+  "e": "Formal written purpose. The main clause states the effort made.",
+  "x": [
+   {
+    "jp": "夢を実現す**べく**、毎日努力している。",
+    "en": "I work hard every day to make my dream come true."
+   },
+   {
+    "jp": "事故の原因を明らかにす**べく**、調査が行われた。",
+    "en": "An investigation was carried out to find the cause."
+   }
+  ],
+  "q": {
+   "s": "日本の大学に入る＿＿、日本語を勉強している。",
+   "o": [
+    "べく",
+    "べき",
+    "まじき"
+   ],
+   "a": 0,
+   "en": "I'm studying Japanese in order to enter a Japanese university."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Not used for requests or orders in the main clause."
+ },
+ {
+  "id": "n1-n-ga-tame",
+  "l": 1,
+  "t": "〜んがため（に）",
+  "m": "for the sake of (at all costs)",
+  "f": "V ない-stem ＋ んがため (する → せんがため)",
+  "e": "Very formal purpose with strong determination.",
+  "x": [
+   {
+    "jp": "勝た**んがため**、彼は厳しい練習に耐えた。",
+    "en": "He endured hard training for the sake of winning."
+   },
+   {
+    "jp": "真実を知ら**んがため**に、記者は危険な国へ向かった。",
+    "en": "To learn the truth, the reporter headed to a dangerous country."
+   }
+  ],
+  "q": {
+   "s": "試験に合格せ＿＿、彼女は寝る間も惜しんで勉強した。",
+   "o": [
+    "んがため",
+    "ずにはいられず",
+    "まじき"
+   ],
+   "a": 0,
+   "en": "To pass the exam, she studied even at the expense of sleep."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Remember the irregular form せんがため."
+ },
+ {
+  "id": "n1-ni-katakunai",
+  "l": 1,
+  "t": "〜にかたくない",
+  "m": "not hard to (imagine / understand)",
+  "f": "N / V dict. ＋ にかたくない",
+  "e": "Used with 想像, 理解, 察する: easily imagined.",
+  "x": [
+   {
+    "jp": "彼の悲しみは想像**にかたくない**。",
+    "en": "It is not hard to imagine his grief."
+   },
+   {
+    "jp": "事故の大きさは察する**にかたくない**。",
+    "en": "One can easily guess the scale of the accident."
+   }
+  ],
+  "q": {
+   "s": "家族を失った彼女の気持ちは、想像＿＿。",
+   "o": [
+    "にかたくない",
+    "に足りない",
+    "にほかならない"
+   ],
+   "a": 0,
+   "en": "It's easy to imagine how she felt after losing her family."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Almost always with 想像 / 理解 / 察する."
+ },
+ {
+  "id": "n1-wo-fumaete",
+  "l": 1,
+  "t": "〜を踏まえて",
+  "m": "based on / taking into account",
+  "f": "N ＋ を踏まえて",
+  "e": "Making a judgement or plan based on facts or results.",
+  "x": [
+   {
+    "jp": "調査結果**を踏まえて**、対策を考える。",
+    "en": "We'll consider measures based on the survey results."
+   },
+   {
+    "jp": "前回の反省**を踏まえ**、計画を見直した。",
+    "en": "Reflecting on last time, we revised the plan."
+   }
+  ],
+  "q": {
+   "s": "アンケートの結果＿＿、商品を改良した。",
+   "o": [
+    "を踏まえて",
+    "をよそに",
+    "をものともせず"
+   ],
+   "a": 0,
+   "en": "We improved the product based on the survey results."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Close to をもとに; を踏まえて stresses careful consideration."
+ },
+ {
+  "id": "n1-ikan",
+  "l": 1,
+  "t": "〜いかんによらず",
+  "m": "regardless of",
+  "f": "N（の）＋ いかんによらず / いかんにかかわらず",
+  "e": "Formal: whatever the circumstances or result.",
+  "x": [
+   {
+    "jp": "理由の**いかんによらず**、遅刻は認めない。",
+    "en": "Lateness will not be accepted regardless of the reason."
+   },
+   {
+    "jp": "結果の**いかんにかかわらず**、報告してください。",
+    "en": "Please report regardless of the results."
+   }
+  ],
+  "q": {
+   "s": "理由の＿＿、返品はお受けできません。",
+   "o": [
+    "いかんによらず",
+    "かぎりでは",
+    "ものなら"
+   ],
+   "a": 0,
+   "en": "Returns cannot be accepted regardless of the reason."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Without によらず, Nいかんで(は) means 'depending on N'."
+ },
+ {
+  "id": "n1-zukume",
+  "l": 1,
+  "t": "〜ずくめ",
+  "m": "full of / nothing but",
+  "f": "N ＋ ずくめ",
+  "e": "Surrounded by many of the same (often good) things.",
+  "x": [
+   {
+    "jp": "今年はいいこと**ずくめ**の一年だった。",
+    "en": "This year was full of good things."
+   },
+   {
+    "jp": "黒**ずくめ**の服を着た男",
+    "en": "a man dressed all in black"
+   }
+  ],
+  "q": {
+   "s": "昇進に結婚に、今年はいいこと＿＿だ。",
+   "o": [
+    "ずくめ",
+    "だらけ",
+    "まみれ"
+   ],
+   "a": 0,
+   "en": "A promotion and a wedding – this year is full of good news."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "だらけ / まみれ are negative; ずくめ is often positive or neutral."
+ },
+ {
+  "id": "n1-meku",
+  "l": 1,
+  "t": "〜めく",
+  "m": "show signs of / -ish",
+  "f": "N ＋ めく / めいた N",
+  "e": "Takes on a quality: 春めく (spring-like), 皮肉めいた (sarcastic-sounding).",
+  "x": [
+   {
+    "jp": "日差しが暖かくなり、だいぶ春**めいて**きた。",
+    "en": "The sunlight is warmer; it feels like spring."
+   },
+   {
+    "jp": "彼は冗談**めいた**口調で言った。",
+    "en": "He said it in a joking tone."
+   }
+  ],
+  "q": {
+   "s": "三月に入り、少しずつ春＿＿きた。",
+   "o": [
+    "めいて",
+    "ぶって",
+    "がって"
+   ],
+   "a": 0,
+   "en": "It's March, and it's gradually starting to feel like spring."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "Common fixed words: 春めく, 秋めく, 謎めいた, 皮肉めいた."
+ },
+ {
+  "id": "n1-toatte",
+  "l": 1,
+  "t": "〜とあって",
+  "m": "because (it is a special case)",
+  "f": "N / Plain form ＋ とあって",
+  "e": "A special situation naturally causes the result.",
+  "x": [
+   {
+    "jp": "連休**とあって**、観光地はどこも混雑している。",
+    "en": "Because it's a long weekend, every tourist spot is crowded."
+   },
+   {
+    "jp": "人気歌手が来る**とあって**、会場は満員だった。",
+    "en": "Since a popular singer was coming, the venue was full."
+   }
+  ],
+  "q": {
+   "s": "年に一度のお祭り＿＿、町は人であふれていた。",
+   "o": [
+    "とあって",
+    "とはいえ",
+    "ともなく"
+   ],
+   "a": 0,
+   "en": "Since it was the once-a-year festival, the town was packed."
+  },
+  "ref": "Shin Kanzen Master N1 Grammar (3A Network); Nihongo Sō Matome N1 Grammar (Ask)",
+  "tip": "The result is something observed, not the speaker's will."
  }
 ]

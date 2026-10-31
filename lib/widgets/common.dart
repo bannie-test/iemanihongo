@@ -7,16 +7,22 @@ import '../services/sync_service.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import 'app_icons.dart';
+import 'botanical.dart';
 
-/// Rounded card with the Sakura border.
+enum PanelTone { paper, sage, clay, forest }
+
+/// Rounded Botanical panel: paper cards with a hairline rule, or sage /
+/// pale-clay / forest fields for grouped content.
 class SoftCard extends StatelessWidget {
   const SoftCard({
     super.key,
     required this.child,
-    this.padding = const EdgeInsets.all(16),
+    this.padding = const EdgeInsets.all(18),
     this.onTap,
     this.color,
     this.borderColor,
+    this.tone = PanelTone.paper,
+    this.radius = AppTheme.radius,
   });
 
   final Widget child;
@@ -24,63 +30,108 @@ class SoftCard extends StatelessWidget {
   final VoidCallback? onTap;
   final Color? color;
   final Color? borderColor;
+  final PanelTone tone;
+  final double radius;
 
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    final radius = BorderRadius.circular(AppTheme.radius);
+    final (fill, line) = switch (tone) {
+      PanelTone.paper => (Theme.of(context).colorScheme.surface, c.border),
+      PanelTone.sage => (c.accentSoft, c.accentSoft),
+      PanelTone.clay => (c.warmField, c.warmField),
+      PanelTone.forest => (c.forest, c.forest),
+    };
+    final content = Padding(padding: padding, child: child);
     return Material(
-      color: color ?? Theme.of(context).colorScheme.surface,
+      color: color ?? fill,
       shape: RoundedRectangleBorder(
-        borderRadius: radius,
-        side: BorderSide(color: borderColor ?? c.border, width: 2),
+        borderRadius: BorderRadius.circular(radius),
+        side: BorderSide(color: borderColor ?? line, width: 1),
       ),
       clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
-        child: Padding(padding: padding, child: child),
-      ),
+      child: tone == PanelTone.forest
+          ? DefaultTextStyle.merge(
+              style: TextStyle(color: c.onForest),
+              child: IconTheme.merge(
+                data: IconThemeData(color: c.onForest),
+                child: content,
+              ),
+            )
+          : (onTap == null ? content : InkWell(onTap: onTap, child: content)),
     );
   }
 }
 
-/// Pill-shaped primary button with the pink → peach gradient.
-class GradientButton extends StatelessWidget {
-  const GradientButton({super.key, required this.label, required this.onPressed, this.icon, this.height = 54});
+/// Primary action: soft-rounded forest button (cream on forest). Pressing
+/// lifts it slightly; the lift is skipped when reduced motion is requested.
+/// (Named for its earlier gradient look; the call sites are unchanged.)
+class GradientButton extends StatefulWidget {
+  const GradientButton({
+    super.key,
+    required this.label,
+    required this.onPressed,
+    this.icon,
+    this.height = 54,
+    this.inverse = false,
+  });
 
   final String label;
   final VoidCallback? onPressed;
   final IconData? icon;
   final double height;
 
+  /// Cream button for use on forest fields.
+  final bool inverse;
+
+  @override
+  State<GradientButton> createState() => _GradientButtonState();
+}
+
+class _GradientButtonState extends State<GradientButton> {
+  bool _pressed = false;
+
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    final enabled = onPressed != null;
-    return Opacity(
-      opacity: enabled ? 1 : 0.45,
-      child: Container(
-        height: height,
-        decoration: ShapeDecoration(shape: const StadiumBorder(), gradient: c.gradient),
+    final enabled = widget.onPressed != null;
+    final reduced = MediaQuery.maybeDisableAnimationsOf(context) ?? false;
+    final bg = widget.inverse ? c.onForest : c.accent;
+    final fg = widget.inverse ? c.forest : c.onAccent;
+    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppTheme.controlRadius));
+    return Semantics(
+      button: true,
+      enabled: enabled,
+      child: AnimatedContainer(
+        duration: reduced ? Duration.zero : AppTheme.motion,
+        curve: Curves.ease,
+        transform: Matrix4.translationValues(0, _pressed && !reduced ? -2 : 0, 0),
+        height: widget.height,
         child: Material(
-          type: MaterialType.transparency,
-          shape: const StadiumBorder(),
+          color: enabled
+              ? (_pressed ? Color.alphaBlend(fg.withValues(alpha: 0.12), bg) : bg)
+              : bg.withValues(alpha: 0.4),
+          shape: shape,
           clipBehavior: Clip.antiAlias,
           child: InkWell(
-            onTap: onPressed,
+            onTap: widget.onPressed,
+            onHighlightChanged: (v) => setState(() => _pressed = v),
             child: Center(
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (icon != null) ...[Icon(icon, color: Colors.white, size: 20), const SizedBox(width: 8)],
-                  Text(
-                    label,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                      fontFamily: AppTheme.font,
-                      fontFamilyFallback: AppTheme.fallback,
+                  if (widget.icon != null) ...[Icon(widget.icon, color: fg, size: 19), const SizedBox(width: 8)],
+                  Flexible(
+                    child: Text(
+                      widget.label,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: enabled ? fg : fg.withValues(alpha: 0.75),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15.5,
+                        fontFamily: AppTheme.font,
+                        fontFamilyFallback: AppTheme.fallback,
+                      ),
                     ),
                   ),
                 ],
@@ -103,22 +154,39 @@ class Tag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = context.colors;
-    final fg = accent ? c.accent : c.muted;
+    final fg = accent ? Theme.of(context).colorScheme.onSurface : c.muted;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-      decoration: BoxDecoration(color: accent ? c.accentSoft : c.surface2, borderRadius: BorderRadius.circular(99)),
+      decoration: BoxDecoration(
+        color: accent ? c.accentSoft : Colors.transparent,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: accent ? c.accentSoft : c.border),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) ...[Icon(icon, size: 13, color: fg), const SizedBox(width: 4)],
-          Text(
-            label,
-            style: TextStyle(color: fg, fontSize: 12, fontWeight: FontWeight.w700),
+          Flexible(
+            child: Text(
+              label,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(color: fg, fontSize: 12, fontWeight: FontWeight.w600, letterSpacing: 0.2),
+            ),
           ),
         ],
       ),
     );
   }
+}
+
+/// Small uppercase tracked label above a section.
+class Eyebrow extends StatelessWidget {
+  const Eyebrow(this.text, {super.key, this.color});
+  final String text;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) => Text(text.toUpperCase(), style: AppTheme.eyebrow(context, color: color));
 }
 
 /// Round speaker button that reads Japanese text aloud.
@@ -152,7 +220,7 @@ class SpeakButton extends StatelessWidget {
 }
 
 class Bar extends StatelessWidget {
-  const Bar(this.value, {super.key, this.height = 8, this.color});
+  const Bar(this.value, {super.key, this.height = 6, this.color});
 
   final double value;
   final double height;
@@ -174,7 +242,7 @@ class Bar extends StatelessWidget {
 }
 
 class Ring extends StatelessWidget {
-  const Ring({super.key, required this.value, required this.child, this.size = 72, this.stroke = 8});
+  const Ring({super.key, required this.value, required this.child, this.size = 72, this.stroke = 5});
 
   final double value;
   final Widget child;
@@ -218,7 +286,7 @@ class _RingPainter extends CustomPainter {
   bool shouldRepaint(_RingPainter old) => old.value != value || old.fill != fill || old.track != track;
 }
 
-/// Japanese text where **…** segments are highlighted in the accent colour.
+/// Japanese text where **…** segments are highlighted in the clay accent.
 class HighlightText extends StatelessWidget {
   const HighlightText(this.text, {super.key, this.style});
 
@@ -235,7 +303,7 @@ class HighlightText extends StatelessWidget {
           for (var i = 0; i < parts.length; i++)
             TextSpan(
               text: parts[i],
-              style: i.isOdd ? base.copyWith(color: context.colors.accent, fontWeight: FontWeight.w700) : base,
+              style: i.isOdd ? base.copyWith(color: context.colors.clay, fontWeight: FontWeight.w700) : base,
             ),
         ],
       ),
@@ -295,9 +363,12 @@ class LevelPicker extends StatelessWidget {
           Expanded(
             child: Material(
               color: l == value ? c.accent : Theme.of(context).colorScheme.surface,
-              shape: StadiumBorder(side: BorderSide(color: l == value ? c.accent : c.border, width: 2)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+                side: BorderSide(color: l == value ? c.accent : c.border),
+              ),
               child: InkWell(
-                customBorder: const StadiumBorder(),
+                borderRadius: BorderRadius.circular(14),
                 onTap: () => onChanged(l),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 9),
@@ -305,7 +376,7 @@ class LevelPicker extends StatelessWidget {
                     child: Text(
                       levelName(l),
                       style: TextStyle(
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         color: l == value ? c.onAccent : c.muted,
                         fontSize: 14,
                       ),
@@ -337,8 +408,10 @@ class EmptyState extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 56, color: context.colors.accent),
-          const SizedBox(height: 14),
+          const Sprig(size: 64),
+          const SizedBox(height: 8),
+          Icon(icon, size: 30, color: context.colors.muted),
+          const SizedBox(height: 12),
           Text(title, style: context.text.titleLarge, textAlign: TextAlign.center),
           const SizedBox(height: 6),
           Text(
@@ -351,4 +424,81 @@ class EmptyState extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// Shown while the Supabase project is missing the app's tables.
+class DatabaseSetupBanner extends StatelessWidget {
+  const DatabaseSetupBanner({super.key, required this.onOpen});
+
+  final VoidCallback onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    final sync = context.read<AppState>().sync;
+    if (sync == null) return const SizedBox.shrink();
+    final c = context.colors;
+    return ValueListenableBuilder(
+      valueListenable: sync.needsDatabaseSetup,
+      builder: (context, missing, _) => !missing
+          ? const SizedBox.shrink()
+          : Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: SoftCard(
+                onTap: onOpen,
+                tone: PanelTone.clay,
+                child: Row(
+                  children: [
+                    Icon(AppIcons.warning, color: c.clay),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Sync is paused: your Supabase project needs a one-time setup. Tap to fix.',
+                        style: context.text.bodyMedium,
+                      ),
+                    ),
+                    Icon(AppIcons.next, color: c.clay),
+                  ],
+                ),
+              ),
+            ),
+    );
+  }
+}
+
+/// "Mẹo" box used for tips in tests, listening and grammar.
+class TipBox extends StatelessWidget {
+  const TipBox(this.text, {super.key, this.label = 'Mẹo'});
+  final String text;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.colors;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(color: c.warmField, borderRadius: BorderRadius.circular(16)),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(AppIcons.bulb, size: 18, color: c.clay),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: '$label  ',
+                    style: TextStyle(fontWeight: FontWeight.w600, color: c.clay),
+                  ),
+                  TextSpan(text: text),
+                ],
+              ),
+              style: const TextStyle(fontSize: 14, height: 1.5),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

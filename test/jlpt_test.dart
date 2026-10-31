@@ -6,7 +6,7 @@ import 'package:iemanihongo/logic/weakness.dart';
 import 'package:iemanihongo/models/jlpt.dart';
 
 List<JlptTest> load() => [
-  for (final j in jsonDecode(File('assets/data/jlpt_tests.json').readAsStringSync()) as List)
+  for (final j in (jsonDecode(File('assets/data/jlpt_tests.json').readAsStringSync()) as Map)['tests'] as List)
     JlptTest.fromJson(j as Map<String, dynamic>),
 ];
 
@@ -25,12 +25,12 @@ TestAnswer ans(String q, bool ok, int at, {String sec = 'kanji', String tag = 'T
 void main() {
   group('question bank', () {
     final tests = load();
-    final raw = jsonDecode(File('assets/data/jlpt_tests.json').readAsStringSync()) as List;
+    final raw = (jsonDecode(File('assets/data/jlpt_tests.json').readAsStringSync()) as Map)['tests'] as List;
 
-    test('two 30-question tests for each of N3, N2, N1', () {
-      for (final l in [3, 2, 1]) {
+    test('30-question mock tests for every level N5–N1', () {
+      for (final l in [5, 4, 3, 2, 1]) {
         final ts = tests.where((t) => t.level == l).toList();
-        expect(ts, hasLength(2));
+        expect(ts.length, greaterThanOrEqualTo(2));
         for (final t in ts) {
           expect(t.questions, hasLength(30));
           expect(t.minutes, greaterThan(0));

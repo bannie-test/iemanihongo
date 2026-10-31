@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../data/content_repository.dart';
 import '../../logic/weakness.dart';
 import '../../models/jlpt.dart';
 import '../../state/app_state.dart';
@@ -11,6 +10,8 @@ import '../../widgets/app_icons.dart';
 import '../../widgets/common.dart';
 import '../../widgets/jlpt_widgets.dart';
 import '../auth_screen.dart';
+import '../database_setup_screen.dart';
+import '../sources_screen.dart';
 import 'test_result_screen.dart';
 import 'test_runner_screen.dart';
 
@@ -30,29 +31,20 @@ class _JlptHubScreenState extends State<JlptHubScreen> {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<AppState>();
-    final level = _level ?? (state.settings.level <= 3 ? state.settings.level : 3);
+    final level = _level ?? state.settings.level;
     final report = state.weakness(level);
     final signedIn = state.canSaveTests;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Luyện thi JLPT'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: SegmentedButton<int>(
-              showSelectedIcon: false,
-              style: const ButtonStyle(visualDensity: VisualDensity.compact),
-              segments: [for (final l in ContentRepository.testLevels) ButtonSegment(value: l, label: Text('N$l'))],
-              selected: {level},
-              onSelectionChanged: (s) => setState(() => _level = s.first),
-            ),
-          ),
-        ],
-      ),
+      appBar: AppBar(title: const Text('Luyện thi JLPT')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
         children: [
+          DatabaseSetupBanner(
+            onOpen: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DatabaseSetupScreen())),
+          ),
+          LevelPicker(value: level, onChanged: (l) => setState(() => _level = l)),
+          const SizedBox(height: 16),
           if (!signedIn) ...[const _SignInCard(), const SizedBox(height: 14)],
           _section(context, 'Đề thi thử', 'Mô phỏng phần 文字・語彙・文法, có tính giờ'),
           for (final t in state.content.testsFor(level)) ...[
@@ -75,6 +67,8 @@ class _JlptHubScreenState extends State<JlptHubScreen> {
           ),
           const SizedBox(height: 20),
           _History(level: level),
+          const SizedBox(height: 20),
+          const _OfficialResources(),
         ],
       ),
     );
@@ -184,8 +178,8 @@ class _TestCard extends StatelessWidget {
               Container(
                 width: 52,
                 height: 52,
-                decoration: BoxDecoration(gradient: c.gradient, borderRadius: BorderRadius.circular(16)),
-                child: const Icon(AppIcons.examOn, color: Colors.white, size: 26),
+                decoration: BoxDecoration(color: c.accentSoft, shape: BoxShape.circle),
+                child: Icon(AppIcons.exam, color: Theme.of(context).colorScheme.onSurface, size: 24),
               ),
               const SizedBox(width: 14),
               Expanded(
@@ -215,7 +209,7 @@ class _TestCard extends StatelessWidget {
                 const SizedBox(width: 6),
                 Text(
                   'Đang làm ${running.answers.length}/${running.total} · còn ${formatClock(running.remainingSec)}',
-                  style: TextStyle(color: c.accent, fontWeight: FontWeight.w700),
+                  style: TextStyle(color: c.accent, fontWeight: FontWeight.w600),
                 ),
               ],
             ),
@@ -279,7 +273,7 @@ class _WeaknessCard extends StatelessWidget {
                 stroke: 7,
                 child: Text(
                   '${(report.accuracy * 100).round()}%',
-                  style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+                  style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                 ),
               ),
               const SizedBox(width: 14),
@@ -293,7 +287,7 @@ class _WeaknessCard extends StatelessWidget {
                       const SizedBox(height: 4),
                       Text(
                         'Yếu nhất: ${weakest.vi}',
-                        style: TextStyle(color: c.bad, fontWeight: FontWeight.w700),
+                        style: TextStyle(color: c.bad, fontWeight: FontWeight.w600),
                       ),
                     ],
                   ],
@@ -366,7 +360,7 @@ class _SectionTile extends StatelessWidget {
         final ids = state.content.questionsFor(level, section: section).map((q) => q.id).toList()..shuffle();
         _open(context, state.startPractice(level: level, key: key, title: 'N$level · ${section.vi}', questionIds: ids));
       },
-      title: Text(section.vi, style: const TextStyle(fontWeight: FontWeight.w700)),
+      title: Text(section.vi, style: const TextStyle(fontWeight: FontWeight.w600)),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -383,7 +377,7 @@ class _SectionTile extends StatelessWidget {
           ? Text(
               '${(stat.accuracy * 100).round()}%',
               style: TextStyle(
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w600,
                 color: stat.accuracy >= Weakness.threshold ? c.good : c.bad,
               ),
             )
@@ -418,14 +412,14 @@ class _History extends StatelessWidget {
                   onTap: () =>
                       Navigator.of(context).push(MaterialPageRoute(builder: (_) => TestResultScreen(attemptId: a.id))),
                   leading: Icon(a.mode == AttemptMode.exam ? AppIcons.exam : AppIcons.practice, color: c.accent),
-                  title: Text(a.title, style: const TextStyle(fontWeight: FontWeight.w700)),
+                  title: Text(a.title, style: const TextStyle(fontWeight: FontWeight.w600)),
                   subtitle: Text(
                     '${DateFormat('dd/MM HH:mm').format(DateTime.fromMillisecondsSinceEpoch(a.finishedAt))} · ${formatClock(a.elapsedSec)}',
                   ),
                   trailing: Text(
                     '${a.score}/${a.total}',
                     style: TextStyle(
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w600,
                       fontSize: 16,
                       color: a.percent >= 0.6 ? c.good : c.bad,
                     ),
@@ -435,6 +429,41 @@ class _History extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _OfficialResources extends StatelessWidget {
+  const _OfficialResources();
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.colors;
+    return SoftCard(
+      tone: PanelTone.clay,
+      radius: AppTheme.radiusWide,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Đề chính thức', style: context.text.titleMedium),
+          const SizedBox(height: 6),
+          Text(
+            'Các đề trong app được biên soạn theo đúng cấu trúc đề JLPT chính thức. '
+            'Để luyện thêm với đề thật, hãy dùng đề mẫu miễn phí của Japan Foundation và bộ 「日本語能力試験 公式問題集」.',
+            style: context.text.bodyMedium,
+          ),
+          const SizedBox(height: 10),
+          OutlinedButton.icon(
+            onPressed: () => openLink(context, jlptSamplesUrl),
+            icon: Icon(AppIcons.next, color: c.clay),
+            label: const Text('Mở đề mẫu chính thức (jlpt.jp)'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SourcesScreen())),
+            child: const Text('Nguồn tham khảo của app'),
+          ),
+        ],
+      ),
     );
   }
 }

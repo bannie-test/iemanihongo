@@ -45,6 +45,7 @@ dependencies:
   uuid: ^4.6.0
   path_drawing: ^1.0.1
   lucide_icons_flutter: ^4.0.1
+  url_launcher: ^6.3.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -67,19 +68,35 @@ flutter:
   assets:
     - assets/data/
     - assets/images/
+    - supabase/schema.sql
 
   fonts:
-    - family: Nunito
+    # Botanical: EB Garamond for display, Be Vietnam Pro for reading text
+    # (Instrument-style grotesque with full Vietnamese), Zen Old Mincho and
+    # Zen Kaku Gothic New for Japanese.
+    - family: BotanicalGaramond
       fonts:
-        - asset: assets/fonts/Nunito-Medium.ttf
+        - asset: assets/fonts/EBGaramond-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/EBGaramond-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Nunito-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Nunito-ExtraBold.ttf
-          weight: 800
-    - family: ZenMaruGothic
+        - asset: assets/fonts/EBGaramond-Italic.ttf
+          style: italic
+    - family: BotanicalReading
       fonts:
-        - asset: assets/fonts/ZenMaruGothic-Medium.ttf
+        - asset: assets/fonts/BeVietnamPro-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/BeVietnamPro-Medium.ttf
           weight: 500
-        - asset: assets/fonts/ZenMaruGothic-Bold.ttf
+        - asset: assets/fonts/BeVietnamPro-SemiBold.ttf
+          weight: 600
+    - family: JapaneseMincho
+      fonts:
+        - asset: assets/fonts/ZenOldMincho-Medium.ttf
+          weight: 500
+    - family: JapaneseGothic
+      fonts:
+        - asset: assets/fonts/ZenKakuGothicNew-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/ZenKakuGothicNew-Bold.ttf
           weight: 700

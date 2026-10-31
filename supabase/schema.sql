@@ -160,3 +160,6 @@ begin
     end if;
   end loop;
 end $$;
+
+-- Make the API see the new tables right away.
+notify pgrst, 'reload schema';

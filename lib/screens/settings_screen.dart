@@ -8,6 +8,8 @@ import '../state/app_state.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import 'auth_screen.dart';
+import 'database_setup_screen.dart';
+import 'sources_screen.dart';
 import '../widgets/app_icons.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -28,7 +30,7 @@ class SettingsScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(6, 0, 6, 8),
             child: Text(
               title.toUpperCase(),
-              style: context.text.bodySmall?.copyWith(letterSpacing: 1.2, fontWeight: FontWeight.w700),
+              style: context.text.bodySmall?.copyWith(letterSpacing: 1.2, fontWeight: FontWeight.w600),
             ),
           ),
           SoftCard(
@@ -96,7 +98,7 @@ class SettingsScreen extends StatelessWidget {
               title: const Text('Reminder time'),
               trailing: Text(
                 TimeOfDay(hour: s.reminderHour, minute: s.reminderMinute).format(context),
-                style: TextStyle(color: c.accent, fontWeight: FontWeight.w700),
+                style: TextStyle(color: c.accent, fontWeight: FontWeight.w600),
               ),
               onTap: () async {
                 final t = await showTimePicker(
@@ -164,13 +166,11 @@ class SettingsScreen extends StatelessWidget {
             ),
           ]),
           section('About', [
-            const ListTile(
-              title: Text('Content sources'),
-              subtitle: Text(
-                'Vocabulary: JLPT lists by Jonathan Waller (tanos.co.uk, CC BY) via open-anki-jlpt-decks (MIT). '
-                'Kanji: KANJIDIC2 by EDRDG (CC BY-SA 4.0). Stroke order: KanjiVG by Ulrich Apel (CC BY-SA 3.0). '
-                'Fonts: Nunito, Zen Maru Gothic (SIL OFL). Icons: Lucide (ISC).',
-              ),
+            ListTile(
+              title: const Text('Content sources & references'),
+              subtitle: const Text('Vocabulary, kanji, stroke order, grammar books, JLPT resources'),
+              trailing: const Icon(AppIcons.next),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SourcesScreen())),
             ),
           ]),
         ],
@@ -234,6 +234,20 @@ class _AccountTile extends StatelessWidget {
               : Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
                   child: Text(err, style: TextStyle(color: Theme.of(context).colorScheme.error)),
+                ),
+        ),
+        ValueListenableBuilder(
+          valueListenable: sync.needsDatabaseSetup,
+          builder: (context, missing, _) => !missing
+              ? const SizedBox.shrink()
+              : Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
+                  child: FilledButton.icon(
+                    onPressed: () =>
+                        Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DatabaseSetupScreen())),
+                    icon: const Icon(AppIcons.settings),
+                    label: const Text('Set up database'),
+                  ),
                 ),
         ),
         ListTile(

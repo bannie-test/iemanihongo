@@ -225,7 +225,7 @@ class _SheetPainter extends CustomPainter {
         final tp = TextPainter(
           text: TextSpan(
             text: '${i + 1}',
-            style: TextStyle(fontSize: 7, fontWeight: FontWeight.w700, color: accent.withValues(alpha: 0.9)),
+            style: TextStyle(fontSize: 7, fontWeight: FontWeight.w600, color: accent.withValues(alpha: 0.9)),
           ),
           textDirection: TextDirection.ltr,
         )..layout();

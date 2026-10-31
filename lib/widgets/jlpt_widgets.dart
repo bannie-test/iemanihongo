@@ -27,7 +27,7 @@ class JlptSentence extends StatelessWidget {
           TextSpan(
             text: m.group(1),
             style: TextStyle(
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w600,
               decoration: TextDecoration.underline,
               decorationColor: c.accent,
               decorationThickness: 2.5,
@@ -131,9 +131,9 @@ class JlptOption extends StatelessWidget {
                   child: Text(
                     '${index + 1}',
                     style: TextStyle(
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w600,
                       fontSize: 13,
-                      color: state == OptionState.idle || state == OptionState.dimmed ? c.muted : Colors.white,
+                      color: state == OptionState.idle || state == OptionState.dimmed ? c.muted : c.onAccent,
                     ),
                   ),
                 ),
@@ -144,7 +144,7 @@ class JlptOption extends StatelessWidget {
                     children: [
                       Text(
                         text,
-                        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: fg),
+                        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: fg),
                       ),
                       if (note != null) Text(note!, style: TextStyle(fontSize: 11.5, color: fg.withValues(alpha: 0.8))),
                     ],
@@ -184,7 +184,7 @@ class ExplanationBox extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 'Dịch nghĩa',
-                style: TextStyle(fontWeight: FontWeight.w700, color: c.accent, fontSize: 13),
+                style: TextStyle(fontWeight: FontWeight.w600, color: c.accent, fontSize: 13),
               ),
             ],
           ),
@@ -197,12 +197,32 @@ class ExplanationBox extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 'Giải thích',
-                style: TextStyle(fontWeight: FontWeight.w700, color: c.accent, fontSize: 13),
+                style: TextStyle(fontWeight: FontWeight.w600, color: c.accent, fontSize: 13),
               ),
             ],
           ),
           const SizedBox(height: 4),
           for (final line in lines) _line(context, c, line),
+          if (question.tip != null) ...[
+            const SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(color: c.warmField, borderRadius: BorderRadius.circular(14)),
+              child: Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Mẹo  ',
+                      style: TextStyle(fontWeight: FontWeight.w600, color: c.clay),
+                    ),
+                    TextSpan(text: question.tip),
+                  ],
+                ),
+                style: const TextStyle(fontSize: 14, height: 1.5),
+              ),
+            ),
+          ],
         ],
       ),
     );
@@ -228,7 +248,7 @@ class ExplanationBox extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 height: 1.5,
-                fontWeight: good ? FontWeight.w700 : FontWeight.w500,
+                fontWeight: good ? FontWeight.w600 : FontWeight.w500,
                 color: good ? c.good : null,
               ),
             ),

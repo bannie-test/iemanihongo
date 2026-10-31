@@ -114,10 +114,7 @@ class _ModeCard extends StatelessWidget {
             height: 52,
             decoration: BoxDecoration(color: c.accentSoft, borderRadius: BorderRadius.circular(16)),
             child: Center(
-              child: Text(
-                mode.glyph,
-                style: TextStyle(fontSize: 24, color: c.accent, fontWeight: FontWeight.w700),
-              ),
+              child: Text(mode.glyph, style: AppTheme.jp(24, color: c.clay)),
             ),
           ),
           const SizedBox(width: 14),
@@ -273,7 +270,7 @@ class _QuizScreenState extends State<QuizScreen> {
               switch (q.mode) {
                 QuizMode.meaning || QuizMode.reading => FittedBox(
                   fit: BoxFit.scaleDown,
-                  child: Text(w.word, style: const TextStyle(fontSize: 52, fontWeight: FontWeight.w700)),
+                  child: Text(w.word, style: AppTheme.jp(52)),
                 ),
                 QuizMode.reverse => Text(w.meaning, textAlign: TextAlign.center, style: context.text.headlineSmall),
                 QuizMode.listening => SpeakButton(w.speakText, size: 84),
@@ -340,7 +337,7 @@ class _QuizScreenState extends State<QuizScreen> {
               Expanded(
                 child: Text(
                   _q.options[i],
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: jp ? 19 : 15.5, color: fg),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: jp ? 19 : 15.5, color: fg),
                 ),
               ),
               if (showGood) Icon(AppIcons.check, color: c.good),
@@ -367,7 +364,7 @@ class _QuizScreenState extends State<QuizScreen> {
               children: [
                 Text(
                   right ? (_combo >= 3 ? 'Correct! $_combo in a row 🔥' : 'Correct!') : 'Not quite',
-                  style: TextStyle(color: right ? c.good : c.bad, fontWeight: FontWeight.w700, fontSize: 16),
+                  style: TextStyle(color: right ? c.good : c.bad, fontWeight: FontWeight.w600, fontSize: 16),
                 ),
                 Text(
                   '${w.word}${w.showReading ? '（${w.reading}）' : ''} · ${w.shortMeaning}',
@@ -418,7 +415,7 @@ class _QuizScreenState extends State<QuizScreen> {
           for (final w in _missed)
             ListTile(
               contentPadding: EdgeInsets.zero,
-              title: Text(w.word, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 18)),
+              title: Text(w.word, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 18)),
               subtitle: Text('${w.showReading ? '${w.reading} · ' : ''}${w.shortMeaning}'),
               trailing: SpeakButton(w.speakText, size: 34),
               onTap: () => showWordSheet(context, w),

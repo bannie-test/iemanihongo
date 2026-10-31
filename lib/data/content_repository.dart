@@ -4,11 +4,12 @@ import 'package:flutter/services.dart';
 
 import '../models/content.dart';
 import '../models/jlpt.dart';
+import '../models/listening.dart';
 
 /// Vocabulary, kanji and grammar bundled with the app, so everything works
 /// offline from the first launch.
 class ContentRepository {
-  ContentRepository._(this.words, this.kanji, this.grammar, this.tests)
+  ContentRepository._(this.words, this.kanji, this.grammar, this.tests, this.sectionTips, this.listening)
     : byId = {for (final w in words) w.id: w},
       byLevel = _groupByLevel(words),
       questionById = {
@@ -26,7 +27,13 @@ class ContentRepository {
   final List<JlptTest> tests;
   final Map<String, JlptQuestion> questionById;
 
-  static const testLevels = [3, 2, 1];
+  static const testLevels = [5, 4, 3, 2, 1];
+
+  /// Strategy tip (Vietnamese) for each JLPT section.
+  final Map<JlptSection, String> sectionTips;
+
+  /// Listening practice items.
+  final List<ListeningItem> listening;
 
   List<JlptTest> testsFor(int level) => tests.where((t) => t.level == level).toList();
 
@@ -41,17 +48,28 @@ class ContentRepository {
     final vocab = jsonDecode(await b.loadString('assets/data/vocab.json')) as List;
     final kanji = jsonDecode(await b.loadString('assets/data/kanji.json')) as Map<String, dynamic>;
     final grammar = jsonDecode(await b.loadString('assets/data/grammar.json')) as List;
-    final tests = jsonDecode(await b.loadString('assets/data/jlpt_tests.json')) as List;
-    return ContentRepository.fromJson(vocab, kanji, grammar, tests);
+    final tests = jsonDecode(await b.loadString('assets/data/jlpt_tests.json')) as Map<String, dynamic>;
+    final listening = jsonDecode(await b.loadString('assets/data/listening.json')) as List;
+    return ContentRepository.fromJson(vocab, kanji, grammar, tests, listening);
   }
 
-  factory ContentRepository.fromJson(List vocab, Map<String, dynamic> kanji, List grammar, [List tests = const []]) =>
-      ContentRepository._(
-        [for (final j in vocab) Word.fromJson(j as Map<String, dynamic>)],
-        {for (final e in kanji.entries) e.key: KanjiInfo.fromJson(e.key, e.value as Map<String, dynamic>)},
-        [for (final j in grammar) GrammarPoint.fromJson(j as Map<String, dynamic>)],
-        [for (final j in tests) JlptTest.fromJson(j as Map<String, dynamic>)],
-      );
+  factory ContentRepository.fromJson(
+    List vocab,
+    Map<String, dynamic> kanji,
+    List grammar, [
+    Map<String, dynamic> tests = const {},
+    List listening = const [],
+  ]) => ContentRepository._(
+    [for (final j in vocab) Word.fromJson(j as Map<String, dynamic>)],
+    {for (final e in kanji.entries) e.key: KanjiInfo.fromJson(e.key, e.value as Map<String, dynamic>)},
+    [for (final j in grammar) GrammarPoint.fromJson(j as Map<String, dynamic>)],
+    [for (final j in (tests['tests'] as List?) ?? const []) JlptTest.fromJson(j as Map<String, dynamic>)],
+    {
+      for (final e in ((tests['sectionTips'] as Map?) ?? const {}).entries)
+        JlptSection.values.byName(e.key as String): e.value as String,
+    },
+    [for (final j in listening) ListeningItem.fromJson(j as Map<String, dynamic>)],
+  );
 
   static Map<int, List<Word>> _groupByLevel(List<Word> words) {
     final m = <int, List<Word>>{for (var l = 1; l <= 5; l++) l: []};

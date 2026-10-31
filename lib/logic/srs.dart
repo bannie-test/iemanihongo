@@ -168,6 +168,15 @@ class Srs {
     }
   }
 
+  /// One-tap review (no self-rating): a new or learning card graduates to
+  /// tomorrow, a review card grows its interval as if rated Good. Missed
+  /// quiz/test answers bring words back sooner (see AppState).
+  static CardState advance(CardState c, int nowMs) => switch (c.phase) {
+    CardPhase.fresh ||
+    CardPhase.learning => _graduate(c, graduatingDays, nowMs).copyWith(reps: c.reps + 1, updatedAt: nowMs),
+    CardPhase.review || CardPhase.relearning => schedule(c, Rating.good, nowMs),
+  };
+
   /// Human-friendly label of the interval a rating would produce.
   static String previewLabel(CardState c, Rating r, int nowMs) => formatInterval(schedule(c, r, nowMs).due - nowMs);
 

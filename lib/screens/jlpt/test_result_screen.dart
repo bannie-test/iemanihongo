@@ -97,7 +97,7 @@ class TestResultScreen extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Text(e.key.vi, style: const TextStyle(fontWeight: FontWeight.w700)),
+                        child: Text(e.key.vi, style: const TextStyle(fontWeight: FontWeight.w600)),
                       ),
                       Text('${e.value.$1}/${e.value.$2}', style: context.text.bodySmall),
                     ],
@@ -203,7 +203,7 @@ class _TestReviewScreenState extends State<TestReviewScreen> {
         children: [
           SwitchListTile(
             value: _showAll,
-            title: const Text('Hiện đáp án & giải thích', style: TextStyle(fontWeight: FontWeight.w700)),
+            title: const Text('Hiện đáp án & giải thích', style: TextStyle(fontWeight: FontWeight.w600)),
             subtitle: const Text('Tắt để tự kiểm tra lại, chạm từng câu để xem'),
             secondary: Icon(_showAll ? AppIcons.eye : AppIcons.eyeOff),
             onChanged: (v) {
@@ -304,7 +304,7 @@ class _ReviewCard extends StatelessWidget {
                   chosen == null ? 'Chưa làm' : (correct ? 'Đúng' : 'Sai'),
                   icon: chosen == null ? null : (correct ? AppIcons.check : AppIcons.cross),
                 ),
-              if (flagged) ...[const SizedBox(width: 6), const Icon(AppIcons.flagOn, color: Colors.orange, size: 16)],
+              if (flagged) ...[const SizedBox(width: 6), Icon(AppIcons.flagOn, color: context.colors.clay, size: 16)],
               const Spacer(),
               Flexible(
                 child: Text(q.section.vi, style: context.text.bodySmall, overflow: TextOverflow.ellipsis),

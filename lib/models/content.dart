@@ -107,6 +107,8 @@ class GrammarPoint {
     required this.explanation,
     required this.examples,
     required this.quiz,
+    this.reference,
+    this.tip,
   });
 
   final String id;
@@ -117,6 +119,10 @@ class GrammarPoint {
   final String explanation;
   final List<GrammarExample> examples;
   final GrammarQuiz quiz;
+
+  /// Where this point is taught in a standard textbook.
+  final String? reference;
+  final String? tip;
 
   factory GrammarPoint.fromJson(Map<String, dynamic> j) {
     final q = j['q'] as Map<String, dynamic>;
@@ -129,6 +135,8 @@ class GrammarPoint {
       explanation: j['e'] as String,
       examples: [for (final x in j['x'] as List) GrammarExample(x['jp'] as String, x['en'] as String)],
       quiz: GrammarQuiz(q['s'] as String, List<String>.from(q['o'] as List), q['a'] as int, q['en'] as String),
+      reference: j['ref'] as String?,
+      tip: j['tip'] as String?,
     );
   }
 }

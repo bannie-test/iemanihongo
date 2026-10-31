@@ -28,10 +28,6 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
   final _watch = Stopwatch()..start();
   late final AppState _state;
   bool _flipped = false;
-  int _answered = 0;
-  int _correct = 0;
-
-  static const _requeueGap = 3;
 
   @override
   void initState() {
@@ -51,17 +47,10 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
     if (_state.settings.autoplayAudio) _state.tts.speak(_queue.first.speakText);
   }
 
-  void _rate(Rating r) {
+  void _next() {
     final word = _queue.removeAt(0);
-    final card = _state.rate(word.id, r);
-    _answered++;
-    if (r != Rating.again) _correct++;
-    final stillLearning = card.phase == CardPhase.learning || card.phase == CardPhase.relearning;
-    if (stillLearning) {
-      _queue.insert(_queue.length < _requeueGap ? _queue.length : _requeueGap, word);
-    } else {
-      _finished.add(word.id);
-    }
+    _state.advance(word.id);
+    _finished.add(word.id);
     setState(() => _flipped = false);
   }
 
@@ -93,7 +82,6 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
     final state = context.watch<AppState>();
     final card = state.cardFor(w.id);
     final isNew = card.phase == CardPhase.fresh;
-    final now = state.nowMs;
     final kanji = state.content.kanjiIn(w);
 
     return Padding(
@@ -132,10 +120,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                               ),
                             FittedBox(
                               fit: BoxFit.scaleDown,
-                              child: Text(
-                                w.word,
-                                style: const TextStyle(fontSize: 64, fontWeight: FontWeight.w700, height: 1.25),
-                              ),
+                              child: Text(w.word, style: AppTheme.jp(64)),
                             ),
                             if (!_flipped) ...[
                               const SizedBox(height: 40),
@@ -176,51 +161,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
           const SizedBox(height: 14),
           if (!_flipped)
             GradientButton(label: 'Show answer', onPressed: _flip)
-          else ...[
-            Text('How well did you remember?', style: context.text.bodySmall),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                for (final r in Rating.values) ...[
-                  Expanded(child: _rateButton(context, c, r, Srs.previewLabel(card, r, now))),
-                  if (r != Rating.easy) const SizedBox(width: 8),
-                ],
-              ],
-            ),
-          ],
+          else
+            GradientButton(label: _queue.length == 1 ? 'Finish' : 'Next', icon: AppIcons.next, onPressed: _next),
         ],
-      ),
-    );
-  }
-
-  Widget _rateButton(BuildContext context, AppColors c, Rating r, String label) {
-    final (name, color) = switch (r) {
-      Rating.again => ('Again', c.bad),
-      Rating.hard => ('Hard', Theme.of(context).colorScheme.onSurface),
-      Rating.good => ('Good', c.good),
-      Rating.easy => ('Easy', c.accent),
-    };
-    return Material(
-      color: Theme.of(context).colorScheme.surface,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18),
-        side: BorderSide(color: c.border, width: 2),
-      ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(18),
-        onTap: () => _rate(r),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Column(
-            children: [
-              Text(
-                name,
-                style: TextStyle(fontWeight: FontWeight.w700, color: color, fontSize: 15),
-              ),
-              Text(label, style: context.text.bodySmall),
-            ],
-          ),
-        ),
       ),
     );
   }
@@ -228,7 +171,6 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
   Widget _summary(BuildContext context) {
     final state = context.watch<AppState>();
     final c = context.colors;
-    final pct = _answered == 0 ? 0 : (_correct * 100 / _answered).round();
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -243,7 +185,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
           Row(
             children: [
               _stat(context, '$_total', 'cards'),
-              _stat(context, '$pct%', 'remembered'),
+              _stat(context, '${state.totalLearned}', 'words learned'),
               _stat(context, '${state.streak.current}', 'day streak'),
             ],
           ),
@@ -256,7 +198,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
           else
             Text(
               "Today's goal is done. Your streak is safe!",
-              style: TextStyle(color: c.good, fontWeight: FontWeight.w700),
+              style: TextStyle(color: c.good, fontWeight: FontWeight.w600),
             ),
           const Spacer(),
           if (state.nextNewWords(5).isNotEmpty)

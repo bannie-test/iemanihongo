@@ -313,6 +313,14 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     return [...due, ...nextNewWords(newLeftToday)];
   }
 
+  /// A different word from the chosen level each day.
+  Word? get wordOfTheDay {
+    final list = content.byLevel[settings.level]!;
+    if (list.isEmpty) return null;
+    final day = DateTime.now().difference(DateTime(2024)).inDays;
+    return list[(day * 37) % list.length];
+  }
+
   CardState cardFor(String wordId) => cards[wordId] ?? CardState(wordId: wordId);
 
   int learnedCount(int level) => content.byLevel[level]!.where((w) => cards[w.id]?.isLearned ?? false).length;
@@ -329,6 +337,20 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     final t = _todayRow();
     t.reviews++;
     if (rating != Rating.again) t.correct++;
+    if (before.phase == CardPhase.fresh) t.newWords++;
+    _afterProgress();
+    return after;
+  }
+
+  /// Marks a flashcard as reviewed and schedules the next review.
+  CardState advance(String wordId) {
+    final before = cardFor(wordId);
+    final after = Srs.advance(before, nowMs);
+    cards[wordId] = after;
+    _write(db.saveCard(after));
+    final t = _todayRow();
+    t.reviews++;
+    t.correct++;
     if (before.phase == CardPhase.fresh) t.newWords++;
     _afterProgress();
     return after;
@@ -589,6 +611,47 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     isCorrect: chosen == q.answer,
     answeredAt: nowMs,
   );
+
+  // ----------------------------------------------------------- listening
+
+  static const listeningAttempt = 'listening';
+
+  /// Latest result per listening item (true = answered correctly).
+  Map<String, bool> get listeningResults {
+    final latest = <String, TestAnswer>{};
+    for (final a in testAnswers.where((a) => a.attemptId == listeningAttempt)) {
+      final prev = latest[a.questionId];
+      if (prev == null || a.answeredAt > prev.answeredAt) latest[a.questionId] = a;
+    }
+    return {for (final e in latest.entries) e.key: e.value.isCorrect};
+  }
+
+  /// Saved like test answers, so listening history syncs to Supabase.
+  void recordListening({
+    required String itemId,
+    required int level,
+    required String tag,
+    required int chosen,
+    required bool correct,
+  }) {
+    final row = TestAnswer(
+      id: const Uuid().v4(),
+      attemptId: listeningAttempt,
+      questionId: itemId,
+      level: level,
+      section: 'choukai',
+      tag: tag,
+      chosen: chosen,
+      isCorrect: correct,
+      answeredAt: nowMs,
+    );
+    testAnswers.add(row);
+    _write(db.saveAnswers([row]));
+    final t = _todayRow();
+    t.quizTotal++;
+    if (correct) t.quizCorrect++;
+    _afterProgress();
+  }
 
   // ------------------------------------------------------------- writing
 

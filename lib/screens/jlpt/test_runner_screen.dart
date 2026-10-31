@@ -178,13 +178,13 @@ class _TestRunnerScreenState extends State<TestRunnerScreen> with WidgetsBinding
                 ),
                 child: Row(
                   children: [
-                    Icon(AppIcons.timer, size: 16, color: lowTime ? Colors.white : c.accent),
+                    Icon(AppIcons.timer, size: 16, color: lowTime ? c.onAccent : c.accent),
                     const SizedBox(width: 4),
                     Text(
                       formatClock(_a.remainingSec),
                       style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        color: lowTime ? Colors.white : c.accent,
+                        fontWeight: FontWeight.w600,
+                        color: lowTime ? c.onAccent : c.accent,
                         fontFeatures: const [FontFeature.tabularFigures()],
                       ),
                     ),
@@ -250,7 +250,7 @@ class _TestRunnerScreenState extends State<TestRunnerScreen> with WidgetsBinding
                   ),
                   IconButton(
                     tooltip: flagged ? 'Bỏ đánh dấu' : 'Đánh dấu xem lại',
-                    icon: Icon(flagged ? AppIcons.flagOn : AppIcons.flag, color: flagged ? Colors.orange : c.muted),
+                    icon: Icon(flagged ? AppIcons.flagOn : AppIcons.flag, color: flagged ? c.clay : c.muted),
                     onPressed: () => setState(() {
                       flagged ? _a.flagged.remove(q.id) : _a.flagged.add(q.id);
                       _state.saveAttempt(_a);
@@ -259,6 +259,16 @@ class _TestRunnerScreenState extends State<TestRunnerScreen> with WidgetsBinding
                 ],
               ),
               Text(q.section.instruction, style: context.text.bodySmall),
+              if (!_exam && _state.content.sectionTips[q.section] != null)
+                Theme(
+                  data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                  child: ExpansionTile(
+                    tilePadding: EdgeInsets.zero,
+                    dense: true,
+                    title: Text('Mẹo làm dạng bài này', style: context.text.bodySmall),
+                    children: [TipBox(_state.content.sectionTips[q.section]!)],
+                  ),
+                ),
               const SizedBox(height: 12),
               SoftCard(padding: const EdgeInsets.all(18), child: JlptSentence(q)),
               const SizedBox(height: 16),
@@ -274,7 +284,7 @@ class _TestRunnerScreenState extends State<TestRunnerScreen> with WidgetsBinding
                 const SizedBox(height: 4),
                 Text(
                   chosen == q.answer ? 'Chính xác! 🎉' : 'Chưa đúng – xem giải thích bên dưới',
-                  style: TextStyle(fontWeight: FontWeight.w700, color: chosen == q.answer ? c.good : c.bad),
+                  style: TextStyle(fontWeight: FontWeight.w600, color: chosen == q.answer ? c.good : c.bad),
                 ),
                 const SizedBox(height: 8),
                 ExplanationBox(q),
@@ -368,15 +378,15 @@ class _TestRunnerScreenState extends State<TestRunnerScreen> with WidgetsBinding
                                 Text(
                                   '${i + 1}',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    color: answered || show ? Colors.white : c.muted,
+                                    fontWeight: FontWeight.w600,
+                                    color: answered || show ? c.onAccent : c.muted,
                                   ),
                                 ),
                                 if (_a.flagged.contains(id))
-                                  const Positioned(
+                                  Positioned(
                                     right: -14,
                                     top: -14,
-                                    child: Icon(AppIcons.flagOn, size: 14, color: Colors.orange),
+                                    child: Icon(AppIcons.flagOn, size: 14, color: c.clay),
                                   ),
                               ],
                             ),

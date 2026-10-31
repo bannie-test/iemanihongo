@@ -88,7 +88,7 @@ class _SetupScreenState extends State<SetupScreen> {
                   SwitchListTile(
                     value: _remind,
                     onChanged: (v) => setState(() => _remind = v),
-                    title: const Text('Daily reminder', style: TextStyle(fontWeight: FontWeight.w700)),
+                    title: const Text('Daily reminder', style: TextStyle(fontWeight: FontWeight.w600)),
                     subtitle: const Text('Skipped automatically once you hit your goal'),
                   ),
                   if (_remind)

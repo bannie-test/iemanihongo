@@ -31,6 +31,7 @@ class TtsService {
 
   Future<void> speak(String text) async {
     if (!_ready) return;
+    _sequence++; // a single word interrupts any dialogue being read
     try {
       await _tts.stop();
       await _tts.speak(text);
@@ -39,7 +40,39 @@ class TtsService {
     }
   }
 
+  int _sequence = 0;
+
+  /// Reads lines one after another with a pitch per speaker. Starting a new
+  /// sequence or calling [stop] cancels the running one.
+  Future<void> speakLines(List<(String, double)> lines, {Duration gap = const Duration(milliseconds: 450)}) async {
+    if (!_ready) return;
+    final id = ++_sequence;
+    try {
+      await _tts.stop();
+      await _tts.awaitSpeakCompletion(true);
+      for (final (text, pitch) in lines) {
+        if (id != _sequence) break;
+        await _tts.setPitch(pitch);
+        await _tts.speak(text);
+        if (id != _sequence) break;
+        await Future<void>.delayed(gap);
+      }
+    } catch (e) {
+      debugPrint('TTS sequence failed: $e');
+    } finally {
+      if (id == _sequence) {
+        await _tts.setPitch(1.0);
+        await _tts.awaitSpeakCompletion(false);
+      }
+    }
+  }
+
   Future<void> stop() async {
-    if (_ready) await _tts.stop();
+    _sequence++;
+    if (_ready) {
+      await _tts.stop();
+      await _tts.setPitch(1.0);
+      await _tts.awaitSpeakCompletion(false);
+    }
   }
 }

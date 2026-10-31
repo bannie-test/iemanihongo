@@ -63,12 +63,18 @@ Future<void> _loadFonts() async {
     await loader.load();
   }
 
-  await load('Nunito', [
-    'assets/fonts/Nunito-Medium.ttf',
-    'assets/fonts/Nunito-Bold.ttf',
-    'assets/fonts/Nunito-ExtraBold.ttf',
+  await load('BotanicalGaramond', [
+    'assets/fonts/EBGaramond-Regular.ttf',
+    'assets/fonts/EBGaramond-Medium.ttf',
+    'assets/fonts/EBGaramond-Italic.ttf',
   ]);
-  await load('ZenMaruGothic', ['assets/fonts/ZenMaruGothic-Medium.ttf', 'assets/fonts/ZenMaruGothic-Bold.ttf']);
+  await load('BotanicalReading', [
+    'assets/fonts/BeVietnamPro-Regular.ttf',
+    'assets/fonts/BeVietnamPro-Medium.ttf',
+    'assets/fonts/BeVietnamPro-SemiBold.ttf',
+  ]);
+  await load('JapaneseMincho', ['assets/fonts/ZenOldMincho-Medium.ttf']);
+  await load('JapaneseGothic', ['assets/fonts/ZenKakuGothicNew-Medium.ttf', 'assets/fonts/ZenKakuGothicNew-Bold.ttf']);
   final flutterRoot = File(Platform.resolvedExecutable).parent.parent.parent.parent.parent.parent.path;
   await load('MaterialIcons', ['$flutterRoot/bin/cache/artifacts/material_fonts/MaterialIcons-Regular.otf']);
   final pubCache = Platform.environment['PUB_CACHE'] ?? '${Platform.environment['HOME']}/.pub-cache';
@@ -89,7 +95,8 @@ Future<AppState> _seededState(ThemeMode mode) async {
     jsonDecode(File('assets/data/vocab.json').readAsStringSync()) as List,
     jsonDecode(File('assets/data/kanji.json').readAsStringSync()) as Map<String, dynamic>,
     jsonDecode(File('assets/data/grammar.json').readAsStringSync()) as List,
-    jsonDecode(File('assets/data/jlpt_tests.json').readAsStringSync()) as List,
+    jsonDecode(File('assets/data/jlpt_tests.json').readAsStringSync()) as Map<String, dynamic>,
+    jsonDecode(File('assets/data/listening.json').readAsStringSync()) as List,
   );
   final db = await LocalDb.open(factory: databaseFactoryFfi, path: inMemoryDatabasePath);
   final now = DateTime.now().millisecondsSinceEpoch;
@@ -249,14 +256,17 @@ void main() {
       final m = mode.name;
 
       await _shot(tester, '01-home-$m');
-      expect(find.textContaining('days'), findsWidgets);
+      expect(find.text('Word of the day'.toUpperCase()), findsOneWidget);
+      await tester.drag(find.byType(Scrollable).first, const Offset(0, -700));
+      await _shot(tester, '01b-home-path-$m');
+      expect(find.text('Four small steps'), findsOneWidget);
 
       await tester.tap(find.text("Start today's session"));
       await _shot(tester, '02-flashcard-front-$m');
       await tester.tap(find.text('Show answer'));
       await _shot(tester, '03-flashcard-back-$m');
-      expect(find.text('Good'), findsOneWidget);
-      await tester.tap(find.text('Good'));
+      expect(find.text('How well did you remember?'), findsNothing);
+      await tester.tap(find.text('Next'));
       await tester.pumpAndSettle();
       await tester.tap(find.byTooltip('End session'));
       await tester.pumpAndSettle();
@@ -270,6 +280,23 @@ void main() {
       await tester.tap(find.byType(InkWell).at(3));
       await _shot(tester, '05-quiz-answered-$m');
       await tester.tap(find.byTooltip('End quiz'));
+      await tester.pumpAndSettle();
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text('Listening · 聴解'));
+      await tester.pumpAndSettle();
+      await _shot(tester, '05b-listening-hub-$m');
+      await tester.tap(find.byType(ListTile).first);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Nghe'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byType(InkWell).at(3));
+      await tester.pumpAndSettle();
+      await tester.drag(find.byType(Scrollable).first, const Offset(0, -400));
+      await _shot(tester, '05c-listening-answered-$m');
+      expect(find.text('Giải thích'), findsOneWidget);
+      await tester.pageBack();
       await tester.pumpAndSettle();
       await tester.pageBack();
       await tester.pumpAndSettle();
@@ -305,6 +332,8 @@ void main() {
 
       // JLPT: hub, resume a timed test, practice with explanation, review.
       await tester.tap(_nav('JLPT'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.descendant(of: find.byType(JlptHubScreen), matching: find.text('N3')));
       await _shot(tester, '10-jlpt-hub-$m');
       expect(find.textContaining('Đang làm 12/30'), findsOneWidget);
       await tester.tap(find.text('Làm tiếp').first);
@@ -359,6 +388,18 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.widgetWithText(ListTile, '勉強').first);
       await _shot(tester, '18-word-kanji-$m');
+      await tester.tapAt(const Offset(200, 60));
+      await tester.pumpAndSettle();
+
+      await tester.tap(_nav('Home'));
+      await tester.pumpAndSettle();
+      await tester.drag(find.byType(Scrollable).first, const Offset(0, 2000));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip('Settings'));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(find.text('Content sources & references'), 300);
+      await tester.tap(find.text('Content sources & references'));
+      await _shot(tester, '19-sources-$m');
 
       // Let debounced timers finish before the test ends.
       await tester.pump(const Duration(seconds: 5));

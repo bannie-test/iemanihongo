@@ -31,6 +31,7 @@ class JlptQuestion {
     required this.answer,
     required this.translation,
     required this.explanation,
+    this.tip,
   });
 
   final String id;
@@ -50,13 +51,16 @@ class JlptQuestion {
   /// Vietnamese explanation; lines starting with ✓ / ✗ explain each option.
   final String explanation;
 
+  /// Optional trick for this question (Vietnamese).
+  final String? tip;
+
   /// Options are authored with the answer first; shuffle them with a seed
   /// from the id so the order is the same on every device and every visit.
   factory JlptQuestion.fromJson(Map<String, dynamic> j, int level, int testNo) {
     final id = j['id'] as String;
     final authored = List<String>.from(j['o'] as List);
     final correct = authored[j['a'] as int];
-    final shuffled = List.of(authored)..shuffle(Random(_stableHash(id)));
+    final shuffled = List.of(authored)..shuffle(Random(stableHash(id)));
     return JlptQuestion(
       id: id,
       level: level,
@@ -68,11 +72,13 @@ class JlptQuestion {
       answer: shuffled.indexOf(correct),
       translation: j['vi'] as String,
       explanation: j['ex'] as String,
+      tip: j['tip'] as String?,
     );
   }
 }
 
-int _stableHash(String s) {
+/// Deterministic hash so shuffled options are identical on every device.
+int stableHash(String s) {
   var h = 0x811c9dc5;
   for (final c in s.codeUnits) {
     h = ((h ^ c) * 0x01000193) & 0x7fffffff;

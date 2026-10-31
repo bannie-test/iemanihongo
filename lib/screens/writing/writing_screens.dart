@@ -144,7 +144,7 @@ class _CharGrid extends StatelessWidget {
                   child: Stack(
                     children: [
                       Center(
-                        child: Text(ch, style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
+                        child: Text(ch, style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w600)),
                       ),
                       if (s.attempts > 0)
                         Positioned(
@@ -152,7 +152,7 @@ class _CharGrid extends StatelessWidget {
                           bottom: 4,
                           child: Text(
                             '${s.best}',
-                            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: color),
+                            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600, color: color),
                           ),
                         ),
                     ],
@@ -263,7 +263,7 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(_ch, style: const TextStyle(fontSize: 54, fontWeight: FontWeight.w700, height: 1.1)),
+                  Text(_ch, style: const TextStyle(fontSize: 54, fontWeight: FontWeight.w600, height: 1.1)),
                   const SizedBox(width: 14),
                   Expanded(
                     child: Column(
@@ -428,7 +428,7 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
             const SizedBox(height: 2),
             Text(
               label,
-              style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w600),
             ),
           ],
         ),
@@ -468,7 +468,7 @@ class _ResultPanel extends StatelessWidget {
             stroke: 7,
             child: Text(
               '${r.score}',
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18, color: color),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18, color: color),
             ),
           ),
           const SizedBox(width: 14),

@@ -40,6 +40,10 @@ class SyncService {
   final lastSynced = ValueNotifier<DateTime?>(null);
   final lastError = ValueNotifier<String?>(null);
 
+  /// True when the Supabase project is missing this app's tables (or an
+  /// older version of them): supabase/schema.sql has to be run once.
+  final needsDatabaseSetup = ValueNotifier<bool>(false);
+
   RealtimeChannel? _channel;
   StreamSubscription<List<ConnectivityResult>>? _connectivitySub;
   Timer? _debounce;
@@ -126,9 +130,11 @@ class SyncService {
       lastSynced.value = now;
       await prefs.setInt('last_synced_$_uid', now.millisecondsSinceEpoch);
       lastError.value = null;
+      needsDatabaseSetup.value = false;
       status.value = SyncStatus.idle;
     } catch (e) {
       debugPrint('Sync failed: $e');
+      needsDatabaseSetup.value = isMissingSchema(e);
       lastError.value = _describe(e);
       status.value = _isNetwork(e) ? SyncStatus.offline : SyncStatus.error;
     } finally {
@@ -260,13 +266,21 @@ class SyncService {
     return s.contains('SocketException') || s.contains('ClientException') || s.contains('Failed host lookup');
   }
 
+  /// PostgREST reports a missing table as PGRST205 ("Could not find the
+  /// table … in the schema cache") and a missing column as PGRST204;
+  /// Postgres itself uses 42P01 / 42703.
+  static bool isMissingSchema(Object e) {
+    if (e is! PostgrestException) return false;
+    const codes = {'PGRST205', 'PGRST204', '42P01', '42703'};
+    return codes.contains(e.code) || e.message.contains('schema cache') || e.message.contains('does not exist');
+  }
+
   static String _describe(Object e) {
-    if (e is PostgrestException) {
-      if (e.code == '42P01' || e.message.contains('does not exist')) {
-        return 'Database tables are missing. Run supabase/schema.sql in your Supabase project.';
-      }
-      return e.message;
+    if (isMissingSchema(e)) {
+      return 'Your Supabase project does not have the app\'s tables yet. '
+          'Run the setup SQL once (Settings → Set up database), then tap sync.';
     }
+    if (e is PostgrestException) return e.message;
     if (_isNetwork(e)) return 'No connection. Your progress is saved on this device.';
     return e.toString();
   }

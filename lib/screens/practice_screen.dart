@@ -6,6 +6,7 @@ import '../theme.dart';
 import '../widgets/app_icons.dart';
 import '../widgets/common.dart';
 import 'grammar_screen.dart';
+import 'listening/listening_screens.dart';
 import 'quiz_screen.dart';
 import 'writing/writing_screens.dart';
 
@@ -29,6 +30,14 @@ class PracticeScreen extends StatelessWidget {
             subtitle: 'Meaning, reverse, reading and listening',
             badge: '${state.cards.length} words studied',
             onTap: () => _push(context, const QuizHubScreen()),
+          ),
+          const SizedBox(height: 12),
+          _PracticeCard(
+            icon: AppIcons.voice,
+            title: 'Listening · 聴解',
+            subtitle: 'JLPT-style dialogues and sentence listening',
+            badge: '${state.content.listening.length} dialogues · N5–N1',
+            onTap: () => _push(context, const ListeningHubScreen()),
           ),
           const SizedBox(height: 12),
           _PracticeCard(
@@ -81,8 +90,8 @@ class _PracticeCard extends StatelessWidget {
           Container(
             width: 60,
             height: 60,
-            decoration: BoxDecoration(gradient: c.gradient, borderRadius: BorderRadius.circular(20)),
-            child: Icon(icon, color: Colors.white, size: 30),
+            decoration: BoxDecoration(color: c.accentSoft, shape: BoxShape.circle),
+            child: Icon(icon, color: Theme.of(context).colorScheme.onSurface, size: 26),
           ),
           const SizedBox(width: 16),
           Expanded(
