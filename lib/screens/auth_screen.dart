@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -28,11 +30,60 @@ class _AuthScreenState extends State<AuthScreen> {
   String? _message;
   bool _messageIsError = false;
 
+  /// Set when the account exists but its email is not confirmed yet.
+  String? _pendingEmail;
+  int _resendIn = 0;
+  Timer? _cooldown;
+
   @override
   void dispose() {
+    _cooldown?.cancel();
     _email.dispose();
     _password.dispose();
     super.dispose();
+  }
+
+  void _startCooldown() {
+    _cooldown?.cancel();
+    setState(() => _resendIn = 60);
+    _cooldown = Timer.periodic(const Duration(seconds: 1), (t) {
+      if (!mounted || _resendIn <= 1) {
+        t.cancel();
+        if (mounted) setState(() => _resendIn = 0);
+        return;
+      }
+      setState(() => _resendIn--);
+    });
+  }
+
+  Future<void> _resend() async {
+    final email = _pendingEmail;
+    if (email == null) return;
+    try {
+      await context.read<AppState>().resendConfirmation(email);
+      if (!mounted) return;
+      _startCooldown();
+      setState(() {
+        _message = 'Sent again. It can take a few minutes – check Spam and Promotions too.';
+        _messageIsError = false;
+      });
+    } on AuthException catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _message = _describe(e);
+        _messageIsError = true;
+      });
+    }
+  }
+
+  static String _describe(AuthException e) {
+    final code = e.code ?? '';
+    if (code.contains('rate_limit') || e.statusCode == '429') {
+      return 'Too many emails were sent recently. Supabase\'s built-in email service only allows a few per hour. '
+          'Wait a while, or turn off email confirmation for this project (see below).';
+    }
+    if (code == 'invalid_credentials') return 'Wrong email or password.';
+    return e.message;
   }
 
   Future<void> _submit() async {
@@ -50,26 +101,40 @@ class _AuthScreenState extends State<AuthScreen> {
       _message = null;
     });
     try {
-      String? info;
       if (_signUp) {
-        info = await state.signUp(_email.text, _password.text);
+        final result = await state.signUp(_email.text, _password.text);
+        if (!mounted) return;
+        switch (result) {
+          case SignUpResult.signedIn:
+            if (widget.linking) Navigator.of(context).pop();
+          case SignUpResult.confirmEmail:
+            _startCooldown();
+            setState(() {
+              _pendingEmail = _email.text.trim();
+              _signUp = false;
+            });
+          case SignUpResult.alreadyRegistered:
+            setState(() {
+              _signUp = false;
+              _message = 'This email already has an account. Sign in with its password instead.';
+              _messageIsError = true;
+            });
+        }
       } else {
         await state.signIn(_email.text, _password.text);
-      }
-      if (!mounted) return;
-      if (info != null) {
-        setState(() {
-          _message = info;
-          _messageIsError = false;
-          _signUp = false;
-        });
-      } else if (widget.linking) {
-        Navigator.of(context).pop();
+        if (!mounted) return;
+        if (widget.linking) Navigator.of(context).pop();
       }
     } on AuthException catch (e) {
+      if (!mounted) return;
       setState(() {
-        _message = e.message;
-        _messageIsError = true;
+        if (e.code == 'email_not_confirmed') {
+          _pendingEmail = _email.text.trim();
+          _message = null;
+        } else {
+          _message = _describe(e);
+          _messageIsError = true;
+        }
       });
     } catch (e) {
       setState(() {
@@ -140,6 +205,10 @@ class _AuthScreenState extends State<AuthScreen> {
                       validator: (v) => (v ?? '').length >= 6 ? null : 'At least 6 characters',
                       onFieldSubmitted: (_) => _submit(),
                     ),
+                    if (_pendingEmail != null) ...[
+                      const SizedBox(height: 14),
+                      _ConfirmEmailPanel(email: _pendingEmail!, resendIn: _resendIn, onResend: _resend),
+                    ],
                     if (_message != null) ...[
                       const SizedBox(height: 14),
                       Text(
@@ -189,6 +258,51 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// Explains the confirmation step and why the email may not arrive.
+class _ConfirmEmailPanel extends StatelessWidget {
+  const _ConfirmEmailPanel({required this.email, required this.resendIn, required this.onResend});
+
+  final String email;
+  final int resendIn;
+  final VoidCallback onResend;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = context.colors;
+    return SoftCard(
+      tone: PanelTone.sage,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(AppIcons.mail, size: 20),
+              const SizedBox(width: 8),
+              Expanded(child: Text('Confirm your email', style: context.text.titleMedium)),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text('We asked Supabase to send a confirmation link to $email. Open it, then sign in here.'),
+          const SizedBox(height: 8),
+          Text(
+            'Not arriving? Check Spam/Promotions. Supabase\'s built-in email only sends a few messages per hour, '
+            'and on newer projects only to members of the project\'s team. For a personal app the simplest fix is '
+            'to turn off email confirmation: Supabase dashboard → Authentication → Sign In / Providers → Email → '
+            'turn off "Confirm email", then sign in. (Or connect your own SMTP under Authentication → Emails.)',
+            style: context.text.bodySmall,
+          ),
+          const SizedBox(height: 10),
+          OutlinedButton.icon(
+            onPressed: resendIn > 0 ? null : onResend,
+            icon: Icon(AppIcons.retry, color: c.clay),
+            label: Text(resendIn > 0 ? 'Resend email in ${resendIn}s' : 'Resend confirmation email'),
+          ),
+        ],
       ),
     );
   }

@@ -22,6 +22,8 @@ import '../services/tts_service.dart';
 
 enum AuthPhase { signedOut, guest, signedIn }
 
+enum SignUpResult { signedIn, confirmEmail, alreadyRegistered }
+
 /// Everything the UI reads and every change it makes goes through here.
 /// Changes are written to the local database first (so the app works
 /// offline) and then synced in the background.
@@ -168,14 +170,20 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   /// Returns a message for the user when something needs their attention
   /// (e.g. confirm email), or null on success.
-  Future<String?> signUp(String email, String password) async {
+  Future<SignUpResult> signUp(String email, String password) async {
     final res = await supabase!.auth.signUp(email: email.trim(), password: password);
-    if (res.session == null) {
-      return 'Check your inbox to confirm your email, then sign in.';
+    if (res.session != null) {
+      await _afterSignIn();
+      return SignUpResult.signedIn;
     }
-    await _afterSignIn();
-    return null;
+    // Supabase hides whether an address exists: for an already registered
+    // email it returns a user with no identities and sends no email.
+    if (res.user?.identities?.isEmpty ?? false) return SignUpResult.alreadyRegistered;
+    return SignUpResult.confirmEmail;
   }
+
+  /// Sends the sign-up confirmation email again.
+  Future<void> resendConfirmation(String email) => supabase!.auth.resend(type: OtpType.signup, email: email.trim());
 
   Future<void> signIn(String email, String password) async {
     await supabase!.auth.signInWithPassword(email: email.trim(), password: password);
