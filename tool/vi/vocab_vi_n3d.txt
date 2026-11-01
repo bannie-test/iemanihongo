@@ -1,0 +1,360 @@
+含める|bao gồm
+福|phúc, may mắn
+量る|cân, đo
+量|lượng
+失望|thất vọng
+望み|mong muốn, hy vọng
+望む|mong muốn; ngắm nhìn
+松|cây thông
+非行|hành vi sai trái (vị thành niên)
+非常|khẩn cấp; bất thường
+撃つ|bắn
+核|hạt nhân
+〜観|quan điểm ~
+観察|quan sát
+整理|sắp xếp
+手段|phương tiện, cách thức
+段|bậc; cấp
+横断|băng qua
+横切る|cắt ngang qua
+金融|tài chính
+型|khuôn, kiểu
+深まる|sâu sắc thêm
+深める|làm sâu sắc thêm
+字体|kiểu chữ
+数字|chữ số
+文字|chữ, ký tự
+文字|chữ, ký tự
+答案|bài thi
+夜|đêm
+夜明け|bình minh
+夜中|nửa đêm
+製造|chế tạo
+製品|sản phẩm
+投票|bỏ phiếu
+票|phiếu
+状況|tình hình
+音|âm thanh
+音|âm thanh
+物音|tiếng động
+申告|khai báo
+仕様|cách thức; quy cách
+同様|giống như
+様子|tình hình, dáng vẻ
+財産|tài sản
+意識|ý thức
+常識|lẽ thường
+知識|kiến thức
+注す|rót
+注ぐ|rót vào
+注|chú thích
+注目|chú ý
+注文|đặt hàng, gọi món
+注ぐ|rót vào
+上達|tiến bộ
+達する|đạt tới
+配達|giao hàng
+発達|phát triển
+良い|tốt
+影響|ảnh hưởng
+帰す|cho về
+帰宅|về nhà
+針|cây kim
+谷|thung lũng
+中古|đồ cũ
+気候|khí hậu
+候補|ứng cử viên
+女史|bà, quý bà
+天候|thời tiết
+天然|tự nhiên
+過程|quá trình
+課程|chương trình học
+程度|mức độ
+不満|bất mãn
+満足|hài lòng
+満ちる|đầy
+〜敗|~ trận thua
+管|ống
+管理|quản lý
+管|ống
+価値|giá trị
+値|giá trị, giá
+突く|đâm, chọc
+突然|đột nhiên
+直接|trực tiếp
+接ぐ|nối; bó (xương); ghép (cây)
+請求|yêu cầu (thanh toán)
+器官|cơ quan (cơ thể)
+器用|khéo tay
+計器|đồng hồ đo
+武器|vũ khí
+容器|đồ đựng
+同士|bạn, đồng chí; cùng nhau
+光景|quang cảnh
+日光|ánh nắng
+討つ|tấn công; báo thù
+検討|xem xét
+道路|đường sá
+悪|cái ác
+意地悪|xấu tính
+悪口|nói xấu
+科目|môn học
+攻撃|tấn công
+攻める|tấn công
+専攻|chuyên ngành
+監督|giám sát; đạo diễn
+教授|giáo sư; giảng dạy
+効く|có hiệu quả
+効果|hiệu quả
+有効|có hiệu lực
+合図|ra hiệu
+図|hình vẽ
+図書|sách vở
+図る|mưu tính, cố gắng
+週|tuần
+積極的|tích cực
+積む|chất đống
+積もる|tích tụ
+丸|hình tròn
+他|khác
+他人|người khác, người lạ
+他|khác
+及ぼす|gây ra (ảnh hưởng)
+湾|vịnh
+記録|ghi chép, kỷ lục
+処理|xử lý
+省く|lược bỏ
+反省|kiểm điểm, hối lỗi
+旧|cũ, cựu
+憲法|hiến pháp
+進歩|tiến bộ
+歩道|vỉa hè
+離す|tách ra
+岸|bờ
+観客|khán giả
+乗客|hành khách
+風景|phong cảnh
+急激|đột ngột, dữ dội
+激しい|dữ dội
+否|không
+否定|phủ định
+医師|bác sĩ
+教師|giáo viên
+技師|kỹ sư
+摘む|hái, ngắt
+材料|nguyên liệu
+登山|leo núi
+批判|phê phán
+批評|phê bình
+母親|mẹ
+容易|dễ dàng
+急速|nhanh chóng
+高速|tốc độ cao
+速度|tốc độ
+存在|tồn tại
+保存|bảo tồn
+飛ばす|làm bay; bỏ qua
+飛び出す|lao ra
+飛行|bay
+殺す|giết
+自殺|tự tử
+中央|trung tâm
+券|vé
+真っ赤|đỏ rực
+単位|tín chỉ; đơn vị
+単なる|đơn thuần
+単に|đơn giản là
+座席|chỗ ngồi
+青年|thanh niên
+破産|phá sản
+破る|xé; phá vỡ; đánh bại
+破れる|bị rách
+捜査|điều tra (hình sự)
+除く|loại trừ
+完成|hoàn thành
+完全|hoàn toàn
+降ろす|hạ xuống, cho xuống
+超える|vượt quá
+超す|vượt qua
+責任|trách nhiệm
+責める|trách móc
+並|bình thường, trung bình
+医療|y tế
+治療|điều trị
+従う|tuân theo
+修正|sửa chữa
+修理|sửa chữa
+軍隊|quân đội
+隊|đội
+採集|sưu tập
+織る|dệt
+組織|tổ chức
+競技|thi đấu
+拡大|mở rộng, phóng to
+故人|người đã khuất
+振り|dáng vẻ; giả vờ
+振る|vẫy; rắc; phân vai
+供給|cung cấp
+支給|chi trả
+小屋|túp lều
+読書|đọc sách
+読み|cách đọc
+弁当|cơm hộp
+根|rễ
+屋根|mái nhà
+親友|bạn thân
+友|bạn
+殴る|đánh, đấm
+友好|hữu nghị
+友情|tình bạn
+友人|bạn bè
+苦|khổ
+苦しい|khổ sở
+苦しむ|chịu khổ
+苦労|vất vả
+苦手|kém, không giỏi
+就職|tìm được việc làm
+就く|nhậm chức; theo học
+迎え|đón
+販売|bán hàng
+具体|cụ thể
+具える|trang bị
+左右|trái phải; chi phối
+異|khác
+異常|bất thường
+異動|thuyên chuyển
+異なる|khác nhau
+学歴|học vấn
+辞退|từ chối
+辞める|nghỉ việc
+因る|do, bởi
+馬|con ngựa
+愛|tình yêu
+愛情|tình thương
+愛する|yêu
+可愛そう|đáng thương
+可愛らしい|đáng yêu
+幅|chiều rộng
+維持|duy trì
+父親|bố
+一般|thông thường
+未来|tương lai
+講演|diễn thuyết
+舞台|sân khấu
+見舞い|thăm hỏi
+装置|thiết bị
+素|tố, cơ bản
+要素|yếu tố
+死亡|tử vong
+亡くす|mất (người thân)
+劇|kịch
+劇場|nhà hát
+河|sông
+航海|hàng hải
+航空|hàng không
+反抗|phản kháng
+冷ます|làm nguội
+冷める|nguội đi
+冷やす|làm lạnh
+模様|hoa văn
+適する|thích hợp
+適切|thích đáng
+適度|vừa phải
+適用|áp dụng
+婦人|phụ nữ
+鉄|sắt
+鉄道|đường sắt
+寄付|quyên góp
+年寄|người già
+寄せる|dồn lại; gửi
+利益|lợi nhuận
+人込み|đám đông
+申し込む|đăng ký
+緊張|căng thẳng
+種類|chủng loại
+人類|nhân loại
+余分|phần thừa
+禁止|cấm
+印象|ấn tượng
+印|dấu hiệu
+逆|ngược lại
+逆らう|chống lại
+王|vua
+王様|vua
+王子|hoàng tử
+女王|nữ hoàng
+目標|mục tiêu
+交換|trao đổi
+油|dầu
+石油|dầu mỏ
+輪|vòng tròn
+占める|chiếm
+宣伝|quảng cáo, tuyên truyền
+植物|thực vật
+熱中|say mê
+宿|nhà trọ
+清む|trong lại
+寮|ký túc xá
+学習|học tập
+信頼|tin cậy
+頼る|dựa vào
+官僚|quan chức
+感覚|cảm giác
+覚ます|đánh thức
+覚める|tỉnh giấc
+視覚|thị giác
+盛り|phần (ăn)
+平均|trung bình
+芸術|nghệ thuật
+許可|cho phép
+許す|tha thứ; cho phép
+臨む|đối mặt; tham dự
+署名|chữ ký
+抜く|rút ra; bỏ qua
+抜ける|rụng; sót
+便り|tin tức, thư
+伸ばす|kéo dài; duỗi
+伸びる|dài ra; tiến bộ
+留める|gắn, cài; giữ lại
+留学|du học
+罪|tội
+停電|mất điện
+停留所|trạm dừng xe buýt
+新興|mới nổi
+振興|chấn hưng
+爆発|bùng nổ
+大陸|lục địa
+陸|đất liền
+玉|viên, quả cầu
+起源|nguồn gốc
+資源|tài nguyên
+お辞儀|cúi chào
+行儀|cách cư xử
+波|sóng
+創造|sáng tạo
+障害|chướng ngại; khuyết tật
+保障|bảo đảm
+継ぐ|kế thừa
+筋|cơ bắp; mạch (truyện)
+一帯|cả vùng
+帯|thắt lưng obi
+熱帯|nhiệt đới
+延期|hoãn lại
+延ばす|kéo dài; hoãn
+延びる|bị kéo dài
+羽|cánh
+羽根|lông vũ
+努力|nỗ lực
+精算|tính toán lại (tiền)
+精神|tinh thần
+避ける|tránh
+普段|thường ngày
+散らす|rải rác
+散る|rơi, tàn (hoa)
+上司|cấp trên
+健康|sức khỏe
+測る|đo
+予測|dự đoán
+豊富|phong phú
+豊か|giàu có, phong phú
+東洋|phương Đông

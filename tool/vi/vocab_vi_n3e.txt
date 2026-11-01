@@ -1,0 +1,360 @@
+冷静|bình tĩnh
+改善|cải thiện
+善|điều thiện
+逮捕|bắt giữ
+婚約|đính hôn
+離婚|ly hôn
+喜び|niềm vui
+年齢|tuổi tác
+囲む|vây quanh
+周囲|xung quanh
+猿|con khỉ
+省略|lược bỏ, viết tắt
+承認|phê duyệt
+順|thứ tự
+順調|thuận lợi
+順番|lượt, thứ tự
+世紀|thế kỷ
+旅|chuyến đi
+絶対|tuyệt đối
+級|cấp, lớp
+幸運|may mắn
+幸福|hạnh phúc
+幸い|may mắn thay
+幸せ|hạnh phúc
+不幸|bất hạnh
+岩|tảng đá
+押える|đè, giữ chặt
+倒す|làm đổ; đánh bại
+倒産|phá sản (công ty)
+面倒|phiền phức
+完了|hoàn tất
+博士|tiến sĩ
+博物館|viện bảo tàng
+城|lâu đài
+患者|bệnh nhân
+上等|thượng hạng
+等しい|bằng nhau
+平等|bình đẳng
+救助|cứu hộ
+救う|cứu
+一層|càng thêm
+出版|xuất bản
+版|bản (in)
+老い|tuổi già
+老人|người già
+命令|mệnh lệnh
+角|góc (hình học)
+四角|hình vuông
+角|góc
+損|thiệt hại, lỗ
+損害|tổn hại
+作曲|sáng tác nhạc
+裏切る|phản bội
+皿|cái đĩa
+支払|thanh toán
+支払う|trả tiền
+密|dày đặc, kín
+仏|Phật
+築く|xây dựng
+建築|kiến trúc
+通貨|tiền tệ
+意志|ý chí
+志望|nguyện vọng
+同志|đồng chí
+混乱|hỗn loạn
+混ざる|bị trộn lẫn
+混じる|bị trộn lẫn
+混ぜる|trộn
+載せる|đặt lên; đăng tải
+載る|được đăng
+昇る|mọc, lên
+通勤|đi làm
+勤め|công việc
+為る|làm
+所為|lỗi tại, do
+為る|trở thành
+血管|mạch máu
+遅れ|sự chậm trễ
+幕|màn
+居間|phòng khách
+温かい|ấm áp
+温まる|ấm lên
+温める|hâm nóng
+温度|nhiệt độ
+体温|thân nhiệt
+混雑|đông đúc, tắc nghẽn
+招く|mời
+四季|bốn mùa
+困難|khó khăn
+衛星|vệ tinh
+傷める|làm hại
+傷|vết thương
+永久|vĩnh cửu
+選択|lựa chọn
+優秀|ưu tú
+著す|viết (sách)
+著者|tác giả
+特徴|đặc trưng
+金庫|két sắt
+弾|viên đạn
+補償|bồi thường
+刊行|xuất bản
+季刊|tạp chí theo quý
+想像|tưởng tượng
+像|bức tượng
+成功|thành công
+香り|hương thơm
+欠く|thiếu
+欠ける|thiếu, sứt mẻ
+欠席|vắng mặt
+欠点|khuyết điểm
+更に|hơn nữa
+変更|thay đổi
+刑|hình phạt
+刑事|cảnh sát hình sự
+深刻|nghiêm trọng
+時刻|thời khắc, giờ
+遅刻|đến muộn
+底|đáy
+賛成|tán thành
+一致|nhất trí
+抱く|ôm; ấp ủ
+抱える|ôm; gánh vác
+抱く|ôm
+繰り返す|lặp lại
+服装|trang phục
+犯罪|tội phạm
+尾|đuôi
+描く|vẽ; miêu tả
+描く|vẽ; miêu tả
+布|vải
+恐らく|có lẽ
+恐れる|sợ
+恐ろしい|đáng sợ
+息|hơi thở
+休息|nghỉ ngơi
+永遠|vĩnh viễn
+戻す|trả lại
+街|phố
+巨大|khổng lồ
+震える|run rẩy
+願い|lời ước
+願う|mong ước
+絵画|hội họa
+希望|hy vọng
+越える|vượt qua
+越す|vượt; chuyển (nhà)
+引越し|chuyển nhà
+契機|cơ hội, bước ngoặt
+契約|hợp đồng
+掲示|thông báo (dán)
+活躍|hoạt động tích cực
+食欲|sự thèm ăn
+痛み|cơn đau
+苦痛|đau khổ
+頭痛|đau đầu
+触れる|chạm; đề cập
+依然|vẫn như cũ
+依頼|nhờ vả
+国籍|quốc tịch
+汚染|ô nhiễm
+汚す|làm bẩn
+金属|kim loại
+笑顔|khuôn mặt tươi cười
+笑い|tiếng cười
+お互い|lẫn nhau
+互い|lẫn nhau
+考慮|cân nhắc
+郵便|bưu chính
+束|bó
+仲|quan hệ
+仲間|bạn bè, đồng nghiệp
+栄養|dinh dưỡng
+札|tiền giấy
+枠|khung
+似合う|hợp
+真似|bắt chước
+知恵|trí tuệ
+板|tấm ván
+黒板|bảng đen
+列車|đoàn tàu
+列|hàng
+露|sương
+沖|ngoài khơi
+借り|món nợ
+借金|tiền nợ
+節|khi; đoạn; mục
+節約|tiết kiệm
+節|giai điệu; đốt
+需要|nhu cầu
+骨|xương
+射す|chiếu
+発射|phóng, bắn
+傾向|khuynh hướng
+届く|đến nơi; với tới
+金曜|thứ Sáu
+月曜|thứ Hai
+土曜|thứ Bảy
+日曜|Chủ nhật
+木曜|thứ Năm
+曜日|thứ trong tuần
+迷子|trẻ lạc
+迷う|lạc đường; phân vân
+迷惑|phiền hà
+夢中|say mê
+巻く|cuộn, quấn
+指揮|chỉ huy
+燃える|cháy
+燃やす|đốt
+閉じる|đóng, nhắm
+跡|dấu vết
+小包|bưu kiện
+包み|gói
+包装|đóng gói
+駐車|đỗ xe
+貢献|cống hiến
+馬鹿|ngốc
+弱まる|yếu đi
+弱める|làm yếu đi
+途端|ngay khi
+端|mép, đầu
+骨折|gãy xương
+郡|quận, huyện
+徹底|triệt để
+徹夜|thức trắng đêm
+貴重|quý giá
+衝突|va chạm, xung đột
+奪う|cướp đoạt
+雇う|thuê
+火災|hỏa hoạn
+暮らし|cuộc sống
+暮らす|sinh sống
+暮れ|cuối năm
+替える|thay đổi
+両替|đổi tiền
+分析|phân tích
+預かる|giữ hộ
+預ける|gửi
+譲る|nhường
+筋肉|cơ bắp
+納める|nộp
+納得|thấu hiểu, chấp nhận
+挑戦|thử thách
+章|chương; huân chương
+心臓|tim
+貸し|cho vay
+至る|đến, dẫn đến
+至急|khẩn cấp
+宗教|tôn giáo
+慎重|thận trọng
+贈る|tặng
+握手|bắt tay
+握る|nắm
+照明|chiếu sáng
+対照|đối chiếu
+宇宙|vũ trụ
+酒|rượu
+金銭|tiền bạc
+小銭|tiền lẻ
+群|nhóm, bầy
+銃|súng
+悲しむ|đau buồn
+悲劇|bi kịch
+秒|giây
+操作|thao tác
+携帯|mang theo; điện thoại di động
+奥|bên trong
+診察|khám bệnh
+診る|khám (bệnh)
+詰める|nhồi, rút ngắn
+誕生|ra đời
+お目に掛かる|gặp (khiêm nhường)
+見掛ける|bắt gặp
+感謝|cảm tạ
+双子|sinh đôi
+刺さる|bị đâm, mắc vào
+刺激|kích thích
+名刺|danh thiếp
+到着|đến nơi
+駆ける|chạy
+稲|cây lúa
+仮定|giả định
+暗記|học thuộc lòng
+裂く|xé
+裂ける|bị rách
+単純|đơn giản
+飯|cơm
+余裕|dư dả
+堅い|cứng; nghiêm túc
+通訳|phiên dịch
+申し訳|lời xin lỗi
+訳|bản dịch
+訳す|dịch
+強盗|cướp
+芝居|vở kịch
+芝生|bãi cỏ
+吸収|hấp thụ
+呼吸|hô hấp
+典型|điển hình
+扱う|xử lý, đối xử
+歓迎|hoan nghênh
+歓声|tiếng reo hò
+演奏|biểu diễn (nhạc)
+勧める|khuyên
+騒ぎ|náo động
+騒音|tiếng ồn
+太陽|mặt trời
+陽気|vui vẻ; thời tiết
+快適|dễ chịu
+縄|dây thừng
+片付く|được dọn dẹp
+片付け|dọn dẹp
+故郷|quê hương
+敬意|kính ý
+動揺|dao động, xao động
+既に|đã
+推薦|tiến cử
+悩む|phiền não
+泉|suối
+範囲|phạm vi
+隠す|giấu
+隠れる|trốn
+道徳|đạo đức
+皮|da; vỏ
+哲学|triết học
+解釈|giải thích, diễn giải
+自己|bản thân
+荒廃|hoang tàn
+貯金|tiền tiết kiệm
+硬い|cứng
+硬貨|tiền xu
+豪華|xa hoa
+渋滞|tắc đường
+滞在|lưu trú
+微笑む|mỉm cười
+埋まる|bị chôn; được lấp đầy
+埋める|chôn; lấp đầy
+症状|triệu chứng
+お昼|bữa trưa
+昼食|bữa trưa
+茶|trà
+蚊|con muỗi
+沿う|dọc theo
+微妙|tinh tế; khó nói
+妙|kỳ lạ
+祭|lễ hội
+足袋|tất tabi
+袋|túi
+筆|bút lông
+訓|âm kun
+訓練|huấn luyện
+俳優|diễn viên
+児童|nhi đồng
+宝|báu vật
+宝石|đá quý
+柄|cán
+柄|hoa văn; vóc dáng
+驚き|sự ngạc nhiên
+胸|ngực
+誤り|sai lầm
