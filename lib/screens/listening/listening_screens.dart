@@ -58,7 +58,7 @@ class _ListeningHubScreenState extends State<ListeningHubScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Nghe câu · Sentence listening', style: context.text.titleMedium),
+                      Text('Nghe câu', style: context.text.titleMedium),
                       Text(
                         'Nghe một câu N$level và chọn nghĩa tiếng Việt đúng · 10 câu',
                         style: context.text.bodySmall,

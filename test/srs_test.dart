@@ -61,10 +61,10 @@ void main() {
   });
 
   test('interval labels', () {
-    expect(Srs.formatInterval(60000), '1m');
-    expect(Srs.formatInterval(3 * 3600000), '3h');
-    expect(Srs.formatInterval(4 * day), '4d');
-    expect(Srs.formatInterval(90 * day), '3mo');
+    expect(Srs.formatInterval(60000), '1 phút');
+    expect(Srs.formatInterval(3 * 3600000), '3 giờ');
+    expect(Srs.formatInterval(4 * day), '4 ngày');
+    expect(Srs.formatInterval(90 * day), '3 tháng');
   });
 
   test('advance: one tap graduates new cards to tomorrow and grows reviews', () {

@@ -66,9 +66,9 @@ void main() {
     }
   });
 
-  test('search finds by kanji, kana and English', () {
+  test('search finds by kanji, kana and Vietnamese', () {
     expect(content.search('勉強').first.word, '勉強');
     expect(content.search('べんきょう').any((w) => w.word == '勉強'), isTrue);
-    expect(content.search('library').any((w) => w.word == '図書館'), isTrue);
+    expect(content.search('thư viện').any((w) => w.word == '図書館'), isTrue);
   });
 }

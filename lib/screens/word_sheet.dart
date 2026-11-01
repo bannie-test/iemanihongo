@@ -248,7 +248,7 @@ class KanjiPanel extends StatelessWidget {
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(width: 64, child: Text(label, style: context.text.bodySmall)),
+        SizedBox(width: 84, child: Text(label, style: context.text.bodySmall)),
         Expanded(child: Text(value)),
       ],
     ),

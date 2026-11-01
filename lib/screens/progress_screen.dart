@@ -43,9 +43,9 @@ class _ProgressScreenState extends State<ProgressScreen> {
               showSelectedIcon: false,
               style: const ButtonStyle(visualDensity: VisualDensity.compact),
               segments: const [
-                ButtonSegment(value: 7, label: Text('7d')),
-                ButtonSegment(value: 30, label: Text('30d')),
-                ButtonSegment(value: 90, label: Text('90d')),
+                ButtonSegment(value: 7, label: Text('7 ngày')),
+                ButtonSegment(value: 30, label: Text('30 ngày')),
+                ButtonSegment(value: 90, label: Text('90 ngày')),
               ],
               selected: {_range},
               onSelectionChanged: (s) => setState(() => _range = s.first),

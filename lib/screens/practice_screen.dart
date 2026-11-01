@@ -51,7 +51,7 @@ class PracticeScreen extends StatelessWidget {
           _PracticeCard(
             icon: AppIcons.grammar,
             title: 'Bài ngữ pháp',
-            subtitle: today == null ? 'Đã hoàn thành mọi bài' : "Today: ${today.title} · ${today.meaning}",
+            subtitle: today == null ? 'Đã hoàn thành mọi bài' : 'Hôm nay: ${today.title} · ${today.meaning}',
             badge: 'Đã xong ${state.grammarDone.length}/${state.content.grammar.length}',
             onTap: () => _push(context, const GrammarScreen()),
           ),

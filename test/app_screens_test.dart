@@ -256,35 +256,35 @@ void main() {
       final m = mode.name;
 
       await _shot(tester, '01-home-$m');
-      expect(find.text('Word of the day'.toUpperCase()), findsOneWidget);
+      expect(find.text('Từ của ngày'.toUpperCase()), findsOneWidget);
       await tester.drag(find.byType(Scrollable).first, const Offset(0, -700));
       await _shot(tester, '01b-home-path-$m');
-      expect(find.text('Four small steps'), findsOneWidget);
+      expect(find.text('Bốn bước nhỏ'), findsOneWidget);
 
-      await tester.tap(find.text("Start today's session"));
+      await tester.tap(find.text('Bắt đầu buổi học hôm nay'));
       await _shot(tester, '02-flashcard-front-$m');
-      await tester.tap(find.text('Show answer'));
+      await tester.tap(find.text('Xem đáp án'));
       await _shot(tester, '03-flashcard-back-$m');
       expect(find.text('How well did you remember?'), findsNothing);
-      await tester.tap(find.text('Next'));
+      await tester.tap(find.text('Tiếp'));
       await tester.pumpAndSettle();
-      await tester.tap(find.byTooltip('End session'));
+      await tester.tap(find.byTooltip('Kết thúc'));
       await tester.pumpAndSettle();
 
-      await tester.tap(_nav('Practice'));
+      await tester.tap(_nav('Luyện tập'));
       await _shot(tester, '04-practice-$m');
-      await tester.tap(find.text('Vocabulary quiz'));
+      await tester.tap(find.text('Trắc nghiệm từ vựng'));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('Meaning'));
+      await tester.tap(find.text('Nghĩa'));
       await tester.pumpAndSettle();
       await tester.tap(find.byType(InkWell).at(3));
       await _shot(tester, '05-quiz-answered-$m');
-      await tester.tap(find.byTooltip('End quiz'));
+      await tester.tap(find.byTooltip('Kết thúc'));
       await tester.pumpAndSettle();
       await tester.pageBack();
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Listening · 聴解'));
+      await tester.tap(find.text('Nghe hiểu · 聴解'));
       await tester.pumpAndSettle();
       await _shot(tester, '05b-listening-hub-$m');
       await tester.tap(find.byType(ListTile).first);
@@ -301,24 +301,24 @@ void main() {
       await tester.pageBack();
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Writing practice'));
+      await tester.tap(find.text('Luyện viết'));
       await tester.pumpAndSettle();
       await _shot(tester, '06-writing-hub-$m');
       await tester.tap(find.text('あ').first);
       await tester.pumpAndSettle();
       await _shot(tester, '07-writing-guide-$m');
       await _trace(tester, 'あ');
-      await tester.tap(find.text('Check'));
+      await tester.tap(find.text('Kiểm tra'));
       await _shot(tester, '08-writing-checked-$m');
-      expect(find.textContaining('Order 3/3'), findsOneWidget);
+      expect(find.textContaining('Thứ tự 3/3'), findsOneWidget);
       await tester.pageBack();
       await tester.pumpAndSettle();
       await tester.pageBack();
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Grammar lessons'));
+      await tester.tap(find.text('Bài ngữ pháp'));
       await tester.pumpAndSettle();
-      await tester.tap(find.textContaining("Today's lesson"));
+      await tester.tap(find.textContaining('Bài hôm nay'));
       await tester.pumpAndSettle();
       await tester.scrollUntilVisible(find.byType(ChoiceChip).first, 200);
       await tester.tap(find.byType(ChoiceChip).first);
@@ -379,10 +379,10 @@ void main() {
       await tester.pumpAndSettle();
       await _shot(tester, '16-jlpt-weak-$m');
 
-      await tester.tap(_nav('Progress'));
+      await tester.tap(_nav('Tiến độ'));
       await _shot(tester, '17-progress-$m');
 
-      await tester.tap(_nav('Words'));
+      await tester.tap(_nav('Từ vựng'));
       await tester.pumpAndSettle();
       await tester.enterText(find.byType(TextField), '勉強');
       await tester.pumpAndSettle();
@@ -391,14 +391,14 @@ void main() {
       await tester.tapAt(const Offset(200, 60));
       await tester.pumpAndSettle();
 
-      await tester.tap(_nav('Home'));
+      await tester.tap(_nav('Trang chủ'));
       await tester.pumpAndSettle();
       await tester.drag(find.byType(Scrollable).first, const Offset(0, 2000));
       await tester.pumpAndSettle();
-      await tester.tap(find.byTooltip('Settings'));
+      await tester.tap(find.byTooltip('Cài đặt'));
       await tester.pumpAndSettle();
-      await tester.scrollUntilVisible(find.text('Content sources & references'), 300);
-      await tester.tap(find.text('Content sources & references'));
+      await tester.scrollUntilVisible(find.text('Nguồn nội dung & tài liệu tham khảo'), 300);
+      await tester.tap(find.text('Nguồn nội dung & tài liệu tham khảo'));
       await _shot(tester, '19-sources-$m');
 
       // Let debounced timers finish before the test ends.

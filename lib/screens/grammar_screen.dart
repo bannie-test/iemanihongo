@@ -32,7 +32,7 @@ class GrammarScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Today's lesson · Day ${state.grammarDayNumber}",
+                          'Bài hôm nay · Ngày ${state.grammarDayNumber}',
                           style: TextStyle(color: c.accent, fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(height: 6),

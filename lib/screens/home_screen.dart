@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
     }
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (_) => FlashcardScreen(words: words, title: "Today's session"),
+        builder: (_) => FlashcardScreen(words: words, title: 'Buổi học hôm nay'),
       ),
     );
   }
@@ -180,7 +180,7 @@ class HomeScreen extends StatelessWidget {
                                       style: context.text.titleLarge?.copyWith(height: 1, color: c.clay),
                                     ),
                                     Text(
-                                      'ngày liên tiếp',
+                                      'ngày',
                                       style: context.text.bodySmall?.copyWith(fontSize: 9.5, height: 1.1),
                                     ),
                                   ],
@@ -250,7 +250,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 GradientButton(
                   inverse: true,
-                  label: "Start today's session",
+                  label: 'Bắt đầu buổi học hôm nay',
                   icon: AppIcons.play,
                   onPressed: () => _startSession(context, state),
                 ),
