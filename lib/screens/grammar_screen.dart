@@ -182,7 +182,7 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           HighlightText(x.jp, style: const TextStyle(fontSize: 17, height: 1.5)),
-                          Text(x.en, style: context.text.bodySmall),
+                          Text(x.vi, style: context.text.bodySmall),
                         ],
                       ),
                     ),

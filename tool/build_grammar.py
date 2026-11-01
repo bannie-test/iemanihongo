@@ -7,6 +7,23 @@ from grammar_n3_n1 import N3, N2, N1
 import grammar_more_n5_n4 as more_lo
 import grammar_more_n3_n1 as more_hi
 from grammar_refs import REFS
+import glob, re, runpy
+
+# Vietnamese text (meaning, formation, explanation, examples, quiz, tip) per lesson.
+VI = {}
+for f in sorted(glob.glob(os.path.join(os.path.dirname(__file__), 'vi', 'grammar_vi_*.py'))):
+    VI.update(runpy.run_path(f)['G'])
+TITLES = {
+    'n5-de-place': '〜で (nơi chốn / phương tiện)', 'n5-ni-time': '〜に (thời gian)',
+    'n5-adj-i': 'Tính từ đuôi い', 'n5-adj-na': 'Tính từ đuôi な', 'n5-kara-reason': '〜から (lý do)',
+    'n5-te-link': '〜て (và, rồi)', 'n4-potential': 'Thể khả năng', 'n4-volitional': 'Thể ý chí 〜よう / 〜おう',
+    'n4-ba': '〜ば (điều kiện)', 'n4-to-cond': '〜と (kết quả tất yếu)', 'n4-sou-looks': '〜そうです (trông có vẻ)',
+    'n4-sou-hearsay': '〜そうです (nghe nói)', 'n4-passive': 'Thể bị động 〜られる', 'n4-causative': 'Thể sai khiến 〜させる',
+}
+
+def vi_ref(ref):
+    ref = re.sub(r'\bLessons? ', 'Bài ', ref)
+    return ref.replace(' & ', ' và ').replace(' Grammar (', ' Ngữ pháp (')
 
 tables = {
     5: [(t, None, None) for t in N5] + [(t[:7], t[7], t[8]) for t in more_lo.N5],
@@ -25,10 +42,12 @@ for level, items in tables.items():
             ref, tip = REFS[gid]
         q, opts, ans, qen = quiz
         assert '＿＿' in q and 0 <= ans < len(opts) and len(set(opts)) == len(opts), gid
-        out.append({'id': gid, 'l': level, 't': title, 'm': meaning, 'f': formation, 'e': expl,
-                    'x': [{'jp': jp, 'en': en} for jp, en in examples],
-                    'q': {'s': q, 'o': opts, 'a': ans, 'en': qen},
-                    'ref': ref, 'tip': tip})
+        vm, vf, ve, vx, vq, vtip = VI[gid]
+        assert len(vx) == len(examples), gid
+        out.append({'id': gid, 'l': level, 't': TITLES.get(gid, title), 'm': vm, 'f': vf, 'e': ve,
+                    'x': [{'jp': jp, 'vi': vi} for (jp, _), vi in zip(examples, vx)],
+                    'q': {'s': q, 'o': opts, 'a': ans, 'vi': vq},
+                    'ref': vi_ref(ref), 'tip': vtip})
 missing = set(REFS) - ids
 assert not missing, missing
 

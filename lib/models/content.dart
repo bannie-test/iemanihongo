@@ -83,9 +83,9 @@ class KanjiInfo {
 }
 
 class GrammarExample {
-  const GrammarExample(this.jp, this.en);
+  const GrammarExample(this.jp, this.vi);
   final String jp; // ** marks the highlighted grammar
-  final String en;
+  final String vi;
   String get plain => jp.replaceAll('**', '');
 }
 
@@ -133,8 +133,8 @@ class GrammarPoint {
       meaning: j['m'] as String,
       formation: j['f'] as String,
       explanation: j['e'] as String,
-      examples: [for (final x in j['x'] as List) GrammarExample(x['jp'] as String, x['en'] as String)],
-      quiz: GrammarQuiz(q['s'] as String, List<String>.from(q['o'] as List), q['a'] as int, q['en'] as String),
+      examples: [for (final x in j['x'] as List) GrammarExample(x['jp'] as String, x['vi'] as String)],
+      quiz: GrammarQuiz(q['s'] as String, List<String>.from(q['o'] as List), q['a'] as int, q['vi'] as String),
       reference: j['ref'] as String?,
       tip: j['tip'] as String?,
     );
