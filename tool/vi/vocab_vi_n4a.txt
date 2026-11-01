@@ -1,0 +1,340 @@
+日|mặt trời; ngày
+事|việc, sự việc
+社長|giám đốc
+見える|nhìn thấy được; đến (lịch sự)
+見つける|tìm thấy, phát hiện
+月|mặt trăng
+会議|cuộc họp, hội nghị
+この間|hôm nọ, gần đây
+部長|trưởng phòng
+選ぶ|chọn
+大学生|sinh viên đại học
+決める|quyết định
+お子さん|con (của người khác)
+ご主人|chồng (của người khác)
+用事|việc bận
+政治|chính trị
+今度|lần này; lần tới
+思う|nghĩ
+続ける|tiếp tục
+日記|nhật ký
+世界|thế giới
+予定|dự định, kế hoạch
+予約|đặt trước
+文化|văn hóa
+文学|văn học
+文法|ngữ pháp
+最近|gần đây, dạo này
+考える|suy nghĩ, cân nhắc
+参る|đi, đến (khiêm nhường)
+集める|thu thập, tập hợp
+場所|địa điểm
+始める|bắt đầu
+直す|sửa
+運ぶ|vận chuyển, mang
+高校生|học sinh cấp ba
+小学校|trường tiểu học
+工場|nhà máy
+空気|không khí
+お土産|quà lưu niệm
+急ぐ|vội vàng
+送る|gửi; tiễn
+受付|quầy lễ tân
+自由|tự do
+小説|tiểu thuyết
+優しい|hiền, tốt bụng
+足りる|đủ
+間違える|nhầm lẫn
+番組|chương trình (TV, radio)
+お宅|nhà (của người khác)
+育てる|nuôi dạy
+起こす|đánh thức
+着物|kimono
+試合|trận đấu
+例えば|ví dụ
+いじめる|bắt nạt
+いらっしゃる|đi, đến, ở (kính ngữ)
+うん|ừ
+おっしゃる|nói (kính ngữ)
+おもちゃ|đồ chơi
+おる|ở, có (khiêm nhường)
+ごみ|rác
+ごらんになる|xem (kính ngữ)
+さっき|lúc nãy
+だから|vì vậy
+なさる|làm (kính ngữ)
+ひげ|râu
+ひどい|tồi tệ; quá đáng
+びっくりする|ngạc nhiên
+まず|trước hết
+もうすぐ|sắp sửa
+もちろん|tất nhiên
+アメリカ|nước Mỹ
+アルバイト|việc làm thêm
+カーテン|rèm cửa
+ガソリン|xăng
+ケーキ|bánh ngọt
+コンサート|buổi hòa nhạc
+テニス|quần vợt
+ピアノ|đàn piano
+プレゼント|quà tặng
+いただく|ăn, uống; nhận (khiêm nhường)
+親|bố mẹ
+試験|kỳ thi
+伝える|truyền đạt
+差し上げる|biếu, tặng (khiêm nhường)
+警察|cảnh sát; đồn cảnh sát
+字|chữ
+音|âm thanh
+申す|nói (khiêm nhường)
+空港|sân bay
+専門|chuyên ngành
+天気予報|dự báo thời tiết
+科学|khoa học
+太る|béo lên
+台風|bão
+赤ちゃん|em bé
+美術館|bảo tàng mỹ thuật
+歴史|lịch sử
+将来|tương lai
+厳しい|nghiêm khắc
+彼女|cô ấy; bạn gái
+彼|anh ấy; bạn trai
+寄る|ghé qua
+久しぶり|lâu rồi mới
+指輪|nhẫn
+予習|chuẩn bị bài trước
+留守|vắng nhà
+旅館|nhà trọ kiểu Nhật
+払う|trả tiền
+遅れる|muộn, trễ
+致す|làm (khiêm nhường)
+戻る|quay lại
+地震|động đất
+約束|lời hứa; cuộc hẹn
+探す|tìm kiếm
+季節|mùa
+夢|giấc mơ
+包む|gói, bọc
+焼く|nướng
+〜会|buổi ~, hội ~
+悲しい|buồn
+大事|quan trọng
+行う|tiến hành
+社会|xã hội
+見つかる|được tìm thấy
+〜月|~ tháng
+十分|đủ
+大分|khá, đáng kể
+生きる|sống
+連れる|dẫn theo
+出発|xuất phát
+間|khoảng giữa; trong khoảng
+上がる|lên, tăng
+合う|hợp, vừa
+間に合う|kịp
+市|thành phố
+市民|người dân thành phố
+内|bên trong
+是非|nhất định
+回る、回す|quay, đi vòng quanh
+盗む|ăn trộm
+会場|hội trường
+場合|trường hợp
+〜員|nhân viên ~, thành viên ~
+立てる|dựng lên; lập (kế hoạch)
+開く|mở; tổ chức
+米|gạo
+力|sức mạnh
+〜学部|khoa ~ (đại học)
+入学|nhập học
+〜代|độ tuổi ~; thời ~; tiền ~
+代わり|thay thế
+時代|thời đại
+明日|ngày mai
+決まる|được quyết định
+決して|nhất định không
+子|đứa trẻ
+動く|chuyển động
+〜目|thứ ~
+表|mặt trước; bên ngoài
+通う|đi lại (đều đặn)
+通り|con đường, phố
+通る|đi qua
+最後|cuối cùng
+最も|nhất
+地理|địa lý
+調べる|tra cứu, điều tra
+大体|đại khái, phần lớn
+下りる|xuống
+下る|đi xuống
+下げる|hạ xuống
+首|cổ
+意見|ý kiến
+用|việc
+用意|chuẩn bị
+治る|khỏi (bệnh)
+一度|một lần
+気|tinh thần, tâm trạng
+気分|tâm trạng, cảm giác
+公務員|công chức
+お金持ち|người giàu
+気持ち|cảm giác, tâm trạng
+都合|hoàn cảnh, thuận tiện
+都|thủ đô (Tokyo)
+手袋|găng tay
+以下|dưới, không quá
+以外|ngoài ra, ngoại trừ
+以上|trên, hơn; xin hết
+以内|trong vòng
+機会|cơ hội
+思い出す|nhớ ra
+〜家|nhà ~ (chuyên gia)
+家内|vợ (tôi)
+会話|hội thoại
+世話|chăm sóc
+受ける|nhận; dự (thi)
+〜区|quận ~
+〜続ける|tiếp tục ~
+続く|tiếp diễn
+進む|tiến lên
+正月|Tết
+正しい|đúng
+安全|an toàn
+数学|toán học
+入院|nhập viện
+女性|phụ nữ
+最初|đầu tiên
+趣味|sở thích
+指|ngón tay
+安心|yên tâm
+心|trái tim, tâm hồn
+支度|chuẩn bị
+産業|công nghiệp
+生産|sản xuất
+点く|bật lên, sáng lên
+点|điểm
+教会|nhà thờ
+経済|kinh tế
+済む|xong
+生活|cuộc sống; sinh hoạt
+床屋|tiệm cắt tóc
+交通|giao thông
+大抵|thường thì, đại khái
+向かう|hướng về
+国際|quốc tế
+お礼|lời cảm ơn; quà cảm ơn
+勝つ|thắng
+反対|phản đối
+昔|ngày xưa
+売り場|quầy bán hàng
+利用|sử dụng
+知らせる|thông báo
+案内|hướng dẫn
+集まる|tập trung
+別|khác, riêng
+別れる|chia tay
+見物|tham quan
+引き出し|ngăn kéo
+怒る|tức giận; mắng
+近所|hàng xóm, khu lân cận
+事務所|văn phòng
+水道|nước máy
+品物|hàng hóa
+計画|kế hoạch
+増える|tăng lên
+関係|quan hệ
+特に|đặc biệt là
+特別|đặc biệt
+投げる|ném
+僕|tôi (nam giới)
+変える|thay đổi (tha động từ)
+変わる|thay đổi (tự động từ)
+変|lạ
+打つ|đánh
+男性|nam giới
+〜始める|bắt đầu ~
+島|đảo
+直る|được sửa
+頑張る|cố gắng
+両方|cả hai
+〜式|lễ ~; kiểu ~
+確か|chắc chắn; nếu tôi nhớ không nhầm
+運動|vận động, tập thể dục
+終わり|kết thúc
+必ず|nhất định
+必要|cần thiết
+捨てる|vứt bỏ
+電報|điện báo
+住所|địa chỉ
+戦争|chiến tranh
+相談|bàn bạc, trao đổi
+無くなる|mất; hết
+無理|vô lý; không thể
+再来月|tháng sau nữa
+真面目|nghiêm túc, chăm chỉ
+真中|chính giữa
+人口|dân số
+過ぎる|quá; đi qua
+〜町|thị trấn ~
+校長|hiệu trưởng
+中学校|trường trung học cơ sở
+工業|công nghiệp
+建て|nhà ~ tầng
+建てる|xây
+空く|trống
+空く|vắng, trống (người)
+踊る|nhảy múa
+急|gấp; đột ngột; dốc
+急行|tàu (xe) tốc hành
+特急|tàu tốc hành đặc biệt
+止める|dừng (cái gì)
+止む|tạnh, ngừng
+止める|bỏ, thôi
+放送|phát sóng
+眠い|buồn ngủ
+役に立つ|có ích
+割合|tỷ lệ
+割れる|vỡ
+聞こえる|nghe thấy
+新聞社|tòa soạn báo
+怖い|đáng sợ
+理由|lý do
+説明|giải thích
+運転手|tài xế
+運転|lái xe
+食事|bữa ăn
+食料品|thực phẩm
+比べる|so sánh
+夫|chồng
+石|hòn đá
+足す|cộng thêm
+湖|hồ
+消しゴム|cục tẩy
+神社|đền Thần đạo
+心配|lo lắng
+先輩|tiền bối, đàn anh
+研究|nghiên cứu
+教育|giáo dục
+出席|có mặt, tham dự
+席|chỗ ngồi
+輸出|xuất khẩu
+輸入|nhập khẩu
+訪ねる|thăm
+楽しみ|niềm vui, mong chờ
+楽む|tận hưởng
+下着|đồ lót
+乗り物|phương tiện đi lại
+店員|nhân viên cửa hàng
+泣く|khóc
+残る|còn lại
+線|đường kẻ, tuyến
+残念|đáng tiếc
+〜(て) しまう|lỡ ~, ~ mất
+〜(に) ついて|về ~
+〜(に) よると|theo ~
+〜おき|cách ~
+〜おわる|~ xong
+〜ございます|có, là (lịch sự)
+〜だす|bắt đầu ~
+〜ちゃん|bé ~ (gọi thân mật)

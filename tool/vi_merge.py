@@ -1,7 +1,8 @@
 """Applies the Vietnamese text in tool/vi/ to assets/data/kanji.json and vocab.json.
 
   kanji_vi_*.txt   char|HÁN VIỆT|nghĩa, nghĩa
-  vocab_vi_*.txt   word id|nghĩa tiếng Việt
+  vocab_vi_nL*.txt word|nghĩa — one line per word of level L, in vocab.json order
+                   (the word is checked, so a shifted line fails loudly)
 
 Run after build_content.py (which calls it), or on its own. Safe to repeat.
 """
@@ -38,11 +39,15 @@ def merge():
 
     vocab_path = os.path.join(data, 'vocab.json')
     words = json.load(open(vocab_path, encoding='utf-8'))
-    vv = read('vocab_vi_*.txt', 2)
     done = 0
-    for w in words:
-        if w['id'] in vv:
-            w['m'] = vv[w['id']][0]
+    for level in (5, 4, 3, 2, 1):
+        lines = []
+        for f in sorted(glob.glob(os.path.join(here, 'vi', f'vocab_vi_n{level}*.txt'))):
+            lines += [l.rstrip('\n').split('|') for l in open(f, encoding='utf-8') if l.strip()]
+        level_words = [w for w in words if w['l'] == level]
+        for (word, vi), w in zip(lines, level_words):
+            assert word == w['w'], (level, word, w['w'])
+            w['m'] = vi
             done += 1
     json.dump(words, open(vocab_path, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print(f'kanji: {sum(1 for c in kanji if c in kv)}/{len(kanji)} · words: {done}/{len(words)} in Vietnamese')

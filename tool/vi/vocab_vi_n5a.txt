@@ -1,0 +1,330 @@
+一日|một ngày (khoảng thời gian)
+一つ|một cái
+国|đất nước; quê hương
+人|người
+一人|một người
+大きい|to, lớn
+大人|người lớn
+十|mười (cái)
+十日|mười ngày; ngày mùng mười
+二つ|hai cái
+二人|hai người
+二日|hai ngày; ngày mùng hai
+本|sách
+長い|dài
+出す|lấy ra; nộp
+出かける|ra ngoài; xuất phát
+三日|ba ngày; ngày mùng ba
+三つ|ba cái
+同じ|giống nhau
+会社|công ty
+見せる|cho xem
+自分|bản thân, tự mình
+後|sau đó; phần còn lại
+前|trước, phía trước
+五日|năm ngày; ngày mùng năm
+五つ|năm cái
+時間|thời gian
+四日|bốn ngày; ngày mùng bốn
+四つ|bốn cái
+今|bây giờ
+今日|hôm nay
+今年|năm nay
+今月|tháng này
+新しい|mới
+お金|tiền
+九日|chín ngày; ngày mùng chín
+九つ|chín cái
+立つ|đứng lên
+学生|học sinh, sinh viên
+大学|trường đại học
+高い|cao; đắt
+明るい|sáng sủa; vui vẻ
+明日|ngày mai
+全部|toàn bộ, tất cả
+目|mắt
+外国|nước ngoài
+外国人|người nước ngoài
+外|bên ngoài
+言う|nói
+体|cơ thể; sức khỏe
+八つ|tám cái
+八日|tám ngày; ngày mùng tám
+六日|sáu ngày; ngày mùng sáu
+六つ|sáu cái
+来月|tháng sau
+来年|năm sau
+作る|làm, chế tạo
+強い|mạnh
+小さい|nhỏ, bé
+七つ|bảy cái
+七日|bảy ngày; ngày mùng bảy
+取る|lấy; đạt được
+山|núi
+家|nhà
+話|câu chuyện, cuộc nói chuyện
+多分|có lẽ
+安い|rẻ
+女|phụ nữ, nữ
+女の子|bé gái
+初めて|lần đầu tiên
+午後|buổi chiều
+午前|buổi sáng
+先月|tháng trước
+先生|thầy cô giáo; bác sĩ
+名前|tên
+作文|bài văn
+重い|nặng; nghiêm trọng
+近い|gần
+海|biển
+売る|bán
+知る|biết
+道|con đường; đường đi
+物|đồ vật
+所|nơi, chỗ
+次|tiếp theo
+水|nước
+半|một nửa, rưỡi
+一昨日|hôm kia
+昨日|hôm qua
+時計|đồng hồ
+死ぬ|chết
+男|đàn ông, nam
+男の子|bé trai
+私|tôi (trang trọng)
+私|tôi
+始まる|bắt đầu
+朝|buổi sáng
+今朝|sáng nay
+広い|rộng
+電気|điện; đèn điện
+電話|điện thoại
+置く|đặt, để
+少ない|ít
+少し|một chút, một ít
+町|thị trấn, phố
+学校|trường học
+子供|trẻ em
+木|cây; gỗ
+新聞|báo
+切手|tem thư
+切る|cắt; cúp máy
+食べ物|đồ ăn
+難しい|khó
+車|xe ô tô
+自転車|xe đạp
+電車|tàu điện
+何|cái gì
+違う|khác; sai
+消える|biến mất, tắt
+一番|nhất, số một
+楽しい|vui
+起きる|thức dậy; xảy ra
+着る|mặc (áo)
+店|cửa hàng
+病院|bệnh viện
+病気|bệnh
+家族|gia đình
+銀行|ngân hàng
+あそこ|đằng kia
+あちら|phía kia (lịch sự)
+あなた|bạn, anh, chị
+あれ|cái kia
+いくら|bao nhiêu (tiền)
+いつ|bao giờ, khi nào
+いつも|luôn luôn
+うち|nhà; nhà tôi
+うるさい|ồn ào; phiền phức
+ええ|vâng
+おじいさん|ông; ông lão
+おばあさん|bà; bà lão
+かかる|mất, tốn (thời gian, tiền)
+かける|gọi (điện thoại); ngồi
+かばん|cặp, túi xách
+かぶる|đội (mũ)
+ここ|ở đây
+こちら|vị này; phía này (lịch sự)
+これ|cái này
+する|làm; đeo (đồ nhỏ)
+そこ|chỗ đó; đáy
+そば|bên cạnh; mì soba
+それ|cái đó
+ちょっと|một chút
+つまらない|chán, nhạt nhẽo
+とても|rất
+どうして|tại sao
+どうも|cảm ơn; không hiểu sao
+どこ|ở đâu
+どちら|phía nào; ở đâu (lịch sự)
+どっち|cái nào, phía nào
+どれ|cái nào
+なぜ|tại sao
+なる|trở thành
+はい|vâng, dạ
+はく|mặc (quần, váy), đi (giày)
+まずい|dở, không ngon
+また|lại; hơn nữa
+まだ|vẫn, chưa
+みんな|mọi người, tất cả
+もう|đã; thêm nữa
+もしもし|a lô
+もっと|hơn nữa
+やる|làm; cho (động vật, người dưới)
+よく|thường; giỏi, kỹ
+アパート|căn hộ
+カメラ|máy ảnh
+カレー|cà ri
+ギター|đàn ghi-ta
+クラス|lớp học
+コップ|cái cốc
+コーヒー|cà phê
+シャツ|áo sơ mi
+スカート|váy
+ストーブ|lò sưởi
+スポーツ|thể thao
+セーター|áo len
+テスト|bài kiểm tra
+テレビ|tivi
+テープ|băng (dính, ghi âm)
+デパート|cửa hàng bách hóa
+ニュース|tin tức
+ネクタイ|cà vạt
+ノート|vở
+バス|xe buýt
+パン|bánh mì
+パーティー|bữa tiệc
+プール|bể bơi
+ペット|thú cưng
+ペン|bút
+ページ|trang
+ホテル|khách sạn
+ラジオ|radio
+レストラン|nhà hàng
+早い|sớm
+映画|phim
+両親|bố mẹ
+言葉|từ ngữ; ngôn ngữ
+葉書|bưu thiếp
+働く|làm việc
+英語|tiếng Anh
+毎朝|mỗi sáng
+毎日|mỗi ngày
+医者|bác sĩ
+仕事|công việc
+去年|năm ngoái
+意味|ý nghĩa
+写真|ảnh
+若い|trẻ
+面白い|thú vị, buồn cười
+白い|trắng
+夜|buổi tối, ban đêm
+音楽|âm nhạc
+呼ぶ|gọi; mời
+古い|cũ
+天気|thời tiết
+歌|bài hát
+歌う|hát
+買い物|mua sắm
+悪い|xấu, tồi
+授業|giờ học
+地図|bản đồ
+今週|tuần này
+先週|tuần trước
+毎週|mỗi tuần
+来週|tuần sau
+歩く|đi bộ
+風|gió
+紙|giấy
+手紙|lá thư
+お母さん|mẹ
+母|mẹ (tôi)
+黒い|đen
+速い|nhanh
+春|mùa xuân
+飛行機|máy bay
+赤い|đỏ
+番号|số (thứ tự)
+青い|xanh
+映画館|rạp chiếu phim
+図書館|thư viện
+部屋|căn phòng
+お弁当|cơm hộp
+色|màu sắc
+友達|bạn bè
+走る|chạy
+公園|công viên
+辞書|từ điển
+秋|mùa thu
+休み|ngày nghỉ; sự vắng mặt
+お父さん|bố
+父|bố (tôi)
+夏|mùa hè
+冷たい|lạnh (đồ vật); lạnh lùng
+地下鉄|tàu điện ngầm
+顔|khuôn mặt
+短い|ngắn
+熱い|nóng (đồ vật)
+宿題|bài tập về nhà
+薬|thuốc
+習う|học (từ ai đó)
+頼む|nhờ, yêu cầu
+駅|nhà ga
+留学生|du học sinh
+脱ぐ|cởi (quần áo)
+旅行|du lịch
+押す|đẩy, ấn
+角|góc
+庭|vườn
+遅い|chậm; muộn
+困る|khó xử, gặp khó khăn
+雑誌|tạp chí
+冷蔵庫|tủ lạnh
+弾く|chơi (đàn)
+服|quần áo
+財布|cái ví
+遠い|xa
+絵|bức tranh
+痛い|đau
+汚い|bẩn
+郵便局|bưu điện
+夕方|chiều tối
+火曜日|thứ Ba
+金曜日|thứ Sáu
+月曜日|thứ Hai
+水曜日|thứ Tư
+土曜日|thứ Bảy
+日曜日|Chủ nhật
+木曜日|thứ Năm
+遊ぶ|chơi
+雨|mưa
+飲み物|đồ uống
+肉|thịt
+〜日|ngày ~; ~ ngày
+一|một
+一日|ngày mùng một
+会う|gặp
+〜人|người (nước) ~
+〜人|~ người (đếm người)
+〜年|~ năm
+お酒|rượu sake; rượu bia
+年|năm; tuổi
+大きな|to, lớn
+十|mười
+二|hai
+二十日|hai mươi ngày; ngày 20
+〜本|~ cây, ~ chai (đếm vật dài)
+食堂|nhà ăn
+〜中|suốt ~, trong ~
+〜中|đang ~
+中|bên trong, giữa
+出る|ra, rời khỏi; xuất hiện
+三|ba
+〜時|~ giờ
+〜時|khi ~, lúc ~
+奥さん|vợ (người khác)
+行く|đi
+晴れ|trời nắng
+晴れる|trời nắng, quang đãng
+見る|nhìn, xem
+〜か月|~ tháng (khoảng thời gian)
+〜月|tháng ~
