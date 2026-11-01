@@ -63,9 +63,13 @@ class KanjiInfo {
     required this.onReadings,
     required this.kunReadings,
     this.level,
+    this.hanViet,
   });
 
   final String char;
+
+  /// Sino-Vietnamese reading, e.g. HỌC for 学. Null for kanji made in Japan.
+  final String? hanViet;
   final int? strokes;
   final List<String> meanings;
   final List<String> onReadings;
@@ -79,6 +83,7 @@ class KanjiInfo {
     onReadings: List<String>.from(j['on'] as List),
     kunReadings: List<String>.from(j['kun'] as List),
     level: j['l'] as int?,
+    hanViet: (j['hv'] as String?)?.isEmpty ?? true ? null : j['hv'] as String,
   );
 }
 

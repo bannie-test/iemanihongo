@@ -271,6 +271,8 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
                       children: [
                         if (romaji != null) Text(romaji, style: context.text.titleLarge),
                         if (info != null) ...[
+                          if (info.hanViet != null)
+                            Text(info.hanViet!, style: context.text.titleMedium?.copyWith(letterSpacing: 0.8)),
                           Text(info.meanings.take(3).join(', '), style: context.text.titleMedium),
                           if (info.onReadings.isNotEmpty)
                             Text('Âm On: ${info.onReadings.join('、')}', style: context.text.bodySmall),

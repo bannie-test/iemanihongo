@@ -1,0 +1,300 @@
+祭|TẾ|lễ hội
+禁|CẤM|cấm
+秒|MIỂU|giây
+移|DI|di chuyển
+税|THUẾ|thuế
+章|CHƯƠNG|chương
+童|ĐỒNG|trẻ em
+競|CẠNH|cạnh tranh
+竹|TRÚC|tre
+符|PHÙ|ký hiệu, vé
+筆|BÚT|bút lông
+筒|ĐỒNG|ống
+算|TOÁN|tính toán
+管|QUẢN|ống, quản lý
+築|TRÚC|xây dựng
+簡|GIẢN|đơn giản
+籍|TỊCH|hộ tịch, quốc tịch
+粉|PHẤN|bột
+粒|LẠP|hạt
+糸|MỊCH|sợi chỉ
+紅|HỒNG|đỏ thẫm
+純|THUẦN|thuần khiết
+細|TẾ|nhỏ, mảnh
+紹|THIỆU|giới thiệu
+絡|LẠC|liên lạc
+綿|MIÊN|bông
+総|TỔNG|tổng
+緑|LỤC|xanh lá
+線|TUYẾN|đường, tuyến
+編|BIÊN|đan, biên tập
+練|LUYỆN|luyện tập
+績|TÍCH|thành tích
+缶|PHẪU|lon, hộp
+署|THỰ|cơ quan; ký tên
+群|QUẦN|bầy, nhóm
+羽|VŨ|lông vũ, cánh
+翌|DỰC|hôm sau
+耕|CANH|cày
+肌|CƠ|làn da
+肩|KIÊN|vai
+肯|KHẲNG|khẳng định
+胃|VỊ|dạ dày
+胸|HUNG|ngực
+脂|CHI|mỡ
+脳|NÃO|não
+腕|OẢN|cánh tay
+腰|YÊU|eo, hông
+膚|PHU|da
+臓|TẠNG|nội tạng
+臣|THẦN|bề tôi
+舟|CHU|thuyền nhỏ
+航|HÀNG|hàng hải, bay
+般|BAN|chung, nói chung
+芸|NGHỆ|nghệ thuật
+荒|HOANG|hoang dã, thô
+荷|HÀ|hành lý
+菓|QUẢ|bánh kẹo
+菜|THÁI|rau
+著|TRỨ|tác giả, nổi bật
+蒸|CHƯNG|hấp
+蔵|TÀNG|kho, cất giữ
+薄|BẠC|mỏng, nhạt
+虫|TRÙNG|côn trùng
+血|HUYẾT|máu
+衣|Y|áo
+袋|ĐẠI|túi
+被|BỊ|bị, chịu
+装|TRANG|trang phục, giả vờ
+裏|LÝ|mặt sau
+補|BỔ|bổ sung
+複|PHỨC|phức tạp
+角|GIÁC|góc, sừng
+触|XÚC|chạm
+訓|HUẤN|huấn luyện; âm kun
+設|THIẾT|thiết lập
+詞|TỪ|từ ngữ
+詰|CẬT|nhồi, chật
+誌|CHÍ|tạp chí
+課|KHÓA|bài, ban
+諸|CHƯ|các
+講|GIẢNG|giảng
+谷|CỐC|thung lũng
+豊|PHONG|phong phú
+象|TƯỢNG|con voi, hình tượng
+貝|BỐI|vỏ sò
+貨|HÓA|hàng hóa
+販|PHIẾN|buôn bán
+貯|TRỮ|tiết kiệm
+貿|MẬU|mậu dịch
+賞|THƯỞNG|giải thưởng
+賢|HIỀN|hiền, khôn
+贈|TẶNG|tặng
+超|SIÊU|vượt
+跡|TÍCH|dấu vết
+踊|DŨNG|nhảy múa
+軍|QUÂN|quân đội
+軒|HIÊN|mái hiên; đếm nhà
+軟|NHUYỄN|mềm
+軽|KHINH|nhẹ
+輪|LUÂN|bánh xe, vòng
+輸|THÂU|vận chuyển
+辛|TÂN|cay
+農|NÔNG|nông nghiệp
+辺|BIÊN|vùng, xung quanh
+述|THUẬT|trình bày
+逆|NGHỊCH|ngược
+造|TẠO|tạo ra
+郊|GIAO|ngoại ô
+郵|BƯU|bưu điện
+量|LƯỢNG|lượng
+針|CHÂM|cây kim
+鈍|ĐỘN|cùn, chậm
+鉄|THIẾT|sắt
+鉱|KHOÁNG|khoáng sản
+銅|ĐỒNG|đồng
+鋭|DUỆ|sắc bén
+録|LỤC|ghi lại
+門|MÔN|cổng
+防|PHÒNG|phòng ngừa
+陸|LỤC|đất liền
+隅|NGUNG|góc
+階|GIAI|tầng
+雇|CỐ|thuê (người)
+雲|VÂN|mây
+零|LINH|số không
+震|CHẤN|rung chuyển
+革|CÁCH|da thuộc, cải cách
+順|THUẬN|thứ tự
+預|DỰ|gửi, giữ hộ
+領|LĨNH|lãnh thổ, lĩnh
+額|NGẠCH|trán; số tiền
+香|HƯƠNG|hương thơm
+駐|TRÚ|đỗ, trú
+骨|CỐT|xương
+麦|MẠCH|lúa mạch
+黄|HOÀNG|vàng (màu)
+鼻|TỴ|mũi
+齢|LINH|tuổi
+丁|ĐINH|đinh; khu phố
+且|THẢ|vả lại
+丘|KHÂU|đồi
+乃|NÃI|là, bèn
+乏|PHẠP|thiếu
+乙|ẤT|thứ hai (Ất)
+井|TỈNH|cái giếng
+享|HƯỞNG|hưởng thụ
+仮|GIẢ|tạm thời, giả định
+仰|NGƯỠNG|ngưỡng mộ, ngước lên
+企|XÍ|kế hoạch
+伏|PHỤC|cúi xuống, ẩn nấp
+伯|BÁ|bác
+伴|BẠN|đi cùng
+但|ĐÃN|nhưng
+併|TÍNH|hợp nhất
+侍|THỊ|samurai, hầu
+価|GIÁ|giá cả
+侮|VŨ|khinh thường
+侵|XÂM|xâm lược
+促|XÚC|thúc giục
+俗|TỤC|thông tục
+保|BẢO|bảo vệ
+修|TU|tu sửa, học
+俳|BÀI|diễn viên; thơ haiku
+俵|BIẾU|bao gạo
+倉|THƯƠNG|nhà kho
+倣|PHỎNG|bắt chước
+倹|KIỆM|tiết kiệm
+偏|THIÊN|thiên lệch
+健|KIỆN|khỏe mạnh
+偽|NGỤY|giả
+傍|BÀNG|bên cạnh
+傑|KIỆT|kiệt xuất
+傘|TẢN|cái ô
+催|THÔI|tổ chức, thúc giục
+債|TRÁI|nợ
+傷|THƯƠNG|vết thương
+僕|BỘC|tôi (nam giới)
+僚|LIÊU|đồng nghiệp
+僧|TĂNG|nhà sư
+儀|NGHI|nghi lễ
+償|THƯỜNG|bồi thường
+充|SUNG|sung túc, lấp đầy
+克|KHẮC|khắc phục
+免|MIỄN|miễn
+典|ĐIỂN|điển, kinh điển
+兼|KIÊM|kiêm
+冒|MẠO|mạo hiểm
+冗|NHŨNG|thừa, đùa
+冠|QUAN|vương miện
+冴|NGÀ|trong trẻo, sắc sảo
+凌|LĂNG|vượt qua, chịu đựng
+凝|NGƯNG|đông lại, chăm chú
+凡|PHÀM|bình thường
+凶|HUNG|xấu, hung
+凸|ĐỘT|lồi
+凹|AO|lõm
+刀|ĐAO|dao, kiếm
+刃|NHẪN|lưỡi dao
+刈|NGẢI|cắt (cỏ, tóc)
+刑|HÌNH|hình phạt
+削|TƯỚC|gọt
+剖|PHẪU|mổ xẻ
+剣|KIẾM|kiếm
+剤|TỄ|thuốc
+剰|THẶNG|dư thừa
+創|SÁNG|sáng tạo
+功|CÔNG|công lao
+劣|LIỆT|kém
+励|LỆ|khích lệ
+勘|KHÁM|trực giác
+勧|KHUYẾN|khuyến khích
+卑|TI|hèn hạ
+卓|TRÁC|cái bàn; xuất sắc
+博|BÁC|uyên bác
+即|TỨC|ngay lập tức
+却|KHƯỚC|trái lại, từ chối
+卸|TÁ|bán buôn
+厄|ÁCH|tai họa
+厳|NGHIÊM|nghiêm khắc
+及|CẬP|đạt tới, cùng với
+叔|THÚC|chú
+句|CÚ|câu, cụm từ
+只|CHỈ|chỉ
+叶|HIỆP|thành hiện thực
+司|TI|cai quản
+吉|CÁT|tốt lành
+吐|THỔ|nôn, nhổ
+吟|NGÂM|ngâm (thơ)
+呂|LỮ|xương sống; ふろ (bồn tắm)
+呈|TRÌNH|trình, tặng
+哀|AI|buồn thương
+哲|TRIẾT|triết học
+唇|THẦN|môi
+唯|DUY|duy nhất
+唱|XƯỚNG|hát, đọc
+啓|KHẢI|khai sáng
+善|THIỆN|thiện, tốt
+嘆|THÁN|than thở
+器|KHÍ|đồ dùng, khí cụ
+噴|PHÚN|phun
+圏|QUYỂN|khu vực, vòng
+垂|THÙY|rủ xuống
+垣|VIÊN|hàng rào
+執|CHẤP|nắm, cố chấp
+培|BỒI|bồi dưỡng
+基|CƠ|nền tảng
+堀|QUẬT|hào nước
+堅|KIÊN|vững chắc
+堤|ĐÊ|con đê
+堪|KHAM|chịu đựng
+塀|BIÊN|tường rào
+塊|KHỐI|khối, cục
+塾|THỤC|lớp học thêm
+墓|MỘ|ngôi mộ
+墜|TRỤY|rơi xuống
+墨|MẶC|mực
+壁|BÍCH|bức tường
+壇|ĐÀN|bục, đàn
+壊|HOẠI|phá hỏng
+士|SĨ|người có học, sĩ
+壮|TRÁNG|tráng lệ
+奇|KỲ|kỳ lạ
+奉|PHỤNG|phụng sự
+奏|TẤU|biểu diễn (nhạc)
+契|KHẾ|khế ước
+奨|TƯỞNG|khuyến khích
+奪|ĐOẠT|cướp đoạt
+奮|PHẤN|phấn chấn
+奴|NÔ|nô lệ; thằng
+如|NHƯ|như
+妊|NHÂM|mang thai
+妙|DIỆU|kỳ diệu, kỳ lạ
+妥|THỎA|thỏa đáng
+妨|PHƯƠNG|cản trở
+姿|TƯ|dáng vẻ
+威|UY|uy lực
+娠|THẦN|mang thai
+娯|NGU|giải trí
+婿|TẾ|con rể
+嫁|GIÁ|cô dâu, lấy chồng
+嫌|HIỀM|ghét
+嬉|HY|vui vẻ
+嬢|NƯƠNG|cô gái
+孤|CÔ|cô độc
+宗|TÔNG|tôn giáo
+宙|TRỤ|vũ trụ
+宜|NGHI|thích hợp
+宣|TUYÊN|tuyên bố
+宮|CUNG|cung điện, đền
+宴|YẾN|tiệc
+寂|TỊCH|cô quạnh
+密|MẬT|bí mật, dày đặc
+寛|KHOAN|khoan dung
+寧|NINH|an ninh, lịch sự
+審|THẨM|thẩm định
+寮|LIÊU|ký túc xá
+寸|THỐN|tấc, một chút
+射|XẠ|bắn
+尋|TẦM|hỏi, tìm
+尚|THƯỢNG|vẫn còn, hơn nữa

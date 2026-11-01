@@ -142,7 +142,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                                   children: [
                                     for (final k in kanji)
                                       ActionChip(
-                                        label: Text('${k.char}  ${k.meanings.take(2).join(', ')}'),
+                                        label: Text('${k.char}  ${k.hanViet ?? k.meanings.take(2).join(', ')}'),
                                         onPressed: () => showKanjiSheet(context, k),
                                       ),
                                   ],

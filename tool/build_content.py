@@ -11,6 +11,7 @@ Sources (download into a folder and pass it as the first argument):
                     not in the first source are added.
 """
 import csv, hashlib, json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 src = sys.argv[1]
 out = os.path.join(os.path.dirname(__file__), '..', 'assets', 'data')
@@ -102,3 +103,6 @@ json.dump(kanji, open(os.path.join(out, 'kanji.json'), 'w', encoding='utf-8'),
 print(len(words), 'words;', len(kanji), 'kanji')
 for lv in (5, 4, 3, 2, 1):
     print(f'N{lv}', sum(1 for x in words if x['l'] == lv))
+
+from vi_merge import merge
+merge()

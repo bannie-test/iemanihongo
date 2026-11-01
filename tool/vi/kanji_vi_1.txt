@@ -1,0 +1,540 @@
+一|NHẤT|một
+七|THẤT|bảy
+万|VẠN|mười nghìn, vạn
+三|TAM|ba
+上|THƯỢNG|trên, lên
+下|HẠ|dưới, xuống
+中|TRUNG|giữa, bên trong
+九|CỬU|chín
+二|NHỊ|hai
+五|NGŨ|năm (số 5)
+人|NHÂN|người
+今|KIM|bây giờ
+休|HƯU|nghỉ ngơi
+何|HÀ|cái gì
+先|TIÊN|trước, đi trước
+入|NHẬP|vào
+八|BÁT|tám
+六|LỤC|sáu
+円|VIÊN|tròn; yên (tiền)
+出|XUẤT|ra, đi ra
+前|TIỀN|phía trước, trước
+北|BẮC|phía bắc
+十|THẬP|mười
+千|THIÊN|nghìn
+午|NGỌ|buổi trưa
+半|BÁN|một nửa
+南|NAM|phía nam
+友|HỮU|bạn bè
+右|HỮU|bên phải
+名|DANH|tên, nổi tiếng
+四|TỨ|bốn
+国|QUỐC|đất nước
+土|THỔ|đất
+外|NGOẠI|bên ngoài
+大|ĐẠI|to, lớn
+天|THIÊN|trời
+女|NỮ|phụ nữ, con gái
+子|TỬ|con, đứa trẻ
+学|HỌC|học
+小|TIỂU|nhỏ
+山|SƠN|núi
+川|XUYÊN|sông
+左|TẢ|bên trái
+年|NIÊN|năm
+後|HẬU|sau, phía sau
+日|NHẬT|ngày, mặt trời
+時|THỜI|thời gian, giờ
+書|THƯ|viết, sách
+月|NGUYỆT|tháng, mặt trăng
+木|MỘC|cây, gỗ
+本|BẢN|sách, gốc, chính
+来|LAI|đến
+東|ĐÔNG|phía đông
+校|HIỆU|trường học
+母|MẪU|mẹ
+毎|MỖI|mỗi
+気|KHÍ|khí, tinh thần
+水|THỦY|nước
+火|HỎA|lửa
+父|PHỤ|bố
+生|SINH|sống, sinh ra
+男|NAM|đàn ông, con trai
+白|BẠCH|trắng
+百|BÁCH|trăm
+聞|VĂN|nghe, hỏi
+行|HÀNH|đi, thực hiện
+西|TÂY|phía tây
+見|KIẾN|nhìn, xem
+話|THOẠI|nói chuyện, câu chuyện
+語|NGỮ|ngôn ngữ, từ
+読|ĐỘC|đọc
+車|XA|xe
+金|KIM|vàng, tiền
+長|TRƯỜNG|dài; người đứng đầu
+間|GIAN|khoảng, giữa
+雨|VŨ|mưa
+電|ĐIỆN|điện
+食|THỰC|ăn, thức ăn
+高|CAO|cao, đắt
+不|BẤT|không
+世|THẾ|thế giới, đời
+主|CHỦ|chủ, chính
+事|SỰ|sự việc
+京|KINH|kinh đô
+仕|SĨ|phục vụ, làm
+代|ĐẠI|thay thế, thời đại, tiền
+以|DĨ|bằng, từ
+会|HỘI|gặp, hội họp
+住|TRÚ|sống, cư trú
+体|THỂ|cơ thể
+作|TÁC|làm, tạo ra
+使|SỬ|dùng, sử dụng
+借|TÁ|mượn
+元|NGUYÊN|gốc, ban đầu
+兄|HUYNH|anh trai
+公|CÔNG|công cộng
+写|TẢ|chép, chụp
+冬|ĐÔNG|mùa đông
+切|THIẾT|cắt; tha thiết
+別|BIỆT|khác, chia tay
+力|LỰC|sức lực
+勉|MIỄN|cố gắng
+動|ĐỘNG|chuyển động
+医|Y|y học, bác sĩ
+去|KHỨ|đi qua, quá khứ
+口|KHẨU|miệng
+古|CỔ|cũ
+台|ĐÀI|bệ, đài; đếm máy móc
+同|ĐỒNG|giống nhau
+味|VỊ|vị, mùi vị
+品|PHẨM|hàng hóa, phẩm chất
+員|VIÊN|thành viên, nhân viên
+問|VẤN|hỏi, vấn đề
+図|ĐỒ|bản đồ, hình vẽ
+地|ĐỊA|đất, địa điểm
+堂|ĐƯỜNG|hội trường, nhà
+場|TRƯỜNG|nơi chốn
+売|MẠI|bán
+夏|HẠ|mùa hè
+夕|TỊCH|buổi chiều tối
+多|ĐA|nhiều
+夜|DẠ|ban đêm
+妹|MUỘI|em gái
+姉|TỶ|chị gái
+始|THỦY|bắt đầu
+字|TỰ|chữ
+安|AN|yên ổn, rẻ
+室|THẤT|phòng
+家|GIA|nhà, gia đình
+少|THIỂU|ít
+屋|ỐC|mái nhà, cửa hàng
+工|CÔNG|công việc, thợ
+帰|QUY|trở về
+広|QUẢNG|rộng
+店|ĐIẾM|cửa hàng
+度|ĐỘ|độ, lần
+建|KIẾN|xây dựng
+弟|ĐỆ|em trai
+強|CƯỜNG|mạnh
+待|ĐÃI|chờ đợi
+心|TÂM|trái tim, tâm
+思|TƯ|nghĩ
+急|CẤP|gấp, vội
+悪|ÁC|xấu, ác
+意|Ý|ý, ý nghĩa
+手|THỦ|tay
+持|TRÌ|cầm, mang
+教|GIÁO|dạy
+文|VĂN|văn, câu văn
+料|LIỆU|nguyên liệu, phí
+新|TÂN|mới
+方|PHƯƠNG|hướng, cách, vị (người)
+旅|LỮ|du lịch
+族|TỘC|gia tộc, dân tộc
+早|TẢO|sớm
+明|MINH|sáng
+映|ÁNH|chiếu, phản chiếu
+春|XUÂN|mùa xuân
+昼|TRÚ|ban ngày, buổi trưa
+曜|DIỆU|ngày trong tuần
+有|HỮU|có
+服|PHỤC|quần áo
+朝|TRIỀU|buổi sáng
+業|NGHIỆP|nghề nghiệp, sự nghiệp
+楽|LẠC|vui; nhạc
+歌|CA|bài hát
+止|CHỈ|dừng lại
+正|CHÍNH|đúng, chính
+歩|BỘ|đi bộ
+死|TỬ|chết
+注|CHÚ|rót; chú ý
+洋|DƯƠNG|đại dương; phương Tây
+海|HẢI|biển
+漢|HÁN|Hán, Trung Hoa
+牛|NGƯU|con bò
+物|VẬT|đồ vật
+特|ĐẶC|đặc biệt
+犬|KHUYỂN|con chó
+理|LÝ|lý lẽ
+用|DỤNG|dùng, việc
+田|ĐIỀN|ruộng
+町|ĐINH|thị trấn, khu phố
+画|HỌA|bức tranh, vẽ
+界|GIỚI|giới, ranh giới
+病|BỆNH|bệnh
+発|PHÁT|phát ra, xuất phát
+目|MỤC|mắt
+真|CHÂN|thật
+着|TRƯỚC|mặc, đến nơi
+知|TRI|biết
+研|NGHIÊN|mài, nghiên cứu
+社|XÃ|công ty, xã hội
+私|TƯ|tôi, riêng tư
+秋|THU|mùa thu
+究|CỨU|nghiên cứu, tìm tòi
+空|KHÔNG|bầu trời, trống
+立|LẬP|đứng
+答|ĐÁP|trả lời
+紙|CHỈ|giấy
+終|CHUNG|kết thúc
+習|TẬP|học, luyện tập
+考|KHẢO|suy nghĩ
+者|GIẢ|người
+肉|NHỤC|thịt
+自|TỰ|tự mình
+色|SẮC|màu sắc
+花|HOA|hoa
+英|ANH|nước Anh, anh tú
+茶|TRÀ|trà
+親|THÂN|bố mẹ, thân thiết
+言|NGÔN|nói
+計|KẾ|đo, kế hoạch
+試|THÍ|thử, thi
+買|MÃI|mua
+貸|THẢI|cho mượn
+質|CHẤT|chất lượng, hỏi
+赤|XÍCH|đỏ
+走|TẨU|chạy
+起|KHỞI|thức dậy
+足|TÚC|chân, đủ
+転|CHUYỂN|lăn, chuyển
+近|CẬN|gần
+送|TỐNG|gửi, tiễn
+通|THÔNG|đi qua, thông
+週|CHU|tuần
+運|VẬN|vận chuyển, vận may
+道|ĐẠO|con đường
+重|TRỌNG|nặng, quan trọng
+野|DÃ|cánh đồng
+銀|NGÂN|bạc
+開|KHAI|mở
+院|VIỆN|viện
+集|TẬP|tập hợp
+青|THANH|xanh
+音|ÂM|âm thanh
+題|ĐỀ|đề, chủ đề
+風|PHONG|gió
+飯|PHẠN|cơm
+飲|ẨM|uống
+館|QUÁN|tòa nhà, quán
+駅|DỊCH|nhà ga
+験|NGHIỆM|kiểm tra, thí nghiệm
+魚|NGƯ|cá
+鳥|ĐIỂU|chim
+黒|HẮC|đen
+与|DỮ|cho, trao
+両|LƯỠNG|hai, cả hai
+乗|THỪA|lên (xe)
+予|DỰ|trước, dự
+争|TRANH|tranh giành
+互|HỖ|lẫn nhau
+亡|VONG|mất, chết
+交|GIAO|giao, qua lại
+他|THA|khác
+付|PHÓ|gắn, đính kèm
+件|KIỆN|vụ việc
+任|NHIỆM|giao phó, nhiệm vụ
+伝|TRUYỀN|truyền đạt
+似|TỰ|giống
+位|VỊ|vị trí
+余|DƯ|dư thừa
+例|LỆ|ví dụ
+供|CUNG|cung cấp, đi theo
+便|TIỆN|tiện lợi; thư
+係|HỆ|liên quan, phụ trách
+信|TÍN|tin
+倒|ĐẢO|đổ, ngã
+候|HẬU|khí hậu, chờ
+値|TRỊ|giá trị
+偉|VĨ|vĩ đại
+側|TRẮC|bên, phía
+偶|NGẪU|ngẫu nhiên
+備|BỊ|chuẩn bị
+働|ĐỘNG|làm việc
+優|ƯU|ưu tú, dịu dàng
+光|QUANG|ánh sáng
+全|TOÀN|toàn bộ
+共|CỘNG|cùng nhau
+具|CỤ|dụng cụ
+内|NỘI|bên trong
+冷|LÃNH|lạnh
+処|XỨ|xử lý, nơi
+列|LIỆT|hàng
+初|SƠ|lần đầu
+判|PHÁN|phán đoán
+利|LỢI|lợi ích
+到|ĐÁO|đến
+制|CHẾ|chế độ
+刻|KHẮC|khắc, thời khắc
+割|CÁT|chia, cắt
+加|GIA|thêm
+助|TRỢ|giúp đỡ
+努|NỖ|nỗ lực
+労|LAO|lao động
+務|VỤ|nhiệm vụ
+勝|THẮNG|thắng
+勤|CẦN|làm việc, chuyên cần
+化|HÓA|biến đổi
+単|ĐƠN|đơn
+危|NGUY|nguy hiểm
+原|NGUYÊN|cánh đồng, nguyên
+参|THAM|tham gia, đi viếng
+反|PHẢN|phản đối, ngược
+収|THU|thu
+取|THỦ|lấy
+受|THỤ|nhận
+号|HIỆU|số, hiệu
+合|HỢP|hợp
+向|HƯỚNG|hướng
+君|QUÂN|cậu, bạn
+否|PHỦ|phủ định
+吸|HẤP|hút, hít
+吹|XUY|thổi
+告|CÁO|thông báo
+呼|HÔ|gọi
+命|MỆNH|sinh mệnh
+和|HÒA|hòa; Nhật Bản
+商|THƯƠNG|buôn bán
+喜|HỶ|vui mừng
+回|HỒI|lần, quay
+因|NHÂN|nguyên nhân
+困|KHỐN|khó khăn
+園|VIÊN|vườn
+在|TẠI|ở, tồn tại
+報|BÁO|báo tin
+増|TĂNG|tăng
+声|THANH|giọng nói
+変|BIẾN|thay đổi, lạ
+夢|MỘNG|giấc mơ
+太|THÁI|béo, to
+夫|PHU|chồng
+失|THẤT|mất
+好|HẢO|thích
+妻|THÊ|vợ
+娘|NƯƠNG|con gái
+婚|HÔN|kết hôn
+婦|PHỤ|phụ nữ
+存|TỒN|tồn tại, biết
+宅|TRẠCH|nhà
+守|THỦ|bảo vệ, giữ
+完|HOÀN|hoàn thành
+官|QUAN|quan chức
+定|ĐỊNH|quyết định
+実|THỰC|thật, quả
+客|KHÁCH|khách
+害|HẠI|có hại
+容|DUNG|dung chứa, dáng
+宿|TÚC|trọ
+寄|KÝ|ghé, gửi
+富|PHÚ|giàu
+寒|HÀN|lạnh
+寝|TẨM|ngủ
+察|SÁT|quan sát
+対|ĐỐI|đối
+局|CỤC|cục
+居|CƯ|ở
+差|SAI|chênh lệch
+市|THỊ|thành phố, chợ
+師|SƯ|thầy
+席|TỊCH|chỗ ngồi
+常|THƯỜNG|thường
+平|BÌNH|bằng phẳng, bình
+幸|HẠNH|hạnh phúc
+幾|KỶ|bao nhiêu
+座|TỌA|ngồi
+庭|ĐÌNH|sân, vườn
+式|THỨC|nghi thức, kiểu
+引|DẪN|kéo
+当|ĐƯƠNG|trúng, đương
+形|HÌNH|hình dạng
+役|DỊCH|vai trò
+彼|BỈ|anh ấy
+徒|ĐỒ|học trò, đi bộ
+得|ĐẮC|được
+御|NGỰ|kính ngữ
+必|TẤT|tất yếu
+忘|VONG|quên
+忙|MANG|bận
+念|NIỆM|ý niệm
+怒|NỘ|giận
+怖|BỐ|sợ
+性|TÍNH|tính chất, giới tính
+恐|KHỦNG|sợ hãi
+恥|SỈ|xấu hổ
+息|TỨC|hơi thở; con trai
+悲|BI|buồn
+情|TÌNH|tình cảm
+想|TƯỞNG|nghĩ, tưởng tượng
+愛|ÁI|yêu
+感|CẢM|cảm giác
+慣|QUÁN|quen
+成|THÀNH|trở thành
+戦|CHIẾN|chiến tranh
+戻|LỆ|quay lại
+所|SỞ|nơi chốn
+才|TÀI|tài năng; tuổi
+打|ĐẢ|đánh
+払|PHẤT|trả tiền
+投|ĐẦU|ném
+折|CHIẾT|bẻ, gấp
+抜|BẠT|rút ra
+抱|BÃO|ôm
+押|ÁP|đẩy, ấn
+招|CHIÊU|mời
+指|CHỈ|ngón tay, chỉ
+捕|BỔ|bắt
+掛|QUẢI|treo
+探|THÁM|tìm kiếm
+支|CHI|chống đỡ, chi
+放|PHÓNG|thả, phóng
+政|CHÍNH|chính trị
+敗|BẠI|thua
+散|TÁN|tản ra
+数|SỐ|số
+断|ĐOẠN|cắt đứt, từ chối
+易|DỊCH|dễ; dịch (đổi)
+昔|TÍCH|ngày xưa
+昨|TẠC|hôm qua
+晩|VÃN|buổi tối
+景|CẢNH|cảnh
+晴|TÌNH|trời quang
+暗|ÁM|tối
+暮|MỘ|sinh sống, chiều tà
+曲|KHÚC|bài hát, cong
+更|CANH|thay đổi, hơn nữa
+最|TỐI|nhất
+望|VỌNG|mong muốn
+期|KỲ|kỳ hạn
+未|VỊ|chưa
+末|MẠT|cuối
+束|THÚC|bó
+杯|BÔI|cốc, chén
+果|QUẢ|quả, kết quả
+格|CÁCH|cách, tư cách
+構|CẤU|cấu trúc
+様|DẠNG|dạng; ngài
+権|QUYỀN|quyền lợi
+横|HOÀNH|ngang, bên cạnh
+機|CƠ|máy móc, cơ hội
+欠|KHIẾM|thiếu
+次|THỨ|tiếp theo
+欲|DỤC|muốn
+歯|XỈ|răng
+歳|TUẾ|tuổi
+残|TÀN|còn lại
+段|ĐOẠN|bậc, đoạn
+殺|SÁT|giết
+民|DÂN|dân
+求|CẦU|yêu cầu
+決|QUYẾT|quyết định
+治|TRỊ|cai trị, chữa
+法|PHÁP|pháp luật, phương pháp
+泳|VỊNH|bơi
+洗|TẨY|rửa
+活|HOẠT|hoạt động
+流|LƯU|chảy
+浮|PHÙ|nổi
+消|TIÊU|tắt, biến mất
+深|THÂM|sâu
+済|TẾ|xong, kinh tế
+渡|ĐỘ|băng qua, trao
+港|CẢNG|cảng
+満|MÃN|đầy
+演|DIỄN|biểu diễn
+点|ĐIỂM|điểm
+然|NHIÊN|tự nhiên
+煙|YÊN|khói
+熱|NHIỆT|nóng
+犯|PHẠM|phạm tội
+状|TRẠNG|tình trạng
+猫|MIÊU|con mèo
+王|VƯƠNG|vua
+現|HIỆN|hiện tại
+球|CẦU|quả bóng
+産|SẢN|sản xuất, sinh
+由|DO|lý do
+申|THÂN|nói (khiêm nhường)
+留|LƯU|lưu lại
+番|PHIÊN|số thứ tự, lượt
+疑|NGHI|nghi ngờ
+疲|BÌ|mệt mỏi
+痛|THỐNG|đau
+登|ĐĂNG|leo
+皆|GIAI|tất cả mọi người
+盗|ĐẠO|trộm
+直|TRỰC|thẳng, sửa
+相|TƯƠNG|lẫn nhau
+眠|MIÊN|ngủ
+石|THẠCH|đá
+破|PHÁ|phá, rách
+確|XÁC|chắc chắn
+示|THỊ|chỉ ra
+礼|LỄ|lễ phép
+祖|TỔ|tổ tiên
+神|THẦN|thần
+福|PHÚC|phúc
+科|KHOA|khoa, môn
+程|TRÌNH|mức độ
+種|CHỦNG|loại, hạt giống
+積|TÍCH|chất đống, tích lũy
+突|ĐỘT|đột ngột, đâm
+窓|SONG|cửa sổ
+笑|TIẾU|cười
+等|ĐẲNG|đẳng cấp, v.v.
+箱|TƯƠNG|cái hộp
+米|MỄ|gạo; nước Mỹ
+精|TINH|tinh thần, tinh
+約|ƯỚC|hứa, khoảng
+組|TỔ|nhóm
+経|KINH|trải qua, kinh tế
+給|CẤP|cấp, lương
+絵|HỘI|bức tranh
+絶|TUYỆT|tuyệt đối, cắt đứt
+続|TỤC|tiếp tục
+緒|TỰ|cùng nhau, đầu mối
+罪|TỘI|tội
+置|TRÍ|đặt
+美|MỸ|đẹp
+老|LÃO|già
+耳|NHĨ|tai
+職|CHỨC|chức vụ, nghề
+育|DỤC|nuôi dưỡng
+背|BỐI|lưng
+能|NĂNG|năng lực
+腹|PHÚC|bụng
+舞|VŨ|múa
+船|THUYỀN|thuyền
+良|LƯƠNG|tốt
+若|NHƯỢC|trẻ
+苦|KHỔ|khổ, đắng
+草|THẢO|cỏ
+落|LẠC|rơi
+葉|DIỆP|lá
+薬|DƯỢC|thuốc
+術|THUẬT|kỹ thuật
+表|BIỂU|bề mặt, biểu thị
+要|YẾU|cần thiết
+規|QUY|quy tắc
+覚|GIÁC|nhớ, tỉnh giấc
+観|QUAN|quan sát, xem

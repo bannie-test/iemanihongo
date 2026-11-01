@@ -204,6 +204,8 @@ class KanjiPanel extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (info.hanViet != null)
+                      Text(info.hanViet!, style: context.text.titleMedium?.copyWith(color: c.clay, letterSpacing: 0.8)),
                     Text(info.meanings.take(4).join(', '), style: context.text.titleMedium),
                     const SizedBox(height: 4),
                     Wrap(
