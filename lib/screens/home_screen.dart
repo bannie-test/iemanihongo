@@ -1,3 +1,5 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -439,10 +441,13 @@ class _VoiceMissingCard extends StatelessWidget {
       children: [
         Icon(AppIcons.voice, color: context.colors.accent),
         const SizedBox(width: 10),
-        const Expanded(
+        Expanded(
           child: Text(
-            'Không tìm thấy giọng đọc tiếng Nhật. Trên Android, mở Cài đặt → Hỗ trợ tiếp cận → Chuyển văn bản thành giọng nói '
-            '(hoặc cài "Dịch vụ lời nói của Google") rồi thêm tiếng Nhật. Sau đó dùng được cả khi không có mạng.',
+            Platform.isIOS
+                ? 'Không tìm thấy giọng đọc tiếng Nhật. Trên iPhone, mở Cài đặt → Trợ năng → Nội dung được đọc → '
+                      'Giọng nói → Tiếng Nhật và tải một giọng. Sau đó dùng được cả khi không có mạng.'
+                : 'Không tìm thấy giọng đọc tiếng Nhật. Trên Android, mở Cài đặt → Hỗ trợ tiếp cận → Chuyển văn bản thành giọng nói '
+                      '(hoặc cài "Dịch vụ lời nói của Google") rồi thêm tiếng Nhật. Sau đó dùng được cả khi không có mạng.',
           ),
         ),
       ],

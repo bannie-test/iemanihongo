@@ -1,3 +1,5 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -12,6 +14,13 @@ class TtsService {
 
   Future<void> init(double rate) async {
     try {
+      if (Platform.isIOS) {
+        // Play through the speaker even when the silent switch is on.
+        await _tts.setSharedInstance(true);
+        await _tts.setIosAudioCategory(IosTextToSpeechAudioCategory.playback, [
+          IosTextToSpeechAudioCategoryOptions.mixWithOthers,
+        ], IosTextToSpeechAudioMode.defaultMode);
+      }
       await _tts.awaitSpeakCompletion(false);
       final available = await _tts.isLanguageAvailable('ja-JP');
       japaneseAvailable.value = available == true;
