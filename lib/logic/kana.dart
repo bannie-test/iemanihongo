@@ -8,8 +8,8 @@ const _roma = [
   'da', 'ji (ぢ)', 'zu (づ)', 'de', 'do', 'na', 'ni', 'nu', 'ne', 'no', 'ha', 'hi', 'fu', 'he', 'ho',
   'ba', 'bi', 'bu', 'be', 'bo', 'pa', 'pi', 'pu', 'pe', 'po', 'ma', 'mi', 'mu', 'me', 'mo',
   'ya', 'yu', 'yo', 'ra', 'ri', 'ru', 're', 'ro', 'wa', 'wo', 'n',
-  'small a', 'small i', 'small u', 'small e', 'small o', 'small tsu', 'small ya', 'small yu', 'small yo', 'small wa',
-  'wi (old)', 'we (old)', 'vu',
+  'a nhỏ', 'i nhỏ', 'u nhỏ', 'e nhỏ', 'o nhỏ', 'tsu nhỏ', 'ya nhỏ', 'yu nhỏ', 'yo nhỏ', 'wa nhỏ',
+  'wi (cổ)', 'we (cổ)', 'vu',
 ];
 
 /// Basic kana first, then voiced, then small and rare ones.

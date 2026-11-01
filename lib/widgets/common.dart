@@ -201,7 +201,7 @@ class SpeakButton extends StatelessWidget {
     final c = context.colors;
     return Semantics(
       button: true,
-      label: 'Play pronunciation',
+      label: 'Nghe phát âm',
       child: Material(
         color: c.accentSoft,
         shape: const CircleBorder(),
@@ -319,15 +319,15 @@ class SyncBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final sync = context.read<AppState>().sync;
     final c = context.colors;
-    if (sync == null) return _badge(context, c.muted, 'Offline mode');
+    if (sync == null) return _badge(context, c.muted, 'Ngoại tuyến');
     return ValueListenableBuilder(
       valueListenable: sync.status,
       builder: (context, s, _) => switch (s) {
-        SyncStatus.guest => _badge(context, c.muted, 'Guest'),
-        SyncStatus.idle => _badge(context, c.good, 'Synced'),
-        SyncStatus.syncing => _badge(context, Colors.amber, 'Syncing'),
-        SyncStatus.offline => _badge(context, c.muted, 'Offline'),
-        SyncStatus.error => _badge(context, Theme.of(context).colorScheme.error, 'Sync issue'),
+        SyncStatus.guest => _badge(context, c.muted, 'Khách'),
+        SyncStatus.idle => _badge(context, c.good, 'Đã đồng bộ'),
+        SyncStatus.syncing => _badge(context, Colors.amber, 'Đang đồng bộ'),
+        SyncStatus.offline => _badge(context, c.muted, 'Ngoại tuyến'),
+        SyncStatus.error => _badge(context, Theme.of(context).colorScheme.error, 'Lỗi đồng bộ'),
       },
     );
   }
@@ -452,7 +452,7 @@ class DatabaseSetupBanner extends StatelessWidget {
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        'Sync is paused: your Supabase project needs a one-time setup. Tap to fix.',
+                        'Đồng bộ đang tạm dừng: dự án Supabase cần thiết lập một lần. Chạm để sửa.',
                         style: context.text.bodyMedium,
                       ),
                     ),

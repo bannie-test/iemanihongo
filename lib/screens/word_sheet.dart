@@ -78,7 +78,7 @@ class _WordSheet extends StatelessWidget {
           children: [
             Tag('JLPT N${word.level}', accent: true),
             Tag(_status(card, state.nowMs)),
-            if (card != null && card.lapses > 0) Tag('Missed ${card.lapses}×'),
+            if (card != null && card.lapses > 0) Tag('Sai ${card.lapses} lần'),
           ],
         ),
         const SizedBox(height: 16),
@@ -88,7 +88,7 @@ class _WordSheet extends StatelessWidget {
               child: OutlinedButton.icon(
                 onPressed: () => state.toggleStar(word.id),
                 icon: Icon(state.isStarred(word.id) ? AppIcons.starOn : AppIcons.star, color: c.accent),
-                label: Text(state.isStarred(word.id) ? 'Starred' : 'Star'),
+                label: Text(state.isStarred(word.id) ? 'Đã đánh dấu' : 'Đánh dấu sao'),
               ),
             ),
             const SizedBox(width: 10),
@@ -96,14 +96,14 @@ class _WordSheet extends StatelessWidget {
               child: OutlinedButton.icon(
                 onPressed: () => _pickDecks(context, state),
                 icon: const Icon(AppIcons.addToList),
-                label: const Text('Add to deck'),
+                label: const Text('Thêm vào bộ từ'),
               ),
             ),
           ],
         ),
         if (kanji.isNotEmpty) ...[
           const SizedBox(height: 24),
-          Text('Kanji breakdown', style: context.text.titleMedium),
+          Text('Phân tích kanji', style: context.text.titleMedium),
           const SizedBox(height: 10),
           for (final k in kanji) ...[KanjiPanel(info: k), const SizedBox(height: 10)],
         ],
@@ -112,10 +112,10 @@ class _WordSheet extends StatelessWidget {
   }
 
   static String _status(CardState? c, int now) {
-    if (c == null) return 'Not studied yet';
-    if (c.phase == CardPhase.learning || c.phase == CardPhase.relearning) return 'Learning';
-    if (c.due <= now) return 'Due now';
-    return 'Next review in ${Srs.formatInterval(c.due - now)}';
+    if (c == null) return 'Chưa học';
+    if (c.phase == CardPhase.learning || c.phase == CardPhase.relearning) return 'Đang học';
+    if (c.due <= now) return 'Cần ôn ngay';
+    return 'Ôn lại sau ${Srs.formatInterval(c.due - now)}';
   }
 
   Future<void> _pickDecks(BuildContext context, AppState state) => showModalBottomSheet(
@@ -133,7 +133,7 @@ class _WordSheet extends StatelessWidget {
             ),
           ListTile(
             leading: const Icon(AppIcons.add),
-            title: const Text('New deck…'),
+            title: const Text('Bộ từ mới…'),
             onTap: () async {
               final name = await promptDeckName(context);
               if (name != null) {
@@ -153,18 +153,18 @@ Future<String?> promptDeckName(BuildContext context, {Deck? existing}) {
   return showDialog<String>(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text(existing == null ? 'New deck' : 'Rename deck'),
+      title: Text(existing == null ? 'Bộ từ mới' : 'Đổi tên bộ từ'),
       content: TextField(
         controller: controller,
         autofocus: true,
-        decoration: const InputDecoration(hintText: 'e.g. Travel words'),
+        decoration: const InputDecoration(hintText: 'VD: Từ vựng du lịch'),
         onSubmitted: (v) => Navigator.pop(context, v.trim().isEmpty ? null : v.trim()),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Hủy')),
         TextButton(
           onPressed: () => Navigator.pop(context, controller.text.trim().isEmpty ? null : controller.text.trim()),
-          child: const Text('Save'),
+          child: const Text('Lưu'),
         ),
       ],
     ),
@@ -210,7 +210,7 @@ class KanjiPanel extends StatelessWidget {
                       spacing: 6,
                       runSpacing: 4,
                       children: [
-                        if (info.strokes != null) Tag('${info.strokes} strokes'),
+                        if (info.strokes != null) Tag('${info.strokes} nét'),
                         if (info.level != null) Tag('Kanji N${info.level}'),
                       ],
                     ),
@@ -220,11 +220,11 @@ class KanjiPanel extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10),
-          if (info.onReadings.isNotEmpty) _reading(context, '音 On', clean(info.onReadings)),
-          if (info.kunReadings.isNotEmpty) _reading(context, '訓 Kun', clean(info.kunReadings)),
+          if (info.onReadings.isNotEmpty) _reading(context, '音 Âm On', clean(info.onReadings)),
+          if (info.kunReadings.isNotEmpty) _reading(context, '訓 Âm Kun', clean(info.kunReadings)),
           if (related.isNotEmpty) ...[
             const SizedBox(height: 12),
-            Text('Words with ${info.char}', style: context.text.titleMedium),
+            Text('Từ có chữ ${info.char}', style: context.text.titleMedium),
             const SizedBox(height: 6),
             for (final w in related)
               ListTile(

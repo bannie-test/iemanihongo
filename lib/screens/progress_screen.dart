@@ -1,8 +1,9 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+
+import '../logic/vi_format.dart';
 
 import '../logic/streak.dart';
 import '../models/user_data.dart';
@@ -34,7 +35,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Progress'),
+        title: const Text('Tiến độ'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 12),
@@ -57,11 +58,11 @@ class _ProgressScreenState extends State<ProgressScreen> {
         children: [
           Row(
             children: [
-              _Stat(label: 'Words learned', value: '${state.totalLearned}', delta: '+${sum((s) => s.newWords)} new'),
+              _Stat(label: 'Từ đã thuộc', value: '${state.totalLearned}', delta: '+${sum((s) => s.newWords)} từ mới'),
               const SizedBox(width: 8),
-              _Stat(label: 'Accuracy', value: accuracy == null ? '–' : '$accuracy%', delta: '$answered answers'),
+              _Stat(label: 'Độ chính xác', value: accuracy == null ? '–' : '$accuracy%', delta: '$answered câu trả lời'),
               const SizedBox(width: 8),
-              _Stat(label: 'Streak', value: '${state.streak.current} d', delta: 'best ${state.streak.best}'),
+              _Stat(label: 'Chuỗi ngày', value: '${state.streak.current} ngày', delta: 'kỷ lục ${state.streak.best}'),
             ],
           ),
           const SizedBox(height: 10),
@@ -71,9 +72,9 @@ class _ProgressScreenState extends State<ProgressScreen> {
               children: [
                 Row(
                   children: [
-                    Text('Items studied', style: context.text.titleMedium),
+                    Text('Số mục đã học', style: context.text.titleMedium),
                     const Spacer(),
-                    Text('$minutes min studied', style: context.text.bodySmall),
+                    Text('$minutes phút học', style: context.text.bodySmall),
                   ],
                 ),
                 const SizedBox(height: 12),
@@ -86,7 +87,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('JLPT vocabulary coverage', style: context.text.titleMedium),
+                Text('Mức độ phủ từ vựng JLPT', style: context.text.titleMedium),
                 const SizedBox(height: 6),
                 for (final l in [5, 4, 3, 2, 1]) _LevelRow(level: l),
               ],
@@ -99,9 +100,9 @@ class _ProgressScreenState extends State<ProgressScreen> {
               children: [
                 Row(
                   children: [
-                    Text('Study calendar', style: context.text.titleMedium),
+                    Text('Lịch học', style: context.text.titleMedium),
                     const Spacer(),
-                    Text('${state.grammarDone.length} grammar lessons', style: context.text.bodySmall),
+                    Text('${state.grammarDone.length} bài ngữ pháp', style: context.text.bodySmall),
                   ],
                 ),
                 const SizedBox(height: 12),
@@ -192,12 +193,12 @@ class _BarChart extends StatelessWidget {
           total += days[dayKey(DateTime(now.year, now.month, now.day - w * 7 - d))]?.studied ?? 0;
         }
         final start = DateTime(now.year, now.month, now.day - w * 7 - 6);
-        buckets.add((w % 3 == 0 ? DateFormat('M/d').format(start) : '', total));
+        buckets.add((w % 3 == 0 ? viDayMonth(start) : '', total));
       }
     } else {
       for (var i = range - 1; i >= 0; i--) {
         final d = DateTime(now.year, now.month, now.day - i);
-        final label = range == 7 ? DateFormat('E').format(d).substring(0, 1) : (i % 5 == 0 ? '${d.day}' : '');
+        final label = range == 7 ? viWeekdayShort(d) : (i % 5 == 0 ? '${d.day}' : '');
         buckets.add((label, days[dayKey(d)]?.studied ?? 0));
       }
     }
@@ -216,7 +217,7 @@ class _BarChart extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(child: Container(height: 1.5, color: c.accent.withValues(alpha: 0.35))),
-                Text(' goal', style: context.text.bodySmall?.copyWith(fontSize: 10)),
+                Text(' mục tiêu', style: context.text.bodySmall?.copyWith(fontSize: 10)),
               ],
             ),
           ),
@@ -231,7 +232,7 @@ class _BarChart extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Tooltip(
-                          message: '$v items',
+                          message: '$v mục',
                           child: Container(
                             height: math.max(3, v / maxV * h),
                             decoration: BoxDecoration(
@@ -327,7 +328,7 @@ class _Heatmap extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text('Less ', style: context.text.bodySmall),
+            Text('Ít ', style: context.text.bodySmall),
             for (final col in c.heat) ...[
               Container(
                 width: 10,
@@ -336,13 +337,13 @@ class _Heatmap extends StatelessWidget {
               ),
               const SizedBox(width: 3),
             ],
-            Text(' More  ', style: context.text.bodySmall),
+            Text(' Nhiều  ', style: context.text.bodySmall),
             Container(
               width: 10,
               height: 10,
               decoration: BoxDecoration(color: c.fieldLine.withValues(alpha: 0.55), shape: BoxShape.circle),
             ),
-            Text(' freeze', style: context.text.bodySmall),
+            Text(' đóng băng', style: context.text.bodySmall),
           ],
         ),
       ],

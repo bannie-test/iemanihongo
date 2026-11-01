@@ -23,7 +23,7 @@ class DatabaseSetupScreen extends StatelessWidget {
     final sql = await rootBundle.loadString('supabase/schema.sql');
     await Clipboard.setData(ClipboardData(text: sql));
     if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Setup SQL copied to the clipboard')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Đã sao chép SQL thiết lập')));
     }
   }
 
@@ -32,7 +32,7 @@ class DatabaseSetupScreen extends StatelessWidget {
     if (!ok && context.mounted) {
       await Clipboard.setData(ClipboardData(text: sqlEditorUrl));
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Link copied – open it in a browser')));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Đã sao chép đường dẫn – hãy mở bằng trình duyệt')));
       }
     }
   }
@@ -74,48 +74,48 @@ class DatabaseSetupScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Set up database')),
+      appBar: AppBar(title: const Text('Thiết lập cơ sở dữ liệu')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
         children: [
           Text(
-            'Your Supabase project needs this app\'s tables before your progress can sync. '
-            'This is a one-time step for the project owner and takes about a minute. '
-            'Until then everything keeps working and is saved on this phone.',
+            'Dự án Supabase của bạn cần có các bảng dữ liệu của app thì tiến độ mới đồng bộ được. '
+            'Chủ dự án chỉ cần làm một lần, mất khoảng một phút. '
+            'Trong lúc chờ, app vẫn hoạt động bình thường và lưu tiến độ trên điện thoại này.',
             style: context.text.bodyMedium,
           ),
           const SizedBox(height: 18),
           step(
             1,
-            'Open the SQL editor',
-            'Sign in to supabase.com and open a new query for your project. A computer is easiest.',
+            'Mở trình soạn SQL',
+            'Đăng nhập supabase.com và mở một truy vấn mới cho dự án. Dùng máy tính sẽ dễ nhất.',
             OutlinedButton.icon(
               onPressed: () => _openEditor(context),
               icon: const Icon(AppIcons.next),
-              label: const Text('Open SQL editor'),
+              label: const Text('Mở SQL Editor'),
             ),
           ),
           step(
             2,
-            'Copy the setup SQL',
-            'It creates the tables, the security rules (each account sees only its own data) and realtime sync. '
-                'It is safe to run again later.',
+            'Sao chép SQL thiết lập',
+            'SQL này tạo các bảng, quy tắc bảo mật (mỗi tài khoản chỉ thấy dữ liệu của mình) và đồng bộ thời gian thực. '
+                'Chạy lại sau này cũng an toàn.',
             OutlinedButton.icon(
               onPressed: () => _copySql(context),
               icon: const Icon(AppIcons.addToList),
-              label: const Text('Copy setup SQL'),
+              label: const Text('Sao chép SQL'),
             ),
           ),
           step(
             3,
-            'Paste and run',
-            'Paste it into the editor and press Run. You should see "Success. No rows returned".',
+            'Dán và chạy',
+            'Dán vào trình soạn và nhấn Run. Bạn sẽ thấy "Success. No rows returned".',
             null,
           ),
           step(
             4,
-            'Check again',
-            'Come back here and tap the button. Your progress from this phone is uploaded right away.',
+            'Kiểm tra lại',
+            'Quay lại đây và chạm nút bên dưới. Tiến độ trên điện thoại sẽ được tải lên ngay.',
             sync == null
                 ? null
                 : ValueListenableBuilder(
@@ -125,7 +125,7 @@ class DatabaseSetupScreen extends StatelessWidget {
                         : FilledButton.icon(
                             onPressed: sync.sync,
                             icon: const Icon(AppIcons.sync),
-                            label: const Text('Check & sync now'),
+                            label: const Text('Kiểm tra & đồng bộ'),
                           ),
                   ),
           ),
@@ -142,7 +142,7 @@ class DatabaseSetupScreen extends StatelessWidget {
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          ok ? 'Database is ready and your progress is synced.' : (err ?? 'Not checked yet.'),
+                          ok ? 'Cơ sở dữ liệu đã sẵn sàng và tiến độ đã được đồng bộ.' : (err ?? 'Chưa kiểm tra.'),
                           style: context.text.bodyMedium,
                         ),
                       ),

@@ -44,11 +44,11 @@ class HandwritingResult {
   bool get strokeCountOk => expectedStrokes == drawnStrokes;
 
   String get grade => switch (score) {
-    >= 90 => 'Excellent',
-    >= 75 => 'Great',
-    >= 60 => 'Good',
-    >= 40 => 'Keep practising',
-    _ => 'Try again',
+    >= 90 => 'Xuất sắc',
+    >= 75 => 'Rất tốt',
+    >= 60 => 'Tốt',
+    >= 40 => 'Cần luyện thêm',
+    _ => 'Viết lại nhé',
   };
 }
 

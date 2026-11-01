@@ -277,11 +277,11 @@ class SyncService {
 
   static String _describe(Object e) {
     if (isMissingSchema(e)) {
-      return 'Your Supabase project does not have the app\'s tables yet. '
-          'Run the setup SQL once (Settings → Set up database), then tap sync.';
+      return 'Dự án Supabase của bạn chưa có các bảng dữ liệu của app. '
+          'Hãy chạy SQL thiết lập một lần (Cài đặt → Thiết lập cơ sở dữ liệu), rồi chạm đồng bộ.';
     }
     if (e is PostgrestException) return e.message;
-    if (_isNetwork(e)) return 'No connection. Your progress is saved on this device.';
+    if (_isNetwork(e)) return 'Không có mạng. Tiến độ vẫn được lưu trên máy này.';
     return e.toString();
   }
 }

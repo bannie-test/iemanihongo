@@ -34,12 +34,12 @@ class _ListeningHubScreenState extends State<ListeningHubScreen> {
     final done = items.where((i) => results.containsKey(i.id)).length;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Listening · 聴解')),
+      appBar: AppBar(title: const Text('Nghe hiểu · 聴解')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 28),
         children: [
           Text(
-            'Dialogues and sentences are read aloud with two voices. Listen first, then answer – the transcript is hidden until you want it.',
+            'Hội thoại và câu được đọc bằng hai giọng. Hãy nghe trước rồi trả lời – lời thoại được ẩn cho đến khi bạn muốn xem.',
             style: context.text.bodyMedium?.copyWith(color: c.muted),
           ),
           const SizedBox(height: 14),
@@ -233,7 +233,7 @@ class _ListeningPlayerScreenState extends State<ListeningPlayerScreen> {
             Center(
               child: Semantics(
                 button: true,
-                label: _playing ? 'Stop audio' : 'Play audio',
+                label: _playing ? 'Dừng âm thanh' : 'Phát âm thanh',
                 child: GestureDetector(
                   onTap: _playing ? _stop : _play,
                   child: ArchPanel(
@@ -438,7 +438,7 @@ class _SentenceListeningScreenState extends State<SentenceListeningScreen> {
                   Center(
                     child: Semantics(
                       button: true,
-                      label: 'Play sentence',
+                      label: 'Phát câu',
                       child: GestureDetector(
                         onTap: _play,
                         child: const OrnamentCircle(size: 112, child: Icon(AppIcons.speaker, size: 40)),

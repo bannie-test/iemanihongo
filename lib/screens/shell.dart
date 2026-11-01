@@ -35,18 +35,18 @@ class _ShellState extends State<Shell> {
         selectedIndex: _index,
         onDestinationSelected: _select,
         destinations: const [
-          NavigationDestination(icon: Icon(AppIcons.home), selectedIcon: Icon(AppIcons.homeOn), label: 'Home'),
-          NavigationDestination(icon: Icon(AppIcons.words), selectedIcon: Icon(AppIcons.wordsOn), label: 'Words'),
+          NavigationDestination(icon: Icon(AppIcons.home), selectedIcon: Icon(AppIcons.homeOn), label: 'Trang chủ'),
+          NavigationDestination(icon: Icon(AppIcons.words), selectedIcon: Icon(AppIcons.wordsOn), label: 'Từ vựng'),
           NavigationDestination(
             icon: Icon(AppIcons.practice),
             selectedIcon: Icon(AppIcons.practiceOn),
-            label: 'Practice',
+            label: 'Luyện tập',
           ),
           NavigationDestination(icon: Icon(AppIcons.exam), selectedIcon: Icon(AppIcons.examOn), label: 'JLPT'),
           NavigationDestination(
             icon: Icon(AppIcons.progress),
             selectedIcon: Icon(AppIcons.progressOn),
-            label: 'Progress',
+            label: 'Tiến độ',
           ),
         ],
       ),

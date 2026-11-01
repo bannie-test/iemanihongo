@@ -182,12 +182,12 @@ class Srs {
 
   static String formatInterval(int ms) {
     final m = ms / 60000;
-    if (m < 60) return '${math.max(1, m.round())}m';
+    if (m < 60) return '${math.max(1, m.round())} phút';
     final h = m / 60;
-    if (h < 24) return '${h.round()}h';
+    if (h < 24) return '${h.round()} giờ';
     final d = h / 24;
-    if (d < 30) return '${d.round()}d';
-    if (d < 365) return '${(d / 30).round()}mo';
-    return '${(d / 365).toStringAsFixed(1)}y';
+    if (d < 30) return '${d.round()} ngày';
+    if (d < 365) return '${(d / 30).round()} tháng';
+    return '${(d / 365).toStringAsFixed(1)} năm';
   }
 }

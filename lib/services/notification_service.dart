@@ -23,8 +23,8 @@ class NotificationService {
   static const _details = NotificationDetails(
     android: AndroidNotificationDetails(
       'daily_reminders',
-      'Daily reminders',
-      channelDescription: 'Reminders to keep your study streak going',
+      'Nhắc học hằng ngày',
+      channelDescription: 'Nhắc bạn giữ chuỗi ngày học',
       importance: Importance.defaultImportance,
       priority: Priority.defaultPriority,
       icon: 'ic_notification',
@@ -33,13 +33,13 @@ class NotificationService {
   );
 
   static const _reminderLines = [
-    ('今日も頑張ろう！', 'Your daily Japanese session is ready. A few minutes keeps the streak alive.'),
-    ('復習の時間です', 'Some words are due for review. Catch them before you forget!'),
-    ('一日一歩', 'One step a day. Open the app for today\'s cards and grammar.'),
-    ('継続は力なり', 'Consistency is power. Your flashcards are waiting.'),
-    ('少しずつ', 'Little by little. Just 5 minutes of review today?'),
-    ('新しい言葉', 'New words are ready to learn today.'),
-    ('今日の文法', 'Today\'s grammar lesson takes about 5 minutes.'),
+    ('今日も頑張ろう！', 'Buổi học tiếng Nhật hôm nay đã sẵn sàng. Vài phút thôi là giữ được chuỗi ngày học.'),
+    ('復習の時間です', 'Có từ đến hạn ôn tập. Ôn ngay trước khi quên nhé!'),
+    ('一日一歩', 'Mỗi ngày một bước. Mở app để học thẻ từ và ngữ pháp hôm nay.'),
+    ('継続は力なり', 'Kiên trì là sức mạnh. Thẻ từ đang chờ bạn.'),
+    ('少しずつ', 'Từng chút một. Hôm nay ôn 5 phút nhé?'),
+    ('新しい言葉', 'Có từ mới để học hôm nay.'),
+    ('今日の文法', 'Bài ngữ pháp hôm nay chỉ mất khoảng 5 phút.'),
   ];
 
   Future<void> init() async {
@@ -103,7 +103,7 @@ class NotificationService {
         if (!skipToday && at.isAfter(now)) {
           final line = _reminderLines[(day.day + day.month) % _reminderLines.length];
           final body = i == 0 && dueCount > 0
-              ? '$dueCount words are due for review. ${streak > 0 ? 'Keep your $streak-day streak going!' : 'Start a new streak today!'}'
+              ? 'Có $dueCount từ cần ôn. ${streak > 0 ? 'Giữ chuỗi $streak ngày học nhé!' : 'Bắt đầu chuỗi ngày học mới hôm nay!'}'
               : line.$2;
           await _schedule(_reminderBase + i, at, line.$1, body);
         }
@@ -116,8 +116,8 @@ class NotificationService {
             nudgeAt,
             'ストリークが危ない！',
             i == 0 && streak > 0
-                ? 'Your $streak-day streak ends at midnight. A quick session will save it.'
-                : 'You haven\'t hit today\'s goal yet. A quick session keeps your streak alive.',
+                ? 'Chuỗi $streak ngày học sẽ mất lúc nửa đêm. Học nhanh một chút để giữ chuỗi nhé.'
+                : 'Bạn chưa đạt mục tiêu hôm nay. Học nhanh một chút để giữ chuỗi nhé.',
           );
         }
       }

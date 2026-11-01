@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+
+import '../logic/vi_format.dart';
 
 import '../logic/streak.dart';
 import '../state/app_state.dart';
@@ -22,9 +23,9 @@ class HomeScreen extends StatelessWidget {
 
   (String, String, String) _greeting() {
     final h = DateTime.now().hour;
-    if (h < 11) return ('おはよう', 'Good morning,', 'a fresh page.');
-    if (h < 18) return ('こんにちは', 'Good afternoon,', 'a little more today.');
-    return ('こんばんは', 'Good evening,', 'one quiet review.');
+    if (h < 11) return ('おはよう', 'Chào buổi sáng,', 'một trang mới.');
+    if (h < 18) return ('こんにちは', 'Chào buổi chiều,', 'thêm chút nữa hôm nay.');
+    return ('こんばんは', 'Chào buổi tối,', 'một buổi ôn nhẹ nhàng.');
   }
 
   void _startSession(BuildContext context, AppState state) {
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
     if (words.isEmpty) words = state.nextNewWords(5);
     if (words.isEmpty) {
       ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text('You have seen every word in this level. Pick another level.')));
+          .showSnackBar(const SnackBar(content: Text('Bạn đã học hết từ của cấp độ này. Hãy chọn cấp độ khác.')));
       return;
     }
     Navigator.of(context).push(
@@ -69,10 +70,10 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(20, 10, 8, 0),
             child: Row(
               children: [
-                Expanded(child: Eyebrow('${_weekdaysJa[now.weekday - 1]} · ${DateFormat('EEEE').format(now)}')),
+                Expanded(child: Eyebrow('${_weekdaysJa[now.weekday - 1]} · ${viWeekdayLong(now)}')),
                 const SyncBadge(),
                 IconButton(
-                  tooltip: 'Settings',
+                  tooltip: 'Cài đặt',
                   icon: const Icon(AppIcons.settings),
                   onPressed: () => push(const SettingsScreen()),
                 ),
@@ -101,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                             Text(line1, style: context.text.headlineLarge),
                             Text(line2, style: displayItalic(context, 40)),
                             const SizedBox(height: 14),
-                            Text('N$level · $learned of $levelTotal words learned', style: context.text.bodySmall),
+                            Text('N$level · đã thuộc $learned/$levelTotal từ', style: context.text.bodySmall),
                             const SizedBox(height: 8),
                             Bar(levelTotal == 0 ? 0 : learned / levelTotal, height: 4),
                           ],
@@ -120,8 +121,8 @@ class HomeScreen extends StatelessWidget {
                             child: Semantics(
                               button: true,
                               label: word == null
-                                  ? 'Word of the day'
-                                  : 'Word of the day: ${word.word}, ${word.meaning}. Tap to hear it.',
+                                  ? 'Từ của ngày'
+                                  : 'Từ của ngày: ${word.word}, ${word.meaning}. Chạm để nghe.',
                               child: GestureDetector(
                                 onTap: word == null ? null : () => state.tts.speak(word.speakText),
                                 child: ArchPanel(
@@ -134,7 +135,7 @@ class HomeScreen extends StatelessWidget {
                                           child: Column(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children: [
-                                              FittedBox(child: Eyebrow('Word of the day', color: c.muted)),
+                                              FittedBox(child: Eyebrow('Từ của ngày', color: c.muted)),
                                               const SizedBox(height: 10),
                                               Flexible(
                                                 flex: 3,
@@ -168,7 +169,7 @@ class HomeScreen extends StatelessWidget {
                             left: 0,
                             bottom: 4,
                             child: Semantics(
-                              label: '${state.streak.current} day streak',
+                              label: 'Chuỗi ${state.streak.current} ngày',
                               child: OrnamentCircle(
                                 size: 68,
                                 child: Column(
@@ -179,7 +180,7 @@ class HomeScreen extends StatelessWidget {
                                       style: context.text.titleLarge?.copyWith(height: 1, color: c.clay),
                                     ),
                                     Text(
-                                      'day streak',
+                                      'ngày liên tiếp',
                                       style: context.text.bodySmall?.copyWith(fontSize: 9.5, height: 1.1),
                                     ),
                                   ],
@@ -213,33 +214,33 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Eyebrow("Today's path", color: c.onForest.withValues(alpha: 0.75)),
+                Eyebrow('Lộ trình hôm nay', color: c.onForest.withValues(alpha: 0.75)),
                 const SizedBox(height: 6),
-                Text('Four small steps', style: context.text.headlineMedium?.copyWith(color: c.onForest)),
+                Text('Bốn bước nhỏ', style: context.text.headlineMedium?.copyWith(color: c.onForest)),
                 const SizedBox(height: 14),
                 _Step(
                   n: 1,
-                  title: 'Vocabulary',
+                  title: 'Từ vựng',
                   body: due + newLeft == 0
-                      ? 'All caught up · study extra words'
-                      : '$due to review · $newLeft new words',
+                      ? 'Đã ôn xong · học thêm từ mới'
+                      : '$due từ cần ôn · $newLeft từ mới',
                   onTap: () => _startSession(context, state),
                 ),
                 _Step(
                   n: 2,
-                  title: grammar == null ? 'Grammar · all lessons done' : 'Grammar · ${grammar.title}',
-                  body: grammar == null ? 'すごい！ Revisit any lesson in Practice.' : grammar.meaning,
+                  title: grammar == null ? 'Ngữ pháp · đã học hết bài' : 'Ngữ pháp · ${grammar.title}',
+                  body: grammar == null ? 'すごい！ Hãy ôn lại bài bất kỳ trong mục Luyện tập.' : grammar.meaning,
                   onTap: grammar == null ? null : () => push(GrammarLessonScreen(point: grammar)),
                 ),
                 _Step(
                   n: 3,
-                  title: 'Listening',
-                  body: 'Short dialogues and sentences read aloud',
+                  title: 'Nghe hiểu',
+                  body: 'Hội thoại ngắn và câu được đọc to',
                   onTap: () => push(const ListeningHubScreen()),
                 ),
                 _Step(
                   n: 4,
-                  title: 'JLPT practice',
+                  title: 'Luyện thi JLPT',
                   body: running.isEmpty
                       ? 'Đề thi thử có tính giờ · giải thích tiếng Việt'
                       : '${running.first.title} · đang làm ${running.first.answers.length}/${running.first.total}',
@@ -363,7 +364,7 @@ class _StreakCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 6),
                         Text(
-                          '${s.current} ${s.current == 1 ? 'day' : 'days'}',
+                          '${s.current} ngày',
                           style: context.text.headlineSmall?.copyWith(fontSize: 26),
                         ),
                       ],
@@ -371,15 +372,15 @@ class _StreakCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       s.todayDone
-                          ? 'Goal done for today. お疲れさま！'
+                          ? 'Đã đạt mục tiêu hôm nay. お疲れさま！'
                           : left == goal
-                          ? 'Study $goal items today to ${s.current > 0 ? 'keep' : 'start'} your streak'
-                          : '$left more to ${s.current > 0 ? 'keep' : 'start'} your streak',
+                          ? 'Học $goal mục hôm nay để ${s.current > 0 ? 'giữ' : 'bắt đầu'} chuỗi ngày'
+                          : 'Còn $left mục để ${s.current > 0 ? 'giữ' : 'bắt đầu'} chuỗi ngày',
                       style: context.text.bodySmall,
                     ),
                     if (s.freezes > 0) ...[
                       const SizedBox(height: 4),
-                      Tag('${s.freezes} streak freeze${s.freezes > 1 ? 's' : ''}', icon: AppIcons.freeze),
+                      Tag('${s.freezes} lượt đóng băng chuỗi', icon: AppIcons.freeze),
                     ],
                   ],
                 ),
@@ -407,7 +408,7 @@ class _StreakCard extends StatelessWidget {
     final isToday = key == today;
     return Column(
       children: [
-        Text(DateFormat('E').format(d).substring(0, 1), style: context.text.bodySmall),
+        Text(viWeekdayShort(d), style: context.text.bodySmall),
         const SizedBox(height: 4),
         Container(
           width: 28,
@@ -440,8 +441,8 @@ class _VoiceMissingCard extends StatelessWidget {
         const SizedBox(width: 10),
         const Expanded(
           child: Text(
-            'No Japanese voice found for audio. On Android open Settings → Accessibility → Text-to-speech '
-            '(or install "Speech Services by Google") and add Japanese. It then works offline.',
+            'Không tìm thấy giọng đọc tiếng Nhật. Trên Android, mở Cài đặt → Hỗ trợ tiếp cận → Chuyển văn bản thành giọng nói '
+            '(hoặc cài "Dịch vụ lời nói của Google") rồi thêm tiếng Nhật. Sau đó dùng được cả khi không có mạng.',
           ),
         ),
       ],

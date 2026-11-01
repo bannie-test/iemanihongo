@@ -61,7 +61,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(AppIcons.close),
-          tooltip: 'End session',
+          tooltip: 'Kết thúc',
           onPressed: () => Navigator.pop(context),
         ),
         titleSpacing: 0,
@@ -97,10 +97,10 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                   children: [
                     Row(
                       children: [
-                        Tag('N${w.level}${isNew ? ' · New' : ''}', accent: true),
+                        Tag('N${w.level}${isNew ? ' · Mới' : ''}', accent: true),
                         const Spacer(),
                         IconButton(
-                          tooltip: state.isStarred(w.id) ? 'Remove star' : 'Star word',
+                          tooltip: state.isStarred(w.id) ? 'Bỏ đánh dấu sao' : 'Đánh dấu sao',
                           icon: Icon(state.isStarred(w.id) ? AppIcons.starOn : AppIcons.star, color: c.accent),
                           onPressed: () => state.toggleStar(w.id),
                         ),
@@ -124,7 +124,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                             ),
                             if (!_flipped) ...[
                               const SizedBox(height: 40),
-                              Text('Tap to reveal', style: context.text.bodySmall),
+                              Text('Chạm để xem', style: context.text.bodySmall),
                             ] else ...[
                               const SizedBox(height: 8),
                               SpeakButton(w.speakText, size: 46),
@@ -160,9 +160,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
           ),
           const SizedBox(height: 14),
           if (!_flipped)
-            GradientButton(label: 'Show answer', onPressed: _flip)
+            GradientButton(label: 'Xem đáp án', onPressed: _flip)
           else
-            GradientButton(label: _queue.length == 1 ? 'Finish' : 'Next', icon: AppIcons.next, onPressed: _next),
+            GradientButton(label: _queue.length == 1 ? 'Hoàn thành' : 'Tiếp', icon: AppIcons.next, onPressed: _next),
         ],
       ),
     );
@@ -180,24 +180,24 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
           const SizedBox(height: 12),
           Text('お疲れさまでした！', style: context.text.headlineSmall),
           const SizedBox(height: 4),
-          Text('Session complete', style: context.text.bodySmall),
+          Text('Hoàn thành buổi học', style: context.text.bodySmall),
           const SizedBox(height: 24),
           Row(
             children: [
-              _stat(context, '$_total', 'cards'),
-              _stat(context, '${state.totalLearned}', 'words learned'),
-              _stat(context, '${state.streak.current}', 'day streak'),
+              _stat(context, '$_total', 'thẻ'),
+              _stat(context, '${state.totalLearned}', 'từ đã thuộc'),
+              _stat(context, '${state.streak.current}', 'ngày liên tiếp'),
             ],
           ),
           const SizedBox(height: 16),
           if (!state.goalDone)
             Text(
-              '${(state.settings.dailyGoal - state.goalProgress).clamp(0, 999)} more items to reach today\'s goal.',
+              '${(state.settings.dailyGoal - state.goalProgress).clamp(0, 999)} mục nữa là đạt mục tiêu hôm nay.',
               style: TextStyle(color: c.muted),
             )
           else
             Text(
-              "Today's goal is done. Your streak is safe!",
+              'Đã đạt mục tiêu hôm nay. Chuỗi ngày của bạn được giữ!',
               style: TextStyle(color: c.good, fontWeight: FontWeight.w600),
             ),
           const Spacer(),
@@ -205,13 +205,13 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
             OutlinedButton(
               onPressed: () => Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (_) => FlashcardScreen(words: state.nextNewWords(5), title: 'Extra words'),
+                  builder: (_) => FlashcardScreen(words: state.nextNewWords(5), title: 'Từ học thêm'),
                 ),
               ),
-              child: const Text('Learn 5 more words'),
+              child: const Text('Học thêm 5 từ'),
             ),
           const SizedBox(height: 10),
-          GradientButton(label: 'Done', onPressed: () => Navigator.pop(context)),
+          GradientButton(label: 'Xong', onPressed: () => Navigator.pop(context)),
         ],
       ),
     );

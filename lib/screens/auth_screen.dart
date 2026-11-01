@@ -64,7 +64,7 @@ class _AuthScreenState extends State<AuthScreen> {
       if (!mounted) return;
       _startCooldown();
       setState(() {
-        _message = 'Sent again. It can take a few minutes – check Spam and Promotions too.';
+        _message = 'Đã gửi lại. Có thể mất vài phút – hãy xem cả mục Thư rác (Spam) và Quảng cáo.';
         _messageIsError = false;
       });
     } on AuthException catch (e) {
@@ -79,10 +79,10 @@ class _AuthScreenState extends State<AuthScreen> {
   static String _describe(AuthException e) {
     final code = e.code ?? '';
     if (code.contains('rate_limit') || e.statusCode == '429') {
-      return 'Too many emails were sent recently. Supabase\'s built-in email service only allows a few per hour. '
-          'Wait a while, or turn off email confirmation for this project (see below).';
+      return 'Đã gửi quá nhiều email gần đây. Dịch vụ email có sẵn của Supabase chỉ cho phép vài email mỗi giờ. '
+          'Hãy đợi một lúc, hoặc tắt xác nhận email cho dự án này (xem bên dưới).';
     }
-    if (code == 'invalid_credentials') return 'Wrong email or password.';
+    if (code == 'invalid_credentials') return 'Sai email hoặc mật khẩu.';
     return e.message;
   }
 
@@ -91,7 +91,7 @@ class _AuthScreenState extends State<AuthScreen> {
     final state = context.read<AppState>();
     if (state.supabase == null) {
       setState(() {
-        _message = 'Accounts are unavailable right now. You can continue as a guest.';
+        _message = 'Hiện chưa thể dùng tài khoản. Bạn có thể tiếp tục với tư cách khách.';
         _messageIsError = true;
       });
       return;
@@ -116,7 +116,7 @@ class _AuthScreenState extends State<AuthScreen> {
           case SignUpResult.alreadyRegistered:
             setState(() {
               _signUp = false;
-              _message = 'This email already has an account. Sign in with its password instead.';
+              _message = 'Email này đã có tài khoản. Hãy đăng nhập bằng mật khẩu của tài khoản đó.';
               _messageIsError = true;
             });
         }
@@ -138,7 +138,7 @@ class _AuthScreenState extends State<AuthScreen> {
       });
     } catch (e) {
       setState(() {
-        _message = 'Could not reach the server. Check your connection, or continue as a guest.';
+        _message = 'Không kết nối được máy chủ. Hãy kiểm tra mạng, hoặc tiếp tục với tư cách khách.';
         _messageIsError = true;
       });
     } finally {
@@ -150,7 +150,7 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     final c = context.colors;
     return Scaffold(
-      appBar: widget.linking ? AppBar(title: const Text('Sync your progress')) : null,
+      appBar: widget.linking ? AppBar(title: const Text('Đồng bộ tiến độ')) : null,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -168,14 +168,14 @@ class _AuthScreenState extends State<AuthScreen> {
                       Text('Iemanihongo', textAlign: TextAlign.center, style: context.text.headlineMedium),
                       const SizedBox(height: 6),
                       Text(
-                        'Japanese from N5 to N1: flashcards, quizzes\nand a short grammar lesson every day.',
+                        'Tiếng Nhật từ N5 đến N1: thẻ từ, trắc nghiệm\nvà một bài ngữ pháp ngắn mỗi ngày.',
                         textAlign: TextAlign.center,
                         style: context.text.bodyMedium?.copyWith(color: c.muted),
                       ),
                       const SizedBox(height: 28),
                     ] else ...[
                       Text(
-                        'Create an account or sign in to back up your progress and sync it across devices.',
+                        'Tạo tài khoản hoặc đăng nhập để sao lưu tiến độ và đồng bộ giữa các thiết bị.',
                         style: context.text.bodyMedium?.copyWith(color: c.muted),
                       ),
                       const SizedBox(height: 20),
@@ -186,7 +186,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       autofillHints: const [AutofillHints.email],
                       decoration: const InputDecoration(labelText: 'Email', prefixIcon: Icon(AppIcons.mail)),
                       validator: (v) =>
-                          v != null && RegExp(r'^\S+@\S+\.\S+$').hasMatch(v.trim()) ? null : 'Enter a valid email',
+                          v != null && RegExp(r'^\S+@\S+\.\S+$').hasMatch(v.trim()) ? null : 'Hãy nhập email hợp lệ',
                     ),
                     const SizedBox(height: 12),
                     TextFormField(
@@ -194,15 +194,15 @@ class _AuthScreenState extends State<AuthScreen> {
                       obscureText: _obscure,
                       autofillHints: [_signUp ? AutofillHints.newPassword : AutofillHints.password],
                       decoration: InputDecoration(
-                        labelText: 'Password',
+                        labelText: 'Mật khẩu',
                         prefixIcon: const Icon(AppIcons.lock),
                         suffixIcon: IconButton(
-                          tooltip: _obscure ? 'Show password' : 'Hide password',
+                          tooltip: _obscure ? 'Hiện mật khẩu' : 'Ẩn mật khẩu',
                           icon: Icon(_obscure ? AppIcons.eye : AppIcons.eyeOff),
                           onPressed: () => setState(() => _obscure = !_obscure),
                         ),
                       ),
-                      validator: (v) => (v ?? '').length >= 6 ? null : 'At least 6 characters',
+                      validator: (v) => (v ?? '').length >= 6 ? null : 'Ít nhất 6 ký tự',
                       onFieldSubmitted: (_) => _submit(),
                     ),
                     if (_pendingEmail != null) ...[
@@ -221,11 +221,11 @@ class _AuthScreenState extends State<AuthScreen> {
                         ? const Center(
                             child: Padding(padding: EdgeInsets.all(12), child: CircularProgressIndicator()),
                           )
-                        : GradientButton(label: _signUp ? 'Create account' : 'Sign in', onPressed: _submit),
+                        : GradientButton(label: _signUp ? 'Tạo tài khoản' : 'Đăng nhập', onPressed: _submit),
                     const SizedBox(height: 8),
                     TextButton(
                       onPressed: _busy ? null : () => setState(() => _signUp = !_signUp),
-                      child: Text(_signUp ? 'I already have an account' : 'New here? Create an account'),
+                      child: Text(_signUp ? 'Tôi đã có tài khoản' : 'Bạn mới? Tạo tài khoản'),
                     ),
                     if (!widget.linking) ...[
                       const SizedBox(height: 8),
@@ -234,7 +234,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           const Expanded(child: Divider()),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 12),
-                            child: Text('or', style: context.text.bodySmall),
+                            child: Text('hoặc', style: context.text.bodySmall),
                           ),
                           const Expanded(child: Divider()),
                         ],
@@ -243,11 +243,11 @@ class _AuthScreenState extends State<AuthScreen> {
                       OutlinedButton.icon(
                         onPressed: _busy ? null : () => context.read<AppState>().continueAsGuest(),
                         icon: const Icon(AppIcons.guest),
-                        label: const Text('Continue as guest'),
+                        label: const Text('Tiếp tục với tư cách khách'),
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Guest progress stays on this device. You can link an account later in Settings.',
+                        'Tiến độ của khách chỉ lưu trên máy này. Bạn có thể liên kết tài khoản sau trong Cài đặt.',
                         textAlign: TextAlign.center,
                         style: context.text.bodySmall,
                       ),
@@ -283,24 +283,24 @@ class _ConfirmEmailPanel extends StatelessWidget {
             children: [
               const Icon(AppIcons.mail, size: 20),
               const SizedBox(width: 8),
-              Expanded(child: Text('Confirm your email', style: context.text.titleMedium)),
+              Expanded(child: Text('Xác nhận email', style: context.text.titleMedium)),
             ],
           ),
           const SizedBox(height: 6),
-          Text('We asked Supabase to send a confirmation link to $email. Open it, then sign in here.'),
+          Text('Supabase sẽ gửi đường dẫn xác nhận tới $email. Hãy mở đường dẫn đó rồi đăng nhập tại đây.'),
           const SizedBox(height: 8),
           Text(
-            'Not arriving? Check Spam/Promotions. Supabase\'s built-in email only sends a few messages per hour, '
-            'and on newer projects only to members of the project\'s team. For a personal app the simplest fix is '
-            'to turn off email confirmation: Supabase dashboard → Authentication → Sign In / Providers → Email → '
-            'turn off "Confirm email", then sign in. (Or connect your own SMTP under Authentication → Emails.)',
+            'Không nhận được? Hãy xem Thư rác/Quảng cáo. Email có sẵn của Supabase chỉ gửi vài thư mỗi giờ, '
+            'và với dự án mới chỉ gửi cho thành viên nhóm dự án. Với app cá nhân, cách đơn giản nhất là '
+            'tắt xác nhận email: trang quản trị Supabase → Authentication → Sign In / Providers → Email → '
+            'tắt "Confirm email", rồi đăng nhập. (Hoặc kết nối SMTP riêng tại Authentication → Emails.)',
             style: context.text.bodySmall,
           ),
           const SizedBox(height: 10),
           OutlinedButton.icon(
             onPressed: resendIn > 0 ? null : onResend,
             icon: Icon(AppIcons.retry, color: c.clay),
-            label: Text(resendIn > 0 ? 'Resend email in ${resendIn}s' : 'Resend confirmation email'),
+            label: Text(resendIn > 0 ? 'Gửi lại sau $resendIn giây' : 'Gửi lại email xác nhận'),
           ),
         ],
       ),

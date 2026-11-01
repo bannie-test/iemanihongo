@@ -16,7 +16,7 @@ class GrammarScreen extends StatelessWidget {
     final today = state.todaysGrammar;
     final c = context.colors;
     return Scaffold(
-      appBar: AppBar(title: const Text('Grammar')),
+      appBar: AppBar(title: const Text('Ngữ pháp')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
         children: [
@@ -76,8 +76,8 @@ class _LevelSection extends StatelessWidget {
           child: ExpansionTile(
             initiallyExpanded: initiallyExpanded,
             shape: const Border(),
-            title: Text('N$level grammar', style: context.text.titleMedium),
-            subtitle: Text('$done / ${points.length} lessons done', style: context.text.bodySmall),
+            title: Text('Ngữ pháp N$level', style: context.text.titleMedium),
+            subtitle: Text('Đã xong $done / ${points.length} bài', style: context.text.bodySmall),
             children: [
               for (final g in points)
                 ListTile(
@@ -134,7 +134,7 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
     final correct = _picked == g.quiz.answer;
 
     return Scaffold(
-      appBar: AppBar(title: Text('N${g.level} · Grammar')),
+      appBar: AppBar(title: Text('N${g.level} · Ngữ pháp')),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(18, 0, 18, 24),
@@ -157,7 +157,7 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
             ),
             const SizedBox(height: 14),
             Text(g.explanation, style: context.text.bodyMedium),
-            if (g.tip != null) ...[const SizedBox(height: 12), TipBox(g.tip!, label: 'Tip')],
+            if (g.tip != null) ...[const SizedBox(height: 12), TipBox(g.tip!, label: 'Mẹo')],
             if (g.reference != null) ...[
               const SizedBox(height: 10),
               Row(
@@ -165,12 +165,12 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
                 children: [
                   Icon(AppIcons.grammar, size: 15, color: c.muted),
                   const SizedBox(width: 6),
-                  Expanded(child: Text('Reference: ${g.reference}', style: context.text.bodySmall)),
+                  Expanded(child: Text('Tham khảo: ${g.reference}', style: context.text.bodySmall)),
                 ],
               ),
             ],
             const SizedBox(height: 16),
-            Text('Examples', style: context.text.titleMedium),
+            Text('Ví dụ', style: context.text.titleMedium),
             for (final x in g.examples) ...[
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
@@ -198,7 +198,7 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Quick check', style: context.text.bodySmall),
+                  Text('Kiểm tra nhanh', style: context.text.bodySmall),
                   const SizedBox(height: 8),
                   Text(
                     answered
@@ -225,7 +225,7 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
                   if (answered) ...[
                     const SizedBox(height: 10),
                     Text(
-                      correct ? 'Correct! よくできました。' : 'Not quite. The answer is ${g.quiz.options[g.quiz.answer]}.',
+                      correct ? 'Đúng rồi! よくできました。' : 'Chưa đúng. Đáp án là ${g.quiz.options[g.quiz.answer]}.',
                       style: TextStyle(color: correct ? c.good : c.bad, fontWeight: FontWeight.w600),
                     ),
                   ],
@@ -237,17 +237,17 @@ class _GrammarLessonScreenState extends State<GrammarLessonScreen> {
               OutlinedButton.icon(
                 onPressed: () => Navigator.pop(context),
                 icon: Icon(AppIcons.checkCircle, color: c.good),
-                label: const Text('Lesson completed'),
+                label: const Text('Đã hoàn thành bài'),
               )
             else
               GradientButton(
-                label: answered ? 'Complete lesson' : 'Answer the quick check to finish',
+                label: answered ? 'Hoàn thành bài' : 'Trả lời câu kiểm tra nhanh để hoàn thành',
                 onPressed: answered
                     ? () {
                         state.completeGrammar(g.id);
                         Navigator.pop(context);
                         ScaffoldMessenger.of(context)
-                            .showSnackBar(SnackBar(content: Text('${g.title} completed. また明日！')));
+                            .showSnackBar(SnackBar(content: Text('Đã hoàn thành ${g.title}. また明日！')));
                       }
                     : null,
               ),

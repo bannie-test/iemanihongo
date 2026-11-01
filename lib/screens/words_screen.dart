@@ -37,7 +37,7 @@ class _WordsScreenState extends State<WordsScreen> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Words'),
+          title: const Text('Từ vựng'),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(120),
             child: Padding(
@@ -48,13 +48,13 @@ class _WordsScreenState extends State<WordsScreen> {
                     controller: _search,
                     onChanged: (v) => setState(() => _query = v),
                     decoration: InputDecoration(
-                      hintText: 'Search 日本語, かな or English',
+                      hintText: 'Tìm 日本語, かな hoặc tiếng Việt',
                       prefixIcon: const Icon(AppIcons.search),
                       suffixIcon: _query.isEmpty
                           ? null
                           : IconButton(
                               icon: const Icon(AppIcons.close),
-                              tooltip: 'Clear',
+                              tooltip: 'Xóa',
                               onPressed: () => setState(() {
                                 _search.clear();
                                 _query = '';
@@ -65,8 +65,8 @@ class _WordsScreenState extends State<WordsScreen> {
                   ),
                   const TabBar(
                     tabs: [
-                      Tab(text: 'JLPT levels'),
-                      Tab(text: 'My decks'),
+                      Tab(text: 'Cấp độ JLPT'),
+                      Tab(text: 'Bộ từ của tôi'),
                     ],
                   ),
                 ],
@@ -85,7 +85,7 @@ class _WordsScreenState extends State<WordsScreen> {
 class _LevelsTab extends StatelessWidget {
   const _LevelsTab();
 
-  static const _names = {5: 'Beginner', 4: 'Elementary', 3: 'Intermediate', 2: 'Upper-intermediate', 1: 'Advanced'};
+  static const _names = {5: 'Sơ cấp', 4: 'Sơ trung cấp', 3: 'Trung cấp', 2: 'Trung cao cấp', 1: 'Cao cấp'};
 
   @override
   Widget build(BuildContext context) {
@@ -119,8 +119,8 @@ class _LevelsTab extends StatelessWidget {
                       Bar(state.learnedCount(l) / state.content.byLevel[l]!.length),
                       const SizedBox(height: 4),
                       Text(
-                        '${state.learnedCount(l)} learned · ${state.seenCount(l) - state.learnedCount(l)} learning · '
-                        '${state.content.byLevel[l]!.length} words',
+                        '${state.learnedCount(l)} đã thuộc · ${state.seenCount(l) - state.learnedCount(l)} đang học · '
+                        '${state.content.byLevel[l]!.length} từ',
                         style: context.text.bodySmall,
                       ),
                     ],
@@ -158,7 +158,7 @@ class _DecksTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(d.name, style: context.text.titleMedium),
-                      Text('${state.wordsIn(d.id).length} words', style: context.text.bodySmall),
+                      Text('${state.wordsIn(d.id).length} từ', style: context.text.bodySmall),
                     ],
                   ),
                 ),
@@ -174,11 +174,11 @@ class _DecksTab extends StatelessWidget {
             if (name != null) state.createDeck(name);
           },
           icon: const Icon(AppIcons.add),
-          label: const Text('New deck'),
+          label: const Text('Bộ từ mới'),
         ),
         const SizedBox(height: 8),
         Text(
-          'Tip: star words on flashcards, or add them to a deck from any word page.',
+          'Mẹo: đánh dấu sao từ trên thẻ từ, hoặc thêm vào bộ từ từ trang chi tiết của từ.',
           textAlign: TextAlign.center,
           style: context.text.bodySmall,
         ),
@@ -228,10 +228,10 @@ class _LevelWordsScreenState extends State<LevelWordsScreen> {
                 for (final f in _Filter.values) ...[
                   ChoiceChip(
                     label: Text(switch (f) {
-                      _Filter.all => 'All ${all.length}',
-                      _Filter.fresh => 'New',
-                      _Filter.learning => 'Learning',
-                      _Filter.learned => 'Learned',
+                      _Filter.all => 'Tất cả ${all.length}',
+                      _Filter.fresh => 'Mới',
+                      _Filter.learning => 'Đang học',
+                      _Filter.learned => 'Đã thuộc',
                     }),
                     selected: _filter == f,
                     onSelected: (_) => setState(() => _filter = f),
@@ -248,11 +248,11 @@ class _LevelWordsScreenState extends State<LevelWordsScreen> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
                 child: GradientButton(
-                  label: 'Learn ${next.length} new N${widget.level} words',
+                  label: 'Học ${next.length} từ mới N${widget.level}',
                   icon: AppIcons.add,
                   onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => FlashcardScreen(words: next, title: 'N${widget.level} new words'),
+                      builder: (_) => FlashcardScreen(words: next, title: 'Từ mới N${widget.level}'),
                     ),
                   ),
                 ),
@@ -288,11 +288,11 @@ class DeckScreen extends StatelessWidget {
                   final ok = await showDialog<bool>(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Text('Delete "${deck.name}"?'),
-                      content: const Text('The words stay in the app and keep their progress.'),
+                      title: Text('Xóa "${deck.name}"?'),
+                      content: const Text('Các từ vẫn còn trong ứng dụng và giữ nguyên tiến độ.'),
                       actions: [
-                        TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
-                        TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('Delete')),
+                        TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Hủy')),
+                        TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('Xóa')),
                       ],
                     ),
                   );
@@ -303,8 +303,8 @@ class DeckScreen extends StatelessWidget {
                 }
               },
               itemBuilder: (_) => const [
-                PopupMenuItem(value: 'rename', child: Text('Rename')),
-                PopupMenuItem(value: 'delete', child: Text('Delete deck')),
+                PopupMenuItem(value: 'rename', child: Text('Đổi tên')),
+                PopupMenuItem(value: 'delete', child: Text('Xóa bộ từ')),
               ],
             ),
         ],
@@ -312,10 +312,10 @@ class DeckScreen extends StatelessWidget {
       body: words.isEmpty
           ? EmptyState(
               icon: deck.isStarred ? AppIcons.star : AppIcons.folderOpen,
-              title: 'No words yet',
+              title: 'Chưa có từ nào',
               body: deck.isStarred
-                  ? 'Tap the star on a flashcard or word page to save tricky words here.'
-                  : 'Open any word and use "Add to deck".',
+                  ? 'Chạm vào ngôi sao trên thẻ từ hoặc trang chi tiết để lưu từ khó vào đây.'
+                  : 'Mở một từ bất kỳ và chọn "Thêm vào bộ từ".',
             )
           : Column(
               children: [
@@ -336,13 +336,13 @@ class DeckScreen extends StatelessWidget {
                                     ),
                                   ),
                             icon: const Icon(AppIcons.quiz),
-                            label: const Text('Quiz'),
+                            label: const Text('Trắc nghiệm'),
                           ),
                         ),
                         const SizedBox(width: 10),
                         Expanded(
                           child: GradientButton(
-                            label: 'Study',
+                            label: 'Học',
                             height: 48,
                             icon: AppIcons.wordsOn,
                             onPressed: () => Navigator.of(context).push(
@@ -371,7 +371,7 @@ class WordList extends StatelessWidget {
     final state = context.watch<AppState>();
     final c = context.colors;
     if (words.isEmpty) {
-      return const EmptyState(icon: AppIcons.notFound, title: 'Nothing here', body: 'Try another filter or search.');
+      return const EmptyState(icon: AppIcons.notFound, title: 'Không có gì ở đây', body: 'Hãy thử bộ lọc hoặc từ khóa khác.');
     }
     return ListView.separated(
       padding: const EdgeInsets.only(bottom: 16),

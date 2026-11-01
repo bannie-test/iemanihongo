@@ -424,7 +424,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     return [starredDeck, ...list];
   }
 
-  Deck get starredDeck => decks[Deck.starredId] ?? Deck(id: Deck.starredId, name: 'Starred');
+  Deck get starredDeck => decks[Deck.starredId] ?? Deck(id: Deck.starredId, name: 'Đã đánh dấu sao');
 
   List<Word> wordsIn(String deckId) => [for (final id in deckWords[deckId] ?? const <String>{}) ?content.byId[id]];
 
@@ -434,7 +434,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   void setInDeck(String deckId, String wordId, bool present) {
     if (deckId == Deck.starredId && !decks.containsKey(deckId)) {
-      final d = Deck(id: deckId, name: 'Starred', updatedAt: nowMs);
+      final d = Deck(id: deckId, name: 'Đã đánh dấu sao', updatedAt: nowMs);
       decks[deckId] = d;
       _write(db.saveDeck(d));
     }

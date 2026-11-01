@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+
+import '../logic/vi_format.dart';
 
 import '../models/settings.dart';
 import '../services/sync_service.dart';
@@ -42,15 +43,15 @@ class SettingsScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(title: const Text('Cài đặt')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
         children: [
-          section('Account & sync', [_AccountTile(state: state)]),
-          section('Study', [
+          section('Tài khoản & đồng bộ', [_AccountTile(state: state)]),
+          section('Học tập', [
             ListTile(
-              title: const Text('Daily goal'),
-              subtitle: const Text('Cards + quiz answers per day'),
+              title: const Text('Mục tiêu mỗi ngày'),
+              subtitle: const Text('Số thẻ + câu trả lời mỗi ngày'),
               trailing: DropdownButton<int>(
                 value: s.dailyGoal,
                 underline: const SizedBox(),
@@ -59,7 +60,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: const Text('New words per day'),
+              title: const Text('Từ mới mỗi ngày'),
               trailing: DropdownButton<int>(
                 value: s.newPerDay,
                 underline: const SizedBox(),
@@ -72,7 +73,7 @@ class SettingsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('New words come from'),
+                  const Text('Lấy từ mới ở cấp độ'),
                   const SizedBox(height: 8),
                   LevelPicker(
                     value: s.level,
@@ -82,11 +83,11 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
           ]),
-          section('Reminders', [
+          section('Nhắc nhở', [
             SwitchListTile(
               value: s.remindersOn,
-              title: const Text('Daily reminder'),
-              subtitle: const Text('Skipped once today\'s goal is done'),
+              title: const Text('Nhắc học hằng ngày'),
+              subtitle: const Text('Bỏ qua khi đã đạt mục tiêu hôm nay'),
               onChanged: (v) async {
                 if (v) await state.notifications.requestPermission();
                 state.updateSettings((x) => x.copyWith(remindersOn: v));
@@ -95,7 +96,7 @@ class SettingsScreen extends StatelessWidget {
             ListTile(
               enabled: s.remindersOn,
               leading: const Icon(AppIcons.schedule),
-              title: const Text('Reminder time'),
+              title: const Text('Giờ nhắc'),
               trailing: Text(
                 TimeOfDay(hour: s.reminderHour, minute: s.reminderMinute).format(context),
                 style: TextStyle(color: c.accent, fontWeight: FontWeight.w600),
@@ -110,30 +111,30 @@ class SettingsScreen extends StatelessWidget {
             ),
             SwitchListTile(
               value: s.streakNudge,
-              title: const Text('Streak-at-risk nudge'),
-              subtitle: const Text('9 PM if you haven\'t hit your goal'),
+              title: const Text('Nhắc khi sắp mất chuỗi'),
+              subtitle: const Text('Lúc 21 giờ nếu chưa đạt mục tiêu'),
               onChanged: s.remindersOn ? (v) => state.updateSettings((x) => x.copyWith(streakNudge: v)) : null,
             ),
           ]),
-          section('Audio', [
+          section('Âm thanh', [
             SwitchListTile(
               value: s.autoplayAudio,
-              title: const Text('Auto-play pronunciation'),
-              subtitle: const Text('When a card is revealed or a quiz is answered'),
+              title: const Text('Tự phát âm'),
+              subtitle: const Text('Khi lật thẻ hoặc trả lời câu hỏi'),
               onChanged: (v) => state.updateSettings((x) => x.copyWith(autoplayAudio: v)),
             ),
             ListTile(
-              title: const Text('Speech speed'),
+              title: const Text('Tốc độ đọc'),
               subtitle: Slider(
                 value: s.speechRate,
                 min: 0.2,
                 max: 0.7,
                 divisions: 10,
                 label: s.speechRate < 0.35
-                    ? 'Slow'
+                    ? 'Chậm'
                     : s.speechRate > 0.55
-                    ? 'Fast'
-                    : 'Normal',
+                    ? 'Nhanh'
+                    : 'Bình thường',
                 onChanged: (v) => state.updateSettings((x) => x.copyWith(speechRate: v)),
               ),
               trailing: const SpeakButton('こんにちは、日本語を勉強しましょう。'),
@@ -143,32 +144,32 @@ class SettingsScreen extends StatelessWidget {
               builder: (context, ok, _) => ok == false
                   ? const ListTile(
                       leading: Icon(AppIcons.warning),
-                      title: Text('Japanese voice not installed'),
+                      title: Text('Chưa cài giọng đọc tiếng Nhật'),
                       subtitle: Text(
-                        'Android: Settings → Accessibility → Text-to-speech → install Japanese voice data.',
+                        'Android: Cài đặt → Hỗ trợ tiếp cận → Chuyển văn bản thành giọng nói → cài dữ liệu giọng tiếng Nhật.',
                       ),
                     )
                   : const SizedBox.shrink(),
             ),
           ]),
-          section('Appearance', [
+          section('Giao diện', [
             Padding(
               padding: const EdgeInsets.all(12),
               child: SegmentedButton<ThemeMode>(
                 segments: const [
-                  ButtonSegment(value: ThemeMode.system, label: Text('System'), icon: Icon(AppIcons.system)),
-                  ButtonSegment(value: ThemeMode.light, label: Text('Light'), icon: Icon(AppIcons.light)),
-                  ButtonSegment(value: ThemeMode.dark, label: Text('Dark'), icon: Icon(AppIcons.dark)),
+                  ButtonSegment(value: ThemeMode.system, label: Text('Hệ thống'), icon: Icon(AppIcons.system)),
+                  ButtonSegment(value: ThemeMode.light, label: Text('Sáng'), icon: Icon(AppIcons.light)),
+                  ButtonSegment(value: ThemeMode.dark, label: Text('Tối'), icon: Icon(AppIcons.dark)),
                 ],
                 selected: {s.themeMode},
                 onSelectionChanged: (v) => state.updateSettings((x) => x.copyWith(themeMode: v.first)),
               ),
             ),
           ]),
-          section('About', [
+          section('Thông tin', [
             ListTile(
-              title: const Text('Content sources & references'),
-              subtitle: const Text('Vocabulary, kanji, stroke order, grammar books, JLPT resources'),
+              title: const Text('Nguồn nội dung & tài liệu tham khảo'),
+              subtitle: const Text('Từ vựng, kanji, thứ tự nét, sách ngữ pháp, tài liệu JLPT'),
               trailing: const Icon(AppIcons.next),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SourcesScreen())),
             ),
@@ -191,13 +192,13 @@ class _AccountTile extends StatelessWidget {
         children: [
           const ListTile(
             leading: Icon(AppIcons.guest),
-            title: Text('Guest'),
-            subtitle: Text('Progress is saved on this device only.'),
+            title: Text('Khách'),
+            subtitle: Text('Tiến độ chỉ được lưu trên máy này.'),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
             child: GradientButton(
-              label: 'Sign in to sync',
+              label: 'Đăng nhập để đồng bộ',
               height: 46,
               icon: AppIcons.cloudUpload,
               onPressed: state.supabase == null
@@ -214,17 +215,17 @@ class _AccountTile extends StatelessWidget {
       children: [
         ListTile(
           leading: const Icon(AppIcons.account),
-          title: Text(user.email ?? 'Signed in'),
+          title: Text(user.email ?? 'Đã đăng nhập'),
           subtitle: ValueListenableBuilder(
             valueListenable: sync.lastSynced,
             builder: (context, t, _) =>
-                Text(t == null ? 'Not synced yet' : 'Last synced ${DateFormat.MMMd().add_jm().format(t)}'),
+                Text(t == null ? 'Chưa đồng bộ' : 'Đồng bộ lần cuối: ${formatViDateTime(t)}'),
           ),
           trailing: ValueListenableBuilder(
             valueListenable: sync.status,
             builder: (context, st, _) => st == SyncStatus.syncing
                 ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2.5))
-                : IconButton(tooltip: 'Sync now', icon: const Icon(AppIcons.sync), onPressed: sync.sync),
+                : IconButton(tooltip: 'Đồng bộ ngay', icon: const Icon(AppIcons.sync), onPressed: sync.sync),
           ),
         ),
         ValueListenableBuilder(
@@ -246,23 +247,23 @@ class _AccountTile extends StatelessWidget {
                     onPressed: () =>
                         Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DatabaseSetupScreen())),
                     icon: const Icon(AppIcons.settings),
-                    label: const Text('Set up database'),
+                    label: const Text('Thiết lập cơ sở dữ liệu'),
                   ),
                 ),
         ),
         ListTile(
           leading: const Icon(AppIcons.signOut),
-          title: const Text('Sign out'),
-          subtitle: const Text('Removes this account\'s data from this device'),
+          title: const Text('Đăng xuất'),
+          subtitle: const Text('Xóa dữ liệu của tài khoản này khỏi máy'),
           onTap: () async {
             final ok = await showDialog<bool>(
               context: context,
               builder: (context) => AlertDialog(
-                title: const Text('Sign out?'),
-                content: const Text('Your progress is backed up to your account. Changes not yet synced will be lost.'),
+                title: const Text('Đăng xuất?'),
+                content: const Text('Tiến độ đã được sao lưu vào tài khoản. Những thay đổi chưa đồng bộ sẽ bị mất.'),
                 actions: [
-                  TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Cancel')),
-                  TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('Sign out')),
+                  TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Hủy')),
+                  TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('Đăng xuất')),
                 ],
               ),
             );

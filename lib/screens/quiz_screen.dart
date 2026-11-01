@@ -29,34 +29,34 @@ class _QuizHubScreenState extends State<QuizHubScreen> {
     final starred = state.wordsIn('starred');
     final level = state.settings.level;
     final (pool, label) = switch (_source) {
-      _Source.studied => (studied, 'Words you have studied'),
-      _Source.level => (state.content.byLevel[level]!, 'All N$level words'),
-      _Source.starred => (starred, 'Starred words'),
+      _Source.studied => (studied, 'Từ bạn đã học'),
+      _Source.level => (state.content.byLevel[level]!, 'Toàn bộ từ N$level'),
+      _Source.starred => (starred, 'Từ đã đánh dấu sao'),
     };
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Quiz')),
+      appBar: AppBar(title: const Text('Trắc nghiệm')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
         children: [
-          Text('Quiz on', style: context.text.titleMedium),
+          Text('Trắc nghiệm với', style: context.text.titleMedium),
           const SizedBox(height: 8),
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
               ChoiceChip(
-                label: Text('Studied · ${studied.length}'),
+                label: Text('Đã học · ${studied.length}'),
                 selected: _source == _Source.studied,
                 onSelected: (_) => setState(() => _source = _Source.studied),
               ),
               ChoiceChip(
-                label: Text('All N$level'),
+                label: Text('Toàn bộ N$level'),
                 selected: _source == _Source.level,
                 onSelected: (_) => setState(() => _source = _Source.level),
               ),
               ChoiceChip(
-                label: Text('Starred · ${starred.length}'),
+                label: Text('Đánh dấu sao · ${starred.length}'),
                 selected: _source == _Source.starred,
                 onSelected: (_) => setState(() => _source = _Source.starred),
               ),
@@ -67,8 +67,8 @@ class _QuizHubScreenState extends State<QuizHubScreen> {
             SoftCard(
               child: Text(
                 _source == _Source.starred
-                    ? 'Star at least 4 words to quiz yourself on them.'
-                    : 'Study a few flashcards first, or quiz yourself on all N$level words.',
+                    ? 'Hãy đánh dấu sao ít nhất 4 từ để làm trắc nghiệm với chúng.'
+                    : 'Hãy học vài thẻ từ trước, hoặc làm trắc nghiệm với toàn bộ từ N$level.',
               ),
             )
           else
@@ -87,7 +87,7 @@ void startQuiz(BuildContext context, List<Word> pool, QuizMode mode, String labe
   final questions = QuizBuilder(state.content.words).build(pool, mode, count);
   if (questions.isEmpty) {
     ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('No words with kanji here yet. Try another mode.')));
+        .showSnackBar(const SnackBar(content: Text('Chưa có từ nào có kanji ở đây. Hãy thử chế độ khác.')));
     return;
   }
   Navigator.of(context).push(
@@ -142,7 +142,7 @@ class QuizSetupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: Text('Quiz · $sourceLabel')),
+    appBar: AppBar(title: Text('Trắc nghiệm · $sourceLabel')),
     body: ListView(
       padding: const EdgeInsets.all(16),
       children: [
@@ -228,7 +228,7 @@ class _QuizScreenState extends State<QuizScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(AppIcons.close),
-          tooltip: 'End quiz',
+          tooltip: 'Kết thúc',
           onPressed: () => Navigator.pop(context),
         ),
         titleSpacing: 0,
@@ -250,16 +250,16 @@ class _QuizScreenState extends State<QuizScreen> {
     final q = _q;
     final w = q.word;
     final prompt = switch (q.mode) {
-      QuizMode.meaning => 'What does this word mean?',
-      QuizMode.reverse => 'Which word means…',
-      QuizMode.reading => 'How is this word read?',
-      QuizMode.listening => 'Which word do you hear?',
+      QuizMode.meaning => 'Từ này nghĩa là gì?',
+      QuizMode.reverse => 'Từ nào có nghĩa…',
+      QuizMode.reading => 'Từ này đọc thế nào?',
+      QuizMode.listening => 'Bạn nghe thấy từ nào?',
     };
 
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       children: [
-        Align(alignment: Alignment.centerLeft, child: Tag('${q.mode.title} quiz · N${w.level}')),
+        Align(alignment: Alignment.centerLeft, child: Tag('Trắc nghiệm ${q.mode.title} · N${w.level}')),
         const SizedBox(height: 12),
         SoftCard(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 26),
@@ -290,7 +290,7 @@ class _QuizScreenState extends State<QuizScreen> {
               ],
               if (q.mode == QuizMode.listening && _picked == null) ...[
                 const SizedBox(height: 10),
-                Text('Tap to listen again', style: context.text.bodySmall),
+                Text('Chạm để nghe lại', style: context.text.bodySmall),
               ],
             ],
           ),
@@ -363,7 +363,7 @@ class _QuizScreenState extends State<QuizScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  right ? (_combo >= 3 ? 'Correct! $_combo in a row 🔥' : 'Correct!') : 'Not quite',
+                  right ? (_combo >= 3 ? 'Đúng rồi! $_combo câu liên tiếp 🔥' : 'Đúng rồi!') : 'Chưa đúng',
                   style: TextStyle(color: right ? c.good : c.bad, fontWeight: FontWeight.w600, fontSize: 16),
                 ),
                 Text(
@@ -379,7 +379,7 @@ class _QuizScreenState extends State<QuizScreen> {
           FilledButton(
             style: FilledButton.styleFrom(minimumSize: const Size(88, 44)),
             onPressed: _next,
-            child: Text(_index == widget.questions.length - 1 ? 'Finish' : 'Next'),
+            child: Text(_index == widget.questions.length - 1 ? 'Hoàn thành' : 'Tiếp'),
           ),
         ],
       ),
@@ -404,13 +404,13 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
         ),
         const SizedBox(height: 12),
-        Center(child: Text('$_score / $total correct', style: context.text.headlineSmall)),
+        Center(child: Text('Đúng $_score / $total', style: context.text.headlineSmall)),
         Center(child: Text(widget.label, style: context.text.bodySmall)),
         const SizedBox(height: 24),
         if (_missed.isNotEmpty) ...[
-          Text('Review these', style: context.text.titleMedium),
+          Text('Ôn lại các từ này', style: context.text.titleMedium),
           const SizedBox(height: 4),
-          Text('Missed words you have already learned come back in your next review.', style: context.text.bodySmall),
+          Text('Những từ đã học mà bạn trả lời sai sẽ quay lại trong lần ôn tới.', style: context.text.bodySmall),
           const SizedBox(height: 8),
           for (final w in _missed)
             ListTile(
@@ -422,7 +422,7 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
         ],
         const SizedBox(height: 24),
-        GradientButton(label: 'Done', onPressed: () => Navigator.pop(context)),
+        GradientButton(label: 'Xong', onPressed: () => Navigator.pop(context)),
       ],
     );
   }

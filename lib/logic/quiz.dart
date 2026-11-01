@@ -6,10 +6,10 @@ import 'dart:math';
 import '../models/content.dart';
 
 enum QuizMode {
-  meaning('Meaning', 'Japanese → English', '意味'),
-  reverse('Reverse', 'English → Japanese', '逆'),
-  reading('Reading', 'Kanji → kana reading', '読み'),
-  listening('Listening', 'Hear it, pick the word', '聴');
+  meaning('Nghĩa', 'Tiếng Nhật → tiếng Việt', '意味'),
+  reverse('Ngược', 'Tiếng Việt → tiếng Nhật', '逆'),
+  reading('Cách đọc', 'Kanji → cách đọc kana', '読み'),
+  listening('Nghe', 'Nghe rồi chọn từ', '聴');
 
   const QuizMode(this.title, this.subtitle, this.glyph);
   final String title;

@@ -29,7 +29,7 @@ class _WritingHubScreenState extends State<WritingHubScreen> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Writing practice'),
+          title: const Text('Luyện viết'),
           bottom: const TabBar(
             tabs: [
               Tab(text: 'Hiragana'),
@@ -98,7 +98,7 @@ class _CharGrid extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
             child: Row(
               children: [
-                Expanded(child: Text('$practised / ${chars.length} practised', style: context.text.bodySmall)),
+                Expanded(child: Text('Đã luyện $practised / ${chars.length}', style: context.text.bodySmall)),
                 TextButton.icon(
                   onPressed: chars.isEmpty
                       ? null
@@ -107,7 +107,7 @@ class _CharGrid extends StatelessWidget {
                           _openPractice(context, chars, next < 0 ? 0 : next);
                         },
                   icon: const Icon(AppIcons.play, size: 16),
-                  label: const Text('Continue'),
+                  label: const Text('Tiếp tục'),
                 ),
               ],
             ),
@@ -250,7 +250,7 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
           if (best.attempts > 0)
             Padding(
               padding: const EdgeInsets.only(right: 16),
-              child: Center(child: Tag('Best ${best.best}', accent: true)),
+              child: Center(child: Tag('Cao nhất ${best.best}', accent: true)),
             ),
         ],
       ),
@@ -273,15 +273,15 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
                         if (info != null) ...[
                           Text(info.meanings.take(3).join(', '), style: context.text.titleMedium),
                           if (info.onReadings.isNotEmpty)
-                            Text('On: ${info.onReadings.join('、')}', style: context.text.bodySmall),
+                            Text('Âm On: ${info.onReadings.join('、')}', style: context.text.bodySmall),
                           if (info.kunReadings.isNotEmpty)
                             Text(
-                              'Kun: ${info.kunReadings.map((r) => r.replaceAll('.', '')).join('、')}',
+                              'Âm Kun: ${info.kunReadings.map((r) => r.replaceAll('.', '')).join('、')}',
                               style: context.text.bodySmall,
                             ),
                         ],
                         const SizedBox(height: 4),
-                        Tag('${_strokes.strokeCount} strokes'),
+                        Tag('${_strokes.strokeCount} nét'),
                       ],
                     ),
                   ),
@@ -313,23 +313,23 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _tool(context, AppIcons.playCircle, 'Stroke order', _playing ? null : _playDemo),
+                  _tool(context, AppIcons.playCircle, 'Thứ tự nét', _playing ? null : _playDemo),
                   _tool(
                     context,
                     _guide ? AppIcons.eye : AppIcons.eyeOff,
-                    _guide ? 'Guide on' : 'From memory',
+                    _guide ? 'Có nét mờ' : 'Viết nhớ',
                     () => setState(() => _guide = !_guide),
                   ),
                   _tool(
                     context,
                     AppIcons.grid,
-                    _numbers ? 'Numbers on' : 'Numbers',
+                    _numbers ? 'Hiện số' : 'Số thứ tự',
                     () => setState(() => _numbers = !_numbers),
                   ),
                   _tool(
                     context,
                     AppIcons.undo,
-                    'Undo',
+                    'Hoàn tác',
                     _ink.isEmpty || _result != null
                         ? null
                         : () => setState(() => _ink = _ink.sublist(0, _ink.length - 1)),
@@ -337,7 +337,7 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
                   _tool(
                     context,
                     AppIcons.eraser,
-                    'Clear',
+                    'Xóa',
                     _ink.isEmpty
                         ? null
                         : () => setState(() {
@@ -353,7 +353,7 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
               Row(
                 children: [
                   IconButton.outlined(
-                    tooltip: 'Previous',
+                    tooltip: 'Trước',
                     onPressed: _index == 0 ? null : () => _goTo(_index - 1),
                     icon: const Icon(AppIcons.back),
                   ),
@@ -361,7 +361,7 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
                   Expanded(
                     child: _result == null
                         ? GradientButton(
-                            label: 'Check',
+                            label: 'Kiểm tra',
                             icon: AppIcons.check,
                             height: 50,
                             onPressed: _ink.isEmpty ? null : _check,
@@ -374,13 +374,13 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
                                     _ink = [];
                                     _result = null;
                                   }),
-                                  child: const Text('Try again'),
+                                  child: const Text('Viết lại'),
                                 ),
                               ),
                               const SizedBox(width: 10),
                               Expanded(
                                 child: GradientButton(
-                                  label: 'Next',
+                                  label: 'Tiếp',
                                   height: 50,
                                   onPressed: _index == widget.chars.length - 1 ? null : () => _goTo(_index + 1),
                                 ),
@@ -390,7 +390,7 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
                   ),
                   const SizedBox(width: 10),
                   IconButton.outlined(
-                    tooltip: 'Next',
+                    tooltip: 'Tiếp',
                     onPressed: _index == widget.chars.length - 1 ? null : () => _goTo(_index + 1),
                     icon: const Icon(AppIcons.next),
                   ),
@@ -401,8 +401,8 @@ class _WritingPracticeScreenState extends State<WritingPracticeScreen> with Sing
                   padding: const EdgeInsets.only(top: 10),
                   child: Text(
                     _guide
-                        ? 'Trace over the dashed strokes in order. Tap "Stroke order" to watch first.'
-                        : 'Write it from memory, then check.',
+                        ? 'Tô theo các nét đứt đúng thứ tự. Chạm "Thứ tự nét" để xem trước.'
+                        : 'Hãy viết theo trí nhớ, rồi kiểm tra.',
                     textAlign: TextAlign.center,
                     style: TextStyle(color: c.muted, fontSize: 13),
                   ),
@@ -451,12 +451,12 @@ class _ResultPanel extends StatelessWidget {
         ? Colors.amber.shade700
         : c.bad;
     final tips = <String>[
-      if (!r.strokeCountOk) 'You drew ${r.drawnStrokes} strokes; this character has ${r.expectedStrokes}.',
-      if (r.strokes.any((s) => s.reversed)) 'Some strokes were drawn in the wrong direction (red).',
+      if (!r.strokeCountOk) 'Bạn đã viết ${r.drawnStrokes} nét; chữ này có ${r.expectedStrokes} nét.',
+      if (r.strokes.any((s) => s.reversed)) 'Một số nét bị viết ngược chiều (màu đỏ).',
       if (r.inOrder < r.expectedStrokes && r.strokeCountOk)
-        'Check the stroke order: ${r.inOrder}/${r.expectedStrokes} in the right place.',
-      if (r.coverage < 0.7) 'Parts of the character are missing. Follow the whole outline.',
-      if (r.precision < 0.7) 'Try to stay on the guide lines.',
+        'Kiểm tra thứ tự nét: ${r.inOrder}/${r.expectedStrokes} nét đúng vị trí.',
+      if (r.coverage < 0.7) 'Chữ còn thiếu một số phần. Hãy viết theo toàn bộ đường viền.',
+      if (r.precision < 0.7) 'Cố gắng viết trùng với nét mờ.',
     ];
     return SoftCard(
       borderColor: color,
@@ -478,7 +478,7 @@ class _ResultPanel extends StatelessWidget {
               children: [
                 Text(r.grade, style: context.text.titleMedium?.copyWith(color: color)),
                 Text(
-                  'Order ${r.inOrder}/${r.expectedStrokes} · shape ${(r.coverage * 100).round()}%',
+                  'Thứ tự ${r.inOrder}/${r.expectedStrokes} · hình dạng ${(r.coverage * 100).round()}%',
                   style: context.text.bodySmall,
                 ),
                 for (final t in tips.take(2)) Text('• $t', style: const TextStyle(fontSize: 13)),

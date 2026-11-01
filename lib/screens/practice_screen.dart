@@ -20,39 +20,39 @@ class PracticeScreen extends StatelessWidget {
     final today = state.todaysGrammar;
     final practised = state.writing.values.where((w) => w.attempts > 0).length;
     return Scaffold(
-      appBar: AppBar(title: const Text('Practice')),
+      appBar: AppBar(title: const Text('Luyện tập')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
         children: [
           _PracticeCard(
             icon: AppIcons.quiz,
-            title: 'Vocabulary quiz',
-            subtitle: 'Meaning, reverse, reading and listening',
-            badge: '${state.cards.length} words studied',
+            title: 'Trắc nghiệm từ vựng',
+            subtitle: 'Nghĩa, ngược, cách đọc và nghe',
+            badge: 'Đã học ${state.cards.length} từ',
             onTap: () => _push(context, const QuizHubScreen()),
           ),
           const SizedBox(height: 12),
           _PracticeCard(
             icon: AppIcons.voice,
-            title: 'Listening · 聴解',
-            subtitle: 'JLPT-style dialogues and sentence listening',
-            badge: '${state.content.listening.length} dialogues · N5–N1',
+            title: 'Nghe hiểu · 聴解',
+            subtitle: 'Hội thoại kiểu JLPT và nghe câu',
+            badge: '${state.content.listening.length} bài nghe · N5–N1',
             onTap: () => _push(context, const ListeningHubScreen()),
           ),
           const SizedBox(height: 12),
           _PracticeCard(
             icon: AppIcons.writing,
-            title: 'Writing practice',
-            subtitle: 'Trace kana and kanji stroke by stroke',
-            badge: practised == 0 ? 'New' : '$practised characters practised',
+            title: 'Luyện viết',
+            subtitle: 'Tô kana và kanji theo từng nét',
+            badge: practised == 0 ? 'Mới' : 'Đã luyện $practised chữ',
             onTap: () => _push(context, const WritingHubScreen()),
           ),
           const SizedBox(height: 12),
           _PracticeCard(
             icon: AppIcons.grammar,
-            title: 'Grammar lessons',
-            subtitle: today == null ? 'All lessons completed' : "Today: ${today.title} · ${today.meaning}",
-            badge: '${state.grammarDone.length}/${state.content.grammar.length} done',
+            title: 'Bài ngữ pháp',
+            subtitle: today == null ? 'Đã hoàn thành mọi bài' : "Today: ${today.title} · ${today.meaning}",
+            badge: 'Đã xong ${state.grammarDone.length}/${state.content.grammar.length}',
             onTap: () => _push(context, const GrammarScreen()),
           ),
         ],

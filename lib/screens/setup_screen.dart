@@ -22,11 +22,11 @@ class _SetupScreenState extends State<SetupScreen> {
   TimeOfDay _time = const TimeOfDay(hour: 19, minute: 0);
 
   static const _levelHints = {
-    5: 'Beginner · basic words and kana',
-    4: 'Elementary · everyday conversation',
-    3: 'Intermediate · bridging to real material',
-    2: 'Upper-intermediate · news and work',
-    1: 'Advanced · abstract and formal Japanese',
+    5: 'Sơ cấp · từ cơ bản và kana',
+    4: 'Sơ trung cấp · hội thoại hằng ngày',
+    3: 'Trung cấp · làm quen tài liệu thực tế',
+    2: 'Trung cao cấp · tin tức và công việc',
+    1: 'Cao cấp · tiếng Nhật trừu tượng và trang trọng',
   };
 
   Future<void> _done() async {
@@ -55,19 +55,19 @@ class _SetupScreenState extends State<SetupScreen> {
             Text('はじめまして！', style: context.text.headlineMedium),
             const SizedBox(height: 4),
             Text(
-              "Let's set up your study plan. You can change this any time.",
+              'Hãy thiết lập kế hoạch học. Bạn có thể đổi bất cứ lúc nào.',
               style: context.text.bodyMedium?.copyWith(color: c.muted),
             ),
             const SizedBox(height: 28),
-            Text('Which level are you studying?', style: context.text.titleMedium),
+            Text('Bạn đang học cấp độ nào?', style: context.text.titleMedium),
             const SizedBox(height: 10),
             LevelPicker(value: _level, onChanged: (l) => setState(() => _level = l)),
             const SizedBox(height: 8),
             Text(_levelHints[_level]!, style: context.text.bodySmall),
             const SizedBox(height: 28),
-            Text('Daily goal', style: context.text.titleMedium),
+            Text('Mục tiêu mỗi ngày', style: context.text.titleMedium),
             const SizedBox(height: 4),
-            Text('Cards and quiz questions per day. Hitting it keeps your streak.', style: context.text.bodySmall),
+            Text('Số thẻ và câu hỏi mỗi ngày. Đạt mục tiêu để giữ chuỗi ngày học.', style: context.text.bodySmall),
             const SizedBox(height: 10),
             Wrap(
               spacing: 8,
@@ -88,13 +88,13 @@ class _SetupScreenState extends State<SetupScreen> {
                   SwitchListTile(
                     value: _remind,
                     onChanged: (v) => setState(() => _remind = v),
-                    title: const Text('Daily reminder', style: TextStyle(fontWeight: FontWeight.w600)),
-                    subtitle: const Text('Skipped automatically once you hit your goal'),
+                    title: const Text('Nhắc học hằng ngày', style: TextStyle(fontWeight: FontWeight.w600)),
+                    subtitle: const Text('Tự bỏ qua khi bạn đã đạt mục tiêu'),
                   ),
                   if (_remind)
                     ListTile(
                       leading: const Icon(AppIcons.schedule),
-                      title: const Text('Remind me at'),
+                      title: const Text('Nhắc lúc'),
                       trailing: Text(_time.format(context), style: context.text.titleMedium?.copyWith(color: c.accent)),
                       onTap: () async {
                         final t = await showTimePicker(context: context, initialTime: _time);
@@ -105,7 +105,7 @@ class _SetupScreenState extends State<SetupScreen> {
               ),
             ),
             const SizedBox(height: 32),
-            GradientButton(label: 'Start learning', icon: AppIcons.next, onPressed: _done),
+            GradientButton(label: 'Bắt đầu học', icon: AppIcons.next, onPressed: _done),
           ],
         ),
       ),
@@ -113,9 +113,9 @@ class _SetupScreenState extends State<SetupScreen> {
   }
 
   static String _goalName(int g) => switch (g) {
-    10 => 'casual',
-    20 => 'regular',
-    30 => 'serious',
-    _ => 'intense',
+    10 => 'nhẹ nhàng',
+    20 => 'đều đặn',
+    30 => 'nghiêm túc',
+    _ => 'cường độ cao',
   };
 }
