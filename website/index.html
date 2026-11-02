@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Iemanihongo · Từ vựng tiếng Nhật</title>
+  <meta name="description" content="Học từ vựng tiếng Nhật theo chủ đề bằng thẻ ghi nhớ, kèm từ vựng ngẫu nhiên mỗi ngày.">
+  <meta name="theme-color" content="#24361f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232f4a2a'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23f6f0e1' font-family='serif'%3E%E8%A8%80%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Phong cảnh vườn Nhật: nền, ánh sáng, lá phong, chuông gió -->
+  <div class="scene" id="scene" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="rays"><i></i><i></i><i></i><i></i></div>
+    <div class="bokeh" id="bokeh"></div>
+    <svg class="garden" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="g-ground" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--ground-1)"/>
+          <stop offset="1" stop-color="var(--ground-2)"/>
+        </linearGradient>
+        <radialGradient id="g-stone" cx=".4" cy=".3" r=".8">
+          <stop offset="0" stop-color="var(--stone-1)"/>
+          <stop offset="1" stop-color="var(--stone-2)"/>
+        </radialGradient>
+        <linearGradient id="g-bamboo-h" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#7c5f2a"/>
+          <stop offset=".35" stop-color="#d8b874"/>
+          <stop offset=".55" stop-color="#ecd49a"/>
+          <stop offset="1" stop-color="#6e5222"/>
+        </linearGradient>
+        <linearGradient id="g-bamboo-v" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#7c5f2a"/>
+          <stop offset=".35" stop-color="#d8b874"/>
+          <stop offset=".55" stop-color="#ecd49a"/>
+          <stop offset="1" stop-color="#6e5222"/>
+        </linearGradient>
+        <radialGradient id="g-lamp" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="var(--lamp)" stop-opacity=".95"/>
+          <stop offset="1" stop-color="var(--lamp)" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="g-water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--water-1)"/>
+          <stop offset="1" stop-color="var(--water-2)"/>
+        </linearGradient>
+      </defs>
+      <!-- bụi cây xa -->
+      <g class="far" filter="blur(6px)">
+        <ellipse cx="120" cy="520" rx="260" ry="150" fill="var(--shrub-1)"/>
+        <ellipse cx="460" cy="500" rx="220" ry="110" fill="var(--shrub-2)"/>
+        <ellipse cx="980" cy="510" rx="240" ry="120" fill="var(--shrub-2)"/>
+        <ellipse cx="1330" cy="500" rx="280" ry="170" fill="var(--shrub-1)"/>
+        <rect x="560" y="430" width="330" height="70" rx="20" fill="var(--wall)" opacity=".55"/>
+      </g>
+      <!-- mặt đất rêu -->
+      <path d="M0 560 Q360 520 720 540 T1440 550 V900 H0 Z" fill="url(#g-ground)"/>
+      <g class="moss" opacity=".55">
+        <ellipse cx="300" cy="700" rx="220" ry="40" fill="var(--moss)"/>
+        <ellipse cx="1100" cy="680" rx="260" ry="46" fill="var(--moss)"/>
+        <ellipse cx="760" cy="840" rx="380" ry="60" fill="var(--moss)"/>
+      </g>
+      <!-- đá bước -->
+      <g class="stones">
+        <ellipse cx="640" cy="575" rx="48" ry="11" fill="url(#g-stone)"/>
+        <ellipse cx="600" cy="610" rx="64" ry="15" fill="url(#g-stone)"/>
+        <ellipse cx="560" cy="660" rx="84" ry="20" fill="url(#g-stone)"/>
+        <ellipse cx="500" cy="730" rx="108" ry="26" fill="url(#g-stone)"/>
+        <ellipse cx="430" cy="830" rx="140" ry="34" fill="url(#g-stone)"/>
+      </g>
+      <!-- đèn đá -->
+      <g class="lantern" filter="blur(1.2px)">
+        <ellipse cx="190" cy="640" rx="110" ry="18" fill="#000" opacity=".18"/>
+        <path d="M140 640 h100 l-12 -26 h-76 Z" fill="url(#g-stone)"/>
+        <rect x="170" y="520" width="40" height="96" fill="url(#g-stone)"/>
+        <path d="M128 520 h124 l-10 -20 h-104 Z" fill="url(#g-stone)"/>
+        <rect x="146" y="440" width="88" height="62" fill="url(#g-stone)"/>
+        <rect x="166" y="452" width="48" height="38" fill="var(--lamp-window)"/>
+        <circle cx="190" cy="471" r="60" fill="url(#g-lamp)" class="lamp-glow"/>
+        <path d="M100 444 Q190 380 280 444 Q240 430 190 408 Q140 430 100 444 Z" fill="url(#g-stone)"/>
+        <path d="M120 440 Q190 400 260 440 L250 446 Q190 418 130 446 Z" fill="var(--stone-2)"/>
+        <circle cx="190" cy="398" r="13" fill="url(#g-stone)"/>
+        <path d="M184 386 Q190 368 196 386 Z" fill="url(#g-stone)"/>
+      </g>
+      <!-- hàng rào tre -->
+      <g class="fence">
+        <rect x="-10" y="742" width="330" height="11" rx="5" fill="url(#g-bamboo-h)"/>
+        <rect x="-10" y="800" width="330" height="11" rx="5" fill="url(#g-bamboo-h)"/>
+        <g fill="url(#g-bamboo-v)">
+          <rect x="40" y="700" width="18" height="220" rx="4"/>
+          <rect x="150" y="712" width="18" height="210" rx="4"/>
+          <rect x="262" y="724" width="18" height="200" rx="4"/>
+        </g>
+        <g fill="#5b4320" opacity=".5">
+          <rect x="40" y="760" width="18" height="3"/><rect x="150" y="770" width="18" height="3"/><rect x="262" y="782" width="18" height="3"/>
+        </g>
+        <g stroke="#4b3618" stroke-width="2.4">
+          <path d="M38 740 l22 16 M38 756 l22 -16"/><path d="M148 740 l22 16 M148 756 l22 -16"/><path d="M260 740 l22 16 M260 756 l22 -16"/>
+          <path d="M38 798 l22 16 M38 814 l22 -16"/><path d="M148 798 l22 16 M148 814 l22 -16"/><path d="M260 798 l22 16 M260 814 l22 -16"/>
+        </g>
+      </g>
+      <!-- tảng đá rêu bên phải -->
+      <g class="rock" filter="blur(1px)">
+        <path d="M1180 600 Q1200 520 1270 512 Q1330 515 1350 580 Q1360 620 1300 630 Q1220 636 1180 600 Z" fill="url(#g-stone)"/>
+        <path d="M1196 560 Q1240 520 1300 524 Q1270 540 1240 548 Q1214 556 1196 560 Z" fill="var(--moss)" opacity=".8"/>
+      </g>
+      <!-- chậu nước tsukubai và ống tre -->
+      <g class="tsukubai">
+        <ellipse cx="1150" cy="812" rx="190" ry="40" fill="#000" opacity=".2"/>
+        <path d="M970 770 Q980 720 1150 714 Q1320 720 1330 770 Q1330 830 1150 836 Q970 830 970 770 Z" fill="url(#g-stone)"/>
+        <ellipse cx="1150" cy="752" rx="140" ry="26" fill="url(#g-water)"/>
+        <g class="ripples" fill="none" stroke="var(--ripple)" stroke-width="1.6">
+          <ellipse cx="1136" cy="752" rx="10" ry="3"/>
+          <ellipse cx="1136" cy="752" rx="10" ry="3"/>
+          <ellipse cx="1136" cy="752" rx="10" ry="3"/>
+        </g>
+        <path class="stream" d="M1190 703 Q1150 702 1136 752" fill="none" stroke="var(--stream)" stroke-width="6" stroke-linecap="round"/>
+        <path class="stream s2" d="M1190 703 Q1150 702 1136 752" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+        <g transform="rotate(-14 1300 650)">
+          <rect x="1180" y="660" width="300" height="26" rx="12" fill="url(#g-bamboo-h)"/>
+          <ellipse cx="1186" cy="673" rx="7" ry="13" fill="#4b3618"/>
+          <rect x="1290" y="660" width="4" height="26" fill="#6b4f22" opacity=".6"/>
+        </g>
+        <rect x="1380" y="640" width="26" height="240" rx="6" fill="url(#g-bamboo-v)"/>
+        <path d="M1376 690 l34 14 M1376 704 l34 -14" stroke="#4b3618" stroke-width="3"/>
+      </g>
+    </svg>
+    <svg class="foliage" id="foliage" preserveAspectRatio="xMidYMin slice"></svg>
+    <div class="chimes" id="chimes"></div>
+    <div class="falling" id="falling"></div>
+    <div class="fireflies" id="fireflies"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <!-- Định nghĩa dùng chung cho chuông gió -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <radialGradient id="g-glass" cx=".35" cy=".3" r=".85">
+        <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+        <stop offset=".45" stop-color="#e9f6fb" stop-opacity=".55"/>
+        <stop offset="1" stop-color="#9cc8d8" stop-opacity=".55"/>
+      </radialGradient>
+      <symbol id="maple" viewBox="0 0 100 100">
+        <path d="M50 3 L56 25 L70 12 L67 36 L90 28 L79 47 L97 58 L72 61 L80 82 L57 70 L52 94 L48 94 L43 70 L20 82 L28 61 L3 58 L21 47 L10 28 L33 36 L30 12 L44 25 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="chimes front-chimes" id="chimesFront" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" id="brand" aria-label="Iemanihongo – trang chủ">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M8 30 Q16 22 24 28 T40 26" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M10 36 Q18 30 26 34 T40 33" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+        <path d="M24 8 L18 17 H22 L16 24 H32 L26 17 H30 Z" fill="currentColor"/>
+      </svg>
+      <span>Iemanihongo</span>
+    </a>
+    <nav class="nav" aria-label="Chức năng">
+      <button class="nav-btn" data-mode="cards" aria-pressed="true">
+        <span class="long">Thẻ từ vựng</span><span class="short">Thẻ từ</span>
+      </button>
+      <button class="nav-btn" data-mode="daily" aria-pressed="false">
+        <span class="long">Từ vựng mỗi ngày</span><span class="short">Mỗi ngày</span>
+      </button>
+    </nav>
+    <button class="icon-btn" id="soundBtn" aria-pressed="false" title="Bật tiếng chuông gió">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a5 5 0 0 0-5 5v4l-2 3h14l-2-3V8a5 5 0 0 0-5-5Z"/><path d="M10 19a2 2 0 0 0 4 0"/><path class="mute" d="M3 3l18 18"/></svg>
+    </button>
+  </header>
+
+  <main class="stage">
+    <div class="toolbar" id="toolbar">
+      <div class="chips" id="chips" role="tablist" aria-label="Chủ đề"></div>
+    </div>
+    <div class="daily-head" id="dailyHead" hidden>
+      <span class="daily-kicker">Từ vựng hôm nay</span>
+      <span class="daily-date" id="dailyDate"></span>
+    </div>
+
+    <div class="hanger">
+      <svg class="rope" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M10 60 Q60 20 100 2 Q140 20 190 60" fill="none" stroke="#8a6d3b" stroke-width="2.6"/>
+        <path d="M10 60 Q60 20 100 2 Q140 20 190 60" fill="none" stroke="#d9c08a" stroke-width="1" stroke-dasharray="3 3"/>
+      </svg>
+      <div class="frame">
+        <span class="pole top"></span><span class="pole bottom"></span>
+        <span class="pole left"></span><span class="pole right"></span>
+        <span class="knot tl"></span><span class="knot tr"></span><span class="knot bl"></span><span class="knot br"></span>
+        <div class="card" id="card">
+          <div class="card-inner" id="cardInner">
+            <!-- Mặt trước -->
+            <section class="face front" id="front" tabindex="0" aria-label="Mặt trước thẻ. Nhấn để lật.">
+              <div class="front-top">
+                <span class="topic-tag" id="frontTopic"></span>
+                <button class="mini-btn speak" data-speak title="Nghe phát âm" aria-label="Nghe phát âm">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+                </button>
+              </div>
+              <div class="front-word" id="frontWord" lang="ja"></div>
+              <div class="hint" id="hint" aria-live="polite">
+                <div class="hint-kana" lang="ja" id="hintKana"></div>
+                <div class="hint-romaji" id="hintRomaji"></div>
+              </div>
+              <div class="front-foot">
+                <span class="fav-mark" id="favMark" hidden>★</span>
+                <span>Chạm vào thẻ để lật</span>
+              </div>
+            </section>
+            <!-- Mặt sau -->
+            <section class="face back" id="back" aria-label="Mặt sau thẻ">
+              <div class="back-head">
+                <div class="back-title">
+                  <span class="back-word" lang="ja" id="backWord"></span>
+                  <span class="back-reading" lang="ja" id="backReading"></span>
+                </div>
+                <div class="back-actions">
+                  <button class="mini-btn" data-speak title="Nghe phát âm" aria-label="Nghe phát âm">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+                  </button>
+                  <button class="mini-btn" id="flipBack" title="Lật lại mặt trước" aria-label="Lật lại mặt trước">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="back-meaning" id="backMeaning"></div>
+              <div class="tabs" role="tablist" aria-label="Nội dung mặt sau">
+                <button class="tab" role="tab" id="tab-mean" aria-controls="panel-mean" aria-selected="true">Nghĩa</button>
+                <button class="tab" role="tab" id="tab-write" aria-controls="panel-write" aria-selected="false" tabindex="-1">Cách viết</button>
+              </div>
+              <div class="panels">
+                <div class="panel" role="tabpanel" id="panel-mean" aria-labelledby="tab-mean"></div>
+                <div class="panel" role="tabpanel" id="panel-write" aria-labelledby="tab-write" hidden></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="under">
+      <div class="progress" id="progress"></div>
+      <div class="random-zone" id="randomZone" hidden>
+        <span class="random-label">Từ ngẫu nhiên</span>
+        <button class="pill" id="randomBtn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          Từ ngẫu nhiên khác
+        </button>
+        <button class="link-btn" id="todayBtn" hidden>Về từ của hôm nay</button>
+      </div>
+      <div class="controls">
+        <button class="ctrl" id="prevBtn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+          <span class="long">Thẻ trước</span><span class="short">Trước</span>
+        </button>
+        <button class="ctrl" id="hintBtn" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg>
+          <span>Gợi ý</span>
+        </button>
+        <button class="ctrl" id="favBtn" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9Z"/></svg>
+          <span>Yêu thích</span>
+        </button>
+        <button class="ctrl" id="nextBtn">
+          <span class="long">Thẻ tiếp</span><span class="short">Tiếp</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="credits">
+    Nét chữ: <a href="https://kanjivg.tagaini.net/" target="_blank" rel="noopener">KanjiVG</a> (CC BY-SA 3.0) ·
+    Không cần đăng nhập — từ yêu thích được lưu ngay trên trình duyệt của bạn.
+  </footer>
+
+  <script src="data/words.js"></script>
+  <script src="data/chars.js"></script>
+  <script src="scene.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
