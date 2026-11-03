@@ -6,32 +6,13 @@
   --font-mincho: 'Zen Old Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
   --font-hand: 'Klee One', var(--font-jp);
 
-  /* Phong cảnh ban ngày */
-  --sky-1: #fffbe2;
-  --sky-2: #cfe39c;
-  --sky-3: #6f9a46;
-  --sky-4: #2f5226;
-  --shrub-1: #3f6b2c;
-  --shrub-2: #5c8a3a;
-  --wall: #d9d2b8;
-  --ground-1: #6f8f3c;
-  --ground-2: #2e4a22;
-  --moss: #87a845;
-  --stone-1: #b9b7a8;
-  --stone-2: #6c6a5d;
-  --lamp: #fff4c4;
-  --lamp-window: #3a3a30;
-  --water-1: #4a5a48;
-  --water-2: #22301f;
-  --ripple: rgba(255, 255, 255, .55);
-  --stream: rgba(220, 240, 255, .75);
-  --leaf-1: #9ccc4a;
-  --leaf-2: #79b03a;
-  --leaf-3: #5e9a2c;
-  --leaf-4: #c3df63;
-  --bokeh: 255, 252, 214;
-  --ray: rgba(255, 252, 220, .22);
-  --vignette: rgba(18, 32, 12, .45);
+  /* Phong cảnh (đổi theo buổi qua body[data-period]) */
+  --scene-base: #6f9fc8;
+  --leaf-1: #4f9a4c;
+  --leaf-2: #78b85a;
+  --leaf-3: #2f7a45;
+  --leaf-4: #a6d27a;
+  --vignette: rgba(10, 25, 40, .35);
 
   /* Giao diện */
   --bar: rgba(24, 34, 22, .62);
@@ -59,34 +40,19 @@
   color-scheme: light;
 }
 
-/* Đêm hè: vườn tối, đèn đá sáng và đom đóm */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --sky-1: #3b4b5c; --sky-2: #1e3141; --sky-3: #13231c; --sky-4: #0a140f;
-    --shrub-1: #13261a; --shrub-2: #1a3121; --wall: #2a3330;
-    --ground-1: #1d3020; --ground-2: #0b150d; --moss: #2c4524;
-    --stone-1: #5d6560; --stone-2: #2a2f2b;
-    --lamp: #ffcf6e; --lamp-window: #ffd88a;
-    --water-1: #1c2b30; --water-2: #0b1416; --ripple: rgba(255, 220, 150, .35); --stream: rgba(170, 200, 220, .55);
-    --leaf-1: #2f5a2b; --leaf-2: #24492a; --leaf-3: #1b3a21; --leaf-4: #3c6a30;
-    --bokeh: 255, 214, 140; --ray: rgba(160, 190, 230, .07); --vignette: rgba(0, 0, 0, .6);
-    --paper: #ece4cf; --paper-2: #e0d5ba;
-    --shadow: 0 20px 60px rgba(0, 0, 0, .7);
-    color-scheme: dark;
-  }
+/* Buổi chiều: lá phong đỏ */
+body[data-period="chieu"] {
+  --scene-base: #c9846f;
+  --leaf-1: #c8452e; --leaf-2: #e2703a; --leaf-3: #a3302a; --leaf-4: #f0a04b;
+  --vignette: rgba(40, 15, 30, .4);
 }
-:root[data-theme="dark"] {
-  --sky-1: #3b4b5c; --sky-2: #1e3141; --sky-3: #13231c; --sky-4: #0a140f;
-  --shrub-1: #13261a; --shrub-2: #1a3121; --wall: #2a3330;
-  --ground-1: #1d3020; --ground-2: #0b150d; --moss: #2c4524;
-  --stone-1: #5d6560; --stone-2: #2a2f2b;
-  --lamp: #ffcf6e; --lamp-window: #ffd88a;
-  --water-1: #1c2b30; --water-2: #0b1416; --ripple: rgba(255, 220, 150, .35); --stream: rgba(170, 200, 220, .55);
-  --leaf-1: #2f5a2b; --leaf-2: #24492a; --leaf-3: #1b3a21; --leaf-4: #3c6a30;
-  --bokeh: 255, 214, 140; --ray: rgba(160, 190, 230, .07); --vignette: rgba(0, 0, 0, .6);
+/* Buổi khuya: trời sao, trăng và đom đóm */
+body[data-period="khuya"] {
+  --scene-base: #0a1430;
+  --leaf-1: #2a3b5e; --leaf-2: #3a4f78; --leaf-3: #1d2a45; --leaf-4: #4c6390;
+  --vignette: rgba(0, 0, 10, .55);
   --paper: #ece4cf; --paper-2: #e0d5ba;
   --shadow: 0 20px 60px rgba(0, 0, 0, .7);
-  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -94,7 +60,7 @@ html, body { margin: 0; height: 100%; }
 body {
   font-family: var(--font-ui);
   color: var(--on-scene);
-  background: var(--sky-4);
+  background: var(--scene-base);
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -106,53 +72,13 @@ svg { display: block; }
 
 /* ─────────────── Phong cảnh ─────────────── */
 .scene { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-.sky {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(120% 70% at 50% 8%, var(--sky-1) 0%, var(--sky-2) 28%, var(--sky-3) 62%, var(--sky-4) 100%);
+.backdrop { position: absolute; inset: 0; background: var(--scene-base); }
+.backdrop > * {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0; transition: opacity 1.6s ease;
 }
-.rays { position: absolute; inset: -10% -10% 30%; filter: blur(8px); }
-.rays i {
-  position: absolute; top: -20%; left: 50%; width: 9%; height: 120%;
-  background: linear-gradient(180deg, var(--ray), transparent 85%);
-  transform-origin: top center;
-  animation: ray 14s ease-in-out infinite alternate;
-}
-.rays i:nth-child(1) { transform: rotate(28deg); left: 46%; }
-.rays i:nth-child(2) { transform: rotate(12deg); width: 6%; animation-delay: -4s; }
-.rays i:nth-child(3) { transform: rotate(-10deg); width: 11%; animation-delay: -8s; }
-.rays i:nth-child(4) { transform: rotate(-30deg); left: 54%; width: 7%; animation-delay: -2s; }
-@keyframes ray { from { opacity: .45; } to { opacity: 1; } }
-
-.bokeh { position: absolute; inset: 0; }
-.bokeh span {
-  position: absolute; border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--bokeh), .55), rgba(var(--bokeh), .08) 70%, transparent 72%);
-  filter: blur(2px);
-  animation: twinkle var(--t, 9s) ease-in-out infinite alternate;
-}
-@keyframes twinkle { from { opacity: .25; } to { opacity: .9; } }
-
-.garden { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; }
-.garden .far { opacity: .9; }
-.lamp-glow { animation: lamp 5s ease-in-out infinite alternate; }
-@keyframes lamp { from { opacity: .45; } to { opacity: .9; } }
-.stream { stroke-dasharray: 10 8; animation: flow .7s linear infinite; }
-.stream.s2 { stroke-dasharray: 4 14; animation-duration: .5s; }
-@keyframes flow { to { stroke-dashoffset: -36; } }
-.ripples ellipse { transform-box: fill-box; transform-origin: center; animation: ripple 3s ease-out infinite; opacity: 0; }
-.ripples ellipse:nth-child(2) { animation-delay: 1s; }
-.ripples ellipse:nth-child(3) { animation-delay: 2s; }
-@keyframes ripple { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(7); opacity: 0; } }
-
-.foliage { position: absolute; inset: 0; width: 100%; height: 100%; }
-.foliage .branch { transform-box: view-box; animation: branch var(--bd, 7s) ease-in-out infinite alternate; }
-body.gust .foliage .branch { animation: branch-gust 3.4s ease-out, branch var(--bd, 7s) ease-in-out 3.4s infinite alternate; }
-@keyframes branch { from { transform: rotate(-.6deg); } to { transform: rotate(.8deg); } }
-@keyframes branch-gust {
-  0% { transform: rotate(0); } 20% { transform: rotate(2.6deg); } 45% { transform: rotate(-1.4deg); }
-  70% { transform: rotate(.8deg); } 100% { transform: rotate(0); }
-}
+.backdrop > .on { opacity: 1; }
+.backdrop .photo { background-size: cover; background-position: center; }
 
 .vignette {
   position: absolute; inset: 0;
@@ -256,8 +182,7 @@ body.gust .furin .tail { animation: tail-gust 3.6s ease-out var(--gd, 0s), tail 
 }
 
 .fireflies { position: absolute; inset: 0; display: none; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .fireflies { display: block; } }
-:root[data-theme="dark"] .fireflies { display: block; }
+body[data-period="khuya"] .fireflies { display: block; }
 .fireflies span {
   position: absolute; width: 5px; height: 5px; border-radius: 50%;
   background: #f6f19a; box-shadow: 0 0 10px 3px rgba(240, 236, 120, .7);
@@ -290,8 +215,14 @@ body.gust .furin .tail { animation: tail-gust 3.6s ease-out var(--gd, 0s), tail 
 .nav-btn:hover { color: var(--bar-text); background: rgba(255, 255, 255, .08); }
 .nav-btn[aria-pressed="true"] { color: var(--bar-text); background: rgba(255, 255, 255, .16); }
 .nav-btn .short { display: none; }
-.icon-btn {
-  margin-left: auto; width: 40px; height: 40px; border-radius: 50%;
+.period-btn {
+  margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
+  height: 40px; padding: 0 14px 0 11px; border-radius: 999px; border: 0;
+  background: rgba(255, 255, 255, .08); color: var(--bar-text); font-size: .88rem;
+}
+.period-btn:hover { background: rgba(255, 255, 255, .16); }
+.period-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.icon-btn { width: 40px; height: 40px; border-radius: 50%;
   border: 0; background: rgba(255, 255, 255, .08);
   display: grid; place-items: center;
 }
@@ -649,6 +580,9 @@ body.gust .furin .tail { animation: tail-gust 3.6s ease-out var(--gd, 0s), tail 
   .nav-btn { padding: 7px 10px; font-size: .9rem; }
   .nav-btn .long { display: none; }
   .nav-btn .short { display: inline; }
+  .period-btn { width: 40px; padding: 0; justify-content: center; flex: none; }
+  .period-btn span { display: none; }
+  .icon-btn { flex: none; }
   .stage { padding: 8px 16px 4px; }
   .hanger { margin-top: 28px; }
   .frame { padding: 20px 16px; }
@@ -661,7 +595,7 @@ body.gust .furin .tail { animation: tail-gust 3.6s ease-out var(--gd, 0s), tail 
   .ctrl .short { display: inline; }
   .tategaki { font-size: 1.02rem; }
 }
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .brand span { display: none; }
   .ctrl { padding: 7px 7px; font-size: .86rem; gap: 4px; }
   .box { width: 64px; height: 64px; }

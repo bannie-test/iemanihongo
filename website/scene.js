@@ -1,4 +1,4 @@
-/* Phong cảnh: đốm sáng, lá phong, chuông gió đung đưa, gió thổi, lá rơi, đom đóm. */
+/* Phong cảnh: nền đổi theo buổi, chuông gió đung đưa, gió thổi, lá rơi, đom đóm. */
 (function () {
   'use strict';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -9,62 +9,90 @@
   const between = (a, b) => a + (b - a) * rnd();
   const SVGNS = 'http://www.w3.org/2000/svg';
 
-  /* Đốm sáng nhòe (bokeh) */
-  const bokeh = document.getElementById('bokeh');
-  for (let i = 0; i < 34; i++) {
-    const s = document.createElement('span');
-    const size = between(10, 70);
-    s.style.cssText = `left:${between(0, 100)}%;top:${between(2, 62)}%;width:${size}px;height:${size}px;--t:${between(5, 12)}s;animation-delay:${-between(0, 10)}s`;
-    bokeh.appendChild(s);
-  }
-
-  /* Tán lá phong ở hai góc trên */
-  const foliage = document.getElementById('foliage');
-  const W = 1440, H = 900;
-  foliage.setAttribute('viewBox', `0 0 ${W} ${H}`);
   const leafColors = ['var(--leaf-1)', 'var(--leaf-2)', 'var(--leaf-3)', 'var(--leaf-4)'];
 
-  function branch(x0, y0, x1, y1, dir, count, spread, pivotX, pivotY, dur) {
-    const g = document.createElementNS(SVGNS, 'g');
-    g.setAttribute('class', 'branch');
-    g.style.transformOrigin = `${pivotX}px ${pivotY}px`;
-    g.style.setProperty('--bd', dur + 's');
-    const twig = document.createElementNS(SVGNS, 'path');
-    const cx = (x0 + x1) / 2, cy = Math.min(y0, y1) + 40;
-    twig.setAttribute('d', `M${x0} ${y0} Q${cx} ${cy} ${x1} ${y1}`);
-    twig.setAttribute('fill', 'none');
-    twig.setAttribute('stroke', '#3d2f1d');
-    twig.setAttribute('stroke-width', '4');
-    twig.setAttribute('opacity', '.75');
-    g.appendChild(twig);
-    for (let i = 0; i < count; i++) {
-      const t = rnd();
-      const bx = (1 - t) * (1 - t) * x0 + 2 * (1 - t) * t * cx + t * t * x1;
-      const by = (1 - t) * (1 - t) * y0 + 2 * (1 - t) * t * cy + t * t * y1;
-      const size = between(36, 78);
-      const lx = bx + between(-spread, spread);
-      const ly = by + between(-spread * .4, spread);
-      const u = document.createElementNS(SVGNS, 'use');
-      u.setAttribute('href', '#maple');
-      u.setAttribute('x', lx - size / 2);
-      u.setAttribute('y', ly - size / 2);
-      u.setAttribute('width', size);
-      u.setAttribute('height', size);
-      u.setAttribute('transform', `rotate(${between(-60, 60) + dir * 20} ${lx} ${ly})`);
-      u.style.fill = leafColors[Math.floor(rnd() * leafColors.length)];
-      u.style.opacity = between(.78, 1).toFixed(2);
-      g.appendChild(u);
-    }
-    foliage.appendChild(g);
+  /* Nền đổi theo buổi: sáng, chiều, khuya */
+  const PERIODS = { sang: 'Sáng', chieu: 'Chiều', khuya: 'Khuya' };
+  const backdrop = document.getElementById('backdrop');
+  const images = window.BACKGROUNDS || {};
+  let choice = 'auto';
+  try { choice = localStorage.getItem('iema.period') || 'auto'; } catch (e) { /* bỏ qua */ }
+  if (choice !== 'auto' && !PERIODS[choice]) choice = 'auto';
+  let current = null;
+
+  function periodByClock(d = new Date()) {
+    const h = d.getHours();
+    if (h >= 5 && h < 11) return 'sang';
+    if (h >= 11 && h < 18) return 'chieu';
+    return 'khuya';
   }
-  // trái
-  branch(-40, 30, 420, 120, 1, 70, 70, -40, 30, 7);
-  branch(-30, 200, 260, 250, 1, 38, 55, -30, 200, 8.5);
-  branch(80, -20, 520, 30, 1, 40, 50, 80, -20, 6.5);
-  // phải
-  branch(W + 40, 40, 1000, 140, -1, 70, 70, W + 40, 40, 7.5);
-  branch(W + 30, 230, 1170, 300, -1, 36, 55, W + 30, 230, 9);
-  branch(W - 60, -20, 920, 20, -1, 40, 50, W - 60, -20, 6);
+  function swapLayer(el) {
+    backdrop.appendChild(el);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      el.classList.add('on');
+      setTimeout(() => { Array.from(backdrop.children).forEach(ch => { if (ch !== el) ch.remove(); }); }, 1700);
+    }));
+  }
+  function paintLayer(period) {
+    const cv = document.createElement('canvas');
+    cv.className = 'painting';
+    cv.dataset.period = period;
+    backdrop.appendChild(cv);
+    window.IemaPainter.paint(cv, period);
+    cv.remove();
+    swapLayer(cv);
+  }
+  function showPeriod(period, force) {
+    if (period === current && !force) return;
+    current = period;
+    document.body.dataset.period = period;
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = { sang: '#3f8fdb', chieu: '#2c3f7f', khuya: '#02040d' }[period];
+    const src = images[period];
+    if (src) {
+      const img = new Image();
+      img.onload = () => {
+        if (current !== period) return;
+        const el = document.createElement('div');
+        el.className = 'photo';
+        el.style.backgroundImage = `url("${src}")`;
+        swapLayer(el);
+      };
+      img.onerror = () => { if (current === period) paintLayer(period); };
+      img.src = src;
+    } else {
+      paintLayer(period);
+    }
+    const label = document.getElementById('periodLabel');
+    const btn = document.getElementById('periodBtn');
+    if (label) label.textContent = choice === 'auto' ? `${PERIODS[period]} · tự động` : PERIODS[period];
+    if (btn) {
+      btn.title = `Cảnh: ${PERIODS[period]}${choice === 'auto' ? ' (tự động theo giờ)' : ''}. Nhấn để đổi.`;
+      btn.setAttribute('aria-label', btn.title);
+    }
+  }
+  function refresh(force) { showPeriod(choice === 'auto' ? periodByClock() : choice, force); }
+  const order = ['auto', 'sang', 'chieu', 'khuya'];
+  const periodBtn = document.getElementById('periodBtn');
+  if (periodBtn) periodBtn.addEventListener('click', () => {
+    choice = order[(order.indexOf(choice) + 1) % order.length];
+    try { localStorage.setItem('iema.period', choice); } catch (e) { /* bỏ qua */ }
+    refresh(true);
+  });
+  refresh(true);
+  setInterval(() => { if (choice === 'auto') refresh(false); }, 60 * 1000);
+  // Tranh vẽ phải vẽ lại khi đổi kích thước cửa sổ (ảnh thì tự co giãn).
+  let resizeTimer = null, lastW = window.innerWidth, lastH = window.innerHeight;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const w = window.innerWidth, h = window.innerHeight;
+      // bỏ qua thay đổi nhỏ về chiều cao (thanh địa chỉ trên điện thoại)
+      if (w === lastW && Math.abs(h - lastH) < 120) return;
+      lastW = w; lastH = h;
+      if (backdrop.querySelector('canvas')) showPeriod(current, true);
+    }, 250);
+  });
 
   /* Chuông gió */
   const chimes = document.getElementById('chimes');
@@ -117,7 +145,7 @@
   spots.forEach((spot, i) => makeFurin(chimes, spot, i));
   // Trên điện thoại: hai chuông nhỏ treo trước khung tre để luôn nhìn thấy.
   const front = document.getElementById('chimesFront');
-  if (front) [[3.4, 190, .55, 0], [96.6, 300, .55, 0]].forEach((spot, i) => makeFurin(front, spot, i + 1));
+  if (front) [[3.4, 150, .55, 0], [96.6, 200, .55, 0]].forEach((spot, i) => makeFurin(front, spot, i + 1));
 
   // Ẩn bớt chuông ở giữa trên màn hình hẹp (thẻ che mất).
   const narrow = window.matchMedia('(max-width: 760px)');
