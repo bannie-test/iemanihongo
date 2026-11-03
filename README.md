@@ -2,8 +2,6 @@
 
 A Flutter app for learning Japanese from JLPT N5 to N1, for Android and iOS.
 
-There is also a standalone website with topic-based vocabulary flashcards and a daily word, in [`website/`](website/README.md).
-
 - **Flashcards with spaced repetition.** Reveal the card, then tap Next; the next review is scheduled automatically (an SM-2 variant). Words you miss in quizzes and tests come back sooner. You set how many new words to learn per day.
 - **8,144 vocabulary words** across N5–N1 (Waller's JLPT lists, cross-checked against JMdict). Each one has audio, its reading and meaning, and a breakdown of its kanji (meanings, on/kun readings, stroke count, other words that use it).
 - **Four quiz modes:** meaning, reverse (English → Japanese), reading (kanji → kana), and listening. If you miss a word you have already learned, it comes back for review.
